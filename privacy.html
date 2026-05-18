@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Privacy Policy — Courtright Collective</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --midnight: #0E1520;
+      --ash:      #1A2030;
+      --copper:   #C45C28;
+      --copper-lt:#D97040;
+      --gold:     #D9A030;
+      --smoke:    #7A7268;
+      --parchment:#F4EBD9;
+      --cream:    #FAF6EF;
+    }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family:'Outfit',sans-serif;
+      background:var(--cream);
+      color:var(--midnight);
+      line-height:1.75;
+    }
+
+    /* NAV */
+    nav {
+      background:var(--midnight);
+      padding:1.2rem 4rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      border-bottom:1px solid rgba(196,92,40,0.15);
+    }
+    .nav-back {
+      font-size:0.7rem; font-weight:400; letter-spacing:0.14em;
+      text-transform:uppercase; color:rgba(244,235,217,0.5);
+      text-decoration:none; display:flex; align-items:center; gap:0.5rem;
+      transition:color 0.2s;
+    }
+    .nav-back::before { content:'←'; }
+    .nav-back:hover { color:var(--gold); }
+    .nav-brand {
+      font-family:'Cormorant Garamond',serif; font-weight:300;
+      font-size:1.2rem; letter-spacing:0.06em; color:var(--parchment);
+      text-decoration:none;
+    }
+    .nav-brand span { font-style:italic; color:var(--gold); }
+
+    /* HERO */
+    .hero {
+      background:var(--midnight);
+      padding:5rem 4rem 4rem;
+      border-bottom:1px solid rgba(196,92,40,0.12);
+    }
+    .hero-label {
+      font-size:0.67rem; letter-spacing:0.28em; text-transform:uppercase;
+      color:var(--copper); display:flex; align-items:center; gap:0.8rem;
+      margin-bottom:1.2rem;
+    }
+    .hero-label::before { content:''; width:2rem; height:1px; background:var(--copper); display:block; }
+    .hero h1 {
+      font-family:'Cormorant Garamond',serif; font-weight:300;
+      font-size:clamp(2.5rem,5vw,4.5rem); line-height:1;
+      color:var(--parchment);
+    }
+    .hero h1 em { font-style:italic; color:var(--gold); }
+    .hero-meta {
+      margin-top:1.5rem; font-size:0.82rem; font-weight:300;
+      color:var(--smoke);
+    }
+
+    /* CONTENT */
+    .content {
+      max-width:800px;
+      margin:0 auto;
+      padding:5rem 4rem;
+    }
+
+    /* App switcher tabs */
+    .app-tabs {
+      display:flex; gap:0; margin-bottom:4rem;
+      background:rgba(14,21,32,0.06);
+      border:1px solid rgba(196,92,40,0.15);
+      border-radius:8px; overflow:hidden;
+    }
+    .app-tab {
+      flex:1; padding:0.9rem 1rem; text-align:center;
+      font-family:'Outfit',sans-serif; font-size:0.75rem; font-weight:600;
+      letter-spacing:0.1em; text-transform:uppercase;
+      background:transparent; border:none; color:var(--smoke);
+      cursor:pointer; transition:all 0.25s; text-decoration:none;
+      display:block;
+    }
+    .app-tab.active, .app-tab:hover { background:var(--midnight); color:var(--parchment); }
+    .app-tab.active { color:var(--gold); }
+
+    /* Policy sections */
+    .policy-section { display:none; }
+    .policy-section.active { display:block; }
+
+    h2 {
+      font-family:'Cormorant Garamond',serif; font-weight:300;
+      font-size:clamp(1.8rem,3vw,2.6rem); line-height:1.1;
+      color:var(--midnight); margin-bottom:0.5rem;
+    }
+    h2 em { font-style:italic; color:var(--copper); }
+    h3 {
+      font-family:'Outfit',sans-serif; font-weight:500;
+      font-size:0.95rem; text-transform:uppercase;
+      letter-spacing:0.08em; color:var(--midnight);
+      margin:2.5rem 0 0.8rem;
+      padding-bottom:0.5rem;
+      border-bottom:1px solid rgba(196,92,40,0.15);
+    }
+    p {
+      font-size:0.95rem; font-weight:300; color:#3a322a;
+      margin-bottom:1.2rem; line-height:1.8;
+    }
+    ul {
+      margin:0.5rem 0 1.2rem 1.2rem;
+    }
+    ul li {
+      font-size:0.95rem; font-weight:300; color:#3a322a;
+      margin-bottom:0.5rem; line-height:1.7;
+    }
+    a { color:var(--copper); text-decoration:none; }
+    a:hover { color:var(--copper-lt); text-decoration:underline; }
+    .effective-date {
+      display:inline-block; font-size:0.72rem; letter-spacing:0.15em;
+      text-transform:uppercase; color:var(--smoke); margin-bottom:2.5rem;
+      padding:0.4rem 1rem; background:rgba(196,92,40,0.08);
+      border:1px solid rgba(196,92,40,0.15); border-radius:100px;
+    }
+    .contact-box {
+      background:var(--midnight); border:1px solid rgba(196,92,40,0.2);
+      border-radius:10px; padding:2rem 2.2rem; margin-top:3rem;
+    }
+    .contact-box p { color:rgba(244,235,217,0.7); margin-bottom:0; }
+    .contact-box a { color:var(--gold); }
+    .contact-box strong { color:var(--parchment); font-weight:400; }
+
+    /* FOOTER */
+    footer {
+      background:var(--midnight); padding:2.5rem 4rem;
+      border-top:1px solid rgba(196,92,40,0.1); text-align:center;
+    }
+    .footer-copy { font-size:0.72rem; color:var(--smoke); opacity:0.5; }
+
+    @media(max-width:768px){
+      nav { padding:1rem 1.5rem; }
+      .hero { padding:3.5rem 1.5rem 3rem; }
+      .content { padding:3rem 1.5rem; }
+      footer { padding:2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-back" href="/">Courtright Collective</a>
+    <a class="nav-brand" href="/">Courtright <span>Collective</span></a>
+  </nav>
+
+  <div class="hero">
+    <p class="hero-label">Legal</p>
+    <h1>Privacy <em>Policy</em></h1>
+    <p class="hero-meta">Courtright Collective LLC · Last updated January 1, 2025</p>
+  </div>
+
+  <div class="content">
+
+    <div class="app-tabs">
+      <a class="app-tab active" onclick="showPolicy('cc',this)" href="#">Courtright Collective</a>
+      <a class="app-tab" onclick="showPolicy('tt',this)" href="#">TinkerTaps</a>
+      <a class="app-tab" onclick="showPolicy('trivd',this)" href="#">Trivd</a>
+    </div>
+
+    <!-- ── COURTRIGHT COLLECTIVE ── -->
+    <div class="policy-section active" id="policy-cc">
+      <h2>Courtright <em>Collective</em></h2>
+      <span class="effective-date">Effective January 1, 2025</span>
+
+      <p>Courtright Collective LLC ("we," "us," or "our") operates the website located at courtrightco.com (the "Site"). This Privacy Policy explains how we collect, use, and protect information when you visit our Site or submit a partner application.</p>
+
+      <h3>Information We Collect</h3>
+      <p>When you submit a partner application through our Site, we collect the following information you voluntarily provide:</p>
+      <ul>
+        <li>Your first and last name</li>
+        <li>Your email address</li>
+        <li>Your app name or working title</li>
+        <li>Your app category and development stage</li>
+        <li>A description of your app idea</li>
+      </ul>
+      <p>We also collect standard web analytics data (page visits, browser type, approximate location) through Cloudflare, our hosting provider. This data is aggregated and not linked to individual users.</p>
+
+      <h3>How We Use Your Information</h3>
+      <p>We use the information you submit solely to:</p>
+      <ul>
+        <li>Review your partner application and determine whether it's a fit</li>
+        <li>Contact you to discuss a potential partnership</li>
+        <li>Improve our application process</li>
+      </ul>
+      <p>We do not sell, rent, or share your personal information with third parties for marketing purposes. Ever.</p>
+
+      <h3>Data Retention</h3>
+      <p>We retain partner application data for as long as necessary to evaluate your submission and follow up. If you'd like your information removed at any time, email us and we'll delete it within 7 business days.</p>
+
+      <h3>Cookies</h3>
+      <p>Our Site does not use tracking cookies or third-party advertising cookies. Cloudflare may set functional cookies necessary for site security and performance. We do not run ads on this Site.</p>
+
+      <h3>Third-Party Services</h3>
+      <p>Our Site is hosted on Cloudflare Workers. Cloudflare's privacy practices are governed by their own privacy policy at <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">cloudflare.com/privacypolicy</a>.</p>
+
+      <h3>Children's Privacy</h3>
+      <p>This Site is not directed at children under 13 and we do not knowingly collect personal information from children. Our apps — TinkerTaps and Trivd — have their own privacy policies which address children's privacy as applicable.</p>
+
+      <h3>Your Rights</h3>
+      <p>You have the right to request access to, correction of, or deletion of any personal information we hold about you. To exercise these rights, contact us at the address below.</p>
+
+      <h3>Changes to This Policy</h3>
+      <p>We may update this Privacy Policy from time to time. When we do, we'll update the effective date at the top of this page. Continued use of the Site after any changes constitutes acceptance of the updated policy.</p>
+
+      <div class="contact-box">
+        <p><strong>Questions?</strong> Reach us at <a href="mailto:info@courtrightco.com">info@courtrightco.com</a><br>
+        Courtright Collective LLC · Nashville, TN</p>
+      </div>
+    </div>
+
+    <!-- ── TINKERTAPS ── -->
+    <div class="policy-section" id="policy-tt">
+      <h2>Tinker<em>Taps</em></h2>
+      <span class="effective-date">Effective January 1, 2025</span>
+
+      <p>TinkerTaps is a sensory and hand-eye coordination app for babies and toddlers, developed and published by Courtright Collective LLC ("we," "us," or "our"). We take the privacy of your family seriously — especially when it comes to young children.</p>
+
+      <h3>Our Core Commitment</h3>
+      <p>TinkerTaps does not collect personal information from children. The app is designed to be used by children under parental supervision and does not require account creation, login, or any personal data to function.</p>
+
+      <h3>Information We Do Not Collect</h3>
+      <ul>
+        <li>We do not collect names, email addresses, or contact information from app users</li>
+        <li>We do not collect data on children's activity within the app</li>
+        <li>We do not serve behavioral advertising or track users across apps</li>
+        <li>We do not sell user data to third parties</li>
+        <li>There are no third-party advertising SDKs in TinkerTaps</li>
+      </ul>
+
+      <h3>Information We Do Collect</h3>
+      <p>When you subscribe to TinkerTaps Premium, your subscription is processed through Apple App Store or Google Play. We do not directly handle or store your payment information — all billing is managed by Apple or Google under their respective privacy policies.</p>
+      <p>If you contact us for support, we may collect your email address solely to respond to your inquiry.</p>
+      <p>We may collect anonymous, aggregated analytics (such as app version and crash reports) through Apple and Google's built-in developer tools. This data does not identify individual users and is used only to improve the app.</p>
+
+      <h3>COPPA Compliance</h3>
+      <p>TinkerTaps is designed for use by children under 13 with parental supervision. In compliance with the Children's Online Privacy Protection Act (COPPA), we do not knowingly collect personal information from children under 13. The app does not require children to provide any personal information to use it.</p>
+      <p>Parents or guardians who believe we have inadvertently collected information from a child under 13 should contact us immediately at the address below and we will delete that information promptly.</p>
+
+      <h3>Parental Controls</h3>
+      <p>TinkerTaps includes a built-in Parental Lock feature so parents can control access to settings and ensure children remain within the app experience.</p>
+
+      <h3>The T-Shirt Feature</h3>
+      <p>Subscribers can take a screenshot of their child's artwork and submit it to our Etsy shop for a custom t-shirt. This process happens entirely outside the app — we do not receive or process images through TinkerTaps itself. Any order placed through our Etsy shop is governed by Etsy's privacy policy.</p>
+
+      <h3>Newsletter</h3>
+      <p>If you sign up for our email newsletter through our website, we collect your email address to send you updates about TinkerTaps. You can unsubscribe at any time.</p>
+
+      <h3>Changes to This Policy</h3>
+      <p>We may update this Privacy Policy as the app evolves. We will notify users of significant changes by updating the effective date and, where required by law, providing additional notice.</p>
+
+      <div class="contact-box">
+        <p><strong>Questions about TinkerTaps privacy?</strong><br>
+        Email: <a href="mailto:tinkertapsapp@gmail.com">tinkertapsapp@gmail.com</a><br>
+        Courtright Collective LLC · Nashville, TN</p>
+      </div>
+    </div>
+
+    <!-- ── TRIVD ── -->
+    <div class="policy-section" id="policy-trivd">
+      <h2>Trivd</h2>
+      <span class="effective-date">Effective January 1, 2025</span>
+
+      <p>Trivd is a trivia app developed and published by Courtright Collective LLC ("we," "us," or "our"). This Privacy Policy explains how we handle your information when you use the Trivd app or the Trivd website tools.</p>
+
+      <h3>Information You Provide</h3>
+      <p>Trivd is designed to work without requiring an account. When you play without signing in:</p>
+      <ul>
+        <li>Your stats and streak data are stored locally on your device only</li>
+        <li>No personal information is sent to our servers</li>
+        <li>Game data is not linked to your identity in any way</li>
+      </ul>
+      <p>If you choose to create an account to save your stats, we collect your email address and a display name. This data is stored securely and used only to provide the account feature.</p>
+
+      <h3>Multiplayer and Room Codes</h3>
+      <p>When you create or join a multiplayer game room, we temporarily store the room code, player display names chosen for that session, and game scores for the duration of the game. This data is deleted when the game session ends and is not linked to any persistent user profile unless you are signed in.</p>
+
+      <h3>Daily Challenge (Website)</h3>
+      <p>The Daily Trivia Challenge on our website uses your browser's local storage to track your daily streak. This data lives only on your device and is never sent to our servers. No personal information is collected to play the Daily Challenge.</p>
+
+      <h3>Trivia Night Generator (Website)</h3>
+      <p>When you use the Trivia Night Generator, your category selections and preferences are sent to our server to generate questions. We do not log or retain this data after the response is returned to you.</p>
+
+      <h3>Analytics</h3>
+      <p>We may use anonymous, aggregated analytics to understand how the app is being used — such as which topics are most popular or how many games are played per day. This data does not identify individual users and is used only to improve Trivd.</p>
+
+      <h3>Advertising</h3>
+      <p>The free version of Trivd includes advertisements served through third-party ad networks. These networks may collect certain device identifiers and usage data in accordance with their own privacy policies to serve relevant ads. You can remove all ads by upgrading to Trivd Pro.</p>
+      <p>We do not sell your personal information to advertisers.</p>
+
+      <h3>Age Requirement</h3>
+      <p>Trivd is intended for users 13 years of age and older. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided us with personal information, please contact us and we will delete it promptly.</p>
+
+      <h3>Data Security</h3>
+      <p>We take reasonable steps to protect the information we collect. However, no method of transmission over the internet or electronic storage is 100% secure.</p>
+
+      <h3>Changes to This Policy</h3>
+      <p>We may update this Privacy Policy as Trivd grows. We will update the effective date at the top of this page when changes are made.</p>
+
+      <div class="contact-box">
+        <p><strong>Questions about Trivd privacy?</strong><br>
+        Email: <a href="mailto:info@courtrightco.com">info@courtrightco.com</a><br>
+        Courtright Collective LLC · Nashville, TN</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="footer-copy">© 2025 Courtright Collective LLC. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function showPolicy(id, tab) {
+      event.preventDefault();
+      document.querySelectorAll('.policy-section').forEach(function(s){ s.classList.remove('active'); });
+      document.querySelectorAll('.app-tab').forEach(function(t){ t.classList.remove('active'); });
+      document.getElementById('policy-' + id).classList.add('active');
+      tab.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
