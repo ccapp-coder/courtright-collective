@@ -74,6 +74,20 @@
     .faq summary::after { content: '+'; color: var(--copper); font-size: 1.5rem; font-weight: 300; transition: transform 0.3s ease; }
     .faq details[open] summary::after { transform: rotate(45deg); }
     .faq details p { color: var(--smoke); margin: 1rem 0 0; line-height: 1.65; }
+    .start-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0 1rem; }
+    @media (max-width: 700px) { .start-grid { grid-template-columns: 1fr; } }
+    .start-card { background: white; border: 1px solid rgba(14, 21, 32, 0.08); border-radius: 12px; padding: 1.75rem; transition: all 0.3s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+    .start-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--copper); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+    .start-card.secondary::before { background: var(--gold); }
+    .start-card:hover { transform: translateY(-3px); border-color: var(--copper); box-shadow: 0 12px 32px rgba(14, 21, 32, 0.06); }
+    .start-card.secondary:hover { border-color: var(--gold); }
+    .start-card:hover::before { transform: scaleX(1); }
+    .start-card .start-eyebrow { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.625rem; }
+    .start-card.secondary .start-eyebrow { color: var(--gold); }
+    .start-card h3 { font-family: var(--display); font-size: 1.25rem; font-weight: 600; margin: 0 0 0.5rem; color: var(--midnight); }
+    .start-card > p { font-size: 0.95rem; color: var(--smoke); line-height: 1.6; margin: 0 0 1.25rem; flex: 1; }
+    .start-card .btn { align-self: flex-start; }
+    .start-card .fine-print { font-size: 0.78rem; color: var(--smoke); margin: 0.75rem 0 0; flex: none; }
     footer { padding: 3rem 0 2rem; border-top: 1px solid rgba(14, 21, 32, 0.08); color: var(--smoke); font-size: 0.92rem; text-align: center; }
     footer a { color: var(--smoke); text-decoration: none; }
     footer a:hover { color: var(--copper); }
@@ -132,12 +146,12 @@
 
     <div class="use-case">
       <h3>Hosting, security, and backups handled</h3>
-      <p>We host it on Cloudflare's network so it's fast everywhere, SSL is automatic, and there's nothing for you to maintain. No more $30/month for a "premium plan" you didn't ask for.</p>
+      <p>We host on Cloudflare's network — fast loads everywhere in the world, automatic SSL, daily backups, and zero-downtime deploys. The hosting, SSL renewals, security patches, and infrastructure are baked into your monthly. You don't get a separate bill, you don't get an email asking you to renew anything, and you don't need to know what any of that means.</p>
     </div>
 
     <div class="use-case">
       <h3>Ongoing edits and updates included</h3>
-      <p>Need a new page? A price change? A photo updated? Send us a message, we make the change. No tickets, no developer queue, no relearning Wix every time.</p>
+      <p>Need a new page? A price change? A photo updated? Send us a message, we make the change. No tickets, no developer queue, no relearning Wix every time. Unlimited small edits are part of your monthly — covered.</p>
     </div>
 
     <div class="use-case">
@@ -145,16 +159,42 @@
       <p>Plausible or GA4 set up so you can actually see what's working. Monthly summary if you want one. We'll tell you which pages are pulling weight and which ones aren't.</p>
     </div>
 
+    <div class="use-case">
+      <h3>Interactive tools (add-on)</h3>
+      <p>Beyond the standard pages, we build interactive features that turn your site into a tool: pricing calculators, instant-quote builders, intake forms with branching logic, configurators, AI chat assistants trained on your content, and booking flows with custom rules. Priced per tool, typically <strong>$250 – $2,500</strong> depending on complexity. The kind of thing that makes a visitor stick around instead of bouncing.</p>
+    </div>
+
     <h2>What it actually <em>looks like</em></h2>
     <p>We start with a 30-minute call about your business, who you serve, and what you wish your site did better. Within a week you've got a draft to look at. Within two weeks the site is live on your domain. After that, you message us when something needs to change, and we change it. You never log into a CMS unless you want to.</p>
 
     <h2>What it <em>costs</em></h2>
-    <p>A new small business website starts at <strong>$1,500 one-time + $29/month</strong> for ongoing hosting and management under our Small Business Website Quick Start. For larger sites with custom features, integrations, or multi-page marketing setups, we scope it out after the audit call. <a href="/pricing.html">See all pricing →</a></p>
+    <p>A new small business website is <strong>$750 one-time + $49.99/month</strong>. The build covers design, copy, and launch within two weeks. The monthly covers hosting, SSL, daily backups, analytics, and unlimited small edits. Interactive tool add-ons are priced separately at <strong>$250 – $2,500 per tool</strong> depending on complexity. For larger marketing sites or full e-commerce, we scope it after the discovery call. <a href="/pricing.html">See all pricing →</a></p>
+
+    <h2>Ready to <em>get started?</em></h2>
+    <p>Two ways in. Pick the one that fits how you work.</p>
+
+    <div class="start-grid">
+      <div class="start-card">
+        <div class="start-eyebrow">Option A · Skip the queue</div>
+        <h3>Pay deposit, kick off this week</h3>
+        <p>A $375 deposit (50% of the build) locks in your slot. You fill out a short intake form, we're drafting your site within 48 hours, and the remaining $375 is due at launch. The $49.99/month starts after the site goes live.</p>
+        <!-- TODO: Replace with your real Stripe Payment Link from https://dashboard.stripe.com/payment-links -->
+        <a href="https://buy.stripe.com/REPLACE-WITH-YOUR-DEPOSIT-LINK" class="btn">Pay $375 deposit →</a>
+        <p class="fine-print">Secure payment via Stripe. Full refund within 7 days if we haven't started.</p>
+      </div>
+      <div class="start-card secondary">
+        <div class="start-eyebrow">Option B · Talk first</div>
+        <h3>Book a 15-min discovery call</h3>
+        <p>Free, no card. We'll talk about your business, look at your current site (or sketch one), and you decide whether to move forward. Most calls end with a written quote within 48 hours.</p>
+        <a href="/book.html" class="btn btn-secondary">Book the call →</a>
+        <p class="fine-print">No commitment. Reply within 1 business day if a slot doesn't work.</p>
+      </div>
+    </div>
 
     <div class="cta-card">
-      <h2>See what your site could actually <em>do.</em></h2>
-      <p>15-minute free audit. We'll look at your current site (or sketch of one) and tell you what to fix, what to keep, and what it would cost to build it right.</p>
-      <a href="/book.html" class="btn">Book the audit</a>
+      <h2>Not sure which path <em>fits?</em></h2>
+      <p>Email <a href="mailto:hello@courtrightco.com" style="color: var(--gold);">hello@courtrightco.com</a> and describe your situation. We'll tell you whether to book a call or just pay the deposit and get moving.</p>
+      <a href="/book.html" class="btn">Book a free audit</a>
     </div>
 
     <h2 class="faq">Common <em>questions</em></h2>
