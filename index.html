@@ -277,23 +277,33 @@
     /* ── APPS SECTION ── */
     .apps-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       margin-bottom: 2rem;
     }
-    @media (max-width: 700px) { .apps-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) { .apps-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .apps-grid { grid-template-columns: 1fr; } }
     .app-card {
       background: var(--white);
       border-radius: 12px;
       padding: 2rem;
       border: 1px solid rgba(14, 21, 32, 0.08);
       transition: all 0.3s ease;
+      position: relative;
     }
     .app-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(14, 21, 32, 0.08); border-color: var(--copper); }
     .app-card h3 { font-family: var(--display); font-size: 1.6rem; font-weight: 600; margin: 0 0 0.5rem; color: var(--midnight); }
     .app-card p { color: var(--smoke); margin: 0.5rem 0 1.25rem; line-height: 1.6; }
     .app-card a { color: var(--copper); text-decoration: none; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em; }
     .app-card a:hover { color: var(--copper-lt); }
+    .app-card .soon-badge {
+      position: absolute; top: 1.25rem; right: 1.25rem;
+      background: var(--gold); color: var(--midnight);
+      padding: 0.25rem 0.7rem; border-radius: 999px;
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .app-card.featured { border-color: var(--gold); border-width: 2px; }
 
     .partnership-note {
       background: var(--ash);
@@ -439,7 +449,7 @@
     <a href="/" class="brand">Courtright <span>Collective</span></a>
     <div class="nav-links">
       <a href="#services">Services</a>
-      <a href="#pricing">Pricing</a>
+      <a href="/pricing.html">Pricing</a>
       <a href="/about.html">About</a>
       <a href="/book.html" class="btn">Book a call</a>
     </div>
@@ -557,6 +567,12 @@
     <p class="section-lead">We design and ship native apps from idea to App Store. Two of our own are live now.</p>
 
     <div class="apps-grid">
+      <div class="app-card featured reveal">
+        <span class="soon-badge">Coming Soon</span>
+        <h3>AimToGro</h3>
+        <p>The AI business co-pilot for owners growing past spreadsheets but not yet ready to hire. Daily standups, live bookkeeping, and the automations you'd build if you had the time.</p>
+        <a href="https://aimtogro.courtrightco.com">Get notified →</a>
+      </div>
       <div class="app-card reveal">
         <h3>TinkerTaps</h3>
         <p>Screen time reimagined. Sensory activities for toddlers that don't overstimulate, but still promote growth.</p>
@@ -582,68 +598,106 @@
 <section id="pricing" class="section-parchment">
   <div class="container">
     <div class="eyebrow">04 — Pricing</div>
-    <h2>Pick a starting point. <em>Adjust as you grow.</em></h2>
-    <p class="section-lead">Every package includes the build, deployment, documentation, and monthly tune-ups. No hourly billing. No surprises.</p>
+    <h2>AimToGro pricing. <em>Pick a tier, grow into it.</em></h2>
+    <p class="section-lead">AimToGro is our flagship AI co-pilot — daily check-ins, automated reporting, and a catalog of workflows that grow with your business. Start with the free audit. Choose a tier when you're ready.</p>
 
     <div class="pricing-grid">
       <div class="price-card reveal">
         <h3>Audit</h3>
-        <div class="price">$0<span>one-time</span></div>
-        <p class="pitch">A free 30-minute call to map your bottlenecks and find the most valuable workflow to automate first.</p>
+        <div class="price">Free<span>one-time</span></div>
+        <p class="pitch">A 30-minute call to map your bottlenecks and find the most valuable workflow to start with. No commitment, no upsell.</p>
         <ul>
           <li>30-min workflow audit</li>
           <li>Written summary &amp; recs</li>
-          <li>Scoped proposal if a fit</li>
+          <li>Tier recommendation if a fit</li>
           <li>No commitment</li>
         </ul>
         <a href="/book.html" class="btn btn-secondary" style="text-align: center;">Book the audit</a>
       </div>
 
-      <div class="price-card featured reveal">
+      <div class="price-card reveal">
         <h3>Starter</h3>
-        <div class="price">$500<span>+ $99/month</span></div>
-        <p class="pitch">One automation, built and monitored. Best for testing the water on a specific workflow.</p>
+        <div class="price">$297<span>per month</span></div>
+        <p class="pitch">Your AI business co-pilot. Daily check-ins, automated reporting, and your first two custom workflows.</p>
         <ul>
-          <li>1 automation from scratch</li>
-          <li>Deployed &amp; documented</li>
-          <li>Monthly check-in</li>
-          <li>Email support</li>
+          <li>Daily Meeting chatbot — 10 msgs/day</li>
+          <li>Daily, weekly, monthly &amp; quarterly reporting</li>
+          <li>2 custom automations from the catalog</li>
+          <li>2 integrations + goal tracker</li>
         </ul>
-        <a href="/book.html" class="btn" style="text-align: center;">Get started</a>
+        <a href="/book.html" class="btn btn-secondary" style="text-align: center;">Join the waitlist</a>
       </div>
 
-      <div class="price-card reveal">
+      <div class="price-card featured reveal">
         <h3>Growth</h3>
-        <div class="price">$999<span>+ $250/month</span></div>
-        <p class="pitch">Up to 3 stacked automations. For businesses ready to remove multiple bottlenecks at once.</p>
+        <div class="price">$597<span>per month</span></div>
+        <p class="pitch">More room to run. Five automations, the integrations to back them, and a live bookkeeping dashboard.</p>
         <ul>
-          <li>Up to 3 automations</li>
-          <li>Integrated as a stack</li>
-          <li>Bi-weekly check-ins</li>
-          <li>Quarterly strategy review</li>
+          <li>Daily Meeting chatbot — 20 msgs/day</li>
+          <li>5 custom automations from the catalog</li>
+          <li>Up to 5 integrations</li>
+          <li>Live bookkeeping dashboard</li>
         </ul>
-        <a href="/book.html" class="btn btn-secondary" style="text-align: center;">Book a call</a>
+        <a href="/book.html" class="btn" style="text-align: center;">Join the waitlist</a>
       </div>
 
       <div class="price-card reveal">
-        <h3>Scale</h3>
-        <div class="price">Custom<span>monthly retainer</span></div>
-        <p class="pitch">Full automation stack, dedicated build hours, and ongoing optimization. For teams running multiple processes.</p>
+        <h3>Pro</h3>
+        <div class="price">$997<span>per month</span></div>
+        <p class="pitch">Full AimToGro. Every automation, every integration, every feature — plus a direct line to Dillon.</p>
         <ul>
+          <li>Daily Meeting chatbot — 30 msgs/day</li>
           <li>Unlimited automations</li>
-          <li>Weekly working sessions</li>
-          <li>Dedicated build hours</li>
-          <li>SLA on response time</li>
+          <li>All integrations (incl. Zapier bridge)</li>
+          <li>Full bookkeeping + priority support</li>
         </ul>
-        <a href="/book.html" class="btn btn-secondary" style="text-align: center;">Talk to us</a>
+        <a href="/book.html" class="btn btn-secondary" style="text-align: center;">Join the waitlist</a>
       </div>
+    </div>
+
+    <p style="margin-top: 1.5rem; color: var(--smoke); font-size: 0.92rem; text-align: center;">All tiers include a 7-day free trial. Save 10% on 6-month plans or 20% on annual plans.</p>
+  </div>
+</section>
+
+<section class="section-cream">
+  <div class="container">
+    <div class="eyebrow">05 — Custom Work</div>
+    <h2>Need something <em>built from scratch?</em></h2>
+    <p class="section-lead">Beyond the subscription, we take on custom websites, applications, and analytics projects. Fixed scope, fixed price, scoped after a free 15-minute call.</p>
+
+    <div class="custom-grid">
+      <a href="/services/website-creation.html" class="service-card reveal">
+        <span class="icon">▢</span>
+        <h3>Website creation &amp; management</h3>
+        <p>Modern, mobile-first websites — designed, built, hosted, and managed for you. From one-pagers to multi-page marketing sites.</p>
+      </a>
+      <a href="/services/application-creation.html" class="service-card reveal">
+        <span class="icon">◆</span>
+        <h3>Application creation</h3>
+        <p>Custom web and mobile apps for the workflow no off-the-shelf tool quite fits. Internal tools, customer-facing apps, AI-powered features.</p>
+      </a>
+      <a href="/services/reports-analytics.html" class="service-card reveal">
+        <span class="icon">▲</span>
+        <h3>Reports &amp; analytics</h3>
+        <p>The data work you keep meaning to do. Weekly reports, custom dashboards, and deep dives built around the decisions you're making.</p>
+      </a>
+    </div>
+
+    <style>
+      .custom-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+      @media (max-width: 800px) { .custom-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 500px) { .custom-grid { grid-template-columns: 1fr; } }
+    </style>
+
+    <div style="text-align: center; margin-top: 2.5rem;">
+      <a href="/book.html" class="btn">Book a call to scope custom work</a>
     </div>
   </div>
 </section>
 
 <section class="section-cream">
   <div class="container">
-    <div class="eyebrow">05 — Frequently Asked</div>
+    <div class="eyebrow">06 — Frequently Asked</div>
     <h2>Questions we get <em>a lot.</em></h2>
 
     <div class="faq faq-grid" style="margin-top: 2rem;">
@@ -698,10 +752,10 @@
       <div>
         <h4>Services</h4>
         <ul>
-          <li><a href="/services/email-automation.html">Email automation</a></li>
-          <li><a href="/services/business-reports.html">Reports &amp; dashboards</a></li>
-          <li><a href="/services/financial-trackers.html">Financial trackers</a></li>
-          <li><a href="/services/asset-tracking.html">Asset tracking</a></li>
+          <li><a href="https://aimtogro.courtrightco.com">AimToGro</a></li>
+          <li><a href="/services/website-creation.html">Website creation &amp; management</a></li>
+          <li><a href="/services/application-creation.html">Application creation</a></li>
+          <li><a href="/services/reports-analytics.html">Reports &amp; analytics</a></li>
         </ul>
       </div>
       <div>
