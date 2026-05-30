@@ -6,39 +6,45 @@
   <meta name="description" content="Privacy policy for Courtright Collective LLC. How we handle data, what we collect, and your rights.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://courtrightco.com/privacy.html">
-  <meta name="robots" content="index, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; }
-    :root { --bg: #0a0a0a; --bg-soft: #141414; --text: #f5f5f5; --text-soft: rgba(245,245,245,0.7); --text-fade: rgba(245,245,245,0.5); --accent: #ff7a3d; --border: rgba(245,245,245,0.1); }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); margin: 0; line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
-    nav { position: sticky; top: 0; z-index: 10; background: rgba(10,10,10,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 1rem 0; }
-    nav .container { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; }
-    .brand { font-weight: 700; font-size: 1.1rem; color: var(--text); text-decoration: none; }
-    .brand span { color: var(--accent); }
-    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
-    .nav-links a { color: var(--text-soft); text-decoration: none; font-size: 0.95rem; }
-    .btn { display: inline-block; padding: 0.75rem 1.5rem; background: var(--accent); color: #0a0a0a; border-radius: 8px; text-decoration: none; font-weight: 600; }
-    article { padding: 3rem 0 5rem; }
-    article h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 0.5rem; }
-    article .updated { color: var(--text-fade); font-size: 0.9rem; margin: 0 0 2rem; }
-    article h2 { font-size: 1.35rem; font-weight: 800; margin: 2.5rem 0 0.75rem; }
-    article p { color: var(--text-soft); font-size: 1rem; margin: 0 0 1rem; }
-    article ul { color: var(--text-soft); padding-left: 1.25rem; }
-    article a { color: var(--accent); }
-    footer { padding: 3rem 0 2rem; border-top: 1px solid var(--border); color: var(--text-fade); font-size: 0.9rem; }
-    footer a { color: var(--text-soft); text-decoration: none; }
-    @media (max-width: 700px) { .nav-links a:not(.btn) { display: none; } }
+    *{box-sizing:border-box}
+    :root{--midnight:#0E1520;--ash:#1A2030;--copper:#C45C28;--copper-lt:#D97040;--smoke:#7A7268;--cream:#FAF6EF;--display:'Cormorant Garamond',Georgia,serif;--body:'Outfit',-apple-system,sans-serif}
+    body{font-family:var(--body);background:var(--cream);color:var(--midnight);margin:0;line-height:1.75;-webkit-font-smoothing:antialiased}
+    .container{max-width:800px;margin:0 auto;padding:0 1.5rem}
+    nav{position:sticky;top:0;z-index:50;background:rgba(250,246,239,0.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(14,21,32,0.07)}
+    nav .container{display:flex;align-items:center;justify-content:space-between;max-width:1120px;padding:1rem 1.5rem}
+    .brand{font-family:var(--display);font-weight:300;letter-spacing:0.06em;font-size:1.2rem;color:var(--midnight);text-decoration:none}
+    .brand span{color:var(--copper);font-weight:400}
+    .nav-links{display:flex;gap:1.75rem;align-items:center}
+    .nav-links a{color:var(--midnight);text-decoration:none;font-size:0.95rem;font-weight:500;opacity:0.75}
+    .nav-links a:hover{opacity:1}
+    .btn{display:inline-block;padding:0.875rem 1.75rem;background:var(--copper);color:white;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.95rem;letter-spacing:0.04em}
+    article{padding:3rem 0 5rem}
+    article h1{font-family:var(--display);font-size:clamp(2rem,4vw,2.75rem);font-weight:300;line-height:1.2;letter-spacing:-0.01em;margin:0 0 0.5rem}
+    article .updated{color:var(--smoke);font-size:0.9rem;margin:0 0 2.5rem}
+    article h2{font-family:var(--display);font-size:1.5rem;font-weight:600;margin:2.5rem 0 0.75rem;color:var(--midnight)}
+    article p{color:var(--midnight);font-size:1rem;margin:0 0 1rem}
+    article a{color:var(--copper);text-decoration:none;border-bottom:1px solid rgba(196,92,40,0.3)}
+    article a:hover{border-color:var(--copper)}
+    footer{padding:3rem 0 2rem;border-top:1px solid rgba(14,21,32,0.08);color:var(--smoke);font-size:0.92rem;text-align:center}
+    footer a{color:var(--smoke);text-decoration:none}
+    footer a:hover{color:var(--copper)}
+    @media (max-width:700px){.nav-links a:not(.btn){display:none}}
   </style>
 </head>
 <body>
 
 <nav>
   <div class="container">
-    <a href="/" class="brand">Courtright<span>.</span></a>
+    <a href="/" class="brand">Courtright <span>Collective</span></a>
     <div class="nav-links">
       <a href="/#services">Services</a>
-      <a href="/#pricing">Pricing</a>
+      <a href="/pricing.html">Pricing</a>
       <a href="/about.html">About</a>
       <a href="/book.html" class="btn">Book a call</a>
     </div>
@@ -48,23 +54,23 @@
 <div class="container">
   <article>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: May 18, 2026</p>
+    <p class="updated">Last updated: May 19, 2026</p>
 
     <p>Courtright Collective LLC ("we," "us," "our") respects your privacy. This policy explains what information we collect from visitors and clients of courtrightco.com, how we use it, and your rights.</p>
 
     <h2>What we collect</h2>
-    <p>When you visit the site, we collect minimal usage data via Cloudflare Web Analytics — a privacy-friendly, cookie-free analytics service. This includes page views, referrer, country, and device type. We do not collect your IP address in identifiable form, and we do not use tracking cookies.</p>
-    <p>When you contact us (via email, the booking form, or any other channel), we collect the information you choose to share — typically your name, email address, and the details of your inquiry.</p>
+    <p>When you visit the site, we collect minimal usage data via Cloudflare Web Analytics, a privacy-friendly, cookie-free analytics service. This includes page views, referrer, country, and device type. We do not collect your IP address in identifiable form, and we do not use tracking cookies.</p>
+    <p>When you contact us (via email, the booking form, or any other channel), we collect the information you choose to share, typically your name, email address, and the details of your inquiry.</p>
     <p>When you become a client, we collect the information needed to deliver the service you've engaged us for. This may include access credentials to specific tools (which we handle through secure password managers and revoke immediately upon engagement end).</p>
 
     <h2>How we use it</h2>
     <p>We use your information solely to deliver the services you've requested, to respond to inquiries, and to send occasional updates if you've opted in. We do not sell, rent, or share your data with third parties for marketing purposes.</p>
 
     <h2>Third-party services</h2>
-    <p>This site uses Cloudflare for hosting and DNS. Bookings may be handled through Cal.com (when active) which has its own privacy policy. Email correspondence flows through Google Workspace. Each of these has industry-standard privacy controls.</p>
+    <p>This site uses Cloudflare for hosting and DNS. Bookings are handled through Cal.com, which has its own privacy policy. Email correspondence flows through Google Workspace. Each of these has industry-standard privacy controls.</p>
 
     <h2>Your rights</h2>
-    <p>You can ask us at any time what information we hold about you, request that we correct it, or request that we delete it. Email <a href="mailto:hello@courtrightco.com">hello@courtrightco.com</a> with the request.</p>
+    <p>You can ask us at any time what information we hold about you, request that we correct it, or request that we delete it. Email <a href="mailto:info@courtrightco.com">info@courtrightco.com</a> with the request.</p>
 
     <h2>Cookies</h2>
     <p>This site does not set tracking cookies. Cloudflare may set essential cookies for security and performance.</p>
@@ -73,14 +79,12 @@
     <p>If we materially change how we handle data, we'll update this page and the "last updated" date above.</p>
 
     <h2>Contact</h2>
-    <p>Courtright Collective LLC<br>Nashville, TN, United States<br><a href="mailto:hello@courtrightco.com">hello@courtrightco.com</a></p>
+    <p>Courtright Collective LLC<br>Nashville, TN, United States<br><a href="mailto:info@courtrightco.com">info@courtrightco.com</a></p>
   </article>
 </div>
 
 <footer>
-  <div class="container">
-    <p>© 2026 Courtright Collective LLC · Nashville, TN · <a href="/">Home</a> · <a href="/privacy.html">Privacy</a></p>
-  </div>
+  <div class="container"><p>© 2026 Courtright Collective LLC · Nashville, TN · <a href="/">Home</a> · <a href="/privacy.html">Privacy</a></p></div>
 </footer>
 
 </body>
