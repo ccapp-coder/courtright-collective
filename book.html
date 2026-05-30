@@ -2,50 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Book a Free Workflow Audit | Courtright Collective</title>
-  <meta name="description" content="Book a free 15-minute workflow audit with Courtright Collective. We'll find what's worth automating in your business — no commitment, no sales pitch.">
+  <title>Book a Call — Courtright Collective</title>
+  <meta name="description" content="Book a free 15-minute call with Courtright Collective. AimToGro subscription, custom websites and apps, reports & analytics, or partnership — let's figure out which fits.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://courtrightco.com/book.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Book a Free Workflow Audit">
-  <meta property="og:description" content="Free 15-minute workflow audit — find out what's worth automating.">
+  <meta property="og:title" content="Book a Call — Courtright Collective">
+  <meta property="og:description" content="Free 15-min call. Figure out which way in fits — subscription, project, or partnership.">
   <meta property="og:url" content="https://courtrightco.com/book.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     * { box-sizing: border-box; }
-    :root { --bg: #0a0a0a; --bg-soft: #141414; --text: #f5f5f5; --text-soft: rgba(245,245,245,0.7); --text-fade: rgba(245,245,245,0.5); --accent: #ff7a3d; --accent-soft: rgba(255,122,61,0.1); --border: rgba(245,245,245,0.1); }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); margin: 0; line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
-    nav { position: sticky; top: 0; z-index: 10; background: rgba(10,10,10,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 1rem 0; }
-    nav .container { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; }
-    .brand { font-weight: 700; font-size: 1.1rem; color: var(--text); text-decoration: none; }
-    .brand span { color: var(--accent); }
-    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
-    .nav-links a { color: var(--text-soft); text-decoration: none; font-size: 0.95rem; }
-    .nav-links a:hover { color: var(--text); }
-    .btn { display: inline-block; padding: 0.75rem 1.5rem; background: var(--accent); color: #0a0a0a; border-radius: 8px; text-decoration: none; font-weight: 600; }
-    .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
-    article { padding: 4rem 0 5rem; }
-    article h1 { font-size: clamp(2rem, 4.5vw, 3.25rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 1rem; }
-    article .lead { font-size: 1.25rem; color: var(--text-soft); margin: 0 0 2.5rem; }
-    article h2 { font-size: 1.5rem; font-weight: 800; margin: 2.5rem 0 1rem; }
-    article p { color: var(--text-soft); font-size: 1.05rem; margin: 0 0 1.25rem; }
-    article strong { color: var(--text); }
-    .booking-frame {
-      background: var(--bg-soft); border: 1px solid var(--border);
-      border-radius: 12px; padding: 2rem; margin: 2rem 0;
-      min-height: 400px;
+    :root {
+      --midnight: #0E1520; --ash: #1A2030;
+      --copper: #C45C28; --copper-lt: #D97040;
+      --gold: #D9A030; --gold-lt: #F0B840; --smoke: #7A7268;
+      --parchment: #F4EBD9; --cream: #FAF6EF; --white: #FFFFFF;
+      --display: 'Cormorant Garamond', Georgia, serif;
+      --body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
     }
-    /* Cal.com embed placeholder — replace iframe src with your Cal.com link */
-    .booking-frame iframe { width: 100%; min-height: 600px; border: 0; border-radius: 8px; }
-    .placeholder-box { text-align: center; padding: 3rem 1rem; }
-    .placeholder-box h3 { color: var(--text); margin: 0 0 0.5rem; }
-    .placeholder-box p { color: var(--text-soft); margin: 0.5rem 0 1.5rem; }
-    .what-to-expect { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
-    .what-to-expect h3 { margin-top: 0; }
-    .what-to-expect ol { color: var(--text-soft); padding-left: 1.25rem; margin: 0; }
-    .what-to-expect li { margin: 0.5rem 0; }
-    footer { padding: 3rem 0 2rem; border-top: 1px solid var(--border); color: var(--text-fade); font-size: 0.9rem; }
-    footer a { color: var(--text-soft); text-decoration: none; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--body); background: var(--cream); color: var(--midnight); margin: 0; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+    nav { position: sticky; top: 0; z-index: 50; background: rgba(250, 246, 239, 0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(14, 21, 32, 0.07); }
+    nav .container { display: flex; align-items: center; justify-content: space-between; max-width: 1120px; padding-top: 1rem; padding-bottom: 1rem; }
+    .brand { font-family: var(--display); font-weight: 300; letter-spacing: 0.06em; font-size: 1.2rem; color: var(--midnight); text-decoration: none; }
+    .brand span { color: var(--copper); font-weight: 400; }
+    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+    .nav-links a { color: var(--midnight); text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.75; }
+    .nav-links a:hover { opacity: 1; }
+    .btn { display: inline-block; padding: 0.875rem 1.75rem; background: var(--copper); color: white; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; transition: all 0.25s ease; border: none; cursor: pointer; }
+    .btn:hover { background: var(--copper-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196, 92, 40, 0.25); }
+
+    /* HERO */
+    .hero { background: var(--midnight); color: var(--parchment); padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 70% 50%, rgba(196, 92, 40, 0.18) 0%, transparent 70%); animation: glow 8s ease-in-out infinite alternate; }
+    @keyframes glow { 0% { transform: scale(1) translateX(0); opacity: 0.7; } 100% { transform: scale(1.1) translateX(40px); opacity: 1; } }
+    .hero .container { position: relative; z-index: 1; }
+    .hero-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper); margin-bottom: 1.25rem; }
+    .hero h1 { font-family: var(--display); font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 300; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 1rem; max-width: 800px; }
+    .hero h1 em { font-style: italic; color: var(--copper); font-weight: 400; }
+    .hero h1 .gold { color: var(--gold); font-style: italic; font-weight: 400; }
+    .hero .sub { font-size: 1.2rem; color: rgba(244, 235, 217, 0.78); line-height: 1.65; margin: 0; max-width: 700px; }
+
+    /* SECTIONS */
+    section { padding: 4.5rem 0; }
+    .section-cream { background: var(--cream); }
+    .section-parchment { background: var(--parchment); }
+    .eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.75rem; }
+    h2 { font-family: var(--display); font-size: clamp(1.85rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.2; letter-spacing: -0.005em; margin: 0 0 1rem; }
+    h2 em { color: var(--copper); font-style: italic; font-weight: 500; }
+    .section-lead { font-size: 1.1rem; line-height: 1.7; color: var(--smoke); max-width: 680px; margin: 0 0 2.5rem; }
+
+    /* HELP-WITH GRID */
+    .help-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    @media (max-width: 900px) { .help-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .help-grid { grid-template-columns: 1fr; } }
+    .help-card { background: white; border: 1px solid rgba(14, 21, 32, 0.08); border-radius: 12px; padding: 1.75rem; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: all 0.3s ease; position: relative; overflow: hidden; }
+    .help-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--copper); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+    .help-card:hover { transform: translateY(-4px); border-color: var(--copper); box-shadow: 0 12px 32px rgba(14, 21, 32, 0.08); }
+    .help-card:hover::before { transform: scaleX(1); }
+    .help-card.featured { border-color: var(--gold); border-width: 1.5px; }
+    .help-card.featured::before { background: var(--gold); }
+    .help-card.featured:hover { border-color: var(--gold); }
+    .help-card .tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.5rem; }
+    .help-card.featured .tag { color: var(--gold); }
+    .help-card .icon { font-size: 1.5rem; margin-bottom: 0.625rem; display: inline-block; }
+    .help-card h3 { font-family: var(--display); font-size: 1.3rem; font-weight: 600; margin: 0 0 0.5rem; color: var(--midnight); }
+    .help-card p { color: var(--smoke); font-size: 0.92rem; line-height: 1.6; margin: 0 0 1rem; flex: 1; }
+    .help-card .ctaline { color: var(--copper); font-weight: 600; font-size: 0.9rem; }
+
+    /* WHAT TO EXPECT */
+    .what-card { background: white; border: 1px solid rgba(14, 21, 32, 0.08); border-radius: 12px; padding: 2rem; margin: 0 0 2rem; }
+    .what-card h3 { font-family: var(--display); font-size: 1.4rem; font-weight: 600; margin: 0 0 1rem; color: var(--midnight); }
+    .what-card ol { color: var(--midnight); padding-left: 1.25rem; margin: 0; }
+    .what-card li { margin: 0.625rem 0; line-height: 1.65; }
+    .what-card li::marker { color: var(--copper); font-weight: 700; }
+    .what-card strong { font-weight: 600; }
+
+    /* BOOKING */
+    .booking-frame { background: white; border: 1px solid rgba(14, 21, 32, 0.08); border-radius: 12px; padding: 1rem; margin: 1.5rem 0; min-height: 400px; box-shadow: 0 4px 24px rgba(14, 21, 32, 0.06); }
+    .booking-frame iframe { width: 100%; min-height: 680px; border: 0; border-radius: 8px; display: block; }
+    .fallback-note { text-align: center; color: var(--smoke); font-size: 0.92rem; margin-top: 1rem; }
+    .fallback-note a { color: var(--copper); text-decoration: none; }
+
+    /* EMAIL CARD */
+    .email-card { background: var(--ash); color: var(--parchment); border-radius: 12px; padding: 2rem; text-align: center; margin-top: 2.5rem; position: relative; overflow: hidden; }
+    .email-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(217, 160, 48, 0.12) 0%, transparent 65%); }
+    .email-card > * { position: relative; z-index: 1; }
+    .email-card h3 { font-family: var(--display); font-size: 1.5rem; font-weight: 600; margin: 0 0 0.625rem; color: var(--parchment); }
+    .email-card h3 em { color: var(--gold); font-style: italic; }
+    .email-card p { color: rgba(244, 235, 217, 0.75); margin: 0 0 1.25rem; }
+    .email-card a.btn { background: var(--gold); color: var(--midnight); }
+    .email-card a.btn:hover { background: var(--gold-lt); }
+
+    /* FOOTER */
+    footer { padding: 3rem 0 2rem; border-top: 1px solid rgba(14, 21, 32, 0.08); color: var(--smoke); font-size: 0.92rem; text-align: center; }
+    footer a { color: var(--smoke); text-decoration: none; }
+    footer a:hover { color: var(--copper); }
     @media (max-width: 700px) { .nav-links a:not(.btn) { display: none; } }
   </style>
 </head>
@@ -53,41 +111,109 @@
 
 <nav>
   <div class="container">
-    <a href="/" class="brand">Courtright<span>.</span></a>
+    <a href="/" class="brand">Courtright <span>Collective</span></a>
     <div class="nav-links">
       <a href="/#services">Services</a>
-      <a href="/#pricing">Pricing</a>
+      <a href="/pricing.html">Pricing</a>
       <a href="/about.html">About</a>
       <a href="/book.html" class="btn">Book a call</a>
     </div>
   </div>
 </nav>
 
-<div class="container">
-  <article>
-    <h1>Book a free 15-minute workflow audit.</h1>
-    <p class="lead">No commitment, no sales pitch. We'll map your biggest bottlenecks and tell you which one is worth automating first.</p>
+<header class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Book a Call · Free · 15 minutes</div>
+    <h1>15 minutes. <em>Zero pressure.</em><br>Let's figure out the <span class="gold">right fit.</span></h1>
+    <p class="sub">Whether you're looking at AimToGro, a custom website or app, ongoing reports, or a partnership — start here. We'll figure out together what makes sense for your business, or tell you straight if it doesn't.</p>
+  </div>
+</header>
 
-    <div class="what-to-expect">
+<section class="section-cream">
+  <div class="container">
+    <div class="eyebrow">What we can help with</div>
+    <h2>Five ways in. <em>Pick whichever feels closest.</em></h2>
+    <p class="section-lead">Don't worry if you're not sure which one fits — that's literally what the call is for. The list below is just so you know what's possible.</p>
+
+    <div class="help-grid">
+      <a href="https://aimtogro.courtrightco.com" class="help-card featured">
+        <div class="tag">Coming Soon</div>
+        <span class="icon">★</span>
+        <h3>AimToGro subscription</h3>
+        <p>The AI business co-pilot for owners growing past spreadsheets. Daily check-ins, automated reporting, custom workflows. Tiers from $297/mo.</p>
+        <div class="ctaline">Get notified →</div>
+      </a>
+
+      <a href="/services/website-creation.html" class="help-card">
+        <div class="tag">Service · From $750</div>
+        <span class="icon">▢</span>
+        <h3>Website creation &amp; management</h3>
+        <p>Modern, mobile-first websites built fast and managed for you. $750 build + $49.99/month covers hosting, SSL, edits, and analytics.</p>
+        <div class="ctaline">See details →</div>
+      </a>
+
+      <a href="/services/application-creation.html" class="help-card">
+        <div class="tag">Service · From $2,500</div>
+        <span class="icon">◆</span>
+        <h3>Application creation</h3>
+        <p>Custom web and mobile apps for the workflow no off-the-shelf tool quite fits. Internal tools, customer-facing apps, AI-powered features.</p>
+        <div class="ctaline">See details →</div>
+      </a>
+
+      <a href="/services/reports-analytics.html" class="help-card">
+        <div class="tag">Service · From $500</div>
+        <span class="icon">▲</span>
+        <h3>Reports &amp; analytics</h3>
+        <p>The data work you keep meaning to do. One-time deep dives, weekly reports, custom dashboards, data organization.</p>
+        <div class="ctaline">See details →</div>
+      </a>
+
+      <a href="https://partner.courtrightco.com" class="help-card">
+        <div class="tag">Revenue Share</div>
+        <span class="icon">●</span>
+        <h3>App partnership program</h3>
+        <p>Have an app idea worth shipping? We design, build, launch, and support — revenue share, no upfront fees. For founders ready to ship.</p>
+        <div class="ctaline">Explore partnership →</div>
+      </a>
+
+      <a href="#booking" class="help-card">
+        <div class="tag">Free Audit</div>
+        <span class="icon">◇</span>
+        <h3>Not sure yet?</h3>
+        <p>Bring whatever's on your mind — a bottleneck, a half-formed idea, a problem you keep avoiding. We'll talk it through and find the smallest useful next step.</p>
+        <div class="ctaline">Just book the call →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="booking">
+  <div class="container">
+
+    <div class="what-card">
       <h3>What to expect on the call</h3>
       <ol>
-        <li>You walk us through your business — what you do, what eats your time</li>
-        <li>We ask a few questions to find the highest-ROI workflows</li>
-        <li>You leave with a clear "this is worth automating" / "this isn't" verdict</li>
-        <li>If we're a fit, we send a written scope within 2 days. If we're not, we'll tell you what would be.</li>
+        <li>You walk us through your business — what you do, what eats your time, what you're trying to grow.</li>
+        <li>We ask a few questions to find what's worth doing first — a subscription, a project, an audit, or nothing at all.</li>
+        <li>You leave with a <strong>clear "this is worth it" or "this isn't" verdict</strong> — no pitch, no follow-up emails you have to dodge.</li>
+        <li>If we're a fit, you get a written scope within 2 business days. If not, we'll tell you what would be a fit, even if it's someone else.</li>
       </ol>
     </div>
 
-    <h2>Pick a time</h2>
+    <div class="eyebrow">Pick a time</div>
+    <h2>Grab a <em>15-min slot.</em></h2>
     <div class="booking-frame">
-      <iframe src="https://cal.com/courtright-collective" title="Book a workflow audit with Courtright Collective" loading="lazy" allow="fullscreen *; clipboard-write *"></iframe>
+      <iframe src="https://cal.com/courtright-collective" title="Book a call with Courtright Collective" loading="lazy" allow="fullscreen *; clipboard-write *"></iframe>
     </div>
-    <p style="text-align: center; color: var(--text-fade); font-size: 0.9rem;">Calendar not loading? <a href="https://cal.com/courtright-collective" style="color: var(--accent);">Open it directly →</a></p>
+    <p class="fallback-note">Calendar not loading? <a href="https://cal.com/courtright-collective">Open it directly →</a></p>
 
-    <h2>Prefer to send a note first?</h2>
-    <p>If you'd rather describe your situation in writing before scheduling, email <strong><a href="mailto:hello@courtrightco.com" style="color: var(--accent);">hello@courtrightco.com</a></strong>. We reply within one business day.</p>
-  </article>
-</div>
+    <div class="email-card">
+      <h3>Rather <em>send a note first?</em></h3>
+      <p>If you'd rather describe your situation in writing before scheduling — or you already know what you want and just need a quote — email us. We reply within one business day.</p>
+      <a href="mailto:hello@courtrightco.com" class="btn">Email hello@courtrightco.com</a>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="container">
