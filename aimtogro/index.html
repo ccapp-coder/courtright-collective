@@ -6,6 +6,7 @@
 <meta name="description" content="Aimtogro is the AI business co-pilot for owners growing past spreadsheets but not ready to hire. Daily standups, live bookkeeping, and the automations you'd build if you had the time. Coming soon from Courtright Collective.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="canonical" href="https://courtrightco.com/aimtogro/">
+<link rel="icon" type="image/svg+xml" href="/aimtogro/assets/aimtogro_mark.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Courtright Collective">
 <meta property="og:title" content="Aimtogro — Your AI Business Co-Pilot · Coming Soon">
@@ -13,67 +14,70 @@
 <meta property="og:url" content="https://courtrightco.com/aimtogro/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; }
 :root {
---midnight: #0E1520; --ash: #1A2030; --copper: #C45C28; --copper-lt: #D97040;
---gold: #D9A030; --gold-lt: #F0B840; --smoke: #7A7268; --parchment: #F4EBD9; --cream: #FAF6EF; --white: #FFFFFF;
---display: 'Cormorant Garamond', Georgia, serif; --body: 'Outfit', -apple-system, sans-serif;
+--ink: #0E2436; --ink-deep: #081726; --ink-soft: #15314A;
+--green: #2FC98A; --green-deep: #1F9466; --aqua: #46C8E6; --yellow: #FFD23F;
+--cloud: #EAF3F1; --slate: #5B7282; --paper: #F7FAF9; --white: #FFFFFF;
+--body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 html { scroll-behavior: smooth; }
-body { font-family: var(--body); background: var(--cream); color: var(--midnight); margin: 0; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--body); background: var(--paper); color: var(--ink); margin: 0; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
-nav { position: sticky; top: 0; z-index: 50; background: rgba(250,246,239,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(14,21,32,0.07); }
+nav { position: sticky; top: 0; z-index: 50; background: rgba(247,250,249,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(14,36,54,0.07); }
 nav .container { max-width: 1120px; display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; }
-.brand { font-family: var(--display); font-weight: 300; letter-spacing: 0.06em; font-size: 1.2rem; color: var(--midnight); text-decoration: none; }
-.brand span { color: var(--copper); font-weight: 400; }
+.brand { display: flex; align-items: center; gap: 0.55rem; font-weight: 600; letter-spacing: 0.01em; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
+.brand svg { width: 26px; height: 26px; }
 .nav-links { display: flex; gap: 1.5rem; align-items: center; }
-.nav-links a { color: var(--midnight); text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.75; }
+.nav-links a { color: var(--ink); text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.75; }
 .nav-links a:hover { opacity: 1; }
-.btn { display: inline-block; padding: 0.875rem 1.75rem; background: var(--copper); color: var(--white); border: none; border-radius: 6px; font-family: var(--body); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; text-decoration: none; transition: all 0.25s ease; cursor: pointer; }
-.btn:hover { background: var(--copper-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,92,40,0.25); }
-.btn-secondary { background: transparent; color: var(--parchment); border: 1.5px solid rgba(244,235,217,0.35); }
-.btn-secondary:hover { background: var(--parchment); color: var(--midnight); }
-.hero { background: var(--midnight); color: var(--parchment); padding: 5.5rem 0 5rem; position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 65% 40%, rgba(196,92,40,0.20) 0%, transparent 70%); pointer-events: none; }
+.btn { display: inline-block; padding: 0.875rem 1.75rem; background: var(--yellow); color: var(--ink-deep); border: none; border-radius: 8px; font-family: var(--body); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em; text-decoration: none; transition: all 0.25s ease; cursor: pointer; }
+.btn:hover { filter: brightness(1.06); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,210,63,0.3); }
+.btn-secondary { background: transparent; color: var(--cloud); border: 1.5px solid rgba(234,243,241,0.35); }
+.btn-secondary:hover { background: var(--cloud); color: var(--ink); box-shadow: none; filter: none; }
+.hero { background: radial-gradient(ellipse 90% 120% at 50% 30%, var(--ink-soft) 0%, var(--ink) 70%); color: var(--cloud); padding: 5.5rem 0 5rem; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 70% 45%, rgba(47,201,138,0.16) 0%, transparent 70%); pointer-events: none; }
 .hero .container { position: relative; z-index: 1; }
-.badge { display: inline-block; background: var(--gold); color: var(--midnight); padding: 0.3rem 0.85rem; border-radius: 999px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.5rem; }
-.hero h1 { font-family: var(--display); font-weight: 300; font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.08; margin: 0 0 1.25rem; max-width: 760px; }
-.hero h1 em { font-style: italic; color: var(--gold); font-weight: 400; }
-.hero .sub { font-size: 1.25rem; max-width: 620px; color: rgba(244,235,217,0.78); margin: 0 0 2.25rem; }
+.hero .mark { width: 72px; height: 72px; margin-bottom: 1.25rem; display: block; }
+.badge { display: inline-block; background: var(--yellow); color: var(--ink-deep); padding: 0.3rem 0.85rem; border-radius: 999px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.5rem; }
+.hero h1 { font-weight: 600; font-size: clamp(2.4rem, 5.5vw, 4.2rem); line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 1.25rem; max-width: 760px; }
+.hero h1 em { font-style: normal; color: var(--aqua); }
+.hero .sub { font-size: 1.2rem; font-weight: 300; max-width: 620px; color: rgba(234,243,241,0.78); margin: 0 0 2.25rem; }
 .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
 section { padding: 5rem 0; }
-.section-cream { background: var(--cream); }
-.eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.75rem; }
-h2 { font-family: var(--display); font-weight: 400; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.15; margin: 0 0 1rem; }
-h2 em { font-style: italic; color: var(--copper); }
-.lead { font-size: 1.1rem; color: var(--smoke); max-width: 640px; margin: 0 0 3rem; }
+.section-paper { background: var(--paper); }
+.eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 0.75rem; }
+h2 { font-weight: 600; font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.15; letter-spacing: -0.015em; margin: 0 0 1rem; }
+h2 em { font-style: normal; color: var(--green-deep); }
+.lead { font-size: 1.1rem; color: var(--slate); max-width: 640px; margin: 0 0 3rem; }
 .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 @media (max-width: 800px){ .feature-grid { grid-template-columns: 1fr; } }
-.feature { background: var(--white); border: 1px solid rgba(14,21,32,0.08); border-radius: 12px; padding: 1.75rem; }
-.feature .icon { font-size: 1.5rem; margin-bottom: 0.75rem; display: block; }
-.feature h3 { font-family: var(--display); font-size: 1.25rem; font-weight: 600; margin: 0 0 0.4rem; }
-.feature p { color: var(--smoke); font-size: 0.92rem; margin: 0; }
-.integrations { text-align: center; }
+.feature { background: var(--white); border: 1px solid rgba(14,36,54,0.08); border-radius: 12px; padding: 1.75rem; transition: all 0.25s ease; }
+.feature:hover { border-color: var(--aqua); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(14,36,54,0.07); }
+.feature .icon { font-size: 1.4rem; margin-bottom: 0.75rem; display: block; color: var(--green-deep); }
+.feature h3 { font-size: 1.1rem; font-weight: 600; margin: 0 0 0.4rem; }
+.feature p { color: var(--slate); font-size: 0.92rem; margin: 0; }
+.integrations { text-align: center; background: var(--white); border-top: 1px solid rgba(14,36,54,0.06); border-bottom: 1px solid rgba(14,36,54,0.06); }
 .integrations .pills { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-top: 1.5rem; }
-.pill { background: var(--white); border: 1px solid rgba(14,21,32,0.1); border-radius: 999px; padding: 0.5rem 1.1rem; font-size: 0.9rem; color: var(--midnight); }
-.legal-strip { background: var(--parchment); }
+.pill { background: var(--paper); border: 1px solid rgba(14,36,54,0.1); border-radius: 999px; padding: 0.5rem 1.1rem; font-size: 0.9rem; color: var(--ink); }
+.legal-strip { background: var(--cloud); }
 .legal-strip .container { text-align: center; }
 .legal-buttons { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1.75rem; }
-.legal-btn { display: inline-block; padding: 0.8rem 1.6rem; background: var(--white); color: var(--midnight); border: 1.5px solid rgba(14,21,32,0.15); border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.2s ease; }
-.legal-btn:hover { border-color: var(--copper); color: var(--copper); transform: translateY(-2px); }
-footer { padding: 2.5rem 0; background: var(--cream); border-top: 1px solid rgba(14,21,32,0.08); }
-footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; color: var(--smoke); font-size: 0.85rem; }
-footer a { color: var(--smoke); text-decoration: none; }
-footer a:hover { color: var(--copper); }
+.legal-btn { display: inline-block; padding: 0.8rem 1.6rem; background: var(--white); color: var(--ink); border: 1.5px solid rgba(14,36,54,0.15); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.2s ease; }
+.legal-btn:hover { border-color: var(--green); color: var(--green-deep); transform: translateY(-2px); }
+footer { padding: 2.5rem 0; background: var(--ink); color: rgba(234,243,241,0.65); font-size: 0.85rem; }
+footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+footer a { color: rgba(234,243,241,0.65); text-decoration: none; }
+footer a:hover { color: var(--aqua); }
 </style>
 </head>
 <body>
 <nav><div class="container">
-<a href="/" class="brand">Courtright <span>Collective</span></a>
+<a href="/aimtogro/" class="brand"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M 318.50 684.00 C 440.33 684.00 512.00 543.53 586.53 457.53" fill="none" stroke="#46C8E6" stroke-width="65.93" stroke-linecap="round"/><path d="M 652.47 238.23 Q 652.47 375.83 790.07 375.83 Q 652.47 375.83 652.47 513.43 Q 652.47 375.83 514.87 375.83 Q 652.47 375.83 652.47 238.23 Z" fill="#2FC98A"/><path d="M 529.20 248.27 Q 529.20 297.00 577.93 297.00 Q 529.20 297.00 529.20 345.73 Q 529.20 297.00 480.47 297.00 Q 529.20 297.00 529.20 248.27 Z" fill="#FFD23F"/></svg>Aimtogro</a>
 <div class="nav-links">
-<a href="/#apps">Apps</a>
+<a href="/">Courtright Collective</a>
 <a href="/aimtogro/privacy.html">Privacy</a>
 <a href="/aimtogro/terms.html">Terms</a>
 <a href="/aimtogro/eula.html">EULA</a>
@@ -81,6 +85,7 @@ footer a:hover { color: var(--copper); }
 </div></nav>
 
 <header class="hero"><div class="container">
+<svg class="mark" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M 318.50 684.00 C 440.33 684.00 512.00 543.53 586.53 457.53" fill="none" stroke="#46C8E6" stroke-width="65.93" stroke-linecap="round"/><path d="M 652.47 238.23 Q 652.47 375.83 790.07 375.83 Q 652.47 375.83 652.47 513.43 Q 652.47 375.83 514.87 375.83 Q 652.47 375.83 652.47 238.23 Z" fill="#2FC98A"/><path d="M 529.20 248.27 Q 529.20 297.00 577.93 297.00 Q 529.20 297.00 529.20 345.73 Q 529.20 297.00 480.47 297.00 Q 529.20 297.00 529.20 248.27 Z" fill="#FFD23F"/></svg>
 <span class="badge">Coming Soon</span>
 <h1>Your AI business <em>co-pilot.</em></h1>
 <p class="sub">Aimtogro is the always-on co-pilot for owners growing past spreadsheets but not ready to hire — daily standups, live bookkeeping, and the automations you'd build if you had the time.</p>
@@ -90,10 +95,10 @@ footer a:hover { color: var(--copper); }
 </div>
 </div></header>
 
-<section id="what" class="section-cream"><div class="container">
+<section id="what" class="section-paper"><div class="container">
 <div class="eyebrow">What Aimtogro will be</div>
 <h2>One place that <em>runs the back office</em> with you.</h2>
-<p class="lead">Aimtogro connects to the tools you already use and turns the busywork into a daily rhythm — so the work you keep putting off actually gets done.</p>
+<p class="lead">Aimtogro connects to the tools you already use and turns the busywork into a daily rhythm — so the work you keep putting off actually gets done. You run the business. Aimtogro runs the busywork.</p>
 <div class="feature-grid">
 <div class="feature"><span class="icon">☀</span><h3>Daily meeting</h3><p>A short daily standup with an AI that knows your goals, your numbers, and what needs attention today.</p></div>
 <div class="feature"><span class="icon">▲</span><h3>Live bookkeeping</h3><p>Income, expenses, invoices, and quotes kept current — synced with QuickBooks and your spreadsheets.</p></div>

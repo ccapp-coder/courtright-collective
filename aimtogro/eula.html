@@ -7,47 +7,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="canonical" href="https://courtrightco.com/aimtogro/eula.html">
 <meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="/aimtogro/assets/aimtogro_mark.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; }
 :root {
---midnight: #0E1520; --ash: #1A2030; --copper: #C45C28; --copper-lt: #D97040;
---gold: #D9A030; --smoke: #7A7268; --parchment: #F4EBD9; --cream: #FAF6EF; --white: #FFFFFF;
---display: 'Cormorant Garamond', Georgia, serif; --body: 'Outfit', -apple-system, sans-serif;
+--ink: #0E2436; --ink-deep: #081726; --ink-soft: #15314A;
+--green: #2FC98A; --green-deep: #1F9466; --aqua: #46C8E6; --yellow: #FFD23F;
+--cloud: #EAF3F1; --slate: #5B7282; --paper: #F7FAF9; --white: #FFFFFF;
+--body: 'Outfit', -apple-system, sans-serif;
 }
 html { scroll-behavior: smooth; }
-body { font-family: var(--body); background: var(--cream); color: var(--midnight); margin: 0; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--body); background: var(--paper); color: var(--ink); margin: 0; line-height: 1.7; -webkit-font-smoothing: antialiased; }
 .container { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
-nav { position: sticky; top: 0; z-index: 50; background: rgba(250,246,239,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(14,21,32,0.07); }
+nav { position: sticky; top: 0; z-index: 50; background: rgba(247,250,249,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(14,36,54,0.07); }
 nav .container { max-width: 1120px; display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; }
-.brand { font-family: var(--display); font-weight: 300; letter-spacing: 0.06em; font-size: 1.2rem; color: var(--midnight); text-decoration: none; }
-.brand span { color: var(--copper); font-weight: 400; }
+.brand { display: flex; align-items: center; gap: 0.55rem; font-weight: 600; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
+.brand svg { width: 26px; height: 26px; }
 .nav-links { display: flex; gap: 1.5rem; align-items: center; }
-.nav-links a { color: var(--midnight); text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.75; }
+.nav-links a { color: var(--ink); text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.75; }
 .nav-links a:hover { opacity: 1; }
-.doc-hero { background: var(--midnight); color: var(--parchment); padding: 4rem 0 3rem; }
-.doc-hero .eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper); margin-bottom: 1rem; }
-.doc-hero h1 { font-family: var(--display); font-weight: 300; font-size: clamp(2.2rem, 5vw, 3.4rem); margin: 0 0 0.75rem; line-height: 1.1; }
-.doc-hero .meta { color: rgba(244,235,217,0.6); font-size: 0.92rem; }
+.doc-hero { background: radial-gradient(ellipse 90% 140% at 50% 20%, var(--ink-soft) 0%, var(--ink) 75%); color: var(--cloud); padding: 4rem 0 3rem; }
+.doc-hero .eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--aqua); margin-bottom: 1rem; }
+.doc-hero h1 { font-weight: 600; font-size: clamp(2.1rem, 5vw, 3.2rem); letter-spacing: -0.02em; margin: 0 0 0.75rem; line-height: 1.1; }
+.doc-hero .meta { color: rgba(234,243,241,0.6); font-size: 0.92rem; }
 main { padding: 3.5rem 0 4rem; }
-main h2 { font-family: var(--display); font-weight: 600; font-size: 1.6rem; margin: 2.5rem 0 0.75rem; color: var(--midnight); }
-main p, main li { color: #2a3343; font-size: 1rem; }
+main h2 { font-weight: 600; font-size: 1.45rem; letter-spacing: -0.01em; margin: 2.5rem 0 0.75rem; color: var(--ink); }
+main p, main li { color: #2E4254; font-size: 1rem; }
 main ul { padding-left: 1.25rem; }
 main li { margin: 0.4rem 0; }
-main a { color: var(--copper); }
-.callout { background: var(--parchment); border-left: 3px solid var(--copper); border-radius: 8px; padding: 1.1rem 1.25rem; margin: 1.5rem 0; font-size: 0.95rem; }
-footer { padding: 2.5rem 0; background: var(--cream); border-top: 1px solid rgba(14,21,32,0.08); }
-footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; color: var(--smoke); font-size: 0.85rem; }
-footer a { color: var(--smoke); text-decoration: none; }
-footer a:hover { color: var(--copper); }
-.legal-note { color: var(--smoke); font-size: 0.85rem; font-style: italic; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(14,21,32,0.1); }
+main a { color: var(--green-deep); }
+.callout { background: var(--cloud); border-left: 3px solid var(--green); border-radius: 8px; padding: 1.1rem 1.25rem; margin: 1.5rem 0; font-size: 0.95rem; }
+footer { padding: 2.5rem 0; background: var(--ink); color: rgba(234,243,241,0.65); font-size: 0.85rem; }
+footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+footer a { color: rgba(234,243,241,0.65); text-decoration: none; }
+footer a:hover { color: var(--aqua); }
+.legal-note { color: var(--slate); font-size: 0.85rem; font-style: italic; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(14,36,54,0.1); }
 </style>
 </head>
 <body>
 <nav><div class="container">
-<a href="/" class="brand">Courtright <span>Collective</span></a>
+<a href="/aimtogro/" class="brand"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M 318.50 684.00 C 440.33 684.00 512.00 543.53 586.53 457.53" fill="none" stroke="#46C8E6" stroke-width="65.93" stroke-linecap="round"/><path d="M 652.47 238.23 Q 652.47 375.83 790.07 375.83 Q 652.47 375.83 652.47 513.43 Q 652.47 375.83 514.87 375.83 Q 652.47 375.83 652.47 238.23 Z" fill="#2FC98A"/><path d="M 529.20 248.27 Q 529.20 297.00 577.93 297.00 Q 529.20 297.00 529.20 345.73 Q 529.20 297.00 480.47 297.00 Q 529.20 297.00 529.20 248.27 Z" fill="#FFD23F"/></svg>Aimtogro</a>
 <div class="nav-links">
 <a href="/aimtogro/">Aimtogro</a>
 <a href="/aimtogro/privacy.html">Privacy</a>
