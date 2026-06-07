@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SMS Program &amp; Opt-In — Aimtogro</title>
+<meta name="description" content="How the Aimtogro SMS program works: what messages we send, how business owners opt in, message frequency, rates, and how to opt out (STOP) or get help (HELP). Operated by Courtright Collective LLC.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://courtrightco.com/aimtogro/sms-opt-in.html">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="/aimtogro/assets/aimtogro_mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; }
+:root {
+--ink: #0E2436; --ink-deep: #081726; --ink-soft: #15314A;
+--green: #2FC98A; --green-deep: #1F9466; --aqua: #46C8E6; --yellow: #FFD23F;
+--cloud: #EAF3F1; --slate: #5B7282; --paper: #F7FAF9; --white: #FFFFFF;
+--body: 'Outfit', -apple-system, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--body); background: var(--paper); color: var(--ink); margin: 0; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+.container { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
+nav { position: sticky; top: 0; z-index: 50; background: rgba(247,250,249,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(14,36,54,0.07); }
+nav .container { max-width: 1120px; display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; }
+.brand { display: flex; align-items: center; gap: 0.55rem; font-weight: 600; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
+.brand svg { width: 26px; height: 26px; }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-links a { color: var(--ink); text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.75; }
+.nav-links a:hover { opacity: 1; }
+.doc-hero { background: radial-gradient(ellipse 90% 140% at 50% 20%, var(--ink-soft) 0%, var(--ink) 75%); color: var(--cloud); padding: 4rem 0 3rem; }
+.doc-hero .eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--aqua); margin-bottom: 1rem; }
+.doc-hero h1 { font-weight: 600; font-size: clamp(2.1rem, 5vw, 3.2rem); letter-spacing: -0.02em; margin: 0 0 0.75rem; line-height: 1.1; }
+.doc-hero .meta { color: rgba(234,243,241,0.6); font-size: 0.92rem; }
+main { padding: 3.5rem 0 4rem; }
+main h2 { font-weight: 600; font-size: 1.45rem; letter-spacing: -0.01em; margin: 2.5rem 0 0.75rem; color: var(--ink); }
+main h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.4rem; }
+main p, main li { color: #2E4254; font-size: 1rem; }
+main ul { padding-left: 1.25rem; }
+main li { margin: 0.4rem 0; }
+main a { color: var(--green-deep); }
+.callout { background: var(--cloud); border-left: 3px solid var(--green); border-radius: 8px; padding: 1.1rem 1.25rem; margin: 1.5rem 0; font-size: 0.95rem; }
+.disclosures { background: var(--white); border: 1px solid rgba(14,36,54,0.1); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.disclosures h4 { margin: 0 0 0.6rem; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--slate); }
+.disclosures ul { margin: 0; padding-left: 1.2rem; }
+.msg-example { background: var(--cloud); border-radius: 12px; padding: 0.85rem 1.1rem; margin: 0.6rem 0; font-size: 0.95rem; color: var(--ink); }
+.msg-example .who { display: block; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--slate); margin-bottom: 0.25rem; }
+/* mock opt-in form */
+.optin-mock { max-width: 420px; margin: 1.5rem auto; background: var(--white); border: 1px solid rgba(14,36,54,0.12); border-radius: 16px; padding: 1.75rem 1.6rem; box-shadow: 0 14px 40px rgba(14,36,54,0.08); }
+.optin-mock .mock-eyebrow { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--green-deep); font-weight: 700; margin-bottom: 0.4rem; }
+.optin-mock .mock-title { font-weight: 600; font-size: 1.15rem; margin: 0 0 1.1rem; color: var(--ink); }
+.optin-mock label.fld-label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--ink); margin: 0 0 0.35rem; }
+.optin-mock .fld { width: 100%; border: 1px solid rgba(14,36,54,0.2); border-radius: 8px; padding: 0.7rem 0.85rem; font-family: var(--body); font-size: 0.95rem; color: var(--slate); background: var(--paper); }
+.checkbox-row { display: flex; gap: 0.7rem; align-items: flex-start; margin: 1.2rem 0 1.3rem; }
+.checkbox-row .box { flex: 0 0 20px; width: 20px; height: 20px; border: 2px solid var(--green-deep); border-radius: 5px; margin-top: 2px; }
+.checkbox-row .consent-text { font-size: 0.82rem; line-height: 1.55; color: #2E4254; }
+.optin-mock .mock-btn { width: 100%; background: var(--yellow); color: var(--ink-deep); border: none; border-radius: 8px; padding: 0.8rem; font-family: var(--body); font-weight: 600; font-size: 0.95rem; text-align: center; }
+.mock-caption { text-align: center; font-size: 0.8rem; color: var(--slate); margin-top: 0.75rem; font-style: italic; }
+footer { padding: 2.5rem 0; background: var(--ink); color: rgba(234,243,241,0.65); font-size: 0.85rem; }
+footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+footer a { color: rgba(234,243,241,0.65); text-decoration: none; }
+footer a:hover { color: var(--aqua); }
+.legal-note { color: var(--slate); font-size: 0.85rem; font-style: italic; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(14,36,54,0.1); }
+</style>
+</head>
+<body>
+<nav><div class="container">
+<a href="/aimtogro/" class="brand"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M 318.50 684.00 C 440.33 684.00 512.00 543.53 586.53 457.53" fill="none" stroke="#46C8E6" stroke-width="65.93" stroke-linecap="round"/><path d="M 652.47 238.23 Q 652.47 375.83 790.07 375.83 Q 652.47 375.83 652.47 513.43 Q 652.47 375.83 514.87 375.83 Q 652.47 375.83 652.47 238.23 Z" fill="#2FC98A"/><path d="M 529.20 248.27 Q 529.20 297.00 577.93 297.00 Q 529.20 297.00 529.20 345.73 Q 529.20 297.00 480.47 297.00 Q 529.20 297.00 529.20 248.27 Z" fill="#FFD23F"/></svg>Aimtogro</a>
+<div class="nav-links">
+<a href="/aimtogro/">Aimtogro</a>
+<a href="/aimtogro/privacy.html">Privacy</a>
+<a href="/aimtogro/terms.html">Terms</a>
+</div>
+</div></nav>
+
+<header class="doc-hero"><div class="container">
+<div class="eyebrow">Aimtogro</div>
+<h1>SMS Program &amp; Opt-In</h1>
+<div class="meta">How our text messages work and how you consent · Operated by Courtright Collective LLC</div>
+</div></header>
+
+<main><div class="container">
+
+<h2 id="overview">What the Aimtogro SMS program is</h2>
+<p>Aimtogro is a business-management app for small-business owners. Our SMS program sends text messages only to the <strong>account owner</strong>, and only about <strong>their own business account</strong>. We send two kinds of messages:</p>
+<ul>
+<li><strong>Account notifications</strong> — alerts about the owner's own account activity, such as overdue invoices, stale quotes, and daily or weekly business summaries.</li>
+<li><strong>Missed-call text-back replies</strong> — when a caller phones the owner's connected business line and the call goes unanswered, Aimtogro sends that caller one automated text inviting them to reply so the business can follow up.</li>
+</ul>
+<p>We never send marketing or promotional texts through this program, and we never share mobile numbers with third parties for their own marketing.</p>
+
+<h2 id="optin">How you opt in</h2>
+<p>There are two consent paths, matching the two message types above.</p>
+
+<h3>1. Account notifications (owner opt-in)</h3>
+<p>During signup, and any time afterward in <strong>Settings → Notifications</strong> inside the Aimtogro web app at <a href="https://aimtogro.courtrightco.com" target="_blank" rel="noopener">aimtogro.courtrightco.com</a>, the business owner enters their own mobile number and checks an unchecked consent box. Consent is never pre-checked and is never required to use the app. The opt-in screen looks like this:</p>
+
+<div class="optin-mock" role="img" aria-label="Representation of the in-app SMS opt-in screen">
+<div class="mock-eyebrow">Settings · Notifications</div>
+<div class="mock-title">Text message alerts</div>
+<label class="fld-label" for="mock-phone">Mobile number</label>
+<div class="fld" id="mock-phone">(615) 555-0142</div>
+<div class="checkbox-row">
+<div class="box" aria-hidden="true"></div>
+<div class="consent-text">I agree to receive SMS account notifications from Aimtogro (overdue invoices, stale quotes, daily/weekly summaries). Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. See our <a href="/aimtogro/privacy.html">Privacy Policy</a> and <a href="/aimtogro/terms.html">Terms</a>.</div>
+</div>
+<div class="mock-btn">Save notification settings</div>
+</div>
+<p class="mock-caption">Representation of the opt-in screen shown to business owners inside Aimtogro.</p>
+
+<h3>2. Missed-call text-back (caller-initiated)</h3>
+<p>When someone calls a business owner's connected business line and the call is not answered, Aimtogro sends that caller a single automated text inviting them to reply. Consent is established by the caller voluntarily initiating contact with the business. The first message identifies the business, explains why they're receiving it, and includes opt-out instructions. We do not add these callers to any notification or marketing list.</p>
+
+<h2 id="disclosures">Program terms</h2>
+<div class="disclosures">
+<h4>At a glance</h4>
+<ul>
+<li><strong>Program name:</strong> Aimtogro account notifications &amp; missed-call replies</li>
+<li><strong>Message frequency:</strong> varies based on your account activity</li>
+<li><strong>Cost:</strong> Message and data rates may apply</li>
+<li><strong>Opt out:</strong> reply <strong>STOP</strong> at any time to stop all messages</li>
+<li><strong>Help:</strong> reply <strong>HELP</strong>, or email <a href="mailto:info@courtrightco.com">info@courtrightco.com</a></li>
+<li><strong>Carriers:</strong> carriers are not liable for delayed or undelivered messages</li>
+</ul>
+</div>
+
+<h2 id="examples">Example messages</h2>
+<div class="msg-example"><span class="who">Opt-in confirmation</span>Aimtogro: You're subscribed to account notifications. Msg frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help.</div>
+<div class="msg-example"><span class="who">Account notification</span>Aimtogro: You have 2 overdue invoices totaling $1,840. Log in to review. Reply STOP to opt out, HELP for help.</div>
+<div class="msg-example"><span class="who">Missed-call reply</span>Aimtogro: Sorry we missed your call. Reply here with what you need and we'll get right back to you. Reply STOP to opt out.</div>
+
+<h2 id="optout">Opting out &amp; getting help</h2>
+<p>You can stop messages at any time by replying <strong>STOP</strong> to any message. You'll receive one confirmation that you've been unsubscribed, and no further messages will be sent. To resume, reply <strong>START</strong>. For help, reply <strong>HELP</strong> or contact us at <a href="mailto:info@courtrightco.com">info@courtrightco.com</a>.</p>
+
+<h2 id="privacy">Privacy</h2>
+<p>Mobile numbers and SMS consent are handled under our <a href="/aimtogro/privacy.html">Privacy Policy</a>. We do not sell your information, and <strong>no mobile information is shared with third parties or affiliates for marketing or promotional purposes</strong>. Messaging is delivered through our messaging provider (Twilio) solely to operate this program. Additional SMS terms are in our <a href="/aimtogro/terms.html">Terms of Service</a>.</p>
+
+<p class="legal-note">This page documents the Aimtogro SMS program and consent flow for transparency and for carrier/registration review. Operated by Courtright Collective LLC, Nashville, Tennessee, USA.</p>
+
+</div></main>
+
+<footer><div class="container">
+<div>© 2026 Courtright Collective LLC · Nashville, TN</div>
+<div><a href="/aimtogro/">Aimtogro</a> · <a href="/aimtogro/privacy.html">Privacy</a> · <a href="/aimtogro/terms.html">Terms</a> · <a href="mailto:info@courtrightco.com">info@courtrightco.com</a></div>
+</div></footer>
+</body>
+</html>
