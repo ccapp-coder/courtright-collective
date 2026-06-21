@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Affiliate Program — Courtright Collective</title>
+  <meta name="description" content="Earn 25% recurring commission reselling Aimtogro — for as long as your referrals stay subscribed. Your referrals get 5% off for life. No cost to join.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://courtrightco.com/affiliates.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Affiliate Program — Courtright Collective">
+  <meta property="og:description" content="Earn 25% recurring reselling Aimtogro. Your referrals get 5% off for life.">
+  <meta property="og:url" content="https://courtrightco.com/affiliates.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+    :root {
+      --midnight:#0E1520; --ash:#1A2030; --copper:#C45C28; --copper-lt:#D97040;
+      --gold:#D9A030; --gold-lt:#F0B840; --smoke:#7A7268; --parchment:#F4EBD9;
+      --cream:#FAF6EF; --white:#FFFFFF;
+      --display:'Cormorant Garamond',Georgia,serif; --body:'Outfit',-apple-system,sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--body); background: var(--cream); color: var(--midnight); margin: 0; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+    .narrow { max-width: 720px; }
+
+    nav { position: sticky; top: 0; z-index: 50; background: rgba(250,246,239,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(14,21,32,0.07); }
+    nav .container { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; }
+    .brand { font-family: var(--display); font-weight: 300; letter-spacing: 0.06em; font-size: 1.2rem; color: var(--midnight); text-decoration: none; }
+    .brand span { color: var(--copper); font-weight: 400; }
+    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+    .nav-links a { color: var(--midnight); text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.75; }
+    .nav-links a:hover { opacity: 1; }
+
+    .btn { display: inline-block; padding: 0.875rem 1.75rem; background: var(--copper); color: var(--white); border: none; border-radius: 6px; font-family: var(--body); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; text-decoration: none; transition: all 0.25s ease; cursor: pointer; }
+    .btn:hover { background: var(--copper-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,92,40,0.25); }
+    .btn-gold { background: var(--gold); color: var(--midnight); }
+    .btn-gold:hover { background: var(--gold-lt); }
+
+    .hero { background: var(--midnight); color: var(--parchment); padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 70% 40%, rgba(217,160,48,0.16) 0%, transparent 70%); pointer-events: none; }
+    .hero .container { position: relative; z-index: 1; }
+    .eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .hero h1 { font-family: var(--display); font-size: clamp(2.3rem,5vw,3.8rem); font-weight: 300; line-height: 1.1; margin: 0 0 1.25rem; max-width: 760px; }
+    .hero h1 em { font-style: italic; color: var(--gold); font-weight: 400; }
+    .hero .sub { font-size: 1.2rem; max-width: 620px; color: rgba(244,235,217,0.78); margin: 0 0 2rem; }
+
+    section { padding: 4.5rem 0; }
+    h2 { font-family: var(--display); font-size: clamp(1.8rem,3.5vw,2.6rem); font-weight: 400; line-height: 1.15; margin: 0 0 1rem; }
+    h2 em { font-style: italic; color: var(--copper); }
+    .lead { font-size: 1.05rem; color: var(--smoke); max-width: 640px; margin: 0 0 2.5rem; }
+
+    .terms { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-bottom: 1rem; }
+    @media (max-width: 760px) { .terms { grid-template-columns: 1fr; } }
+    .term { background: var(--white); border: 1px solid rgba(14,21,32,0.08); border-radius: 12px; padding: 1.75rem; }
+    .term .big { font-family: var(--display); font-size: 2.4rem; font-weight: 600; color: var(--copper); line-height: 1; }
+    .term h3 { font-family: var(--display); font-size: 1.2rem; margin: 0.75rem 0 0.35rem; }
+    .term p { color: var(--smoke); font-size: 0.92rem; margin: 0; }
+
+    .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem; }
+    @media (max-width: 800px) { .steps { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .steps { grid-template-columns: 1fr; } }
+    .step { padding: 1.5rem; border: 1px solid rgba(244,235,217,0.12); border-radius: 12px; background: var(--ash); }
+    .step .num { font-family: var(--display); font-size: 2rem; font-weight: 300; color: var(--gold); display: block; margin-bottom: 0.5rem; }
+    .step h3 { font-family: var(--display); font-size: 1.05rem; margin: 0 0 0.35rem; color: var(--parchment); }
+    .step p { color: rgba(244,235,217,0.6); font-size: 0.88rem; margin: 0; }
+    .section-dark { background: var(--midnight); color: var(--parchment); }
+    .section-dark h2, .section-dark .lead { color: var(--parchment); }
+    .section-dark .lead { color: rgba(244,235,217,0.65); }
+
+    .form-card { background: var(--white); border: 1px solid rgba(14,21,32,0.08); border-radius: 14px; padding: 2rem; max-width: 560px; }
+    .form-card label { display: block; font-size: 0.85rem; font-weight: 600; margin: 1rem 0 0.35rem; }
+    .form-card input, .form-card textarea { width: 100%; padding: 0.75rem 0.9rem; border: 1px solid rgba(14,21,32,0.15); border-radius: 8px; font-family: var(--body); font-size: 0.95rem; }
+    .form-card textarea { min-height: 90px; resize: vertical; }
+    .form-card .btn { width: 100%; margin-top: 1.5rem; text-align: center; }
+    .err { color: #c0392b; font-size: 0.9rem; margin-top: 0.75rem; }
+    .thanks { text-align: center; padding: 1rem 0; }
+    .thanks h3 { font-family: var(--display); font-size: 1.6rem; margin: 0 0 0.5rem; }
+    .thanks p { color: var(--smoke); margin: 0; }
+
+    footer { padding: 3rem 0 2rem; background: var(--cream); border-top: 1px solid rgba(14,21,32,0.08); }
+    .copyright { color: var(--smoke); font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .copyright a { color: var(--smoke); text-decoration: none; }
+    .copyright a:hover { color: var(--copper); }
+    @media (max-width: 700px) { .nav-links a:not(.btn) { display: none; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="brand">Courtright <span>Collective</span></a>
+    <div class="nav-links">
+      <a href="/#services">What we build</a>
+      <a href="/#apps">Products</a>
+      <a href="/about.html">About</a>
+      <a href="/book.html" class="btn">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow">Affiliate Program</div>
+    <h1>Earn 25% reselling <em>Aimtogro.</em></h1>
+    <p class="sub">Aimtogro gives small-business owners a whole team of AI employees. Refer it, and earn a recurring cut for as long as your referrals stay — while they save 5% for life.</p>
+    <a href="#apply" class="btn btn-gold">Apply to become an affiliate</a>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <h2>Simple, generous, <em>recurring.</em></h2>
+    <p class="lead">No tiers to chase, no caps. You bring businesses to Aimtogro; we handle everything else and pay you every month.</p>
+    <div class="terms">
+      <div class="term">
+        <div class="big">25%</div>
+        <h3>Recurring commission</h3>
+        <p>Of every referral's subscription, every month, for as long as they stay a customer.</p>
+      </div>
+      <div class="term">
+        <div class="big">5%</div>
+        <h3>Off for your referrals</h3>
+        <p>The businesses you bring on get 5% off for the life of their subscription — a real reason to say yes.</p>
+      </div>
+      <div class="term">
+        <div class="big">$0</div>
+        <h3>To join</h3>
+        <p>No fees, no minimums. Get a link, share it, and get paid by direct deposit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="container">
+    <h2>How it works</h2>
+    <p class="lead">From application to your first payout.</p>
+    <div class="steps">
+      <div class="step"><span class="num">01</span><h3>Apply</h3><p>Fill out the short form below. We review every application personally.</p></div>
+      <div class="step"><span class="num">02</span><h3>Get approved</h3><p>Once you're in, you get your own referral link and an affiliate dashboard.</p></div>
+      <div class="step"><span class="num">03</span><h3>Share it</h3><p>Send your link to business owners who'd benefit. They sign up, they save 5%.</p></div>
+      <div class="step"><span class="num">04</span><h3>Get paid</h3><p>Connect your payout account and earn 25% every month they stay subscribed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="apply">
+  <div class="container">
+    <h2>Apply to become an <em>affiliate.</em></h2>
+    <p class="lead">Tell us a little about you and how you'd spread the word. We'll be in touch by email.</p>
+    <div class="form-card" id="affform-wrap">
+      <form id="affform">
+        <label for="aff-name">Your name</label>
+        <input id="aff-name" name="name" type="text" maxlength="120" required placeholder="Jane Doe">
+        <label for="aff-email">Email</label>
+        <input id="aff-email" name="email" type="email" maxlength="200" required placeholder="you@example.com">
+        <label for="aff-notes">How do you plan to refer Aimtogro? <span style="font-weight:400;color:var(--smoke);">(optional)</span></label>
+        <textarea id="aff-notes" name="notes" maxlength="2000" placeholder="Your audience, network, or how you'd share it…"></textarea>
+        <button type="submit" class="btn">Apply to become an affiliate</button>
+        <div class="err" id="aff-err"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="copyright">
+      <div>© 2026 Courtright Collective LLC</div>
+      <div><a href="/">Home</a> · <a href="/privacy.html">Privacy</a> · <a href="mailto:info@courtrightco.com">info@courtrightco.com</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var form = document.getElementById('affform');
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('button');
+      var err = document.getElementById('aff-err');
+      err.textContent = '';
+      btn.disabled = true; btn.textContent = 'Submitting…';
+      var body = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        notes: form.notes.value.trim()
+      };
+      try {
+        var res = await fetch('https://aimtogro.com/api/partners/apply', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+        if (!res.ok) throw new Error();
+        document.getElementById('affform-wrap').innerHTML =
+          '<div class="thanks"><h3>Application received 🎉</h3><p>Thanks for applying. We\'ll review it and email you when you\'re approved.</p></div>';
+      } catch (_) {
+        btn.disabled = false; btn.textContent = 'Apply to become an affiliate';
+        err.textContent = 'Something went wrong. Please try again, or email info@courtrightco.com.';
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
