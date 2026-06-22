@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pricing — Courtright Collective AI Automations</title>
+  <meta name="description" content="Transparent pricing for AI automation services. Monthly tiers from $99 to custom. Productized Quick Start offers from $497. No hourly billing, no custom quotes.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://courtrightco.com/pricing.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pricing — Courtright Collective">
+  <meta property="og:description" content="Tiered packages and productized offers. Transparent pricing for AI automation services.">
+  <meta property="og:url" content="https://courtrightco.com/pricing.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+    :root {
+      --midnight: #0E1520; --ash: #1A2030;
+      --copper: #C45C28; --copper-lt: #D97040;
+      --gold: #D9A030; --gold-lt: #F0B840;
+      --smoke: #7A7268; --parchment: #F4EBD9; --cream: #FAF6EF;
+      --display: 'Cormorant Garamond', Georgia, serif;
+      --body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--body); background: var(--cream); color: var(--midnight); margin: 0; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+    nav { position: sticky; top: 0; z-index: 50; background: rgba(250, 246, 239, 0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(14, 21, 32, 0.07); }
+    nav .container { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; padding-bottom: 1rem; }
+    .brand { font-family: var(--display); font-weight: 300; letter-spacing: 0.06em; font-size: 1.2rem; color: var(--midnight); text-decoration: none; }
+    .brand span { color: var(--copper); font-weight: 400; }
+    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+    .nav-links a { color: var(--midnight); text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.75; }
+    .nav-links a:hover { opacity: 1; }
+    .btn { display: inline-block; padding: 0.875rem 1.75rem; background: var(--copper); color: white; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; transition: all 0.25s ease; text-align: center; }
+    .btn:hover { background: var(--copper-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196, 92, 40, 0.25); }
+    .btn-secondary { background: transparent; color: var(--midnight); border: 1.5px solid var(--midnight); }
+    .btn-secondary:hover { background: var(--midnight); color: var(--cream); }
+    .btn-gold { background: var(--gold); color: var(--midnight); }
+    .btn-gold:hover { background: var(--gold-lt); }
+    .hero { background: var(--midnight); color: var(--parchment); padding: 5rem 0 4rem; position: relative; overflow: hidden; text-align: center; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at center, rgba(196, 92, 40, 0.18) 0%, transparent 70%); }
+    .hero .container { position: relative; z-index: 1; }
+    .hero-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper); margin-bottom: 1.25rem; }
+    .hero h1 { font-family: var(--display); font-size: clamp(2.5rem, 5vw, 3.75rem); font-weight: 300; line-height: 1.15; letter-spacing: -0.01em; margin: 0 auto 1rem; max-width: 900px; }
+    .hero h1 em { font-style: italic; color: var(--copper); font-weight: 400; }
+    .hero .sub { font-size: 1.15rem; color: rgba(244, 235, 217, 0.75); line-height: 1.65; margin: 0 auto; max-width: 620px; }
+    section { padding: 5rem 0; }
+    .section-parchment { background: var(--parchment); }
+    .section-cream { background: var(--cream); }
+    .section-dark { background: var(--midnight); color: var(--parchment); }
+    .eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.75rem; }
+    h2 { font-family: var(--display); font-size: clamp(2rem, 3.5vw, 2.5rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.005em; margin: 0 0 1rem; }
+    h2 em { font-style: italic; color: var(--copper); }
+    .section-dark h2 em { color: var(--gold); }
+    .section-lead { font-size: 1.1rem; line-height: 1.7; color: var(--smoke); max-width: 680px; margin: 0 0 3rem; }
+    .section-dark .section-lead { color: rgba(244, 235, 217, 0.7); }
+
+    .pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    @media (max-width: 900px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .pricing-grid { grid-template-columns: 1fr; } }
+    .price-card { background: white; border: 1px solid rgba(14, 21, 32, 0.08); border-radius: 12px; padding: 2rem 1.5rem; display: flex; flex-direction: column; transition: all 0.3s ease; position: relative; }
+    .price-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(14, 21, 32, 0.08); }
+    .price-card.featured { border-color: var(--copper); border-width: 2px; }
+    .price-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: -0.65rem; left: 1.5rem; background: var(--copper); color: white; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; }
+    .price-card h3 { font-family: var(--display); font-size: 1.4rem; font-weight: 600; margin: 0 0 0.25rem; color: var(--midnight); }
+    .price-card .price { font-family: var(--display); font-size: 1.85rem; font-weight: 600; color: var(--midnight); margin: 0.5rem 0; }
+    .price-card .price span { font-size: 0.85rem; font-weight: 400; color: var(--smoke); display: block; margin-top: 0.25rem; }
+    .price-card .pitch { color: var(--smoke); font-size: 0.9rem; line-height: 1.55; margin: 0 0 1.25rem; min-height: 60px; }
+    .price-card ul { list-style: none; padding: 0; margin: 0 0 1.5rem; flex: 1; }
+    .price-card li { padding: 0.55rem 0; color: var(--midnight); font-size: 0.88rem; border-bottom: 1px solid rgba(14, 21, 32, 0.06); }
+    .price-card li:last-child { border-bottom: none; }
+    .price-card li::before { content: '◆ '; color: var(--copper); font-size: 0.7rem; margin-right: 0.25rem; }
+
+    .quickstart-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    @media (max-width: 900px) { .quickstart-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .quickstart-grid { grid-template-columns: 1fr; } }
+    .quickstart-card { background: white; border: 1px solid rgba(14, 21, 32, 0.08); border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; transition: all 0.3s ease; position: relative; overflow: hidden; }
+    .quickstart-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+    .quickstart-card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 12px 32px rgba(14, 21, 32, 0.08); }
+    .quickstart-card:hover::before { transform: scaleX(1); }
+    .quickstart-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+    .quickstart-card h3 { font-family: var(--display); font-size: 1.3rem; font-weight: 600; margin: 0 0 0.25rem; color: var(--midnight); }
+    .quickstart-card .price-line { font-family: var(--display); font-size: 1.4rem; font-weight: 600; color: var(--copper); margin: 0.25rem 0 0.875rem; }
+    .quickstart-card p { color: var(--smoke); font-size: 0.92rem; line-height: 1.55; margin: 0 0 1.25rem; flex: 1; }
+    .quickstart-card a { color: var(--midnight); text-decoration: none; font-weight: 600; font-size: 0.9rem; border-bottom: 1.5px solid var(--copper); display: inline-block; align-self: flex-start; padding-bottom: 2px; transition: color 0.2s; }
+    .quickstart-card a:hover { color: var(--copper); }
+
+    .oneoff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    @media (max-width: 800px) { .oneoff-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .oneoff-grid { grid-template-columns: 1fr; } }
+    .oneoff-card { background: var(--ash); padding: 1.5rem; border-radius: 10px; border: 1px solid rgba(244, 235, 217, 0.1); transition: border-color 0.3s ease; }
+    .oneoff-card:hover { border-color: var(--copper); }
+    .oneoff-card h4 { font-family: var(--display); font-size: 1.1rem; font-weight: 600; margin: 0 0 0.25rem; color: var(--parchment); }
+    .oneoff-card .range { color: var(--gold); font-size: 0.95rem; font-weight: 600; margin: 0.25rem 0 0.625rem; }
+    .oneoff-card p { color: rgba(244, 235, 217, 0.65); font-size: 0.88rem; margin: 0; line-height: 1.5; }
+
+    .faq details { border-bottom: 1px solid rgba(14, 21, 32, 0.1); padding: 1.25rem 0; cursor: pointer; }
+    .faq summary { font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--midnight); }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: '+'; color: var(--copper); font-size: 1.5rem; font-weight: 300; transition: transform 0.3s ease; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details p { color: var(--smoke); font-size: 0.95rem; line-height: 1.65; margin: 1rem 0 0; }
+
+    .cta-section { background: var(--midnight); color: var(--parchment); text-align: center; position: relative; overflow: hidden; }
+    .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(217, 160, 48, 0.15) 0%, transparent 65%); }
+    .cta-section .container { position: relative; z-index: 1; }
+    .cta-section h2 { color: var(--parchment); max-width: 800px; margin: 0.5rem auto 1.25rem; }
+    .cta-section h2 em { color: var(--gold); }
+    .cta-section p { color: rgba(244, 235, 217, 0.7); margin: 0 auto 2.5rem; max-width: 620px; }
+
+    footer { padding: 3rem 0 2rem; border-top: 1px solid rgba(14, 21, 32, 0.08); color: var(--smoke); font-size: 0.92rem; text-align: center; }
+    footer a { color: var(--smoke); text-decoration: none; }
+    footer a:hover { color: var(--copper); }
+    @media (max-width: 700px) { .nav-links a:not(.btn) { display: none; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="brand">Courtright <span>Collective</span></a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/about.html">About</a>
+      <a href="/book.html" class="btn">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Pricing</div>
+    <h1>Transparent prices. <em>No hourly bills.</em></h1>
+    <p class="sub">Pick a monthly tier if you want a relationship, or a Quick Start if you want to buy something specific. Either way, no custom quotes, no surprise invoices.</p>
+  </div>
+</header>
+
+<section class="section-cream">
+  <div class="container">
+    <div class="eyebrow">Monthly Tiers</div>
+    <h2>Build with us <em>monthly.</em></h2>
+    <p class="section-lead">For businesses that want ongoing automation work, monthly check-ins, and a partner who stays involved as the business changes.</p>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Audit</h3>
+        <div class="price">$0<span>one-time</span></div>
+        <p class="pitch">A free 30-minute call to map your bottlenecks and find the most valuable workflow to automate first.</p>
+        <ul>
+          <li>30-min workflow audit</li>
+          <li>Written summary &amp; recs</li>
+          <li>Scoped proposal if a fit</li>
+          <li>No commitment</li>
+        </ul>
+        <a href="/book.html" class="btn btn-secondary">Book the audit</a>
+      </div>
+
+      <div class="price-card featured">
+        <h3>Starter</h3>
+        <div class="price">$500<span>+ $99/month</span></div>
+        <p class="pitch">One automation, built and monitored. Best for testing the water on a specific workflow.</p>
+        <ul>
+          <li>1 automation from scratch</li>
+          <li>Deployed &amp; documented</li>
+          <li>Monthly check-in</li>
+          <li>Email support</li>
+        </ul>
+        <a href="/book.html" class="btn">Get started</a>
+      </div>
+
+      <div class="price-card">
+        <h3>Growth</h3>
+        <div class="price">$999<span>+ $250/month</span></div>
+        <p class="pitch">Up to 3 stacked automations. For businesses ready to remove multiple bottlenecks at once.</p>
+        <ul>
+          <li>Up to 3 automations</li>
+          <li>Integrated as a stack</li>
+          <li>Bi-weekly check-ins</li>
+          <li>Quarterly strategy review</li>
+        </ul>
+        <a href="/book.html" class="btn btn-secondary">Book a call</a>
+      </div>
+
+      <div class="price-card">
+        <h3>Scale</h3>
+        <div class="price">Custom<span>monthly retainer</span></div>
+        <p class="pitch">Full automation stack, dedicated build hours, ongoing optimization. For teams running multiple processes.</p>
+        <ul>
+          <li>Unlimited automations</li>
+          <li>Weekly working sessions</li>
+          <li>Dedicated build hours</li>
+          <li>SLA on response time</li>
+        </ul>
+        <a href="/book.html" class="btn btn-secondary">Talk to us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-parchment">
+  <div class="container">
+    <div class="eyebrow">Quick Starts</div>
+    <h2>Or buy a specific <em>thing.</em></h2>
+    <p class="section-lead">Fixed price. Fixed scope. No discovery call required (unless you want one). For when you know exactly what you need and want to get moving today.</p>
+
+    <div class="quickstart-grid">
+      <div class="quickstart-card">
+        <div class="quickstart-tag">Most Popular</div>
+        <h3>Email Triage in 7 Days</h3>
+        <div class="price-line">$500 + $99/mo</div>
+        <p>Your inbox triaged into actionable buckets, AI-drafted replies in your voice, automated follow-ups for leads who didn't respond. Live within 7 days of signup.</p>
+        <a href="/book.html">Start this one →</a>
+      </div>
+
+      <div class="quickstart-card">
+        <h3>Weekly Reports on Autopilot</h3>
+        <div class="price-line">$500 + $99/mo</div>
+        <p>Custom weekly business report pulled from your tools (Stripe, Shopify, your CRM), formatted, and delivered to your inbox every Monday at 7am.</p>
+        <a href="/book.html">Start this one →</a>
+      </div>
+
+      <div class="quickstart-card">
+        <h3>AI Audit + Action Plan</h3>
+        <div class="price-line">$497 one-time</div>
+        <p>One focused week. Discovery, workflow audit, and a written 10-page action plan with prioritized recommendations and rough cost estimates.</p>
+        <a href="/book.html">Start this one →</a>
+      </div>
+
+      <div class="quickstart-card">
+        <h3>Small Business Website</h3>
+        <div class="price-line">$1,500 + $29/mo</div>
+        <p>Professional 1-5 page site, mobile-first, SEO set up, on your domain. Includes booking integration and analytics. Live in 14 days.</p>
+        <a href="/book.html">Start this one →</a>
+      </div>
+
+      <div class="quickstart-card">
+        <h3>Custom AI Assistant</h3>
+        <div class="price-line">$2,500 starting</div>
+        <p>An AI assistant built around one specific workflow in your business. Embedded on your site, in Slack, or wherever it needs to live. Tailored to your data.</p>
+        <a href="/book.html">Start this one →</a>
+      </div>
+
+      <div class="quickstart-card">
+        <h3>Booking Page Setup</h3>
+        <div class="price-line">$497 one-time</div>
+        <p>Cal.com or similar fully configured on your domain, branded to your site, synced with your calendar. Done in 3 days. Stop wasting time on email scheduling.</p>
+        <a href="/book.html">Start this one →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="container">
+    <div class="eyebrow">One-Off Builds</div>
+    <h2>Bigger projects, <em>custom scope.</em></h2>
+    <p class="section-lead">When the work needs to be tailored from scratch. Ranges shown for transparency. Exact pricing after a discovery call.</p>
+
+    <div class="oneoff-grid">
+      <div class="oneoff-card">
+        <h4>Custom AI Chat Assistant</h4>
+        <div class="range">$2,500 – $5,000</div>
+        <p>Website embed, trained on your knowledge. Includes 30-day support.</p>
+      </div>
+      <div class="oneoff-card">
+        <h4>Internal Knowledge Bot</h4>
+        <div class="range">$3,500 – $7,500</div>
+        <p>Slack or Teams integrated. Trained on your company docs and SOPs.</p>
+      </div>
+      <div class="oneoff-card">
+        <h4>CRM Setup &amp; Automation</h4>
+        <div class="range">$2,000 – $5,000</div>
+        <p>Data migration, workflow setup, training. Pipedrive, HubSpot, Close.</p>
+      </div>
+      <div class="oneoff-card">
+        <h4>E-commerce Automation</h4>
+        <div class="range">$3,500 – $8,000</div>
+        <p>Shopify orders, customer service, abandoned cart, inventory alerts.</p>
+      </div>
+      <div class="oneoff-card">
+        <h4>Custom Dashboard</h4>
+        <div class="range">$1,500 – $4,000</div>
+        <p>Web-based, real-time, pulling from your existing tools. Yours forever.</p>
+      </div>
+      <div class="oneoff-card">
+        <h4>Industry-Specific Package</h4>
+        <div class="range">$1,500 – $5,000</div>
+        <p>Real estate, healthcare, legal, e-commerce. Packaged for your vertical.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-cream faq">
+  <div class="container">
+    <div class="eyebrow">FAQ</div>
+    <h2>About the <em>pricing.</em></h2>
+    <div style="margin-top: 2rem; max-width: 760px;">
+      <details>
+        <summary>Why no hourly billing?</summary>
+        <p>Hourly creates the wrong incentive. The faster we build, the less we make. The slower we build, the more we make. We prefer fixed scope and fixed price so we're aligned with you on shipping fast, not stretching things out.</p>
+      </details>
+      <details>
+        <summary>Can I switch tiers as my needs change?</summary>
+        <p>Yes. Move up or down as your business evolves. Annual prepay gets you 10% off any tier.</p>
+      </details>
+      <details>
+        <summary>What if I want to cancel?</summary>
+        <p>Monthly tiers run month-to-month with 30 days notice. Quick Starts are one-time except for the maintenance component, which is the same 30-day cancellation. No long contracts, no fine print.</p>
+      </details>
+      <details>
+        <summary>Are the Quick Start prices firm?</summary>
+        <p>Yes for the listed scope. If your situation needs more custom work, we'll quote that separately. The whole point of Quick Starts is you know what you're paying before you book.</p>
+      </details>
+      <details>
+        <summary>Do you offer payment plans?</summary>
+        <p>Yes for projects $2,000+, typically 50% upfront and 50% on completion. For longer engagements, we set up monthly billing.</p>
+      </details>
+      <details>
+        <summary>What about app partnerships?</summary>
+        <p>That's a separate offering with revenue share pricing, not monthly fees. See <a href="https://partner.courtrightco.com" style="color: var(--copper);">partner.courtrightco.com</a>.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="eyebrow">Start Here</div>
+    <h2>Still not sure what fits? <em>Book the free audit.</em></h2>
+    <p>15 minutes. We'll map your situation and tell you which tier or Quick Start makes sense. Or that none of them do.</p>
+    <a href="/book.html" class="btn">Book the free audit</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Courtright Collective LLC · Nashville, TN · <a href="/">Home</a> · <a href="/privacy.html">Privacy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
