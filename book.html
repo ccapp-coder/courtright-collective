@@ -63,16 +63,18 @@
     @media (max-width: 900px) { .help-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 600px) { .help-grid { grid-template-columns: 1fr; } }
     .help-card { background: white; border: 1px solid rgba(14, 21, 32, 0.08); border-radius: 12px; padding: 1.75rem; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: all 0.3s ease; position: relative; overflow: hidden; }
-    .help-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent, var(--copper)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
-    .help-card:hover { transform: translateY(-4px); border-color: var(--accent, var(--copper)); box-shadow: 0 12px 32px rgba(14, 21, 32, 0.08); }
+    .help-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--copper); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+    .help-card:hover { transform: translateY(-4px); border-color: var(--copper); box-shadow: 0 12px 32px rgba(14, 21, 32, 0.08); }
     .help-card:hover::before { transform: scaleX(1); }
-    .help-card.featured { border-color: var(--accent, var(--gold)); border-width: 1.5px; }
-    .help-card.featured::before { transform: scaleX(1); }
-    .help-card .tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent, var(--copper)); margin-bottom: 0.5rem; }
-    .help-card .icon { font-size: 1.5rem; margin-bottom: 0.625rem; display: inline-block; color: var(--accent, var(--copper)); }
+    .help-card.featured { border-color: var(--gold); border-width: 1.5px; }
+    .help-card.featured::before { background: var(--gold); }
+    .help-card.featured:hover { border-color: var(--gold); }
+    .help-card .tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.5rem; }
+    .help-card.featured .tag { color: var(--gold); }
+    .help-card .icon { font-size: 1.5rem; margin-bottom: 0.625rem; display: inline-block; }
     .help-card h3 { font-family: var(--display); font-size: 1.3rem; font-weight: 600; margin: 0 0 0.5rem; color: var(--midnight); }
     .help-card p { color: var(--smoke); font-size: 0.92rem; line-height: 1.6; margin: 0 0 1rem; flex: 1; }
-    .help-card .ctaline { color: var(--accent, var(--copper)); font-weight: 600; font-size: 0.9rem; }
+    .help-card .ctaline { color: var(--copper); font-weight: 600; font-size: 0.9rem; }
 
     /* WHAT TO EXPECT */
     .what-card { background: white; border: 1px solid rgba(14, 21, 32, 0.08); border-radius: 12px; padding: 2rem; margin: 0 0 2rem; }
@@ -134,7 +136,7 @@
     <p class="section-lead">Don't worry if you're not sure which one fits — that's literally what the call is for. The list below is just so you know what's possible.</p>
 
     <div class="help-grid">
-      <a href="https://aimtogro.com" class="help-card featured" style="--accent: #2FC98A;">
+      <a href="https://aimtogro.com" class="help-card featured">
         <div class="tag">Our Product</div>
         <span class="icon">★</span>
         <h3>AimToGro subscription</h3>
@@ -142,7 +144,7 @@
         <div class="ctaline">Visit Aimtogro →</div>
       </a>
 
-      <a href="/services/website-creation.html" class="help-card" style="--accent: #46C8E6;">
+      <a href="/services/website-creation.html" class="help-card">
         <div class="tag">Service · From $500</div>
         <span class="icon">▢</span>
         <h3>Website creation &amp; management</h3>
@@ -150,7 +152,7 @@
         <div class="ctaline">See details →</div>
       </a>
 
-      <a href="/services/application-creation.html" class="help-card" style="--accent: #7E6CF2;">
+      <a href="/services/application-creation.html" class="help-card">
         <div class="tag">Service · From $2,500</div>
         <span class="icon">◆</span>
         <h3>Application creation</h3>
@@ -158,7 +160,7 @@
         <div class="ctaline">See details →</div>
       </a>
 
-      <a href="/services/reports-analytics.html" class="help-card" style="--accent: #D9A030;">
+      <a href="/services/reports-analytics.html" class="help-card">
         <div class="tag">Service · From $500</div>
         <span class="icon">▲</span>
         <h3>Reports &amp; analytics</h3>
@@ -166,7 +168,7 @@
         <div class="ctaline">See details →</div>
       </a>
 
-      <a href="https://partner.courtrightco.com" class="help-card" style="--accent: #C45C28;">
+      <a href="https://partner.courtrightco.com" class="help-card">
         <div class="tag">Revenue Share</div>
         <span class="icon">●</span>
         <h3>App partnership program</h3>
@@ -174,7 +176,7 @@
         <div class="ctaline">Explore partnership →</div>
       </a>
 
-      <a href="#booking" class="help-card" style="--accent: #2FA8B8;">
+      <a href="#booking" class="help-card">
         <div class="tag">Free Audit</div>
         <span class="icon">◇</span>
         <h3>Not sure yet?</h3>

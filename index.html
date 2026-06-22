@@ -289,20 +289,24 @@
       border: 1px solid rgba(14, 21, 32, 0.08);
       transition: all 0.3s ease;
       position: relative;
+      overflow: hidden;
     }
-    .app-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(14, 21, 32, 0.08); border-color: var(--copper); }
+    .app-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent, var(--copper)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+    .app-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(14, 21, 32, 0.08); border-color: var(--accent, var(--copper)); }
+    .app-card:hover::before { transform: scaleX(1); }
     .app-card h3 { font-family: var(--display); font-size: 1.6rem; font-weight: 600; margin: 0 0 0.5rem; color: var(--midnight); }
     .app-card p { color: var(--smoke); margin: 0.5rem 0 1.25rem; line-height: 1.6; }
-    .app-card a { color: var(--copper); text-decoration: none; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em; }
-    .app-card a:hover { color: var(--copper-lt); }
+    .app-card a { color: var(--accent, var(--copper)); text-decoration: none; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em; }
+    .app-card a:hover { opacity: 0.75; }
     .app-card .soon-badge {
       position: absolute; top: 1.25rem; right: 1.25rem;
-      background: var(--gold); color: var(--midnight);
+      background: var(--accent, var(--gold)); color: var(--midnight);
       padding: 0.25rem 0.7rem; border-radius: 999px;
       font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em;
       text-transform: uppercase;
     }
-    .app-card.featured { border-color: var(--gold); border-width: 2px; }
+    .app-card.featured { border-color: var(--accent, var(--gold)); border-width: 2px; }
+    .app-card.featured::before { transform: scaleX(1); }
 
     .partnership-note {
       background: var(--ash);
@@ -510,18 +514,18 @@
     <p class="section-lead">Products born in our own studio. Aimtogro is our flagship: a team of AI employees for owner-operators. Resell it and earn a cut (see below).</p>
 
     <div class="apps-grid">
-      <div class="app-card featured reveal">
+      <div class="app-card featured reveal" style="--accent: #2FC98A;">
         <span class="soon-badge">Coming Soon</span>
         <h3>AimToGro</h3>
         <p>The AI business co-pilot for owners growing past spreadsheets but not yet ready to hire. Daily standups, live bookkeeping, and the automations you'd build if you had the time.</p>
         <a href="https://aimtogro.com">Visit Aimtogro →</a>
       </div>
-      <div class="app-card reveal">
+      <div class="app-card reveal" style="--accent: #F0B800;">
         <h3>TinkerTaps</h3>
         <p>Screen time reimagined. Sensory activities for toddlers that don't overstimulate, but still promote growth.</p>
         <a href="https://tinkertaps.courtrightco.com">Visit TinkerTaps →</a>
       </div>
-      <div class="app-card reveal">
+      <div class="app-card reveal" style="--accent: #FF2D92;">
         <h3>Trivd</h3>
         <p>Fast, real-time head-to-head trivia. You're about to get Trivd.</p>
         <a href="https://trivd.courtrightco.com">Visit Trivd →</a>
