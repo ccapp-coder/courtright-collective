@@ -550,6 +550,74 @@
   </div>
 </section>
 
+<section class="section-cream" id="merch">
+  <div class="container">
+    <div class="eyebrow">In the shop</div>
+    <h2>New drop: <em>Nightly Build.</em></h2>
+    <p class="section-lead">Our indie clothing brand for people who ship past midnight. Shirts and merch inspired by the life of building things after hours.</p>
+
+    <a href="https://nightlybuild.courtrightco.com" class="nb-card" target="_blank" rel="noopener">
+      <div class="nb-terminal">
+        <div class="nb-term-bar">
+          <span class="nb-dot dot-r"></span>
+          <span class="nb-dot dot-y"></span>
+          <span class="nb-dot dot-g"></span>
+          <span class="nb-term-title">nightlybuild &mdash; zsh</span>
+        </div>
+        <div class="nb-term-body">
+          <p><span class="nb-prompt">~/nightlybuild $</span> <span class="nb-cmd">./ship shirts.tee</span></p>
+          <p class="nb-out">building nightly.....done</p>
+          <p class="nb-out">deploying to production.....done</p>
+          <p class="nb-out"><span class="nb-check">&#10003;</span> new drop is live</p>
+          <p><span class="nb-prompt">~/nightlybuild $</span> <span class="nb-cursor">_</span></p>
+        </div>
+      </div>
+      <div class="nb-copy">
+        <div class="nb-logo">Nightly<span>Build</span></div>
+        <p class="nb-tagline">Clothing for the people who ship at night.</p>
+        <p class="nb-desc">Tees, hoodies, and quiet flexes for indie devs, night-shift creatives, and anyone who&rsquo;s learned to love a 2AM commit. Small drops. Real shirts. No dropshipped nonsense you didn&rsquo;t ask for.</p>
+        <span class="nb-cta">Visit the shop &rarr;</span>
+      </div>
+    </a>
+  </div>
+
+  <style>
+    .nb-card { display:grid; grid-template-columns:1fr 1fr; gap:0; background:var(--midnight); border-radius:16px; overflow:hidden; text-decoration:none; color:inherit; box-shadow:0 12px 40px rgba(14,21,32,0.18); transition:transform 0.3s ease, box-shadow 0.3s ease; }
+    .nb-card:hover { transform:translateY(-4px); box-shadow:0 20px 50px rgba(14,21,32,0.24); }
+    .nb-terminal { background:#0A0F17; padding:0; font-family:'SF Mono','Menlo','Consolas',monospace; color:#E6EDF3; border-right:1px solid rgba(255,255,255,0.06); }
+    .nb-term-bar { display:flex; align-items:center; gap:0.4rem; padding:0.65rem 1rem; background:#141B24; border-bottom:1px solid rgba(255,255,255,0.06); }
+    .nb-dot { width:11px; height:11px; border-radius:999px; display:inline-block; }
+    .dot-r { background:#FF5F57; }
+    .dot-y { background:#FEBC2E; }
+    .dot-g { background:#28C840; }
+    .nb-term-title { margin-left:auto; font-size:0.72rem; color:rgba(230,237,243,0.55); letter-spacing:0.04em; }
+    .nb-term-body { padding:1.5rem 1.75rem; font-size:0.9rem; line-height:1.75; }
+    .nb-term-body p { margin:0; }
+    .nb-prompt { color:#8DC63F; }
+    .nb-cmd { color:#F0B840; }
+    .nb-out { color:rgba(230,237,243,0.75); }
+    .nb-check { color:#8DC63F; margin-right:0.25rem; }
+    .nb-cursor { display:inline-block; width:9px; background:#8DC63F; margin-left:2px; animation:nbBlink 1s steps(1) infinite; }
+    @keyframes nbBlink { 50% { opacity:0; } }
+    .nb-copy { padding:2.75rem 2.5rem; color:var(--parchment); display:flex; flex-direction:column; justify-content:center; position:relative; }
+    .nb-copy::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 100% 80% at 100% 0%, rgba(141,198,63,0.14) 0%, transparent 65%); pointer-events:none; }
+    .nb-copy > * { position:relative; z-index:1; }
+    .nb-logo { font-family:'SF Mono','Menlo','Consolas',monospace; font-size:1.15rem; font-weight:700; letter-spacing:0.02em; color:#8DC63F; margin-bottom:1.1rem; }
+    .nb-logo span { color:var(--parchment); }
+    .nb-tagline { font-family:var(--display); font-size:1.85rem; font-weight:400; font-style:italic; line-height:1.15; margin:0 0 1rem; color:var(--parchment); }
+    .nb-desc { font-size:0.98rem; line-height:1.65; color:rgba(244,235,217,0.72); margin:0 0 1.5rem; }
+    .nb-cta { font-family:'SF Mono','Menlo','Consolas',monospace; font-size:0.9rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:#8DC63F; align-self:flex-start; padding:0.7rem 1.2rem; border:1px solid rgba(141,198,63,0.35); border-radius:6px; transition:background 0.2s, border-color 0.2s; }
+    .nb-card:hover .nb-cta { background:rgba(141,198,63,0.12); border-color:rgba(141,198,63,0.6); }
+    @media (max-width:820px) {
+      .nb-card { grid-template-columns:1fr; }
+      .nb-terminal { border-right:none; border-bottom:1px solid rgba(255,255,255,0.06); }
+      .nb-copy { padding:2rem 1.5rem; }
+      .nb-tagline { font-size:1.55rem; }
+    }
+  </style>
+</section>
+
+
 <section class="section-cream">
   <div class="container">
     <div class="eyebrow">Frequently Asked</div>
@@ -620,6 +688,7 @@
           <li><a href="/book.html">Book a call</a></li>
           <li><a href="/affiliates.html">Affiliate program</a></li>
           <li><a href="https://partner.courtrightco.com">Partnership program</a></li>
+          <li><a href="https://nightlybuild.courtrightco.com">Nightly Build (merch)</a></li>
         </ul>
       </div>
       <div>
@@ -633,7 +702,7 @@
     </div>
     <div class="copyright">
       <div>© 2026 Courtright Collective LLC</div>
-      <div><a href="/privacy.html">Privacy</a> · <a href="mailto:info@courtrightco.com">info@courtrightco.com</a></div>
+      <div><a href="https://link.courtrightco.com">Links</a> · <a href="/privacy.html">Privacy</a> · <a href="mailto:info@courtrightco.com">info@courtrightco.com</a></div>
     </div>
   </div>
 </footer>
