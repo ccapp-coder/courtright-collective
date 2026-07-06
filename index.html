@@ -474,9 +474,9 @@
 
 <section id="services" class="section-cream">
   <div class="container">
-    <div class="eyebrow">What We Build</div>
-    <h2>Websites, apps, and the tools that <em>run the business.</em></h2>
-    <p class="section-lead">A family-run studio that designs and builds the thing your business actually needs — then keeps it running. Start with one, or let us handle the whole stack.</p>
+    <div class="eyebrow reveal">What We Build</div>
+    <h2 class="reveal">Websites, apps, and the tools that <em>run the business.</em></h2>
+    <p class="section-lead reveal">A family-run studio that designs and builds the thing your business actually needs — then keeps it running. Start with one, or let us handle the whole stack.</p>
 
     <div class="services-grid">
       <a href="/services/website-creation.html" class="service-card reveal">
@@ -509,9 +509,9 @@
 
 <section id="apps" class="section-cream">
   <div class="container">
-    <div class="eyebrow">Products We Build &amp; Back</div>
-    <h2>We don't just build for clients — we <em>ship our own.</em></h2>
-    <p class="section-lead">Products born in our own studio. Aimtogro is our flagship: a team of AI employees for owner-operators. Resell it and earn a cut (see below).</p>
+    <div class="eyebrow reveal">Products We Build &amp; Back</div>
+    <h2 class="reveal">We don't just build for clients — we <em>ship our own.</em></h2>
+    <p class="section-lead reveal">Products born in our own studio. Aimtogro is our flagship: a team of AI employees for owner-operators. Resell it and earn a cut (see below).</p>
 
     <div class="apps-grid">
       <div class="app-card featured reveal" style="--accent: #2FC98A;">
@@ -552,11 +552,11 @@
 
 <section class="section-cream" id="merch">
   <div class="container">
-    <div class="eyebrow">In the shop</div>
-    <h2>New drop: <em>Nightly Build.</em></h2>
-    <p class="section-lead">Our indie clothing brand for people who ship past midnight. Shirts and merch inspired by the life of building things after hours.</p>
+    <div class="eyebrow reveal">In the shop</div>
+    <h2 class="reveal">New drop: <em>Nightly Build.</em></h2>
+    <p class="section-lead reveal">Our indie clothing brand for people who ship past midnight. Shirts and merch inspired by the life of building things after hours.</p>
 
-    <a href="https://nightlybuild.courtrightco.com" class="nb-card" target="_blank" rel="noopener">
+    <a href="https://nightlybuild.courtrightco.com" class="nb-card reveal" target="_blank" rel="noopener">
       <div class="nb-terminal">
         <div class="nb-term-bar">
           <span class="nb-dot dot-r"></span>
@@ -614,14 +614,65 @@
       .nb-copy { padding:2rem 1.5rem; }
       .nb-tagline { font-size:1.55rem; }
     }
+  
+    /* ── REFINED MOTION (Courtright, premium) ── */
+    /* copper→gold shimmer on accent words */
+    .hero h1 em, .hero h1 .gold, section h2 em {
+      background:linear-gradient(100deg, var(--copper) 0%, var(--gold-lt) 45%, var(--copper) 90%);
+      background-size:200% auto;
+      -webkit-background-clip:text; background-clip:text;
+      -webkit-text-fill-color:transparent; color:transparent;
+      animation:ccShimmer 6s linear infinite;
+    }
+    @keyframes ccShimmer { to { background-position:-200% center; } }
+
+    /* card hover polish: lift + copper edge draw + warm glow */
+    .service-card, .app-card { transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+    .service-card { position:relative; overflow:hidden; }
+    .service-card::before, .app-card::before {
+      content:""; position:absolute; top:0; left:0; right:0; height:2px;
+      background:linear-gradient(90deg, var(--copper), var(--gold-lt));
+      transform:scaleX(0); transform-origin:left; transition:transform .4s ease;
+    }
+    .service-card:hover, .app-card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 18px 40px rgba(196,92,40,0.16);
+      border-color:rgba(196,92,40,0.35);
+    }
+    .service-card:hover::before, .app-card:hover::before { transform:scaleX(1); }
+    .icon { transition:transform .3s ease; }
+    .service-card:hover .icon { transform:translateY(-2px) scale(1.08); }
+
+    /* button: polished-metal sheen + press */
+    .btn { position:relative; overflow:hidden; }
+    .btn::after {
+      content:""; position:absolute; top:0; left:-130%; width:55%; height:100%;
+      background:linear-gradient(100deg, transparent, rgba(255,255,255,.38), transparent);
+      transform:skewX(-20deg); transition:left .6s ease; pointer-events:none;
+    }
+    .btn:hover::after { left:170%; }
+    .btn:active { transform:scale(.97); }
+
+    /* merch terminal card lift */
+    .nb-card { transition:transform .3s ease, box-shadow .3s ease; }
+    .nb-card:hover { transform:translateY(-5px); box-shadow:0 20px 44px rgba(0,0,0,.18); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero h1 em, .hero h1 .gold, section h2 em { animation:none; }
+      .service-card:hover, .app-card:hover, .nb-card:hover { transform:none; }
+      .btn::after { display:none; }
+      .hero::before { animation:none; }
+      .reveal { opacity:1 !important; transform:none !important; transition:none !important; }
+    }
+
   </style>
 </section>
 
 
 <section class="section-cream">
   <div class="container">
-    <div class="eyebrow">Frequently Asked</div>
-    <h2>Questions we get <em>a lot.</em></h2>
+    <div class="eyebrow reveal">Frequently Asked</div>
+    <h2 class="reveal">Questions we get <em>a lot.</em></h2>
 
     <div class="faq faq-grid" style="margin-top: 2rem;">
       <div>
@@ -658,8 +709,8 @@
 
 <section class="cta-section">
   <div class="container">
-    <div class="eyebrow">Start Here</div>
-    <h2>Find out how we can help your business in <em>15 minutes.</em></h2>
+    <div class="eyebrow reveal">Start Here</div>
+    <h2 class="reveal">Find out how we can help your business in <em>15 minutes.</em></h2>
     <p>No commitment. We'll talk through your website, app, and automation needs and where we can make the biggest difference first. Free of charge, no email-list trick.</p>
     <a href="/book.html" class="btn">Book the free audit</a>
   </div>
