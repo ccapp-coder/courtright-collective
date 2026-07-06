@@ -96,6 +96,35 @@
     footer a { color: var(--smoke); text-decoration: none; }
     footer a:hover { color: var(--copper); }
     @media (max-width: 700px) { .nav-links a:not(.btn) { display: none; } .pull-quote { font-size: 1.3rem; } }
+  
+    /* ── REFINED MOTION (portable) ── */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s cubic-bezier(.34,1.56,.64,1)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .reveal:nth-child(2){transition-delay:.08s}
+    .reveal:nth-child(3){transition-delay:.16s}
+    .reveal:nth-child(4){transition-delay:.24s}
+    .reveal:nth-child(5){transition-delay:.32s}
+    .hero h1 em, h2 em{
+      background:linear-gradient(100deg,#C45C28 0%,#F0B840 45%,#C45C28 90%);
+      background-size:200% auto;-webkit-background-clip:text;background-clip:text;
+      -webkit-text-fill-color:transparent;color:transparent;animation:ccShimmer 6s linear infinite}
+    @keyframes ccShimmer{to{background-position:-200% center}}
+    .now-card,.cta-card,.form-card,.service-card,.app-card{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+    .now-card:hover,.cta-card:hover,.form-card:hover,.service-card:hover,.app-card:hover{
+      transform:translateY(-6px);box-shadow:0 18px 40px rgba(196,92,40,.16);border-color:rgba(196,92,40,.35)}
+    .btn{position:relative;overflow:hidden}
+    .btn::after{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;
+      background:linear-gradient(100deg,transparent,rgba(255,255,255,.38),transparent);
+      transform:skewX(-20deg);transition:left .6s ease;pointer-events:none}
+    .btn:hover::after{left:170%}
+    .btn:active{transform:scale(.97)}
+    @media (prefers-reduced-motion:reduce){
+      .hero h1 em,h2 em{animation:none}
+      .now-card:hover,.cta-card:hover,.form-card:hover,.service-card:hover,.app-card:hover{transform:none}
+      .btn::after{display:none}
+      .reveal{opacity:1 !important;transform:none !important;transition:none !important}
+    }
+
   </style>
 </head>
 <body>
@@ -123,11 +152,11 @@
 <div class="container">
   <article>
 
-    <h2>What we <em>believe</em></h2>
+    <h2 class="reveal">What we <em>believe</em></h2>
     <p><strong>Most small businesses don't need a full-time AI hire, a $400-an-hour consultant, or another SaaS tool with twelve features and no answer.</strong> They need one good thing built well, deployed cleanly, and maintained when their business changes. Sometimes that's a workflow. Sometimes that's a website. Sometimes that's the report you keep saying you'll get to next weekend.</p>
     <p>That's the whole job. We're a small team that handles the build and the upkeep. You describe the outcome; we figure out how to get there.</p>
 
-    <h2>What I bring to <em>this</em></h2>
+    <h2 class="reveal">What I bring to <em>this</em></h2>
     <p>Before Courtright Collective there was the rest of my life. Four threads pull together into how I do this work.</p>
     <p><strong>Ranch work.</strong> Taught me what hard work actually is. Not the performance of hard work, the thing itself. Cows don't care if you're tired.</p>
     <p><strong>Touring in bands.</strong> Taught me how to serve a room. Reading the energy. Knowing when to push and when to ease back. A bad night is data, not a verdict.</p>
@@ -139,7 +168,7 @@
       The best service feels like attention paid, not effort spent.
     </div>
 
-    <h2>How we <em>got here</em></h2>
+    <h2 class="reveal">How we <em>got here</em></h2>
     <p>I started Courtright Collective as an indie app studio. That's how <a href="https://tinkertaps.courtrightco.com">TinkerTaps</a> and <a href="https://trivd.courtrightco.com">Trivd</a> came to be. Building apps is creative, slow work, and the wins are far apart.</p>
     <p>As AI tools matured, I kept hearing from small-business owners who needed exactly the same thing: workflows built for them, by someone who actually understood the work and would still be around in six months. So we expanded — first into automation services, then into the kinds of work owners kept asking us for next: websites that actually work on phones, custom applications that fit how the business actually runs, reports and dashboards that surface what matters without anyone opening a spreadsheet.</p>
     <p>The latest chapter is <a href="https://aimtogro.com"><strong>AimToGro</strong></a> — our flagship subscription product. It's the AI business co-pilot we wished existed for our clients: a daily check-in, automated reporting, a catalog of automations you can choose from, and the kind of running context that turns AI from a one-off prompt into something that actually grows with your business. It launches soon.</p>
@@ -150,42 +179,42 @@
 
 <section class="now-section">
   <div class="container-wide">
-    <div class="eyebrow">What we do now</div>
-    <h2>One studio. <em>Five ways in.</em></h2>
-    <p class="section-lead">Pick whichever fits your situation. They all run through the same team, with the same approach: flat pricing, monthly check-ins, no hourly billing.</p>
+    <div class="eyebrow reveal">What we do now</div>
+    <h2 class="reveal">One studio. <em>Five ways in.</em></h2>
+    <p class="section-lead reveal">Pick whichever fits your situation. They all run through the same team, with the same approach: flat pricing, monthly check-ins, no hourly billing.</p>
 
     <div class="now-grid">
-      <a href="https://aimtogro.com" class="now-card featured">
+      <a href="https://aimtogro.com" class="now-card featured reveal">
         <div class="tag">Coming Soon · Flagship</div>
         <span class="icon">★</span>
         <h3>AimToGro</h3>
         <p>The AI business co-pilot subscription. Daily check-ins, automated reporting, custom workflows. Tiers from $297/month.</p>
       </a>
-      <a href="/services/website-creation.html" class="now-card">
+      <a href="/services/website-creation.html" class="now-card reveal">
         <div class="tag">Service · From $750</div>
         <span class="icon">▢</span>
         <h3>Websites &amp; management</h3>
         <p>Custom small business websites built fast and managed for you. Hosting, edits, SSL, analytics — all in your monthly.</p>
       </a>
-      <a href="/services/application-creation.html" class="now-card">
+      <a href="/services/application-creation.html" class="now-card reveal">
         <div class="tag">Service · From $2,500</div>
         <span class="icon">◆</span>
         <h3>Application creation</h3>
         <p>Custom web and mobile apps for workflows that don't fit off-the-shelf tools. Internal tools, customer apps, AI features.</p>
       </a>
-      <a href="/services/reports-analytics.html" class="now-card">
+      <a href="/services/reports-analytics.html" class="now-card reveal">
         <div class="tag">Service · From $500</div>
         <span class="icon">▲</span>
         <h3>Reports &amp; analytics</h3>
         <p>The data work you keep meaning to do. Deep dives, weekly reports, dashboards, organizing a messy pile of files.</p>
       </a>
-      <a href="https://partner.courtrightco.com" class="now-card">
+      <a href="https://partner.courtrightco.com" class="now-card reveal">
         <div class="tag">Revenue Share</div>
         <span class="icon">●</span>
         <h3>App partnership</h3>
         <p>For founders with an idea worth shipping. We design, build, launch, support — revenue share, no upfront fees.</p>
       </a>
-      <a href="/book.html" class="now-card">
+      <a href="/book.html" class="now-card reveal">
         <div class="tag">Free Call</div>
         <span class="icon">◇</span>
         <h3>Not sure yet?</h3>
@@ -198,12 +227,12 @@
 <div class="container">
   <article style="padding: 4.5rem 0 1rem;">
 
-    <h2>How we <em>work</em></h2>
+    <h2 class="reveal">How we <em>work</em></h2>
     <p>We don't hourly-bill. We don't disappear after launch. We don't write proposals so big you need a glossary. Every engagement is scoped clearly, priced flatly, and built with monthly check-ins so the work keeps fitting your business as it changes.</p>
     <p>We're based in Nashville. We work with clients across the country remotely. If you're nearby and want to grab coffee, we'd love that too.</p>
 
-    <div class="cta-card">
-      <h2>See if we're a <em>fit.</em></h2>
+    <div class="cta-card reveal">
+      <h2 class="reveal">See if we're a <em>fit.</em></h2>
       <p>15 minutes, free, no commitment. Bring a bottleneck, an idea, or just a question. You'll leave with a clear next step — or none, if there isn't one.</p>
       <a href="/book.html" class="btn">Book a call</a>
     </div>
@@ -216,5 +245,11 @@
   </div>
 </footer>
 
+  <script>(function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('visible')});return;}
+    var o=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target);}})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(e){o.observe(e)});
+  })();</script>
 </body>
 </html>
