@@ -188,8 +188,10 @@
         <input id="aff-name" name="name" type="text" maxlength="120" required placeholder="Jane Doe">
         <label for="aff-email">Email</label>
         <input id="aff-email" name="email" type="email" maxlength="200" required placeholder="you@example.com">
+        <label for="aff-socials">Social media handles <span style="font-weight:400;color:var(--smoke);">(so we can vet your reach)</span></label>
+        <input id="aff-socials" name="socials" type="text" maxlength="200" required placeholder="@you on Instagram, TikTok, YouTube, X…">
         <label for="aff-notes">How do you plan to refer Aimtogro? <span style="font-weight:400;color:var(--smoke);">(optional)</span></label>
-        <textarea id="aff-notes" name="notes" maxlength="2000" placeholder="Your audience, network, or how you'd share it…"></textarea>
+        <textarea id="aff-notes" name="notes" maxlength="1500" placeholder="Your audience, network, or how you'd share it…"></textarea>
         <button type="submit" class="btn">Apply to become an affiliate</button>
         <div class="err" id="aff-err"></div>
       </form>
@@ -215,10 +217,12 @@
       var err = document.getElementById('aff-err');
       err.textContent = '';
       btn.disabled = true; btn.textContent = 'Submitting…';
+      var socials = form.socials.value.trim();
+      var notesText = form.notes.value.trim();
       var body = {
         name: form.name.value.trim(),
         email: form.email.value.trim(),
-        notes: form.notes.value.trim()
+        notes: 'Social handles: ' + socials + (notesText ? '\n\nHow they plan to refer: ' + notesText : '')
       };
       try {
         var res = await fetch('https://aimtogro.com/api/partners/apply', {
