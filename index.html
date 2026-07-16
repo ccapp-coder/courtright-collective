@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"Courtright Collective","url":"https://courtrightco.com","description":"A family-run digital studio building websites, apps, and AI business tools.","address":{"@type":"PostalAddress","addressCountry":"US"},"sameAs":["https://partner.courtrightco.com","https://tinkertaps.courtrightco.com","https://trivd.courtrightco.com"]}
+  {"@context":"https://schema.org","@type":"Organization","name":"Courtright Collective","url":"https://courtrightco.com","description":"A family-run digital studio building websites, apps, and AI business tools.","address":{"@type":"PostalAddress","addressCountry":"US"},"sameAs":["https://partner.courtrightco.com","https://tinkertaps.courtrightco.com","https://trivd.courtrightco.com","https://aimtogro.com","https://ratetamer.com"]}
   </script>
 
   <script type="application/ld+json">
@@ -276,28 +276,40 @@
     /* ── APPS SECTION ── */
     .apps-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
       margin-bottom: 2rem;
     }
-    @media (max-width: 900px) { .apps-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 600px) { .apps-grid { grid-template-columns: 1fr; } }
     .app-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       background: var(--white);
       border-radius: 12px;
       padding: 2rem;
-      border: 1px solid rgba(14, 21, 32, 0.08);
+      border: 1px solid color-mix(in srgb, var(--accent, var(--copper)) 30%, rgba(14, 21, 32, 0.08));
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
-    .app-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent, var(--copper)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
-    .app-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(14, 21, 32, 0.08); border-color: var(--accent, var(--copper)); }
-    .app-card:hover::before { transform: scaleX(1); }
+    .app-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent, var(--copper)); transform: scaleX(1); transform-origin: left; transition: transform 0.4s ease; }
+    .app-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px color-mix(in srgb, var(--accent, var(--copper)) 18%, rgba(14, 21, 32, 0.06)); border-color: var(--accent, var(--copper)); }
     .app-card h3 { font-family: var(--display); font-size: 1.6rem; font-weight: 600; margin: 0 0 0.5rem; color: var(--midnight); }
-    .app-card p { color: var(--smoke); margin: 0.5rem 0 1.25rem; line-height: 1.6; }
-    .app-card a { color: var(--accent, var(--copper)); text-decoration: none; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em; }
-    .app-card a:hover { opacity: 0.75; }
+    .app-card p { color: var(--smoke); margin: 0.5rem 0 1.25rem; line-height: 1.6; flex: 1; }
+    .app-card .app-cta {
+      color: var(--accent, var(--copper));
+      font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em;
+      padding: 0.55rem 1.1rem;
+      border: 1.5px solid color-mix(in srgb, var(--accent, var(--copper)) 45%, transparent);
+      border-radius: 6px;
+      transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    }
+    .app-card:hover .app-cta { background: var(--accent, var(--copper)); color: var(--white); border-color: var(--accent, var(--copper)); }
+    .app-card[style*="F0B800"]:hover .app-cta { color: var(--midnight); }
     .app-card .soon-badge {
       position: absolute; top: 1.25rem; right: 1.25rem;
       background: var(--accent, var(--gold)); color: var(--midnight);
@@ -554,22 +566,28 @@
     <p class="section-lead reveal">Products born in our own studio. Aimtogro is our flagship: a team of AI employees for owner-operators. Resell it and earn a cut (see below).</p>
 
     <div class="apps-grid">
-      <div class="app-card featured reveal" style="--accent: #2FC98A;">
-        <span class="soon-badge">Coming Soon</span>
+      <a href="https://aimtogro.com" class="app-card featured reveal" style="--accent: #2FC98A;">
+        <span class="soon-badge">Founding Round Open</span>
         <h3>AimToGro</h3>
         <p>The AI business co-pilot for owners growing past spreadsheets but not yet ready to hire. Daily standups, live bookkeeping, and the automations you'd build if you had the time.</p>
-        <a href="https://aimtogro.com">Visit Aimtogro →</a>
-      </div>
-      <div class="app-card reveal" style="--accent: #F0B800;">
+        <span class="app-cta">Visit Aimtogro →</span>
+      </a>
+      <a href="https://ratetamer.com" class="app-card reveal" style="--accent: #16A34A;">
+        <span class="soon-badge" style="background: #1B2A4A; color: #FFFFFF;">New</span>
+        <h3>RateTamer</h3>
+        <p>Stop paying eBay ad fees on sales you would have made anyway. RateTamer audits your Promoted Listings fees per SKU and shows you exactly where to cut. Free audit, no signup.</p>
+        <span class="app-cta">Visit RateTamer →</span>
+      </a>
+      <a href="https://tinkertaps.courtrightco.com" class="app-card reveal" style="--accent: #F0B800;">
         <h3>TinkerTaps</h3>
         <p>Screen time reimagined. Sensory activities for toddlers that don't overstimulate, but still promote growth.</p>
-        <a href="https://tinkertaps.courtrightco.com">Visit TinkerTaps →</a>
-      </div>
-      <div class="app-card reveal" style="--accent: #FF2D92;">
+        <span class="app-cta">Visit TinkerTaps →</span>
+      </a>
+      <a href="https://trivd.courtrightco.com" class="app-card reveal" style="--accent: #FF2D92;">
         <h3>Trivd</h3>
         <p>Fast, real-time head-to-head trivia. You're about to get Trivd.</p>
-        <a href="https://trivd.courtrightco.com">Visit Trivd →</a>
-      </div>
+        <span class="app-cta">Visit Trivd →</span>
+      </a>
     </div>
 
     <div class="partnership-note reveal">
@@ -669,17 +687,23 @@
     /* card hover polish: lift + copper edge draw + warm glow */
     .service-card, .app-card { transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
     .service-card { position:relative; overflow:hidden; }
-    .service-card::before, .app-card::before {
+    .service-card::before {
       content:""; position:absolute; top:0; left:0; right:0; height:2px;
       background:linear-gradient(90deg, var(--copper), var(--gold-lt));
       transform:scaleX(0); transform-origin:left; transition:transform .4s ease;
     }
-    .service-card:hover, .app-card:hover {
+    .service-card:hover {
       transform:translateY(-6px);
       box-shadow:0 18px 40px rgba(196,92,40,0.16);
       border-color:rgba(196,92,40,0.35);
     }
-    .service-card:hover::before, .app-card:hover::before { transform:scaleX(1); }
+    .service-card:hover::before { transform:scaleX(1); }
+    /* app cards lift too, but glow in their own product brand color */
+    .app-card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 18px 40px color-mix(in srgb, var(--accent, var(--copper)) 20%, transparent);
+      border-color:var(--accent, var(--copper));
+    }
     .icon { transition:transform .3s ease; }
     .service-card:hover .icon { transform:translateY(-2px) scale(1.08); }
 
@@ -807,6 +831,7 @@
         <h4>Apps</h4>
         <ul>
           <li><a href="https://aimtogro.com">Aimtogro</a></li>
+          <li><a href="https://ratetamer.com">RateTamer</a></li>
           <li><a href="https://tinkertaps.courtrightco.com">TinkerTaps</a></li>
           <li><a href="https://trivd.courtrightco.com">Trivd</a></li>
         </ul>
