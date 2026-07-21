@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../fonts.css"><style>
+.page { background: #12060D; font-family: 'Bricolage', sans-serif; color: #fff; display: flex; flex-direction: column; justify-content: space-between; padding: 90px 80px; }
+h1 { font-size: 92px; font-weight: 700; line-height: 1.05; letter-spacing: -0.025em; max-width: 900px; }
+h1 em { font-style: normal; color: #FF2D92; }
+.board { margin-top: 60px; display: flex; flex-direction: column; gap: 16px; max-width: 860px; }
+.row { display: flex; align-items: center; gap: 28px; background: #1E0A15; border-radius: 20px; padding: 26px 36px; font-size: 36px; }
+.row .rank { width: 60px; font-weight: 700; color: #8A5B72; }
+.row .who { flex: 1; font-weight: 700; }
+.row .pts { font-family: 'JetBrains Mono', monospace; font-size: 30px; color: #C99BB1; }
+.row.first { background: #FF2D92; }
+.row.first .rank, .row.first .pts { color: rgba(255,255,255,0.8); }
+.row.you { border: 3px solid #FF2D92; background: #12060D; }
+.row .badge { font-size: 24px; background: rgba(255,45,146,0.18); color: #FF2D92; border-radius: 999px; padding: 6px 18px; font-weight: 700; }
+.sub { font-size: 36px; color: #C99BB1; margin-top: 50px; }
+.sub b { color: #fff; }
+.bottom { display: flex; align-items: center; justify-content: space-between; }
+.cta { background: #FF2D92; color: #fff; font-weight: 700; font-size: 34px; padding: 28px 54px; border-radius: 999px; }
+.brand { text-align: right; }
+.wordmark { font-size: 40px; font-weight: 700; }
+.url { font-size: 22px; color: #8A5B72; margin-top: 4px; }
+.page > div:first-child { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+</style></head><body><div class="page">
+  <div>
+    <h1>Your mom is <em>#1</em> on the family leaderboard.</h1>
+    <div class="board">
+      <div class="row first"><span class="rank">1</span><span class="who">Mom 👑</span><span class="pts">2,340</span></div>
+      <div class="row"><span class="rank">2</span><span class="who">Uncle Rick</span><span class="pts">2,105</span></div>
+      <div class="row"><span class="rank">3</span><span class="who">Your little sister</span><span class="pts">1,988</span></div>
+      <div class="row you"><span class="rank">4</span><span class="who">You</span><span class="badge">fix this</span><span class="pts">1,730</span></div>
+    </div>
+    <div class="sub">She's not even trying that hard. <b>Daily challenge. Three minutes.</b> Climb.</div>
+  </div>
+  <div class="bottom">
+    <div class="cta">Reclaim your honor</div>
+    <div class="brand"><div class="wordmark">Trivd</div><div class="url">trivd.courtrightco.com</div></div>
+  </div>
+</div></body></html>

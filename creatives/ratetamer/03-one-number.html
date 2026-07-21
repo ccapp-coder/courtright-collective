@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../fonts.css"><style>
+.page { background: #1B2A4A; font-family: 'Work Sans', sans-serif; color: #fff; display: flex; flex-direction: column; justify-content: space-between; padding: 95px 85px 90px; }
+h1 { font-size: 88px; font-weight: 700; line-height: 1.07; letter-spacing: -0.02em; max-width: 950px; }
+h1 em { font-style: normal; color: #4ADE80; }
+.skus { margin-top: 56px; display: flex; flex-direction: column; gap: 18px; max-width: 880px; font-family: 'IBM Plex Mono', monospace; }
+.sku { display: flex; align-items: center; gap: 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 22px 30px; font-size: 28px; }
+.sku .name { flex: 1; color: #C7D2E5; font-family: 'Work Sans', sans-serif; }
+.sku .rate { font-weight: 700; }
+.sku .verdict { font-family: 'Work Sans', sans-serif; font-size: 22px; font-weight: 700; padding: 8px 18px; border-radius: 999px; }
+.cut .rate { color: #F87171; } .cut .verdict { background: rgba(248,113,113,0.15); color: #F87171; }
+.keep .rate { color: #4ADE80; } .keep .verdict { background: rgba(74,222,128,0.15); color: #4ADE80; }
+.trim .rate { color: #FBBF24; } .trim .verdict { background: rgba(251,191,36,0.15); color: #FBBF24; }
+.sub { font-size: 38px; line-height: 1.5; color: #A9B7D0; margin-top: 52px; max-width: 900px; }
+.sub b { color: #fff; }
+.bottom { display: flex; align-items: center; justify-content: space-between; }
+.cta { background: #16A34A; color: #fff; font-weight: 700; font-size: 34px; padding: 28px 54px; border-radius: 10px; }
+.brand { text-align: right; }
+.wordmark { font-size: 38px; font-weight: 700; }
+.wordmark span { color: #4ADE80; }
+.url { font-size: 22px; color: #5E7099; margin-top: 4px; }
+.page > div:first-child { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+</style></head><body><div class="page">
+  <div>
+    <h1>Your ad rate is one number. <em>Your inventory isn't.</em></h1>
+    <div class="skus">
+      <div class="sku cut"><span class="name">Vintage band tee, ranks #3 organic</span><span class="rate">11%</span><span class="verdict">CUT IT</span></div>
+      <div class="sku trim"><span class="name">Golf club set, page 2</span><span class="rate">9%</span><span class="verdict">TRIM TO 4%</span></div>
+      <div class="sku keep"><span class="name">New listing, zero history</span><span class="rate">7%</span><span class="verdict">KEEP</span></div>
+    </div>
+    <div class="sub">A flat rate across every SKU means you're overpaying on your winners to subsidize your long shots. <b>RateTamer scores each listing on its own.</b></div>
+  </div>
+  <div class="bottom">
+    <div class="cta">Score my SKUs</div>
+    <div class="brand"><div class="wordmark">Rate<span>Tamer</span></div><div class="url">ratetamer.com</div></div>
+  </div>
+</div></body></html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../fonts.css"><style>
+.page { background: #F7FAF9; font-family: 'Outfit', sans-serif; color: #0E2436; display: flex; flex-direction: column; justify-content: space-between; padding: 95px 85px 90px; }
+.kicker { font-size: 24px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #1F9466; margin-bottom: 26px; }
+h1 { font-size: 88px; font-weight: 700; line-height: 1.06; letter-spacing: -0.02em; max-width: 940px; }
+h1 em { font-style: normal; color: #1F9466; }
+.bars { margin-top: 60px; display: flex; flex-direction: column; gap: 26px; max-width: 900px; }
+.bar { display: flex; align-items: center; gap: 26px; }
+.bar .name { width: 300px; font-size: 30px; color: #33505F; flex-shrink: 0; }
+.bar .track { flex: 1; height: 44px; background: rgba(14,36,54,0.06); border-radius: 12px; overflow: hidden; }
+.bar .f { height: 100%; background: #5B7282; border-radius: 12px; }
+.bar .hrs { width: 90px; font-family: 'JetBrains Mono', monospace; font-size: 26px; color: #5B7282; text-align: right; flex-shrink: 0; }
+.bar.hot .f { background: #2FC98A; }
+.bar.hot .name, .bar.hot .hrs { color: #0E2436; font-weight: 700; }
+.sub { font-size: 38px; line-height: 1.5; color: #33505F; margin-top: 56px; max-width: 920px; }
+.sub b { color: #0E2436; }
+.bottom { display: flex; align-items: center; justify-content: space-between; }
+.cta { background: #0E2436; color: #fff; font-weight: 700; font-size: 34px; padding: 28px 54px; border-radius: 12px; }
+.brand { display: flex; align-items: center; gap: 16px; }
+.brand svg { width: 54px; height: 54px; }
+.wordmark { font-size: 38px; font-weight: 700; }
+.url { font-size: 22px; color: #5B7282; margin-top: 2px; }
+.page > div:first-child { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+</style></head><body><div class="page">
+  <div>
+    <div class="kicker">The weekly math</div>
+    <h1>Busywork is a <em>part-time job</em> you never applied for.</h1>
+    <div class="bars">
+      <div class="bar"><span class="name">Bookkeeping</span><div class="track"><div class="f" style="width:45%"></div></div><span class="hrs">4 hrs</span></div>
+      <div class="bar"><span class="name">Email &amp; follow-ups</span><div class="track"><div class="f" style="width:55%"></div></div><span class="hrs">5 hrs</span></div>
+      <div class="bar"><span class="name">Reports &amp; admin</span><div class="track"><div class="f" style="width:30%"></div></div><span class="hrs">3 hrs</span></div>
+      <div class="bar hot"><span class="name">With Aimtogro</span><div class="track"><div class="f" style="width:10%"></div></div><span class="hrs">~1 hr</span></div>
+    </div>
+    <div class="sub">Twelve hours a week reviewing instead of doing. <b>That's a whole workday and a half, back.</b> Every week.</div>
+  </div>
+  <div class="bottom">
+    <div class="cta">Do the math for me</div>
+    <div class="brand">
+      <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M 318.50 684.00 C 440.33 684.00 512.00 543.53 586.53 457.53" fill="none" stroke="#46C8E6" stroke-width="65.93" stroke-linecap="round"/><path d="M 652.47 238.23 Q 652.47 375.83 790.07 375.83 Q 652.47 375.83 652.47 513.43 Q 652.47 375.83 514.87 375.83 Q 652.47 375.83 652.47 238.23 Z" fill="#2FC98A"/><path d="M 529.20 248.27 Q 529.20 297.00 577.93 297.00 Q 529.20 297.00 529.20 345.73 Q 529.20 297.00 480.47 297.00 Q 529.20 297.00 529.20 248.27 Z" fill="#FFD23F"/></svg>
+      <div><div class="wordmark">Aimtogro</div><div class="url">aimtogro.com</div></div>
+    </div>
+  </div>
+</div></body></html>

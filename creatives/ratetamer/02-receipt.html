@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../fonts.css"><style>
+.page { background: #EFF3EE; font-family: 'Work Sans', sans-serif; color: #1B2A4A; display: flex; flex-direction: column; justify-content: space-between; padding: 90px 85px; }
+h1 { font-size: 84px; font-weight: 700; line-height: 1.07; letter-spacing: -0.02em; max-width: 940px; }
+h1 em { font-style: normal; color: #16A34A; }
+.receipt { margin-top: 50px; background: #fff; border-radius: 8px; padding: 50px 56px; max-width: 760px; font-family: 'IBM Plex Mono', monospace; box-shadow: 0 24px 60px rgba(27,42,74,0.12); }
+.receipt .head { text-align: center; font-size: 26px; font-weight: 700; letter-spacing: 0.14em; padding-bottom: 26px; border-bottom: 3px dashed #D7DEE8; margin-bottom: 26px; }
+.line { display: flex; justify-content: space-between; font-size: 30px; padding: 12px 0; color: #44536F; }
+.line.total { border-top: 3px dashed #D7DEE8; margin-top: 18px; padding-top: 24px; font-weight: 700; color: #1B2A4A; font-size: 32px; }
+.line.flag { background: #FDECEC; color: #B42318; font-weight: 700; border-radius: 8px; padding: 14px 16px; margin: 8px -16px; position: relative; }
+.note { font-family: 'Work Sans', sans-serif; font-size: 26px; color: #B42318; font-weight: 700; margin-top: 20px; }
+.sub { font-size: 36px; line-height: 1.45; color: #44536F; margin-top: 44px; max-width: 900px; }
+.sub b { color: #1B2A4A; }
+.bottom { display: flex; align-items: center; justify-content: space-between; }
+.cta { background: #16A34A; color: #fff; font-weight: 700; font-size: 34px; padding: 28px 54px; border-radius: 10px; }
+.brand { text-align: right; }
+.wordmark { font-size: 38px; font-weight: 700; }
+.wordmark span { color: #16A34A; }
+.url { font-size: 22px; color: #7A889F; margin-top: 4px; }
+.page > div:first-child { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+</style></head><body><div class="page">
+  <div>
+    <h1>One of these lines was <em>optional.</em></h1>
+    <div class="receipt">
+      <div class="head">EBAY ORDER #4471</div>
+      <div class="line"><span>Item sold</span><span>$49.99</span></div>
+      <div class="line"><span>Final value fee</span><span>-$6.66</span></div>
+      <div class="line flag"><span>Promoted @ 11% ←</span><span>-$5.50</span></div>
+      <div class="line"><span>Shipping label</span><span>-$4.20</span></div>
+      <div class="line total"><span>Your payout</span><span>$33.63</span></div>
+    </div>
+    <div class="sub">This listing was already ranking on page one. <b>RateTamer catches the SKUs where you're promoting for no reason</b> and tells you what to cut.</div>
+  </div>
+  <div class="bottom">
+    <div class="cta">Audit my fees, free</div>
+    <div class="brand"><div class="wordmark">Rate<span>Tamer</span></div><div class="url">ratetamer.com</div></div>
+  </div>
+</div></body></html>
