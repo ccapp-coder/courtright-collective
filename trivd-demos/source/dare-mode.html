@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+  .pass-name { font-size:110px; font-weight:900; color:var(--pink);
+    text-shadow:0 0 50px rgba(255,45,146,0.6); margin:16px 0; }
+  .pass-hand { font-size:130px; animation:handoff 0.9s ease-in-out infinite alternate; }
+  @keyframes handoff { from{ transform:translateX(-30px);} to{ transform:translateX(30px);} }
+  .die { font-size:150px; display:inline-block; animation:roll 0.24s linear infinite; }
+  .die.stopped { animation:none; transform:rotate(0); }
+  @keyframes roll { from{ transform:rotate(0);} to{ transform:rotate(360deg);} }
+  .dare-card { max-width:580px; background:var(--card); border:3px solid var(--pink); border-radius:30px;
+    padding:56px 44px; box-shadow:0 0 60px rgba(255,45,146,0.4);
+    animation:drop 0.5s cubic-bezier(0.2,1.4,0.4,1) both; }
+  .dare-card .who { font-size:30px; letter-spacing:5px; color:var(--smoke); font-weight:700; }
+  .dare-card .what { font-size:56px; font-weight:900; margin-top:18px; line-height:1.15; }
+  .standing { font-size:32px; }
+</style>
+</head><body>
+<script src="engine.js"></script>
+<script>
+(async () => {
+  buildStage({ accent: "var(--pink)", chip: "🎲 DARE MODE · PASS THE PHONE" });
+
+  await titleCard({
+    icon: "🎲", title: "Dare<br/>Mode",
+    sub: "2–6 players · One phone",
+    flair: "Loser pays. Every round.",
+  }, 3100);
+
+  /* setup: pick the punishments */
+  const setup = overlay(`
+    <div class="panel" style="max-width:600px">
+      <h3>Loser Punishments</h3>
+      <div class="row" id="d1"><div class="check">✓</div> Loser does 10 pushups 💪</div>
+      <div class="row" id="d2"><div class="check">✓</div> Loser sings a song 🎤</div>
+      <div class="row" id="d3"><div class="check">✓</div> Loser buys everyone snacks 🍟</div>
+      <div class="row" id="d4"><div class="check">✓</div> Loser tells an embarrassing story 😳</div>
+    </div>
+    <div class="mode-flair" style="margin:26px 0 10px">One gets rolled at random each round.</div>
+    <div class="cta" id="playbtn" style="max-width:600px; background:var(--pink); box-shadow:0 0 34px rgba(255,45,146,0.55)">
+      Play Now ⚡<small>4 players · one phone · 5 rounds</small></div>`);
+  await sleep(400);
+  for (const id of ["d1", "d2", "d3", "d4"]) {
+    const r = $("#" + id); r.classList.add("on"); await sleep(260);
+    r.querySelector(".check").classList.add("on"); await sleep(190);
+  }
+  await sleep(650);
+  $("#playbtn").classList.add("pressed");
+  await sleep(500);
+  await dismiss(setup);
+
+  /* pass the phone to Sam */
+  let pass = overlay(`
+    <div class="pass-hand">📲</div>
+    <div class="mode-sub" style="font-size:32px;letter-spacing:4px">PASS THE PHONE TO</div>
+    <div class="pass-name">SAM</div>
+    <div class="mode-flair">No download needed for the table.</div>`, { clear: true });
+  await sleep(2300); await dismiss(pass);
+
+  $("#app").classList.add("on");
+
+  /* Sam answers — correct */
+  setQnum("1/5");
+  let pills = showQuestion("In which sport would you perform a slam dunk?",
+    ["Volleyball", "Basketball", "Tennis", "Rugby"], 10);
+  await sleep(2400);
+  await tap(pills, 1, { who: "SAM" });
+  stopTimer();
+  await toast("SAM +100 ✓", "b-green");
+  await hideQuestion();
+
+  /* pass to Dave — wrong answer */
+  pass = overlay(`
+    <div class="pass-hand">📲</div>
+    <div class="mode-sub" style="font-size:32px;letter-spacing:4px">PASS THE PHONE TO</div>
+    <div class="pass-name">DAVE</div>`, { clear: true });
+  await sleep(1900); await dismiss(pass);
+
+  setQnum("2/5");
+  pills = showQuestion("Which country gifted the Statue of Liberty to the USA?",
+    ["Spain", "United Kingdom", "France", "Italy"], 10);
+  await sleep(2500);
+  await tap(pills, 0, { who: "DAVE", ok: false, revealCorrect: 2 });
+  stopTimer();
+  await toast("DAVE · WRONG ✗", "b-pink");
+  await hideQuestion();
+
+  /* round result + dice roll + punishment */
+  const res = overlay(`
+    <div class="mode-sub" style="letter-spacing:4px;margin-bottom:30px">END OF ROUND 2</div>
+    <div class="panel" style="max-width:560px">
+      <div class="row on standing">🥇 Sam <span class="rscore">200</span></div>
+      <div class="row on standing">🥈 You <span class="rscore">150</span></div>
+      <div class="row on standing">🥉 Maya <span class="rscore">100</span></div>
+      <div class="row on standing" style="border:2px solid var(--pink)">💀 Dave <span class="rscore" style="color:var(--pink)">50</span></div>
+    </div>
+    <div class="mode-sub" style="margin-top:34px">Last place: <b style="color:var(--pink)">DAVE</b></div>`, { clear: true });
+  await sleep(2500); await dismiss(res);
+
+  const roll = overlay(`
+    <div class="mode-sub" style="letter-spacing:4px">ROLLING THE PUNISHMENT…</div>
+    <div style="margin-top:30px"><span class="die" id="die">🎲</span></div>`, { clear: true });
+  await sleep(1700);
+  $("#die").classList.add("stopped");
+  await sleep(400);
+  await dismiss(roll);
+
+  const dare = overlay(`
+    <div class="dare-card">
+      <div class="who">DAVE — YOUR DARE</div>
+      <div class="what">10 pushups.<br/>Right now. 💪</div>
+    </div>
+    <div class="mode-flair" style="margin-top:36px">Every round, the table gets its show.</div>`, { clear: true });
+  const stamp = el("div", "stamp", "Loser");
+  $("#stage").appendChild(stamp);
+  await sleep(700);
+  stamp.classList.add("on");
+  await sleep(2500);
+  stamp.remove();
+  await dismiss(dare);
+
+  await endCard();
+  finish();
+})();
+</script>
+</body></html>

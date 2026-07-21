@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+  #answers.shuffling .ans { transition:transform 0.5s cubic-bezier(0.4,1.2,0.5,1); }
+  .steal-flash { font-size:100px; animation:drop 0.4s both; }
+  .swing { display:flex; gap:60px; margin-top:30px; font-size:44px; font-weight:900; }
+  .swing .down { color:var(--pink); }
+  .swing .up { color:var(--green); }
+  /* compact layout so the countdown ring fits above the power-up dock */
+  #chip { margin-top:18px; }
+  #players { margin-top:20px; }
+  #qwrap { margin-top:22px; }
+  #qcard { min-height:150px; padding:30px 36px; }
+  #qtext { font-size:38px; }
+  #answers { margin-top:20px; gap:16px; }
+  .ans { padding:20px; font-size:31px; }
+  #dock { margin-top:20px; }
+  #ringwrap { width:160px; height:160px; margin-bottom:4px; }
+  #ringwrap svg { width:160px; height:160px; }
+  #ringnum { font-size:52px; }
+</style>
+</head><body>
+<script src="engine.js"></script>
+<script>
+(async () => {
+  buildStage({
+    accent: "var(--green)",
+    chip: "💥 CHAOS MODE · NO RULES",
+    players: [
+      { id: "me",  cls: "me",  av: "Y", name: "You",   pips: 0 },
+      { id: "foe", cls: "foe", av: "R", name: "Riley", pips: 0 },
+    ],
+  });
+
+  /* power-up dock */
+  $("#slot").innerHTML = `
+    <div id="dock">
+      <div class="pw" id="pw-dd"><div class="ic">⚡</div><div class="nm">Double Down</div></div>
+      <div class="pw" id="pw-sh"><div class="ic">🔀</div><div class="nm">Shuffle</div></div>
+      <div class="pw" id="pw-fr"><div class="ic">❄️</div><div class="nm">Freeze</div></div>
+      <div class="pw" id="pw-st"><div class="ic">💸</div><div class="nm">Steal</div></div>
+    </div>`;
+
+  await titleCard({
+    icon: "💥", title: "Chaos<br/>Mode",
+    sub: "Power-ups · Point steals · Mayhem",
+    flair: "Friendships tested. Legends made.",
+  }, 3100);
+
+  $("#app").classList.add("on");
+  setPScore("foe", 150);
+
+  /* Q1: Double Down for 2× points */
+  setQnum("1/3");
+  let pills = showQuestion("What is the chemical symbol for gold?",
+    ["Ag", "Au", "Gd", "Go"], 10);
+  await sleep(1500);
+  $("#pw-dd").classList.add("armed");
+  await toast("⚡ DOUBLE DOWN · 2× POINTS", "b-gold", 1200);
+  await sleep(500);
+  await tap(pills, 1, { who: "YOU" });
+  stopTimer();
+  setScore(200); setPScore("me", 200);
+  $("#pw-dd").classList.remove("armed"); $("#pw-dd").classList.add("used");
+  await toast("+200 · DOUBLED! ⚡", "b-gold");
+  await hideQuestion();
+
+  /* Q2: Riley shuffles your answers, then freezes you */
+  setQnum("2/3");
+  pills = showQuestion("Which planet is known as the Red Planet?",
+    ["Venus", "Jupiter", "Saturn", "Mars"], 12);
+  await sleep(1800);
+  await toast("RILEY PLAYED 🔀 SHUFFLE!", "b-purple", 1300);
+  const box = $("#answers");
+  box.classList.add("shuffling");
+  const H = 20 + pills[0].offsetHeight;               // pill height + gap
+  pills[0].style.transform = `translateY(${3 * H}px)`; // 0 → bottom
+  pills[3].style.transform = `translateY(${-3 * H}px)`; // Mars → top
+  pills[1].style.transform = `translateY(${H}px)`;
+  pills[2].style.transform = `translateY(${-H}px)`;
+  await sleep(900);
+  await toast("RILEY PLAYED ❄️ FREEZE!", "b-ice", 1200);
+  $("#frost").classList.add("on");
+  $("#ringwrap").classList.add("frozen");
+  pauseTimer(true);
+  await sleep(2200);
+  $("#frost").classList.remove("on");
+  $("#ringwrap").classList.remove("frozen");
+  pauseTimer(false);
+  await sleep(900);
+  await tap(pills, 3, { who: "YOU" });                 // Mars (now on top)
+  stopTimer();
+  setScore(300); setPScore("me", 300);
+  await toast("+100 · UNFROZEN ✓", "b-green");
+  await hideQuestion();
+  pills.forEach((p) => (p.style.transform = ""));
+  box.classList.remove("shuffling");
+
+  /* Q3: Steal round */
+  setQnum("3/3");
+  await toast("💸 STEAL ROUND · FIRST CORRECT TAKES 50", "b-pink", 1700);
+  pills = showQuestion("Which planet is closest to the Sun?",
+    ["Mercury", "Venus", "Earth", "Mars"], 8);
+  await sleep(1300);
+  $("#pl-foe").classList.add("answering");
+  await sleep(1100);
+  await tap(pills, 0, { who: "YOU" });
+  stopTimer();
+  $("#pl-foe").classList.remove("answering");
+  setScore(450); setPScore("me", 450); setPScore("foe", 100);
+  const st = overlay(`
+    <div class="steal-flash">💸</div>
+    <div class="mode-title" style="color:var(--green);font-size:80px">Steal!</div>
+    <div class="swing"><div class="down">RILEY −50</div><div class="up">YOU +50</div></div>`, { clear: true });
+  await sleep(2300); await dismiss(st);
+
+  /* victory */
+  confetti(80, ["#22C55E", "#FFE500", "#FF2D92", "#7C3AED"]);
+  const v = overlay(`
+    <div class="big-icon">💥</div>
+    <div class="mode-title" style="color:var(--green)">Total<br/>Mayhem</div>
+    <div class="mode-sub">You win · 450 – 100</div>
+    <div class="mode-flair">Everything you knew about trivia — gone.</div>`, { clear: true });
+  await sleep(2800); await dismiss(v);
+
+  await endCard();
+  finish();
+})();
+</script>
+</body></html>

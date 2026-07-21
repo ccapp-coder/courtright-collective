@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+  .room-code { font-size:96px; font-weight:900; letter-spacing:12px; color:var(--purple-lt);
+    text-shadow:0 0 40px rgba(157,96,248,0.5); margin:10px 0 30px; }
+  .rounds { display:flex; gap:18px; justify-content:center; margin:30px 0; }
+  .r-opt { width:130px; padding:22px 0; border-radius:18px; background:#20203A; text-align:center;
+    font-size:40px; font-weight:800; border:2px solid rgba(255,255,255,0.08); transition:all 0.25s; }
+  .r-opt small { display:block; font-size:20px; font-weight:600; color:var(--smoke); }
+  .r-opt.sel { background:var(--purple); border-color:var(--purple-lt);
+    box-shadow:0 0 26px rgba(124,58,237,0.6); transform:scale(1.07); }
+  .streak { position:absolute; right:30px; top:248px; z-index:30; padding:12px 24px; border-radius:999px;
+    background:var(--pink); font-size:28px; font-weight:800; transform:scale(0); transition:transform 0.3s cubic-bezier(0.2,1.5,0.4,1); }
+  .streak.on { transform:scale(1) rotate(-4deg); }
+  .live-dot { display:inline-block; width:14px; height:14px; border-radius:50%; background:var(--pink);
+    margin-right:10px; animation:pulse 0.8s infinite alternate; }
+</style>
+</head><body>
+<script src="engine.js"></script>
+<script>
+(async () => {
+  buildStage({ accent: "var(--purple-lt)", chip: "🎯 ACCURACY MODE · MOST CORRECT WINS" });
+
+  await titleCard({
+    icon: "🎯", title: "Accuracy<br/>Mode",
+    sub: "Multiplayer · Most correct answers wins",
+    flair: "Streaks multiply your score.",
+  }, 3100);
+
+  /* lobby: room code + players joining + rounds pick */
+  const lobby = overlay(`
+    <h3 style="font-size:26px;letter-spacing:4px;color:var(--smoke);font-weight:700">ROOM CODE</h3>
+    <div class="room-code">TRV-483</div>
+    <div class="panel" style="max-width:560px">
+      <h3>Players</h3>
+      <div class="row" id="j1"><div class="av" style="width:48px;height:48px;border-radius:50%;background:var(--yellow);color:#000;display:flex;align-items:center;justify-content:center;font-weight:800">Y</div> You</div>
+      <div class="row" id="j2"><div class="av" style="width:48px;height:48px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-weight:800">A</div> Alex</div>
+      <div class="row" id="j3"><div class="av" style="width:48px;height:48px;border-radius:50%;background:var(--pink);display:flex;align-items:center;justify-content:center;font-weight:800">S</div> Sam</div>
+      <div class="row" id="j4"><div class="av" style="width:48px;height:48px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-weight:800">J</div> Jordan</div>
+    </div>
+    <div class="rounds">
+      <div class="r-opt">3<small>Quick</small></div>
+      <div class="r-opt" id="r5">5<small>Classic</small></div>
+      <div class="r-opt">7<small>Full</small></div>
+    </div>
+    <div class="cta" id="startbtn" style="max-width:560px">Start Game 🎯<small>4 players · live scoring</small></div>`);
+  await sleep(400);
+  for (const id of ["j1", "j2", "j3", "j4"]) { $("#" + id).classList.add("on"); await sleep(420); }
+  await sleep(300);
+  $("#r5").classList.add("sel");
+  await sleep(800);
+  $("#startbtn").classList.add("pressed");
+  await sleep(500);
+  await dismiss(lobby);
+
+  $("#app").classList.add("on");
+
+  /* Q1 — correct, streak starts */
+  setQnum("1/5");
+  let pills = showQuestion("Which country spans the most time zones?",
+    ["Russia", "United States", "France", "China"], 10);
+  await sleep(2600);
+  await tap(pills, 2, { who: "YOU" });
+  stopTimer();
+  setScore(100);
+  await toast("+100 · CORRECT ✓", "b-green");
+  await hideQuestion();
+
+  /* Q2 — streak ×2 */
+  const streak = el("div", "streak", "🔥 STREAK ×2");
+  $("#stage").appendChild(streak);
+  setQnum("2/5");
+  pills = showQuestion("What is the largest ocean on Earth?",
+    ["Atlantic", "Indian", "Arctic", "Pacific"], 10);
+  await sleep(700);
+  streak.classList.add("on");
+  await sleep(1900);
+  await tap(pills, 3, { who: "YOU" });
+  stopTimer();
+  setScore(300);
+  await toast("+200 · STREAK ×2! 🔥", "b-pink");
+  await hideQuestion();
+  streak.classList.remove("on");
+
+  /* live leaderboard */
+  const lb = overlay(`
+    <div class="mode-sub" style="margin-bottom:34px"><span class="live-dot"></span>LIVE LEADERBOARD</div>
+    <div class="panel" style="max-width:600px">
+      <div class="lb-row"><div class="lb-name" style="color:var(--yellow)">You</div><div class="lb-track"><div class="lb-fill" id="b1" style="background:var(--yellow)"></div></div><div class="lb-pts" id="p1">0</div></div>
+      <div class="lb-row"><div class="lb-name">Alex</div><div class="lb-track"><div class="lb-fill" id="b2" style="background:var(--purple-lt)"></div></div><div class="lb-pts" id="p2">0</div></div>
+      <div class="lb-row"><div class="lb-name">Sam</div><div class="lb-track"><div class="lb-fill" id="b3" style="background:var(--pink)"></div></div><div class="lb-pts" id="p3">0</div></div>
+      <div class="lb-row"><div class="lb-name">Jordan</div><div class="lb-track"><div class="lb-fill" id="b4" style="background:var(--green)"></div></div><div class="lb-pts" id="p4">0</div></div>
+    </div>
+    <div class="mode-flair" style="margin-top:30px">Scores update after every question.</div>`, { clear: true });
+  await sleep(500);
+  const bars = [["b1", "p1", 100, 300], ["b2", "p2", 83, 250], ["b3", "p3", 66, 200], ["b4", "p4", 50, 150]];
+  bars.forEach(([b, p, w, pts]) => { $("#" + b).style.width = w + "%"; });
+  /* count up the points */
+  for (let t = 0; t <= 10; t++) {
+    bars.forEach(([b, p, w, pts]) => { $("#" + p).textContent = Math.round((pts * t) / 10); });
+    await sleep(95);
+  }
+  await sleep(1700);
+  await dismiss(lb);
+
+  /* winner */
+  confetti(70, ["#9D60F8", "#7C3AED", "#FFE500", "#FF2D92"]);
+  const v = overlay(`
+    <div class="big-icon">🏆</div>
+    <div class="mode-title" style="color:var(--purple-lt)">You Win</div>
+    <div class="mode-sub">300 points · 5 rounds · 4 players</div>
+    <div class="mode-flair">Every correct answer counts.</div>`, { clear: true });
+  await sleep(2700); await dismiss(v);
+
+  await endCard();
+  finish();
+})();
+</script>
+</body></html>
