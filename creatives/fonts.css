@@ -31,3 +31,5 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { width: 1080px; height: 1350px; overflow: hidden; }
 .page { width: 1080px; height: 1350px; position: relative; overflow: hidden; }
+@page { size: 1080px 1350px; margin: 0; }
+@media print { html, body { width: 1080px; height: 1350px; } .page { break-inside: avoid; } }
