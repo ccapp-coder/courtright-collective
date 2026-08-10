@@ -1,0 +1,7 @@
+Date,Customer,What they bought / job done,Asked?,How I asked,Link sent?,Follow-up sent,Reviewed?,Date reviewed,Rating,Replied?,Notes
+2026-01-12,Sample Customer A,Kitchen faucet replacement,Yes,In person + text,Yes,2026-01-15,Yes,2026-01-15,5,Yes,Mentioned we cleaned up after. Use that in marketing
+2026-01-12,Sample Customer B,Water heater flush,Yes,In person only,No,,No,,,,Forgot to send the link. That is the whole reason they did not review
+2026-01-13,Sample Customer C,"Emergency call, 9pm",Yes,Text next morning,Yes,,Yes,2026-01-14,5,Yes,Best kind of review. Ask emergency calls every time
+2026-01-14,Sample Customer D,"Quote only, no job",No,,,,No,,,,Do not ask people who did not buy
+2026-01-15,Sample Customer E,Disposal install,Yes,In person + text,Yes,2026-01-18,No,,,,Two asks done. Stop here
+2026-01-16,Sample Customer F,Leak repair,Yes,Email with invoice,Yes,,Yes,2026-01-19,3,Yes,Said we were late. We were. Fixed the scheduling buffer
