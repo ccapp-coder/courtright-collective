@@ -1,0 +1,7 @@
+{
+  "name": "aimtogro-config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Config for the Aimtogro advisor: cap numbers, price, model choice, module catalog. Nothing here is hardcoded in source."
+}

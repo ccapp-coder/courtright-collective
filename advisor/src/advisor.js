@@ -51,7 +51,9 @@ export function createAdvisor(deps) {
 
   /** Register providers for exactly the modules this account has toggled on. */
   async function prepare(accountId, options = {}) {
-    const access = options.access || (await assertAdvisorAllowed(store, accountId, { config, catalog, now: clock() }));
+    const now = options.now ? new Date(options.now) : clock();
+    const access =
+      options.access || (await assertAdvisorAllowed(store, accountId, { config, catalog, now }));
     registry.providers.clear();
     registerEnabledModules(registry, access.enabledModuleIds, providers);
     return access;
@@ -62,7 +64,7 @@ export function createAdvisor(deps) {
    */
   async function runMoment(accountId, purpose, options = {}) {
     const now = options.now ? new Date(options.now) : clock();
-    const access = await prepare(accountId, options);
+    const access = await prepare(accountId, { ...options, now });
 
     const momentType = purpose;
     const check = await checkMoment(store, accountId, momentType, { config, now });

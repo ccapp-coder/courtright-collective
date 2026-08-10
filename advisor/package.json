@@ -1,0 +1,15 @@
+{
+  "name": "aimtogro-advisor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Aimtogro AI Advisor: account memory layer, retrieval, and the shared reasoning functions behind the account's first AI employee.",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "demo": "node dev/server.js",
+    "margin": "node dev/margin.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
