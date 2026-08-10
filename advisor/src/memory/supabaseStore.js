@@ -159,6 +159,7 @@ export class SupabaseStore extends AdvisorStore {
       purpose: entry.purpose || 'ask',
       subject_type: entry.subject_type || null,
       subject_id: entry.subject_id || null,
+      ...(entry.created_at ? { created_at: entry.created_at } : {}),
     });
   }
 

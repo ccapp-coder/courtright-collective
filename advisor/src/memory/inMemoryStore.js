@@ -113,7 +113,7 @@ export class InMemoryStore extends AdvisorStore {
       purpose: entry.purpose || 'ask',
       subject_type: entry.subject_type || null,
       subject_id: entry.subject_id || null,
-      created_at: nowIso(this.clock),
+      created_at: entry.created_at || nowIso(this.clock),
     };
     this.tables.advice_log.push(record);
     return { ...record };

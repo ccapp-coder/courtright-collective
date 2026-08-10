@@ -74,7 +74,7 @@
     "maxModules": 8,
     "maxItemsPerModule": 5,
     "maxCharsPerItem": 180,
-    "maxBundleChars": 6000,
+    "maxBundleChars": 9000,
     "minConfidence": 0.35,
     "observationRecencyDays": 45,
     "outcomeRecencyDays": 90
