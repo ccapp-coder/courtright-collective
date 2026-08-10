@@ -1,0 +1,18 @@
+# Cloudflare Pages headers. Delete anything you do not need.
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# Never cache the shell. The service worker handles offline.
+/index.html
+  Cache-Control: no-cache
+
+/sw.js
+  Cache-Control: no-cache
+
+# Fingerprint your assets and you can cache them forever instead.
+/icons/*
+  Cache-Control: public, max-age=604800

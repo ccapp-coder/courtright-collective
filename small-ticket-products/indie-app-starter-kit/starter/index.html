@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Starter</title>
+
+<!-- ── Replace these with your app's real details ──────────────── -->
+<meta name="description" content="A starter app that ships.">
+<meta name="theme-color" content="#0E1520" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FAF6EF" media="(prefers-color-scheme: light)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Starter">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Starter">
+<meta property="og:description" content="A starter app that ships.">
+<meta property="og:image" content="/icons/og.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+
+<!-- ── ONBOARDING: shows once, on first launch ───────────────── -->
+<div class="onboarding" id="onboarding" hidden>
+  <div class="onboarding-card">
+    <div class="mark">S</div>
+    <h1>Welcome to <em>Starter</em></h1>
+    <p>This is the first thing a new person sees. Say what the app does in one sentence, then get out of the way.</p>
+    <ul class="onboarding-points">
+      <li><strong>One idea per screen.</strong> Do not explain everything up front.</li>
+      <li><strong>Works offline.</strong> Everything is stored on this device.</li>
+      <li><strong>No account needed.</strong> Until you decide otherwise.</li>
+    </ul>
+    <button class="btn btn-primary" data-action="finish-onboarding">Let's go</button>
+  </div>
+</div>
+
+<!-- ── APP SHELL ─────────────────────────────────────────────── -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#/" data-link>
+      <span class="brand-mark">S</span>
+      <span class="brand-name">Starter</span>
+    </a>
+    <div class="topbar-actions">
+      <button class="icon-btn" data-action="toggle-theme" aria-label="Toggle theme" title="Toggle theme">
+        <span data-theme-icon>◐</span>
+      </button>
+      <a class="icon-btn" href="#/settings" data-link aria-label="Settings" title="Settings">⚙</a>
+    </div>
+  </div>
+</header>
+
+<main id="view" class="view" aria-live="polite"></main>
+
+<nav class="tabbar">
+  <a href="#/" data-link data-tab="/"><span>◇</span>Home</a>
+  <a href="#/list" data-link data-tab="/list"><span>☰</span>Items</a>
+  <a href="#/settings" data-link data-tab="/settings"><span>⚙</span>Settings</a>
+</nav>
+
+<!-- ── OFFLINE BANNER ────────────────────────────────────────── -->
+<div class="offline-banner" id="offlineBanner" hidden>You are offline. Everything still works.</div>
+
+<!-- ── TOAST ─────────────────────────────────────────────────── -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ── MODAL ─────────────────────────────────────────────────── -->
+<div class="modal-backdrop" id="modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <h2 id="modalTitle"></h2>
+    <p id="modalBody"></p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" data-modal-cancel>Cancel</button>
+      <button class="btn btn-danger" data-modal-confirm>Confirm</button>
+    </div>
+  </div>
+</div>
+
+<script src="/app.js" type="module"></script>
+</body>
+</html>
