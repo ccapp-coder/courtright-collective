@@ -1,0 +1,6 @@
+Date,Contact,Company,Deal ID,Type,Direction,Subject,Outcome,Next Step,Next Step Date,Time Spent,Notes
+2026-01-16,Sample Contact,Ridgeline Dental,D-001,Email,Out,"Proposal, website rebuild",Sent,Follow up if no reply,2026-01-22,30m,"Included the booking add-on as an option, not a requirement"
+2026-01-14,Sample Contact,Harper Law,D-003,Email,In,Reply to intake checklist,Interested,Book the 15 min audit,2026-01-19,10m,Asked what the automation would actually cost
+2026-01-14,Sample Contact,Cole & Sons HVAC,D-002,Call,Out,Discovery call,Good fit,Send scoping questions,2026-01-20,45m,Quoting eats 2 hrs a day. Big obvious win
+2026-01-08,Sample Contact,Vaughn Design,,Coffee,Both,Catch up,Referral promised,Send him a lead back,2026-02-08,1h,He has two clients who need automation work
+2026-01-05,Sample Contact,Tinsley Fitness,D-005,Call,Out,Kickoff,Started,First report Feb 1,2026-02-01,30m,"Wants the report on the 1st, not the last day of the month"
