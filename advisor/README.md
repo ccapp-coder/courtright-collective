@@ -14,7 +14,7 @@ decision.
 ## Try it
 
 ```bash
-node --test advisor/test/*.test.js   # 65 tests, no network, no database, no API key
+node --test advisor/test/*.test.js   # 73 tests, no network, no database, no API key
 node advisor/dev/server.js           # then open http://localhost:8787/aimtogro/dashboard.html
 node advisor/dev/margin.js           # margin table for the numbers currently in config
 ```

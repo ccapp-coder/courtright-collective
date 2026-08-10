@@ -285,7 +285,7 @@ as the floor of the product if the provider is ever down.
 ## Running it
 
 ```bash
-node --test advisor/test/*.test.js     # 65 tests, seeded demo account, no network
+node --test advisor/test/*.test.js     # 73 tests, seeded demo account, no network
 node advisor/dev/server.js             # dev server on :8787
 open http://localhost:8787/aimtogro/dashboard.html
 node advisor/dev/margin.js             # margin table for the current config

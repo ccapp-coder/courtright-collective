@@ -115,7 +115,7 @@ and runs unchanged in Node, in a Cloudflare Worker, and in the browser.
 - **The panel**, mounted, in both visible states, with the "did you do it" control writing
   real outcomes. Verified end to end in a real browser: ask, answer, feedback, module toggle,
   state transitions.
-- **65 tests**, all passing, no network, no database, no API key.
+- **73 tests**, all passing, no network, no database, no API key.
 
 ## What is stubbed
 
@@ -170,7 +170,7 @@ and runs unchanged in Node, in a Cloudflare Worker, and in the browser.
 
 ```
 node --test advisor/test/*.test.js
-# tests 65   pass 65   fail 0
+# tests 73   pass 73   fail 0
 ```
 
 Covers: memory forming from all three paths, dedupe and decay, the outcome loop changing
@@ -178,7 +178,8 @@ ranking, retrieval relevance and budget, disabled modules never being queried, a
 module not propagating, both gates and every access state, memory surviving suspension, the
 cap including the daily rundown and blocking at the pool, a failed model call not costing an
 ask, all six reasoning functions against the seeded account, human and AI tool paths
-producing identical answers, and the HTTP surface mapping gate and cap to real statuses.
+producing identical answers, the HTTP surface mapping gate and cap to real statuses, the
+scheduled jobs, and the Supabase adapter's query shapes against a fake fetch.
 
 Browser verified in headless Chromium: ACTIVE and LOCKED states render, the ask box returns
 a grounded answer, the "did you do it" control writes an outcome, and toggling a module
@@ -193,7 +194,7 @@ with a hard budget. All six reasoning functions plus four supporting ones, every
 also an AI tool on the same code path. The `getAdvisorContext` contract and all eight module
 providers. Both gates with grace and suspension that never deletes memory. The cap, soft
 ceiling, upsell and margin calculator. The advisor panel mounted into a dashboard, in both
-visible states, with the feedback control feeding `advice_outcomes`. 65 passing tests and a
+visible states, with the feedback control feeding `advice_outcomes`. 73 passing tests and a
 seeded demo account that can be clicked through right now with no key and no database.
 
 **Stubbed.** Module data sources (contract is real, queries are not). The live Anthropic call
