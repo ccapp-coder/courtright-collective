@@ -1,0 +1,103 @@
+{
+  "$comment": "Aimtogro AI Advisor. Every number the business depends on lives here, never hardcoded in src. Values may be overridden per environment via env vars listed in config/index.js.",
+  "version": 1,
+  "product": {
+    "id": "advisor",
+    "name": "AI Advisor",
+    "tagline": "Your first AI employee. Watches the whole account, tells you what matters today.",
+    "addOnPriceUsdMonthly": 69,
+    "billingInterval": "month",
+    "currency": "USD"
+  },
+  "gate": {
+    "requiresPaidModuleCount": 1,
+    "baseFilingCabinetUnlocks": false,
+    "suspendOnZeroModules": true,
+    "deleteMemoryOnSuspend": false,
+    "graceDays": 7,
+    "lockedStateCopy": {
+      "headline": "Your AI Advisor is one module away.",
+      "body": "The Advisor reads across your whole account and tells you what to do first every morning. Add any paid module to unlock it.",
+      "cta": "Add a module to unlock"
+    },
+    "suspendedStateCopy": {
+      "headline": "Advisor paused.",
+      "body": "Your Advisor is paused because no paid modules are active. Everything it learned about your business is kept. Turn a module back on and it picks up where it left off.",
+      "cta": "Re-enable a module"
+    }
+  },
+  "cap": {
+    "unit": "advisory_moments",
+    "includedDailyRundownsPerDay": 1,
+    "monthlyAskPool": 300,
+    "extraRundownCostsAnAsk": true,
+    "softCeilingAtPercent": 0.8,
+    "hardStopAtPool": true,
+    "resetDayOfMonth": 1,
+    "softCeilingCopy": {
+      "headline": "You are using your Advisor hard.",
+      "body": "You have used {used} of {pool} advisory asks this month. Owners who lean on the Advisor this much usually move to the AI Employee tier, where the pool gets much larger and the employees work on their own.",
+      "cta": "See AI Employee tiers"
+    },
+    "hardStopCopy": {
+      "headline": "Ask pool used up for this month.",
+      "body": "Your daily rundown keeps arriving. On-demand asks reset on the 1st, or you can upgrade to an AI Employee tier now.",
+      "cta": "Upgrade to AI Employees"
+    }
+  },
+  "employeeTiers": [
+    { "id": "employees_1", "employees": 1, "priceUsdMonthly": 149, "monthlyAskPool": 1000 },
+    { "id": "employees_3", "employees": 3, "priceUsdMonthly": 349, "monthlyAskPool": 3000 },
+    { "id": "employees_7", "employees": 7, "priceUsdMonthly": 699, "monthlyAskPool": 8000 }
+  ],
+  "model": {
+    "provider": "anthropic",
+    "reasoningModel": "claude-sonnet-5",
+    "lightModel": "claude-haiku-4-5-20251001",
+    "maxOutputTokens": {
+      "dailyRundown": 700,
+      "advisorAsk": 700,
+      "lowHangingFruit": 600,
+      "suggestPitch": 500,
+      "weeklyReview": 900
+    },
+    "temperature": 0.3,
+    "apiKeyEnvVar": "ANTHROPIC_API_KEY",
+    "fallbackProvider": "stub",
+    "$comment": "fallbackProvider is used when no API key is present: tests, local demo, and the static locked/active preview all run on it with zero token cost."
+  },
+  "context": {
+    "$comment": "This block is the margin lever. Tight bundles keep the per-moment token cost near the floor.",
+    "maxMemoryFacts": 25,
+    "maxObservations": 12,
+    "maxOutcomes": 8,
+    "maxModules": 8,
+    "maxItemsPerModule": 5,
+    "maxCharsPerItem": 180,
+    "maxBundleChars": 6000,
+    "minConfidence": 0.35,
+    "observationRecencyDays": 45,
+    "outcomeRecencyDays": 90
+  },
+  "costs": {
+    "$comment": "Illustrative mid-tier rates in USD per million tokens. Replace with real provider rates. Used by advisor/src/usage/margin.js for the margin report only, never for gating.",
+    "inputPerMillionUsd": 3,
+    "outputPerMillionUsd": 15,
+    "assumedInputTokensPerMoment": 2200,
+    "assumedOutputTokensPerMoment": 550
+  },
+  "rundown": {
+    "focusItemCount": 3,
+    "scheduleCron": "0 7 * * *",
+    "timezoneFallback": "America/Chicago"
+  },
+  "memory": {
+    "defaultConfidence": 0.6,
+    "seedConfidence": 0.9,
+    "observedConfidence": 0.55,
+    "outcomeConfidenceBoost": 0.1,
+    "confidenceCeiling": 0.98,
+    "confidenceFloor": 0.1,
+    "staleAfterDays": 180
+  }
+}

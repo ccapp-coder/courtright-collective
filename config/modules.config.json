@@ -1,0 +1,86 @@
+{
+  "$comment": "The Aimtogro module catalog. The base filing cabinet (shared client database) is always on and never unlocks the Advisor. Every paid module must register a getAdvisorContext provider when it is enabled on an account.",
+  "version": 1,
+  "base": {
+    "id": "filing_cabinet",
+    "name": "Client Filing Cabinet",
+    "paid": false,
+    "alwaysOn": true,
+    "unlocksAdvisor": false,
+    "description": "The shared client database every module reads and writes. Free with the account."
+  },
+  "modules": [
+    {
+      "id": "crm",
+      "number": 1,
+      "name": "CRM",
+      "paid": true,
+      "priceUsdMonthly": 29,
+      "advisorSummary": "hot leads, overdue follow-ups, top clients by value",
+      "providerPath": "advisor/src/modules/providers/crm.js"
+    },
+    {
+      "id": "booking",
+      "number": 2,
+      "name": "Booking",
+      "paid": true,
+      "priceUsdMonthly": 29,
+      "advisorSummary": "upcoming appointments, no-shows, clients overdue to rebook, open capacity",
+      "providerPath": "advisor/src/modules/providers/booking.js"
+    },
+    {
+      "id": "gated_content",
+      "number": 3,
+      "name": "Gated Content",
+      "paid": true,
+      "priceUsdMonthly": 39,
+      "advisorSummary": "new members, churn risk, content that converts",
+      "providerPath": "advisor/src/modules/providers/gatedContent.js"
+    },
+    {
+      "id": "progress",
+      "number": 4,
+      "name": "Progress Tracking",
+      "paid": true,
+      "priceUsdMonthly": 25,
+      "advisorSummary": "stalled clients, milestones hit, programs ending soon",
+      "providerPath": "advisor/src/modules/providers/progress.js"
+    },
+    {
+      "id": "field_capture",
+      "number": 5,
+      "name": "Field Capture",
+      "paid": true,
+      "priceUsdMonthly": 25,
+      "advisorSummary": "pending reports, jobs missing photos, unsigned sign-offs",
+      "providerPath": "advisor/src/modules/providers/fieldCapture.js"
+    },
+    {
+      "id": "invoicing",
+      "number": 6,
+      "name": "Invoicing and Payments",
+      "paid": true,
+      "priceUsdMonthly": 29,
+      "advisorSummary": "unpaid invoices, aging buckets, quotes waiting on a decision",
+      "providerPath": "advisor/src/modules/providers/invoicing.js"
+    },
+    {
+      "id": "marketing",
+      "number": 7,
+      "name": "Marketing and Content",
+      "paid": true,
+      "priceUsdMonthly": 29,
+      "advisorSummary": "campaign performance, list growth, posts that drove bookings",
+      "providerPath": "advisor/src/modules/providers/marketing.js"
+    },
+    {
+      "id": "reviews",
+      "number": 8,
+      "name": "Reviews and Reputation",
+      "paid": true,
+      "priceUsdMonthly": 19,
+      "advisorSummary": "new reviews, unanswered reviews, clients worth asking for one",
+      "providerPath": "advisor/src/modules/providers/reviews.js"
+    }
+  ]
+}
