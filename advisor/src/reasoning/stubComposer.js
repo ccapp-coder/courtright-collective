@@ -12,6 +12,11 @@
 
 import { rankOpportunities, moneyOnTable } from './rank.js';
 
+/** Money reads better with separators. Owners scan these numbers, they do not parse them. */
+function usd(amount) {
+  return `$${Math.round(amount).toLocaleString('en-US')}`;
+}
+
 function factValue(bundle, key) {
   const fact = (bundle.facts || []).find((f) => f.key === key);
   return fact ? fact.value : null;
@@ -34,7 +39,7 @@ export function composeDailyRundown(bundle, options = {}) {
   ranked.forEach((item, index) => {
     lines.push(`${index + 1}. ${item.action || item.title}`);
     lines.push(`   Why: ${item.title}${item.detail ? `. ${item.detail}` : ''}`);
-    if (item.valueUsd) lines.push(`   Worth: about $${item.valueUsd}`);
+    if (item.valueUsd) lines.push(`   Worth: about ${usd(item.valueUsd)}`);
   });
 
   if (!ranked.length) {
@@ -44,7 +49,7 @@ export function composeDailyRundown(bundle, options = {}) {
   const total = moneyOnTable(bundle);
   if (total > 0) {
     lines.push('');
-    lines.push(`Across everything showing today, about $${total} is sitting on the table.`);
+    lines.push(`Across everything showing today, about ${usd(total)} is sitting on the table.`);
   }
 
   const pattern = (bundle.observations || [])[0];
@@ -64,7 +69,7 @@ export function composeLowHangingFruit(bundle, options = {}) {
 
   const lines = ['Lowest hanging fruit right now, easiest and most valuable first.', ''];
   ranked.forEach((item, index) => {
-    const money = item.valueUsd ? ` (about $${item.valueUsd})` : '';
+    const money = item.valueUsd ? ` (about ${usd(item.valueUsd)})` : '';
     lines.push(`${index + 1}. ${item.action || item.title}${money}`);
     lines.push(`   ${item.title}${item.detail ? `. ${item.detail}` : ''} Effort: ${item.effort}.`);
   });
@@ -88,7 +93,7 @@ export function composeAnswer(bundle, question) {
       `${top.title}.`,
       top.detail ? top.detail : '',
       `Next move: ${top.action || 'reach out today'}.`,
-      top.valueUsd ? `That is about $${top.valueUsd}.` : '',
+      top.valueUsd ? `That is about ${usd(top.valueUsd)}.` : '',
     ]
       .filter(Boolean)
       .join(' ');
@@ -138,7 +143,7 @@ export function composeWeeklyReview(bundle, options = {}) {
 
   const total = moneyOnTable(bundle);
   if (total > 0) {
-    lines.push('', `Money visible and unclaimed: about $${total}.`);
+    lines.push('', `Money visible and unclaimed: about ${usd(total)}.`);
   }
 
   const goal = factValue(bundle, 'goals.primary');

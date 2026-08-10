@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aimtogro Dashboard — AI Advisor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="/aimtogro/assets/aimtogro_mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/aimtogro/advisor/advisor-panel.css">
+<style>
+* { box-sizing: border-box; }
+:root {
+  --ink: #0E2436; --ink-deep: #081726; --green: #2FC98A; --green-deep: #1F9466;
+  --aqua: #46C8E6; --yellow: #FFD23F; --cloud: #EAF3F1; --slate: #5B7282;
+  --paper: #F7FAF9; --white: #fff; --line: rgba(14,36,54,0.08);
+  --body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+body { font-family: var(--body); background: var(--paper); color: var(--ink); margin: 0; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+nav { background: var(--ink); color: var(--cloud); }
+nav .bar { max-width: 1120px; margin: 0 auto; padding: 0.9rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 0.55rem; font-weight: 600; font-size: 1.1rem; color: var(--cloud); text-decoration: none; }
+.brand svg { width: 24px; height: 24px; }
+.navtabs { display: flex; gap: 1.2rem; font-size: 0.9rem; }
+.navtabs span { color: rgba(234,243,241,0.55); }
+.navtabs span.on { color: var(--cloud); font-weight: 600; border-bottom: 2px solid var(--yellow); padding-bottom: 2px; }
+main { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.demobar {
+  display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;
+  background: rgba(70,200,230,0.12); border: 1px solid rgba(70,200,230,0.35);
+  border-radius: 10px; padding: 0.7rem 0.95rem; margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--slate);
+}
+.demobar strong { color: var(--ink); }
+.demobar button {
+  font-family: inherit; font-size: 0.82rem; font-weight: 600; padding: 0.35rem 0.8rem;
+  border-radius: 999px; border: 1px solid rgba(14,36,54,0.15); background: #fff; color: var(--ink); cursor: pointer;
+}
+.demobar button:hover { border-color: var(--green); color: var(--green-deep); }
+footer { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem 3rem; color: var(--slate); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+
+<nav><div class="bar">
+  <a href="/aimtogro/" class="brand"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M 318.50 684.00 C 440.33 684.00 512.00 543.53 586.53 457.53" fill="none" stroke="#46C8E6" stroke-width="65.93" stroke-linecap="round"/><path d="M 652.47 238.23 Q 652.47 375.83 790.07 375.83 Q 652.47 375.83 652.47 513.43 Q 652.47 375.83 514.87 375.83 Q 652.47 375.83 652.47 238.23 Z" fill="#2FC98A"/><path d="M 529.20 248.27 Q 529.20 297.00 577.93 297.00 Q 529.20 297.00 529.20 345.73 Q 529.20 297.00 480.47 297.00 Q 529.20 297.00 529.20 248.27 Z" fill="#FFD23F"/></svg>Aimtogro</a>
+  <div class="navtabs">
+    <span class="on">Home</span><span>Clients</span><span>Booking</span><span>Invoices</span><span>Content</span><span>Settings</span>
+  </div>
+</div></nav>
+
+<main>
+  <div class="demobar">
+    <strong>Demo account:</strong> Sharp Line Detailing, seeded with live data across all eight modules.
+    <button id="btn-active">Show ACTIVE</button>
+    <button id="btn-locked">Show LOCKED</button>
+    <span id="demo-note"></span>
+  </div>
+
+  <!-- This is the mount point. In the real dashboard it is one div and two lines of script. -->
+  <div id="advisor-home"></div>
+</main>
+
+<footer>
+  The advisor mounts into the dashboard as the account home panel. Reasoning and memory live in
+  <code>/advisor</code> and are wired in here. This page runs the service in the browser against the
+  seeded demo account with the zero cost fallback writer, so nothing here spends a token.
+</footer>
+
+<script type="module">
+import { mountAdvisorPanel } from '/aimtogro/advisor/advisor-panel.js';
+import { createLocalTransport } from '/aimtogro/advisor/transports.js';
+
+const mountPoint = document.querySelector('#advisor-home');
+const note = document.querySelector('#demo-note');
+
+async function boot(mode) {
+  note.textContent = '';
+  mountPoint.innerHTML = '';
+  try {
+    const transport = await createLocalTransport(
+      mode === 'locked'
+        ? { enabledModules: [], advisorActive: false }
+        : {},
+    );
+    mountAdvisorPanel(mountPoint, transport, {
+      onUnlock: () => note.textContent = 'Checkout would open here. Turn a module on below to see the runtime gate lift.',
+      onUpgrade: () => note.textContent = 'This is where the 1/3/7 AI Employee tiers get pitched.',
+    });
+  } catch (err) {
+    mountPoint.innerHTML = '<div class="adv-card"><p class="adv-error">This browser could not load the advisor modules directly ('
+      + String(err.message || err)
+      + '). Run <code>node advisor/dev/server.js</code> and open http://localhost:8787/aimtogro/dashboard.html instead.</p></div>';
+  }
+}
+
+document.querySelector('#btn-active').addEventListener('click', () => boot('active'));
+document.querySelector('#btn-locked').addEventListener('click', () => boot('locked'));
+boot('active');
+</script>
+
+</body>
+</html>
