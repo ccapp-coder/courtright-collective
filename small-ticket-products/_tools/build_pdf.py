@@ -26,6 +26,7 @@ import re
 import subprocess
 import sys
 import tempfile
+from string import Template
 
 import markdown
 
@@ -82,11 +83,11 @@ THEMES = {
 FONT_CSS = open(os.path.join(TOOLS, "brand-fonts.css")).read()
 
 CSS_TEMPLATE = """
-%(fonts)s
+$fonts
 :root{
-  --ink:%(ink)s; --ash:%(ash)s; --accent:%(accent)s; --accent-lt:%(accent_lt)s;
-  --gold:%(gold)s; --gold-lt:%(gold_lt)s; --smoke:%(smoke)s;
-  --parchment:%(parchment)s; --cream:%(cream)s;
+  --ink:${ink}; --ash:${ash}; --accent:${accent}; --accent-lt:${accent_lt};
+  --gold:${gold}; --gold-lt:${gold_lt}; --smoke:${smoke};
+  --parchment:${parchment}; --cream:${cream};
   --display:'Cormorant Garamond',Georgia,serif;
   --body:'Outfit',-apple-system,Segoe UI,sans-serif;
 }
@@ -102,47 +103,74 @@ body{
 .cover{
   position:relative; height:11in; width:8.5in; overflow:hidden;
   background:
-    radial-gradient(ellipse 70% 55% at 78% 22%, rgba(255,255,255,0.10) 0%, transparent 68%),
-    radial-gradient(ellipse 90% 70% at 15% 88%, %(accent)s55 0%, transparent 62%),
-    radial-gradient(ellipse 80% 60% at 88% 70%, %(gold)s3D 0%, transparent 64%),
-    linear-gradient(155deg, %(ink)s 0%, %(ash)s 58%, %(ink)s 100%);
+    radial-gradient(ellipse 60% 45% at 82% 16%, ${gold}66 0%, transparent 66%),
+    radial-gradient(ellipse 95% 65% at 8% 92%, ${accent}AA 0%, transparent 60%),
+    radial-gradient(ellipse 70% 55% at 95% 78%, ${gold_lt}55 0%, transparent 62%),
+    linear-gradient(155deg, ${ash} 0%, ${ink} 52%, ${ink} 100%);
   color:var(--parchment); page-break-after:always;
-  padding:1.05in 0.95in 0.9in;
+  padding:.85in .95in .8in;
   display:flex; flex-direction:column;
 }
 .cover::after{
-  content:''; position:absolute; left:0; right:0; bottom:0; height:14px;
-  background:linear-gradient(90deg,%(accent)s 0%,%(gold_lt)s 50%,%(accent_lt)s 100%);
+  content:''; position:absolute; left:0; right:0; bottom:0; height:18px;
+  background:linear-gradient(90deg,${accent} 0%,${gold} 34%,${gold_lt} 62%,${accent_lt} 100%);
+}
+/* decorative rings, top right */
+.cover-art{ position:absolute; top:-1.15in; right:-1.35in; width:5.4in; height:5.4in; }
+.cover-art i{
+  position:absolute; border-radius:50%; display:block; border:2px solid ${gold_lt}3A;
+  inset:0;
+}
+.cover-art i:nth-child(2){ inset:.62in; border-color:${accent_lt}55; }
+.cover-art i:nth-child(3){ inset:1.24in; border-color:${gold_lt}70; border-width:3px; }
+.cover-art i:nth-child(4){
+  inset:1.86in; border:none;
+  background:radial-gradient(circle at 35% 30%, ${gold_lt}, ${accent});
+  opacity:.85;
+}
+/* stacked accent bars, left rail */
+.cover-rail{ position:absolute; left:0; top:2.4in; display:flex; flex-direction:column; gap:.09in; }
+.cover-rail i{ display:block; height:.055in; border-radius:0 99px 99px 0; background:${gold_lt}; }
+.cover-rail i:nth-child(1){ width:.62in; }
+.cover-rail i:nth-child(2){ width:.40in; background:${accent_lt}; }
+.cover-rail i:nth-child(3){ width:.86in; }
+.cover-rail i:nth-child(4){ width:.28in; background:${accent}; }
+.cover-rail i:nth-child(5){ width:.52in; opacity:.55; }
+.cover-tag{
+  margin-top:.34in; align-self:flex-start; border-radius:99px;
+  background:linear-gradient(90deg,${accent},${gold});
+  color:#fff; font-size:8.5pt; font-weight:800; letter-spacing:.2em;
+  text-transform:uppercase; padding:.09in .24in;
 }
 .cover-mark{
   font-family:var(--display); font-weight:300; letter-spacing:.14em;
   font-size:15pt; color:var(--parchment); text-transform:none;
 }
-.cover-mark span{ color:%(accent_lt)s; font-weight:600; }
+.cover-mark span{ color:${accent_lt}; font-weight:600; }
 .cover-kicker{
   margin-top:auto; font-size:8pt; font-weight:700; letter-spacing:.30em;
-  text-transform:uppercase; color:%(gold_lt)s;
+  text-transform:uppercase; color:${gold_lt};
 }
 .cover h1{
   font-family:var(--display); font-weight:600; font-size:52pt; line-height:1.03;
   margin:.16in 0 0; color:#fff; letter-spacing:-0.01em;
 }
-.cover h1 em{ font-style:italic; color:%(gold_lt)s; }
+.cover h1 em{ font-style:italic; color:${gold_lt}; }
 .cover .rule{
   width:2.1in; height:5px; margin:.28in 0 .24in; border-radius:99px;
-  background:linear-gradient(90deg,%(accent)s,%(gold_lt)s);
+  background:linear-gradient(90deg,${accent},${gold_lt});
 }
 .cover .sub{
-  font-size:14.5pt; font-weight:300; line-height:1.45; color:%(parchment)s;
+  font-size:14.5pt; font-weight:300; line-height:1.45; color:${parchment};
   max-width:5.6in; opacity:.94;
 }
 .cover-foot{
   margin-top:.55in; display:flex; justify-content:space-between; align-items:flex-end;
-  font-size:8.5pt; letter-spacing:.12em; text-transform:uppercase; color:%(parchment)s; opacity:.7;
+  font-size:8.5pt; letter-spacing:.12em; text-transform:uppercase; color:${parchment}; opacity:.7;
 }
 .cover-badges{ margin-top:.34in; display:flex; gap:.14in; flex-wrap:wrap; }
 .cover-badges span{
-  border:1px solid %(gold_lt)s66; color:%(gold_lt)s; border-radius:99px;
+  border:1px solid ${gold_lt}66; color:${gold_lt}; border-radius:99px;
   padding:.06in .17in; font-size:8pt; letter-spacing:.14em; text-transform:uppercase; font-weight:600;
 }
 
@@ -155,78 +183,81 @@ body{
 .page > h1:first-child{ page-break-before:auto; margin-top:0; }
 .page h1::after{
   content:''; display:block; width:1.5in; height:4px; border-radius:99px; margin-top:.09in;
-  background:linear-gradient(90deg,%(accent)s,%(gold_lt)s);
+  background:linear-gradient(90deg,${accent},${gold_lt});
 }
 h2{
   font-family:var(--body); font-size:14pt; font-weight:700; letter-spacing:-.01em;
-  color:%(accent)s; margin:.30in 0 .07in; page-break-after:avoid;
-  border-left:5px solid %(gold)s; padding-left:.13in;
+  color:${accent}; margin:.30in 0 .07in; page-break-after:avoid;
+  border-left:5px solid ${gold}; padding-left:.13in;
 }
 h3{
   font-size:11.4pt; font-weight:700; color:var(--ink); margin:.20in 0 .04in; page-break-after:avoid;
 }
-h3::before{ content:'\\25AA'; color:%(accent)s; margin-right:.07in; }
-h4{ font-size:10.4pt; font-weight:700; color:%(smoke)s; text-transform:uppercase;
+h3::before{ content:'\\25AA'; color:${accent}; margin-right:.07in; }
+h4{ font-size:10.4pt; font-weight:700; color:${smoke}; text-transform:uppercase;
   letter-spacing:.1em; margin:.17in 0 .04in; page-break-after:avoid; }
 p{ margin:.055in 0 .085in; }
 ul,ol{ margin:.05in 0 .10in; padding-left:.24in; }
 li{ margin:.028in 0; }
-ul li::marker{ color:%(accent)s; }
-ol li::marker{ color:%(accent)s; font-weight:700; }
+ul li::marker{ color:${accent}; }
+ol li::marker{ color:${accent}; font-weight:700; }
 strong{ color:var(--ink); font-weight:700; }
-em{ color:%(smoke)s; }
-a{ color:%(accent)s; text-decoration:none; font-weight:600; }
+em{ color:${smoke}; }
+a{ color:${accent}; text-decoration:none; font-weight:600; }
 hr{
   border:0; height:3px; border-radius:99px; margin:.26in 0;
-  background:linear-gradient(90deg,%(accent)s 0%,%(gold_lt)s 42%,transparent 100%);
+  background:linear-gradient(90deg,${accent} 0%,${gold_lt} 42%,transparent 100%);
 }
 blockquote{
   margin:.14in 0; padding:.14in .18in; border-radius:0 8px 8px 0;
-  background:linear-gradient(90deg,%(gold_lt)s2E,%(gold_lt)s10);
-  border-left:5px solid %(gold)s; page-break-inside:avoid;
+  background:linear-gradient(90deg,${gold_lt}2E,${gold_lt}10);
+  border-left:5px solid ${gold}; page-break-inside:avoid;
 }
 blockquote p{ margin:.03in 0; }
-blockquote strong{ color:%(accent)s; }
+blockquote strong{ color:${accent}; }
 code{
   font-family:'DejaVu Sans Mono',Menlo,Consolas,monospace; font-size:9pt;
-  background:%(accent)s18; color:%(accent)s; padding:.01in .05in; border-radius:4px;
+  background:${accent}18; color:${accent}; padding:.01in .05in; border-radius:4px;
 }
 pre{
   background:var(--ink); color:var(--parchment); padding:.16in .18in; border-radius:9px;
-  overflow-x:auto; page-break-inside:avoid; border-left:5px solid %(accent)s; font-size:8.6pt;
+  overflow-x:auto; page-break-inside:avoid; border-left:5px solid ${accent}; font-size:8.6pt;
   line-height:1.5;
 }
 pre code{ background:none; color:var(--parchment); padding:0; font-size:8.6pt; }
 table{
-  width:100%%; border-collapse:collapse; margin:.14in 0; font-size:9.2pt;
+  width:100%; border-collapse:collapse; margin:.14in 0; font-size:9.2pt;
   page-break-inside:avoid; border-radius:8px; overflow:hidden;
 }
 th{
   background:var(--ink); color:var(--parchment); text-align:left; font-weight:600;
   padding:.075in .1in; font-size:8.6pt; letter-spacing:.06em; text-transform:uppercase;
 }
-td{ padding:.07in .1in; border-bottom:1px solid %(ink)s1A; vertical-align:top; }
-tbody tr:nth-child(even) td{ background:%(gold_lt)s16; }
-.page > p:first-of-type{ font-size:11.6pt; color:%(smoke)s; }
+td{ padding:.07in .1in; border-bottom:1px solid ${ink}1A; vertical-align:top; }
+tbody tr:nth-child(even) td{ background:${gold_lt}16; }
+.page > p:first-of-type{ font-size:11.6pt; color:${smoke}; }
 </style>
 """
 
 HTML_TEMPLATE = """<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>%(title)s</title>
-<style>%(css)s
+<html lang="en"><head><meta charset="utf-8"><title>${title}</title>
+<style>${css}
 </head>
 <body>
 <section class="cover">
-  <div class="cover-mark">%(wordmark)s</div>
-  <div class="cover-kicker">%(kicker)s</div>
-  <h1>%(title_html)s</h1>
+  <div class="cover-art"><i></i><i></i><i></i><i></i></div>
+  <div class="cover-rail"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="cover-mark">${wordmark}</div>
+  ${tag}
+  <div class="cover-kicker">${kicker}</div>
+  <h1>${title_html}</h1>
   <div class="rule"></div>
-  <div class="sub">%(subtitle)s</div>
-  %(badges)s
-  <div class="cover-foot"><span>%(site)s</span><span>Built in Nashville</span></div>
+  <div class="sub">${subtitle}</div>
+  ${badges}
+  <div class="cover-foot"><span>${site}</span><span>Built in Nashville</span></div>
 </section>
 <main class="page">
-%(body)s
+${body}
 </main>
 </body></html>
 """
@@ -283,28 +314,32 @@ def main():
 
     css_vars = dict(theme)
     css_vars["fonts"] = FONT_CSS
-    css = CSS_TEMPLATE % css_vars
+    css = Template(CSS_TEMPLATE).substitute(css_vars)
 
     badge_html = ""
     if badges:
         chips = "".join("<span>%s</span>" % b.strip() for b in badges.split("|"))
         badge_html = '<div class="cover-badges">%s</div>' % chips
 
-    html = HTML_TEMPLATE % {
+    html = Template(HTML_TEMPLATE).substitute({
         "title": title,
         "title_html": title_markup(title),
         "subtitle": subtitle,
         "kicker": kicker,
         "badges": badge_html,
+        "tag": '<div class="cover-tag">%s</div>' % meta["tag"] if meta.get("tag") else "",
         "wordmark": theme["wordmark"],
         "site": theme["site"],
         "css": css,
         "body": body_html,
-    }
+    })
 
     chrome = next((c for c in CHROME_CANDIDATES if os.path.exists(c)), None)
     if not chrome:
         raise SystemExit("No Chromium binary found")
+
+    if opts.get("html"):
+        open(opts["html"], "w").write(html)
 
     with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False) as fh:
         fh.write(html)
