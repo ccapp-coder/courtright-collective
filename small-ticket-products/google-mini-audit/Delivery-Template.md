@@ -151,20 +151,20 @@ Ranked by impact divided by effort.
 
 ### This week
 
-1. **`[Fix]`** — `[why it matters]` — `[how long it takes]`
-2. **`[Fix]`** — `[why]` — `[time]`
-3. **`[Fix]`** — `[why]` — `[time]`
+1. **`[Fix]`**. Why: `[why it matters]`. Time: `[how long it takes]`
+2. **`[Fix]`**. Why: `[why]`. Time: `[time]`
+3. **`[Fix]`**. Why: `[why]`. Time: `[time]`
 
 ### This month
 
-4. **`[Fix]`** — `[why]` — `[time]`
-5. **`[Fix]`** — `[why]` — `[time]`
-6. **`[Fix]`** — `[why]` — `[time]`
+4. **`[Fix]`**. Why: `[why]`. Time: `[time]`
+5. **`[Fix]`**. Why: `[why]`. Time: `[time]`
+6. **`[Fix]`**. Why: `[why]`. Time: `[time]`
 
 ### This quarter
 
-7. **`[Fix]`** — `[why]` — `[time]`
-8. **`[Fix]`** — `[why]` — `[time]`
+7. **`[Fix]`**. Why: `[why]`. Time: `[time]`
+8. **`[Fix]`**. Why: `[why]`. Time: `[time]`
 
 ---
 

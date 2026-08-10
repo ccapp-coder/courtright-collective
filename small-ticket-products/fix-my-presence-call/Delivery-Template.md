@@ -73,9 +73,9 @@ tag: One Call, One Plan
 
 `[Two or three things they brought up, or that somebody has been pushing them toward, that are not worth their time yet. Name each one and say what would have to be true before it becomes worth doing.]`
 
-- **`[Thing]`** — not yet. Revisit when `[condition]`
-- **`[Thing]`** — not yet. Revisit when `[condition]`
-- **`[Thing]`** — honestly, never, and here is why: `[reason]`
+- **`[Thing]`**. Not yet. Revisit when `[condition]`
+- **`[Thing]`**. Not yet. Revisit when `[condition]`
+- **`[Thing]`**. Honestly, never, and here is why: `[reason]`
 
 ---
 

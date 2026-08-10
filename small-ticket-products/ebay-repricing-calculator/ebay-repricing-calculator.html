@@ -110,7 +110,7 @@ summary{
 }
 summary::-webkit-details-marker{display:none}
 summary::before{content:'+ ';font-weight:900}
-details[open] summary::before{content:'– '}
+details[open] summary::before{content:'- '}
 details > div{padding-top:.9rem}
 
 /* ── RESULTS ── */
@@ -498,7 +498,7 @@ footer small{display:block;margin-top:1.4rem;opacity:.55;font-size:.78rem}
       if (!isFinite(target) || target < 0){
         head.classList.add('loss');
         $('hLabel').textContent = 'Not possible';
-        $('hValue').textContent = '—';
+        $('hValue').textContent = 'n/a';
         $('hSub').textContent = 'Your fees and target margin add up to 100% or more. Lower the target or the ad rate.';
         $('stats').innerHTML = '';
         $('breakdown').innerHTML = '';
