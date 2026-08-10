@@ -1,0 +1,50 @@
+Step,Task,Who needs it,Priority,Where,Handle / value used,Done?,Notes
+0. Check,Domain .com availability,Everyone,Critical,,,,
+0. Check,Plain web search for name conflicts,Everyone,Critical,,,,
+0. Check,USPTO free trademark search,Everyone,High,uspto.gov,,,
+0. Check,State business name registry,Everyone,High,Secretary of State site,,,
+1. Domain,Register the .com,Everyone,Critical,,,,$10-15/yr
+1. Domain,WHOIS privacy on,Everyone,Critical,,,,Usually free
+1. Domain,Auto-renew on,Everyone,Critical,,,,
+1. Domain,Renewal reminder on calendar,Everyone,High,,,,2 weeks before
+1. Domain,Registrar lock on,Everyone,High,,,,
+1. Domain,"Defensive variants (.net, misspelling)",Optional,Low,,,,
+2. Email,Email on your domain,Everyone,Critical,,,,$6-7/mo
+2. Email,hello@ or yourname@ created,Everyone,Critical,,,,Skip info@
+2. Email,SPF record,Everyone,Critical,,,,Or you land in spam
+2. Email,DKIM record,Everyone,Critical,,,,
+2. Email,DMARC record,Everyone,High,,,,
+2. Email,Deliverability tested to Gmail + Outlook,Everyone,High,,,,
+3. Google,Google Business Profile claimed,Local,Critical,business.google.com,,,
+3. Google,Verification started,Local,Critical,,,,Postcard takes 2 wks
+3. Google,Primary category chosen,Local,Critical,,,,Biggest ranking lever
+3. Google,Hours + holiday hours,Local,High,,,,
+3. Google,Description written,Local,High,,,,750 chars
+3. Google,5+ real photos uploaded,Local,High,,,,Real beats stock
+3. Google,Services/products listed,Local,Medium,,,,
+3. Google,Review link saved,Local,High,,,,Feeds the Review Kit
+3. Google,Bing Places claimed,Everyone,Medium,,,,"5 minutes, imports from Google"
+4. Social,Instagram,Everyone,High,,,,
+4. Social,Facebook Page,Everyone,High,,,,"Page, not profile"
+4. Social,TikTok,Optional,Medium,,,,
+4. Social,YouTube + custom handle,Optional,Medium,,,,
+4. Social,X,Optional,Low,,,,
+4. Social,LinkedIn Company Page,B2B,High,,,,
+4. Social,Pinterest,Visual/retail,Low,,,,
+4. Social,Threads,Optional,Low,,,,
+4. Social,Nextdoor,Local services,Medium,,,,
+4. Social,Reddit username,Optional,Low,,,,
+4. Social,2FA on every social account,Everyone,Critical,,,,Not optional
+5. Listings,Apple Business Connect,Local,High,,,,"Feeds Apple Maps, rarely claimed"
+5. Listings,Yelp claimed,Local,Medium,,,,A listing exists either way
+5. Listings,Industry directory / association,Varies,Medium,,,,
+5. Listings,Chamber of commerce,Local,Low,,,,
+5. Listings,NAP consistent across every listing,Everyone,Critical,,,,Exact same every time
+6. Security,All logins in a password manager,Everyone,Critical,,,,
+6. Security,2FA on registrar and email,Everyone,Critical,,,,The master keys
+6. Security,Recovery email set to domain email,Everyone,High,,,,
+6. Security,Backup codes saved,Everyone,High,,,,
+6. Security,Second admin on Google + Facebook,Everyone,High,,,,One lost phone from disaster
+6. Security,Written record of where everything lives,Everyone,High,,,,
+7. Legal,USPTO search completed,Everyone,High,,,,Free
+7. Legal,Decide whether to file a trademark,Optional,Varies,,,,Talk to an attorney
