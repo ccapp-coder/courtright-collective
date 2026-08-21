@@ -2,55 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About Courtright Collective — Family-Run Studio in Nashville</title>
-  <meta name="description" content="Courtright Collective is a family-run studio in Nashville, TN. We build the AimToGro AI co-pilot, custom websites and apps, and reports & analytics for small businesses. Founded by Dillon Courtright — ranch kid, touring musician, bartender, freight broker, indie app builder.">
+  <title>About Courtright Collective | Family-Run Studio in Nashville</title>
+  <meta name="description" content="Courtright Collective is a family-run studio in Nashville, TN. We build Tealden, the Belnoda business tools, and the small fixes in between. Founded by Dillon Courtright: ranch kid, touring musician, bartender, freight broker, indie app builder.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://courtrightco.com/about.html">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Courtright Collective">
   <meta property="og:title" content="About Courtright Collective">
-  <meta property="og:description" content="Family-run studio in Nashville. AimToGro, custom websites and apps, reports & analytics, app partnerships. The story behind how we got here.">
+  <meta property="og:description" content="Family-run studio in Nashville. Tealden, the Belnoda tools, Paged, and the story behind how we got here.">
   <meta property="og:url" content="https://courtrightco.com/about.html">
+  <meta property="og:image" content="https://courtrightco.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Courtright Collective">
+  <meta name="twitter:description" content="Family-run studio in Nashville. Tealden, the Belnoda tools, Paged, and the story behind how we got here.">
+  <meta name="twitter:image" content="https://courtrightco.com/og-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Retargeting pixel slots. Paste your snippets below and remove the comments.
+  <script> GOOGLE ADS / GA4 TAG GOES HERE </script>
+  <script> META PIXEL GOES HERE </script>
+  -->
+
   <style>
     * { box-sizing: border-box; }
     :root {
-      --midnight: #0E1520; --ash: #1A2030;
-      --copper: #C45C28; --copper-lt: #D97040;
-      --gold: #D9A030; --gold-lt: #F0B840; --smoke: #7A7268;
-      --parchment: #F4EBD9; --cream: #FAF6EF; --white: #FFFFFF;
+      --midnight:  #0E1520;
+      --ash:       #1A2030;
+      --copper:    #C45C28;
+      --copper-lt: #D97040;
+      --gold:      #D9A030;
+      --gold-lt:   #F0B840;
+      --smoke:     #7A7268;
+      --parchment: #F4EBD9;
+      --cream:     #FAF6EF;
+      --white:     #FFFFFF;
       --display: 'Cormorant Garamond', Georgia, serif;
-      --body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      --body:    'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
     }
     html { scroll-behavior: smooth; }
     body { font-family: var(--body); background: var(--cream); color: var(--midnight); margin: 0; line-height: 1.75; -webkit-font-smoothing: antialiased; }
     .container { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
     .container-wide { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
-    nav { position: sticky; top: 0; z-index: 50; background: rgba(250, 246, 239, 0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(14, 21, 32, 0.07); }
+
+    nav { position: sticky; top: 0; z-index: 50; background: rgba(250,246,239,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(14,21,32,0.07); }
     nav .container { display: flex; align-items: center; justify-content: space-between; max-width: 1120px; padding-top: 1rem; padding-bottom: 1rem; }
     .brand { font-family: var(--display); font-weight: 300; letter-spacing: 0.06em; font-size: 1.2rem; color: var(--midnight); text-decoration: none; }
     .brand span { color: var(--copper); font-weight: 400; }
-    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
-    .nav-links a { color: var(--midnight); text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.75; }
+    .nav-links { display: flex; gap: 1.6rem; align-items: center; }
+    .nav-links a { color: var(--midnight); text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.75; transition: opacity 0.2s; }
     .nav-links a:hover { opacity: 1; }
-    .btn { display: inline-block; padding: 0.875rem 1.75rem; background: var(--copper); color: white; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; transition: all 0.25s ease; }
-    .btn:hover { background: var(--copper-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196, 92, 40, 0.25); }
-    .btn-gold { background: var(--gold); color: var(--midnight); }
-    .btn-gold:hover { background: var(--gold-lt); }
+    .nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--midnight); cursor: pointer; padding: 0.25rem 0.5rem; }
+    @media (max-width: 780px) {
+      .nav-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: flex-start; gap: 0; background: var(--cream); border-bottom: 1px solid rgba(14,21,32,0.1); padding: 0.5rem 1.5rem 1rem; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.6rem 0; width: 100%; }
+      .nav-links a.btn { margin-top: 0.5rem; text-align: center; }
+    }
+
+    .btn { display: inline-block; padding: 0.875rem 1.75rem; background: var(--copper); color: var(--white); border: none; border-radius: 6px; font-family: var(--body); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; text-decoration: none; transition: all 0.25s ease; cursor: pointer; }
+    .btn:hover { background: var(--copper-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,92,40,0.25); }
 
     /* HERO */
     .hero { background: var(--midnight); color: var(--parchment); padding: 5rem 0 4rem; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 70% 50%, rgba(196, 92, 40, 0.18) 0%, transparent 70%); animation: glow 8s ease-in-out infinite alternate; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 70% 50%, rgba(196,92,40,0.18) 0%, transparent 70%); animation: glow 8s ease-in-out infinite alternate; pointer-events: none; }
     @keyframes glow { 0% { transform: scale(1) translateX(0); opacity: 0.7; } 100% { transform: scale(1.1) translateX(40px); opacity: 1; } }
     .hero .container { position: relative; z-index: 1; }
     .hero-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper); margin-bottom: 1.25rem; }
     .hero h1 { font-family: var(--display); font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 300; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 1rem; }
     .hero h1 em { font-style: italic; color: var(--copper); font-weight: 400; }
-    .hero h1 .gold { color: var(--gold); font-style: italic; font-weight: 400; }
-    .hero .sub { font-size: 1.2rem; color: rgba(244, 235, 217, 0.78); line-height: 1.65; margin: 0; max-width: 640px; }
+    .hero .sub { font-size: 1.2rem; color: rgba(244,235,217,0.78); line-height: 1.65; margin: 0; max-width: 640px; }
+    .hero .sub .gold { color: var(--gold); }
 
     /* ARTICLE */
     article { padding: 5rem 0 2rem; }
@@ -58,9 +86,10 @@
     article h2 em { color: var(--copper); font-style: italic; }
     article p { color: var(--midnight); font-size: 1.1rem; margin: 0 0 1.25rem; }
     article strong { color: var(--midnight); font-weight: 600; }
-    article a { color: var(--copper); text-decoration: none; border-bottom: 1px solid rgba(196, 92, 40, 0.3); transition: border-color 0.2s; }
+    article a { color: var(--copper); text-decoration: none; border-bottom: 1px solid rgba(196,92,40,0.3); transition: border-color 0.2s; }
     article a:hover { border-color: var(--copper); }
     .pull-quote { font-family: var(--display); font-size: 1.6rem; font-weight: 300; font-style: italic; color: var(--midnight); border-left: 3px solid var(--copper); padding: 0.5rem 0 0.5rem 1.5rem; margin: 2.5rem 0; line-height: 1.4; }
+    @media (max-width: 700px) { .pull-quote { font-size: 1.3rem; } }
 
     /* WHAT WE DO NOW GRID */
     .now-section { background: var(--parchment); padding: 4rem 0 4.5rem; margin-top: 2rem; }
@@ -71,60 +100,38 @@
     .now-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
     @media (max-width: 900px) { .now-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 600px) { .now-grid { grid-template-columns: 1fr; } }
-    .now-card { background: white; border: 1px solid rgba(14, 21, 32, 0.08); border-radius: 12px; padding: 1.75rem; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: all 0.3s ease; position: relative; overflow: hidden; border-bottom: none; }
+    .now-card { background: var(--white); border: 1px solid rgba(14,21,32,0.08); border-radius: 12px; padding: 1.75rem; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: all 0.3s ease; position: relative; overflow: hidden; }
     .now-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--copper); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
-    .now-card:hover { transform: translateY(-3px); border-color: var(--copper); box-shadow: 0 12px 32px rgba(14, 21, 32, 0.08); }
+    .now-card:hover { transform: translateY(-3px); border-color: var(--copper); box-shadow: 0 12px 32px rgba(14,21,32,0.08); }
     .now-card:hover::before { transform: scaleX(1); }
     .now-card.featured { border-color: var(--gold); border-width: 1.5px; }
     .now-card.featured::before { background: var(--gold); }
     .now-card.featured:hover { border-color: var(--gold); }
     .now-card .tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.5rem; }
     .now-card.featured .tag { color: var(--gold); }
-    .now-card .icon { font-size: 1.4rem; margin-bottom: 0.625rem; display: inline-block; }
     .now-card h3 { font-family: var(--display); font-size: 1.2rem; font-weight: 600; margin: 0 0 0.4rem; color: var(--midnight); }
     .now-card p { color: var(--smoke); font-size: 0.92rem; line-height: 1.55; margin: 0; flex: 1; }
 
     /* CTA CARD */
     .cta-card { background: var(--ash); color: var(--parchment); border-radius: 12px; padding: 2.5rem; text-align: center; margin: 4rem 0 1rem; position: relative; overflow: hidden; }
-    .cta-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(217, 160, 48, 0.12) 0%, transparent 60%); }
+    .cta-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(217,160,48,0.12) 0%, transparent 60%); }
     .cta-card > * { position: relative; z-index: 1; }
     .cta-card h2 { color: var(--parchment); margin-top: 0; font-family: var(--display); }
     .cta-card h2 em { color: var(--gold); }
-    .cta-card p { color: rgba(244, 235, 217, 0.75); margin: 0.5rem 0 1.5rem; }
+    .cta-card p { color: rgba(244,235,217,0.75); margin: 0.5rem 0 1.5rem; }
 
-    footer { padding: 3rem 0 2rem; border-top: 1px solid rgba(14, 21, 32, 0.08); color: var(--smoke); font-size: 0.92rem; }
-    footer a { color: var(--smoke); text-decoration: none; }
-    footer a:hover { color: var(--copper); }
-    @media (max-width: 700px) { .nav-links a:not(.btn) { display: none; } .pull-quote { font-size: 1.3rem; } }
-  
-    /* ── REFINED MOTION (portable) ── */
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s cubic-bezier(.34,1.56,.64,1)}
-    .reveal.visible{opacity:1;transform:translateY(0)}
-    .reveal:nth-child(2){transition-delay:.08s}
-    .reveal:nth-child(3){transition-delay:.16s}
-    .reveal:nth-child(4){transition-delay:.24s}
-    .reveal:nth-child(5){transition-delay:.32s}
-    .hero h1 em, h2 em{
-      background:linear-gradient(100deg,#C45C28 0%,#F0B840 45%,#C45C28 90%);
-      background-size:200% auto;-webkit-background-clip:text;background-clip:text;
-      -webkit-text-fill-color:transparent;color:transparent;animation:ccShimmer 6s linear infinite}
-    @keyframes ccShimmer{to{background-position:-200% center}}
-    .now-card,.cta-card,.form-card,.service-card,.app-card{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
-    .now-card:hover,.cta-card:hover,.form-card:hover,.service-card:hover,.app-card:hover{
-      transform:translateY(-6px);box-shadow:0 18px 40px rgba(196,92,40,.16);border-color:rgba(196,92,40,.35)}
-    .btn{position:relative;overflow:hidden}
-    .btn::after{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;
-      background:linear-gradient(100deg,transparent,rgba(255,255,255,.38),transparent);
-      transform:skewX(-20deg);transition:left .6s ease;pointer-events:none}
-    .btn:hover::after{left:170%}
-    .btn:active{transform:scale(.97)}
-    @media (prefers-reduced-motion:reduce){
-      .hero h1 em,h2 em{animation:none}
-      .now-card:hover,.cta-card:hover,.form-card:hover,.service-card:hover,.app-card:hover{transform:none}
-      .btn::after{display:none}
-      .reveal{opacity:1 !important;transform:none !important;transition:none !important}
+    footer { padding: 3rem 0 2rem; background: var(--cream); border-top: 1px solid rgba(14,21,32,0.08); }
+    .copyright { color: var(--smoke); font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .copyright a { color: var(--smoke); text-decoration: none; }
+    .copyright a:hover { color: var(--copper); }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero::before { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
     }
-
   </style>
 </head>
 <body>
@@ -132,9 +139,11 @@
 <nav>
   <div class="container">
     <a href="/" class="brand">Courtright <span>Collective</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <div class="nav-links">
-      <a href="/#services">Services</a>
-      <a href="/book.html">Pricing</a>
+      <a href="/#modules">The tools</a>
+      <a href="/products.html">Start small</a>
+      <a href="/pricing.html">Pricing</a>
       <a href="/about.html">About</a>
       <a href="/book.html" class="btn">Book a call</a>
     </div>
@@ -145,7 +154,7 @@
   <div class="container">
     <div class="hero-eyebrow">About</div>
     <h1>A family-run studio for the small businesses and indie founders we'd want to <em>work with.</em></h1>
-    <p class="sub">Courtright Collective is an independent studio in Nashville, Tennessee. We build <span style="color: var(--gold);">AimToGro</span> — an AI co-pilot for small business owners — plus the websites, apps, and reports the same owners keep meaning to get to. And we ship indie apps with founders ready to launch.</p>
+    <p class="sub">Courtright Collective is an independent studio in Nashville, Tennessee. We build <span class="gold">Tealden</span>, our done-for-you video service, plus the problem-first business tools that will live together as <span class="gold">Belnoda</span>. And we still ship indie apps with founders ready to launch.</p>
   </div>
 </header>
 
@@ -153,7 +162,7 @@
   <article>
 
     <h2 class="reveal">What we <em>believe</em></h2>
-    <p><strong>Most small businesses don't need a full-time AI hire, a $400-an-hour consultant, or another SaaS tool with twelve features and no answer.</strong> They need one good thing built well, deployed cleanly, and maintained when their business changes. Sometimes that's a workflow. Sometimes that's a website. Sometimes that's the report you keep saying you'll get to next weekend.</p>
+    <p><strong>Most small businesses don't need a full-time hire, a $400-an-hour consultant, or another SaaS tool with twelve features and no answer.</strong> They need one good thing built well, deployed cleanly, and maintained when their business changes. Sometimes that's a booking page. Sometimes that's a website. Sometimes that's the video content you keep saying you'll get to next weekend.</p>
     <p>That's the whole job. We're a small team that handles the build and the upkeep. You describe the outcome; we figure out how to get there.</p>
 
     <h2 class="reveal">What I bring to <em>this</em></h2>
@@ -162,7 +171,7 @@
     <p><strong>Touring in bands.</strong> Taught me how to serve a room. Reading the energy. Knowing when to push and when to ease back. A bad night is data, not a verdict.</p>
     <p><strong>Bartending.</strong> Taught me that the best service feels like attention paid, not effort spent. Remembering what someone drinks. Knowing when to talk and when not to. Making the place a regular comes back to.</p>
     <p><strong>Six years brokering freight.</strong> Taught me how to map a business on a phone call. What do they actually need. What's slowing them down. What would make their week easier without them having to ask.</p>
-    <p>All four show up in this work every day. Whether I'm shipping a new module in AimToGro, hand-building a workflow for a client, scoping a website, organizing a pile of files into a deep-dive report, or talking through an app idea with a founder. Same playbook every time: pay close attention, work hard, make someone's life easier.</p>
+    <p>All four show up in this work every day. Whether I'm shipping a new tool, scoping a website, tuning someone's daily video, or talking through an app idea with a founder. Same playbook every time: pay close attention, work hard, make someone's life easier.</p>
 
     <div class="pull-quote">
       The best service feels like attention paid, not effort spent.
@@ -170,9 +179,9 @@
 
     <h2 class="reveal">How we <em>got here</em></h2>
     <p>I started Courtright Collective as an indie app studio. That's how <a href="https://tinkertaps.courtrightco.com">TinkerTaps</a> and <a href="https://trivd.courtrightco.com">Trivd</a> came to be. Building apps is creative, slow work, and the wins are far apart.</p>
-    <p>As AI tools matured, I kept hearing from small-business owners who needed exactly the same thing: workflows built for them, by someone who actually understood the work and would still be around in six months. So we expanded — first into automation services, then into the kinds of work owners kept asking us for next: websites that actually work on phones, custom applications that fit how the business actually runs, reports and dashboards that surface what matters without anyone opening a spreadsheet.</p>
-    <p>The latest chapter is <a href="https://aimtogro.com"><strong>AimToGro</strong></a> — our flagship subscription product. It's the AI business co-pilot we wished existed for our clients: a daily check-in, automated reporting, a catalog of automations you can choose from, and the kind of running context that turns AI from a one-off prompt into something that actually grows with your business. It launches soon.</p>
-    <p>The app side still exists too, under our <a href="https://partner.courtrightco.com">partnership program</a> for founders ready to ship. Same studio, four service lines, one product, one set of values.</p>
+    <p>Somewhere along the way I noticed the pattern in what small-business owners kept asking for. It was never "build me an app." It was "make this one headache go away." The bookings, the follow-ups, the customer list scattered across three inboxes, the content they never had time to make. So we started building for the headaches instead of the categories.</p>
+    <p>The flagship of that shift is <a href="https://tealden.com"><strong>Tealden</strong></a>, our done-for-you video service. You tell it about your business once, and a fresh branded video shows up every day without you opening an editor. The tools behind the other headaches are becoming rooms in one house we call <a href="/belnoda.html"><strong>Belnoda</strong></a>: one login, one customer list, turn on only what you need. It's coming soon, and the rooms are already open.</p>
+    <p>The app side still exists too, under our <a href="https://partner.courtrightco.com">partnership program</a> for founders ready to ship. Same studio, same family, one set of values.</p>
 
   </article>
 </div>
@@ -180,43 +189,37 @@
 <section class="now-section">
   <div class="container-wide">
     <div class="eyebrow reveal">What we do now</div>
-    <h2 class="reveal">One studio. <em>Five ways in.</em></h2>
-    <p class="section-lead reveal">Pick whichever fits your situation. They all run through the same team, with the same approach: flat pricing, monthly check-ins, no hourly billing.</p>
+    <h2 class="reveal">One studio. <em>A few ways in.</em></h2>
+    <p class="section-lead reveal">Pick whichever fits your situation. They all run through the same small team, with the same approach: clear pricing, no hourly billing, and nobody disappearing after launch.</p>
 
     <div class="now-grid">
-      <a href="https://aimtogro.com" class="now-card featured reveal">
-        <div class="tag">Coming Soon · Flagship</div>
-        <span class="icon">★</span>
-        <h3>AimToGro</h3>
-        <p>The AI business co-pilot subscription. Daily check-ins, automated reporting, custom workflows. Tiers from $297/month.</p>
+      <a href="https://tealden.com" class="now-card featured reveal">
+        <div class="tag">Flagship &middot; From $299/mo</div>
+        <h3>Tealden</h3>
+        <p>Video content, done for you. A new branded video every day, in your colors and your voice. Founding spots are 50 percent off while they last.</p>
       </a>
-      <a href="/services/website-creation.html" class="now-card reveal">
-        <div class="tag">Service · From $750</div>
-        <span class="icon">▢</span>
-        <h3>Websites &amp; management</h3>
-        <p>Custom small business websites built fast and managed for you. Hosting, edits, SSL, analytics — all in your monthly.</p>
+      <a href="/#modules" class="now-card reveal">
+        <div class="tag">Software &middot; Belnoda</div>
+        <h3>The tools</h3>
+        <p>Problem-first modules for bookings, follow-ups, customer lists, memberships, and more. Rooms in one house, coming together as Belnoda.</p>
       </a>
-      <a href="/services/application-creation.html" class="now-card reveal">
-        <div class="tag">Service · From $2,500</div>
-        <span class="icon">◆</span>
-        <h3>Application creation</h3>
-        <p>Custom web and mobile apps for workflows that don't fit off-the-shelf tools. Internal tools, customer apps, AI features.</p>
+      <a href="/products.html" class="now-card reveal">
+        <div class="tag">Start Small &middot; From $9</div>
+        <h3>The small ticket shelf</h3>
+        <p>Cheap, instant fixes for one real problem at a time. Every purchase credits toward the tool it feeds into.</p>
       </a>
-      <a href="/services/reports-analytics.html" class="now-card reveal">
-        <div class="tag">Service · From $500</div>
-        <span class="icon">▲</span>
-        <h3>Reports &amp; analytics</h3>
-        <p>The data work you keep meaning to do. Deep dives, weekly reports, dashboards, organizing a messy pile of files.</p>
+      <a href="https://pagedlive.com" class="now-card reveal">
+        <div class="tag">Website &middot; $199 + $10/mo</div>
+        <h3>Paged</h3>
+        <p>A one-page website, built for you. Clean, fast, works on phones, and you never touch a site builder.</p>
       </a>
       <a href="https://partner.courtrightco.com" class="now-card reveal">
         <div class="tag">Revenue Share</div>
-        <span class="icon">●</span>
         <h3>App partnership</h3>
-        <p>For founders with an idea worth shipping. We design, build, launch, support — revenue share, no upfront fees.</p>
+        <p>For founders with an idea worth shipping. We design, build, launch, and support on a revenue share, no upfront fees.</p>
       </a>
       <a href="/book.html" class="now-card reveal">
         <div class="tag">Free Call</div>
-        <span class="icon">◇</span>
         <h3>Not sure yet?</h3>
         <p>Bring whatever's on your mind. A bottleneck, an idea, a question. 15 minutes, no pitch. We'll find the right way in together.</p>
       </a>
@@ -228,12 +231,12 @@
   <article style="padding: 4.5rem 0 1rem;">
 
     <h2 class="reveal">How we <em>work</em></h2>
-    <p>We don't hourly-bill. We don't disappear after launch. We don't write proposals so big you need a glossary. Every engagement is scoped clearly, priced flatly, and built with monthly check-ins so the work keeps fitting your business as it changes.</p>
+    <p>We don't hourly-bill. We don't disappear after launch. We don't write proposals so big you need a glossary. Every engagement is scoped clearly, priced plainly, and built with check-ins so the work keeps fitting your business as it changes.</p>
     <p>We're based in Nashville. We work with clients across the country remotely. If you're nearby and want to grab coffee, we'd love that too.</p>
 
     <div class="cta-card reveal">
-      <h2 class="reveal">See if we're a <em>fit.</em></h2>
-      <p>15 minutes, free, no commitment. Bring a bottleneck, an idea, or just a question. You'll leave with a clear next step — or none, if there isn't one.</p>
+      <h2>See if we're a <em>fit.</em></h2>
+      <p>15 minutes, free, no commitment. Bring a bottleneck, an idea, or just a question. You'll leave with a clear next step, or none, if there isn't one.</p>
       <a href="/book.html" class="btn">Book a call</a>
     </div>
   </article>
@@ -241,15 +244,30 @@
 
 <footer>
   <div class="container">
-    <p style="text-align: center;">© 2026 Courtright Collective LLC · Nashville, TN · <a href="/">Home</a> · <a href="/privacy.html">Privacy</a></p>
+    <div class="copyright">
+      <span>&copy; 2026 Courtright Collective LLC &middot; Nashville, TN</span>
+      <span><a href="/privacy.html">Privacy</a> &middot; <a href="mailto:info@courtrightco.com">info@courtrightco.com</a></span>
+    </div>
   </div>
 </footer>
 
-  <script>(function(){
-    var els=document.querySelectorAll('.reveal');
-    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('visible')});return;}
-    var o=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target);}})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
-    els.forEach(function(e){o.observe(e)});
-  })();</script>
+<script>
+  (function () {
+    var toggle = document.querySelector('.nav-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', function () {
+        var open = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+  })();
+</script>
+<script src="/assets/funnel.js" defer></script>
+
 </body>
 </html>

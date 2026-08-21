@@ -2,120 +2,179 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Pricing — Courtright Collective AI Automations</title>
-  <meta name="description" content="Transparent pricing for AI automation services. Monthly tiers from $99 to custom. Productized Quick Start offers from $497. No hourly billing, no custom quotes.">
+  <title>Pricing | Courtright Collective</title>
+  <meta name="description" content="Every price on the ladder, in one place. Free tools, $9 to $199 products, software from $4 a month, and done-for-you builds. No hourly billing, no mystery quotes.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://courtrightco.com/pricing.html">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Pricing — Courtright Collective">
-  <meta property="og:description" content="Tiered packages and productized offers. Transparent pricing for AI automation services.">
+  <meta property="og:site_name" content="Courtright Collective">
+  <meta property="og:title" content="Pricing | Courtright Collective">
+  <meta property="og:description" content="Every price on the ladder, in one place. Free tools, $9 to $199 products, software from $4 a month, and done-for-you builds.">
   <meta property="og:url" content="https://courtrightco.com/pricing.html">
+  <meta property="og:image" content="https://courtrightco.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Courtright Collective pricing">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pricing | Courtright Collective">
+  <meta name="twitter:description" content="Every price on the ladder, in one place. Free tools, $9 to $199 products, software from $4 a month, and done-for-you builds.">
+  <meta name="twitter:image" content="https://courtrightco.com/og-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Retargeting pixel slots. Paste your snippets below and remove the comments.
+  <script> GOOGLE ADS / GA4 TAG GOES HERE </script>
+  <script> META PIXEL GOES HERE </script>
+  -->
+
   <style>
     * { box-sizing: border-box; }
     :root {
-      --midnight: #0E1520; --ash: #1A2030;
-      --copper: #C45C28; --copper-lt: #D97040;
-      --gold: #D9A030; --gold-lt: #F0B840;
-      --smoke: #7A7268; --parchment: #F4EBD9; --cream: #FAF6EF;
+      --midnight:  #0E1520;
+      --ash:       #1A2030;
+      --copper:    #C45C28;
+      --copper-lt: #D97040;
+      --gold:      #D9A030;
+      --gold-lt:   #F0B840;
+      --smoke:     #7A7268;
+      --parchment: #F4EBD9;
+      --cream:     #FAF6EF;
+      --white:     #FFFFFF;
       --display: 'Cormorant Garamond', Georgia, serif;
-      --body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      --body:    'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: var(--body); background: var(--cream); color: var(--midnight); margin: 0; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--body); background: var(--cream); color: var(--midnight); margin: 0; line-height: 1.6; -webkit-font-smoothing: antialiased; }
     .container { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
-    nav { position: sticky; top: 0; z-index: 50; background: rgba(250, 246, 239, 0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(14, 21, 32, 0.07); }
+
+    nav { position: sticky; top: 0; z-index: 50; background: rgba(250,246,239,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(14,21,32,0.07); }
     nav .container { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; padding-bottom: 1rem; }
     .brand { font-family: var(--display); font-weight: 300; letter-spacing: 0.06em; font-size: 1.2rem; color: var(--midnight); text-decoration: none; }
     .brand span { color: var(--copper); font-weight: 400; }
-    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
-    .nav-links a { color: var(--midnight); text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.75; }
+    .nav-links { display: flex; gap: 1.6rem; align-items: center; }
+    .nav-links a { color: var(--midnight); text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.75; transition: opacity 0.2s; }
     .nav-links a:hover { opacity: 1; }
-    .btn { display: inline-block; padding: 0.875rem 1.75rem; background: var(--copper); color: white; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; transition: all 0.25s ease; text-align: center; }
-    .btn:hover { background: var(--copper-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196, 92, 40, 0.25); }
+    .nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--midnight); cursor: pointer; padding: 0.25rem 0.5rem; }
+    @media (max-width: 780px) {
+      .nav-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: flex-start; gap: 0; background: var(--cream); border-bottom: 1px solid rgba(14,21,32,0.1); padding: 0.5rem 1.5rem 1rem; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.6rem 0; width: 100%; }
+      .nav-links a.btn { margin-top: 0.5rem; text-align: center; }
+    }
+
+    .btn { display: inline-block; padding: 0.875rem 1.75rem; background: var(--copper); color: var(--white); border: none; border-radius: 6px; font-family: var(--body); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; text-decoration: none; transition: all 0.25s ease; cursor: pointer; }
+    .btn:hover { background: var(--copper-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,92,40,0.25); }
     .btn-secondary { background: transparent; color: var(--midnight); border: 1.5px solid var(--midnight); }
-    .btn-secondary:hover { background: var(--midnight); color: var(--cream); }
+    .btn-secondary:hover { background: var(--midnight); color: var(--cream); box-shadow: 0 8px 24px rgba(14,21,32,0.2); }
     .btn-gold { background: var(--gold); color: var(--midnight); }
     .btn-gold:hover { background: var(--gold-lt); }
-    .hero { background: var(--midnight); color: var(--parchment); padding: 5rem 0 4rem; position: relative; overflow: hidden; text-align: center; }
-    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at center, rgba(196, 92, 40, 0.18) 0%, transparent 70%); }
+
+    .hero { background: var(--midnight); color: var(--parchment); padding: 4.5rem 0 4rem; position: relative; overflow: hidden; text-align: center; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 55% at 50% 40%, rgba(196,92,40,0.18) 0%, transparent 70%); pointer-events: none; animation: glow 8s ease-in-out infinite alternate; }
+    @keyframes glow { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(1.1); opacity: 1; } }
     .hero .container { position: relative; z-index: 1; }
-    .hero-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper); margin-bottom: 1.25rem; }
-    .hero h1 { font-family: var(--display); font-size: clamp(2.5rem, 5vw, 3.75rem); font-weight: 300; line-height: 1.15; letter-spacing: -0.01em; margin: 0 auto 1rem; max-width: 900px; }
+    .hero-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper); margin-bottom: 1.25rem; opacity: 0; transform: translateY(20px); animation: fadeUp 0.7s ease-out 0.1s forwards; }
+    .hero h1 { font-family: var(--display); font-size: clamp(2.4rem, 5vw, 3.9rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.01em; margin: 0 auto 1.25rem; max-width: 860px; opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s ease-out 0.25s forwards; }
     .hero h1 em { font-style: italic; color: var(--copper); font-weight: 400; }
-    .hero .sub { font-size: 1.15rem; color: rgba(244, 235, 217, 0.75); line-height: 1.65; margin: 0 auto; max-width: 620px; }
-    section { padding: 5rem 0; }
-    .section-parchment { background: var(--parchment); }
-    .section-cream { background: var(--cream); }
+    .hero .sub { font-size: 1.15rem; max-width: 640px; color: rgba(244,235,217,0.75); line-height: 1.65; margin: 0 auto; opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s ease-out 0.4s forwards; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    section { padding: 5rem 0; position: relative; }
     .section-dark { background: var(--midnight); color: var(--parchment); }
+    .section-cream { background: var(--cream); }
+    .section-parchment { background: var(--parchment); }
     .eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.75rem; }
-    h2 { font-family: var(--display); font-size: clamp(2rem, 3.5vw, 2.5rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.005em; margin: 0 0 1rem; }
+    h2 { font-family: var(--display); font-size: clamp(2rem, 4vw, 2.9rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 1rem; max-width: 760px; }
     h2 em { font-style: italic; color: var(--copper); }
     .section-dark h2 em { color: var(--gold); }
-    .section-lead { font-size: 1.1rem; line-height: 1.7; color: var(--smoke); max-width: 680px; margin: 0 0 3rem; }
-    .section-dark .section-lead { color: rgba(244, 235, 217, 0.7); }
+    .section-lead { font-size: 1.1rem; line-height: 1.7; color: var(--smoke); max-width: 680px; margin: 0 0 2.5rem; }
+    .section-dark .section-lead { color: rgba(244,235,217,0.65); }
 
-    .pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
-    @media (max-width: 900px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 500px) { .pricing-grid { grid-template-columns: 1fr; } }
-    .price-card { background: white; border: 1px solid rgba(14, 21, 32, 0.08); border-radius: 12px; padding: 2rem 1.5rem; display: flex; flex-direction: column; transition: all 0.3s ease; position: relative; }
-    .price-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(14, 21, 32, 0.08); }
-    .price-card.featured { border-color: var(--copper); border-width: 2px; }
-    .price-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: -0.65rem; left: 1.5rem; background: var(--copper); color: white; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; }
-    .price-card h3 { font-family: var(--display); font-size: 1.4rem; font-weight: 600; margin: 0 0 0.25rem; color: var(--midnight); }
-    .price-card .price { font-family: var(--display); font-size: 1.85rem; font-weight: 600; color: var(--midnight); margin: 0.5rem 0; }
-    .price-card .price span { font-size: 0.85rem; font-weight: 400; color: var(--smoke); display: block; margin-top: 0.25rem; }
-    .price-card .pitch { color: var(--smoke); font-size: 0.9rem; line-height: 1.55; margin: 0 0 1.25rem; min-height: 60px; }
-    .price-card ul { list-style: none; padding: 0; margin: 0 0 1.5rem; flex: 1; }
-    .price-card li { padding: 0.55rem 0; color: var(--midnight); font-size: 0.88rem; border-bottom: 1px solid rgba(14, 21, 32, 0.06); }
-    .price-card li:last-child { border-bottom: none; }
-    .price-card li::before { content: '◆ '; color: var(--copper); font-size: 0.7rem; margin-right: 0.25rem; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    .quickstart-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-    @media (max-width: 900px) { .quickstart-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 500px) { .quickstart-grid { grid-template-columns: 1fr; } }
-    .quickstart-card { background: white; border: 1px solid rgba(14, 21, 32, 0.08); border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; transition: all 0.3s ease; position: relative; overflow: hidden; }
-    .quickstart-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
-    .quickstart-card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 12px 32px rgba(14, 21, 32, 0.08); }
-    .quickstart-card:hover::before { transform: scaleX(1); }
-    .quickstart-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
-    .quickstart-card h3 { font-family: var(--display); font-size: 1.3rem; font-weight: 600; margin: 0 0 0.25rem; color: var(--midnight); }
-    .quickstart-card .price-line { font-family: var(--display); font-size: 1.4rem; font-weight: 600; color: var(--copper); margin: 0.25rem 0 0.875rem; }
-    .quickstart-card p { color: var(--smoke); font-size: 0.92rem; line-height: 1.55; margin: 0 0 1.25rem; flex: 1; }
-    .quickstart-card a { color: var(--midnight); text-decoration: none; font-weight: 600; font-size: 0.9rem; border-bottom: 1.5px solid var(--copper); display: inline-block; align-self: flex-start; padding-bottom: 2px; transition: color 0.2s; }
-    .quickstart-card a:hover { color: var(--copper); }
+    .rung-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; background: var(--gold); color: var(--midnight); border-radius: 100px; padding: 0.22rem 0.75rem; margin-bottom: 1rem; }
 
-    .oneoff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    @media (max-width: 800px) { .oneoff-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 500px) { .oneoff-grid { grid-template-columns: 1fr; } }
-    .oneoff-card { background: var(--ash); padding: 1.5rem; border-radius: 10px; border: 1px solid rgba(244, 235, 217, 0.1); transition: border-color 0.3s ease; }
-    .oneoff-card:hover { border-color: var(--copper); }
-    .oneoff-card h4 { font-family: var(--display); font-size: 1.1rem; font-weight: 600; margin: 0 0 0.25rem; color: var(--parchment); }
-    .oneoff-card .range { color: var(--gold); font-size: 0.95rem; font-weight: 600; margin: 0.25rem 0 0.625rem; }
-    .oneoff-card p { color: rgba(244, 235, 217, 0.65); font-size: 0.88rem; margin: 0; line-height: 1.5; }
+    /* Free */
+    .tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 2rem; }
+    @media (max-width: 720px) { .tools-grid { grid-template-columns: 1fr; } }
+    .tool-card { background: var(--white); border: 1px solid rgba(14,21,32,0.08); border-radius: 12px; padding: 1.75rem; text-decoration: none; color: inherit; transition: all 0.3s ease; }
+    .tool-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(14,21,32,0.08); }
+    .tool-card .free-tag { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; background: var(--gold); color: var(--midnight); border-radius: 100px; padding: 0.2rem 0.7rem; margin-bottom: 0.75rem; }
+    .tool-card h3 { font-family: var(--display); font-size: 1.25rem; font-weight: 600; margin: 0 0 0.4rem; }
+    .tool-card p { color: var(--smoke); font-size: 0.92rem; margin: 0; }
+    .capture-card { background: var(--white); border: 1px solid rgba(14,21,32,0.08); border-radius: 14px; padding: 2rem; max-width: 640px; }
+    .capture-card h3 { font-family: var(--display); font-size: 1.4rem; font-weight: 600; margin: 0 0 0.5rem; }
+    .capture-card p { color: var(--smoke); font-size: 0.95rem; margin: 0 0 1.25rem; }
+    .capture-card form { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .capture-card input[type=email] { flex: 1; min-width: 220px; padding: 0.8rem 1rem; border-radius: 7px; border: 1px solid rgba(14,21,32,0.2); font-size: 0.95rem; font-family: var(--body); }
+    .lead-done { color: var(--copper); font-weight: 600; }
 
-    .faq details { border-bottom: 1px solid rgba(14, 21, 32, 0.1); padding: 1.25rem 0; cursor: pointer; }
-    .faq summary { font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--midnight); }
-    .faq summary::-webkit-details-marker { display: none; }
-    .faq summary::after { content: '+'; color: var(--copper); font-size: 1.5rem; font-weight: 300; transition: transform 0.3s ease; }
-    .faq details[open] summary::after { transform: rotate(45deg); }
-    .faq details p { color: var(--smoke); font-size: 0.95rem; line-height: 1.65; margin: 1rem 0 0; }
+    /* Small ticket */
+    .ticket-band { background: var(--white); border: 1px solid rgba(14,21,32,0.08); border-radius: 14px; padding: 2.25rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
+    @media (max-width: 720px) { .ticket-band { grid-template-columns: 1fr; } }
+    .ticket-band h3 { font-family: var(--display); font-size: 1.6rem; font-weight: 600; margin: 0 0 0.5rem; }
+    .ticket-band .range { font-family: var(--display); font-size: 1.3rem; color: var(--copper); font-weight: 600; }
+    .ticket-band p { color: var(--smoke); font-size: 0.98rem; line-height: 1.65; margin: 0.5rem 0 0; max-width: 560px; }
+    .ticket-band p strong { color: var(--copper); }
 
-    .cta-section { background: var(--midnight); color: var(--parchment); text-align: center; position: relative; overflow: hidden; }
-    .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(217, 160, 48, 0.15) 0%, transparent 65%); }
-    .cta-section .container { position: relative; z-index: 1; }
-    .cta-section h2 { color: var(--parchment); max-width: 800px; margin: 0.5rem auto 1.25rem; }
+    /* Software */
+    .software-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    @media (max-width: 800px) { .software-grid { grid-template-columns: 1fr; } }
+    .software-card { background: rgba(244,235,217,0.05); border: 1px solid rgba(244,235,217,0.14); border-radius: 12px; padding: 1.75rem; color: var(--parchment); display: flex; flex-direction: column; transition: all 0.3s ease; }
+    .software-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .software-card h3 { font-family: var(--display); font-size: 1.45rem; font-weight: 600; margin: 0 0 0.25rem; }
+    .software-card .price-line { color: var(--gold); font-weight: 600; font-size: 1rem; margin: 0 0 0.75rem; }
+    .software-card p { font-size: 0.93rem; color: rgba(244,235,217,0.7); line-height: 1.6; margin: 0 0 1rem; flex: 1; }
+    .software-card ul { margin: 0 0 1.25rem; padding-left: 1.1rem; color: rgba(244,235,217,0.7); font-size: 0.9rem; }
+    .software-card li { margin: 0.3rem 0; }
+    .software-card li strong { color: var(--parchment); }
+    .software-card .go { color: var(--gold); font-weight: 600; font-size: 0.92rem; text-decoration: none; align-self: flex-start; }
+    .software-card .go:hover { color: var(--gold-lt); }
+    .founding-chip { background: rgba(217,160,48,0.12); border: 1px solid rgba(217,160,48,0.45); border-radius: 10px; padding: 0.85rem 1rem; margin: 0 0 1.25rem; font-size: 0.88rem; color: rgba(244,235,217,0.85); }
+    .founding-chip strong { color: var(--gold-lt); }
+
+    /* Done for you */
+    .dfy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-bottom: 2.5rem; }
+    @media (max-width: 800px) { .dfy-grid { grid-template-columns: 1fr; } }
+    .dfy-card { background: var(--white); border: 1px solid rgba(14,21,32,0.08); border-radius: 12px; padding: 1.75rem; }
+    .dfy-card h3 { font-family: var(--display); font-size: 1.35rem; font-weight: 600; margin: 0 0 0.5rem; }
+    .dfy-card p { color: var(--smoke); font-size: 0.93rem; line-height: 1.6; margin: 0 0 0.85rem; }
+    .dfy-card ul { margin: 0; padding-left: 1.1rem; color: var(--smoke); font-size: 0.92rem; }
+    .dfy-card li { margin: 0.35rem 0; }
+    .dfy-card li strong { color: var(--midnight); }
+    .dfy-card .from { color: var(--copper); font-weight: 600; }
+    .dfy-card a { color: var(--copper); font-weight: 600; text-decoration: none; }
+
+    .cta-section { background: var(--midnight); color: var(--parchment); text-align: center; }
+    .cta-section h2 { max-width: 800px; margin: 0.5rem auto 1.25rem; color: var(--parchment); }
     .cta-section h2 em { color: var(--gold); }
-    .cta-section p { color: rgba(244, 235, 217, 0.7); margin: 0 auto 2.5rem; max-width: 620px; }
+    .cta-section p { color: rgba(244,235,217,0.7); margin: 0 auto 2.5rem; max-width: 620px; font-size: 1.1rem; }
 
-    footer { padding: 3rem 0 2rem; border-top: 1px solid rgba(14, 21, 32, 0.08); color: var(--smoke); font-size: 0.92rem; text-align: center; }
-    footer a { color: var(--smoke); text-decoration: none; }
-    footer a:hover { color: var(--copper); }
-    @media (max-width: 700px) { .nav-links a:not(.btn) { display: none; } }
+    footer { padding: 4rem 0 2rem; background: var(--cream); border-top: 1px solid rgba(14,21,32,0.08); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
+    @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+    footer h4 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--smoke); margin: 0 0 1rem; }
+    footer ul { list-style: none; padding: 0; margin: 0; }
+    footer li { margin: 0.45rem 0; }
+    footer a { color: var(--midnight); text-decoration: none; font-size: 0.92rem; opacity: 0.75; transition: opacity 0.2s; }
+    footer a:hover { opacity: 1; color: var(--copper); }
+    footer .tagline { color: var(--smoke); margin: 1rem 0 0; max-width: 320px; font-size: 0.95rem; line-height: 1.6; }
+    .copyright { color: var(--smoke); font-size: 0.85rem; padding-top: 1.5rem; border-top: 1px solid rgba(14,21,32,0.08); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .copyright a { color: var(--smoke); text-decoration: none; }
+    .copyright a:hover { color: var(--copper); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-eyebrow, .hero h1, .hero .sub { animation: none; opacity: 1; transform: none; }
+      .hero::before { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
   </style>
 </head>
 <body>
@@ -123,8 +182,10 @@
 <nav>
   <div class="container">
     <a href="/" class="brand">Courtright <span>Collective</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <div class="nav-links">
-      <a href="/#services">Services</a>
+      <a href="/#modules">The tools</a>
+      <a href="/products.html">Start small</a>
       <a href="/pricing.html">Pricing</a>
       <a href="/about.html">About</a>
       <a href="/book.html" class="btn">Book a call</a>
@@ -135,214 +196,224 @@
 <header class="hero">
   <div class="container">
     <div class="hero-eyebrow">Pricing</div>
-    <h1>Transparent prices. <em>No hourly bills.</em></h1>
-    <p class="sub">Pick a monthly tier if you want a relationship, or a Quick Start if you want to buy something specific. Either way, no custom quotes, no surprise invoices.</p>
+    <h1>Every price we have, <em>on one page.</em></h1>
+    <p class="sub">The ladder runs from free to done-for-you, and you can get on at any rung. No hourly billing, no mystery quotes, no "contact us for pricing" games. Well, almost none. The big custom builds get a real conversation first, and we'll tell you exactly which ones those are.</p>
   </div>
 </header>
 
-<section class="section-cream">
+<section id="free" class="section-cream">
   <div class="container">
-    <div class="eyebrow">Monthly Tiers</div>
-    <h2>Build with us <em>monthly.</em></h2>
-    <p class="section-lead">For businesses that want ongoing automation work, monthly check-ins, and a partner who stays involved as the business changes.</p>
+    <span class="rung-tag reveal">Rung 1</span>
+    <div class="eyebrow reveal">Free</div>
+    <h2 class="reveal">Start at <em>zero dollars.</em></h2>
+    <p class="section-lead reveal">Two working tools, free forever, no signup wall. Use them, keep them, tell a friend. If they save you an hour, you'll know who built them.</p>
+    <div class="tools-grid">
+      <a href="/tools/ebay-calculator.html" class="tool-card reveal">
+        <span class="free-tag">Free</span>
+        <h3>eBay Repricing Calculator</h3>
+        <p>Profit, break-even, target margin. Every mode checked by hand, correct to the cent.</p>
+      </a>
+      <a href="/tools/qr-menu.html" class="tool-card reveal">
+        <span class="free-tag">Free</span>
+        <h3>QR Menu Maker</h3>
+        <p>Build a scannable menu for your restaurant or cafe in about ten minutes.</p>
+      </a>
+    </div>
+    <div class="capture-card reveal">
+      <h3>The email list is free too</h3>
+      <p>New tools, new products, and founding-price windows go to the list before they go anywhere else. No spam, no daily emails.</p>
+      <form data-lead="pricing-list" data-done="You're on the list. Talk soon.">
+        <input type="email" placeholder="you@business.com" required>
+        <button type="submit" class="btn btn-secondary">Keep me posted</button>
+      </form>
+    </div>
+  </div>
+</section>
 
-    <div class="pricing-grid">
-      <div class="price-card">
-        <h3>Audit</h3>
-        <div class="price">$0<span>one-time</span></div>
-        <p class="pitch">A free 30-minute call to map your bottlenecks and find the most valuable workflow to automate first.</p>
-        <ul>
-          <li>30-min workflow audit</li>
-          <li>Written summary &amp; recs</li>
-          <li>Scoped proposal if a fit</li>
-          <li>No commitment</li>
-        </ul>
-        <a href="/book.html" class="btn btn-secondary">Book the audit</a>
+<section id="small-ticket" class="section-parchment">
+  <div class="container">
+    <span class="rung-tag reveal">Rung 2</span>
+    <div class="eyebrow reveal">Small Ticket</div>
+    <h2 class="reveal">Fix one thing for <em>$9 to $199.</em></h2>
+    <p class="section-lead reveal">Templates, kits, audits, and quick fixes. Cheap enough to buy without a meeting, useful enough to matter this afternoon.</p>
+    <div class="ticket-band reveal">
+      <div>
+        <h3>The small ticket shelf</h3>
+        <div class="range">$9 to $199, one-time</div>
+        <p>Copy banks, spreadsheet CRMs, review kits, prompt vaults, teardowns, and more. And here's the part we're proud of: <strong>every dollar counts twice.</strong> Any small ticket purchase credits toward your first month of the software it feeds into, or toward a build if you hire us later.</p>
+      </div>
+      <a href="/products.html" class="btn btn-secondary">Browse the shelf</a>
+    </div>
+  </div>
+</section>
+
+<section id="software" class="section-dark">
+  <div class="container">
+    <span class="rung-tag reveal">Rung 3</span>
+    <div class="eyebrow reveal" style="color: var(--gold);">Software</div>
+    <h2 class="reveal">Tools that work while <em>you don't.</em></h2>
+    <p class="section-lead reveal">Monthly software, priced so a small business can actually say yes. Cancel any of it whenever you want.</p>
+
+    <div class="software-grid">
+      <div class="software-card reveal">
+        <h3>AllOneTap</h3>
+        <div class="price-line">Free to start &middot; $4/mo Pro</div>
+        <p>Your link in bio, done right. One clean page that sends everyone exactly where you want them. Live today, and the free plan is genuinely usable.</p>
+        <a href="https://allonetap.com" class="go">See AllOneTap &rarr;</a>
       </div>
 
-      <div class="price-card featured">
-        <h3>Starter</h3>
-        <div class="price">$500<span>+ $99/month</span></div>
-        <p class="pitch">One automation, built and monitored. Best for testing the water on a specific workflow.</p>
-        <ul>
-          <li>1 automation from scratch</li>
-          <li>Deployed &amp; documented</li>
-          <li>Monthly check-in</li>
-          <li>Email support</li>
-        </ul>
-        <a href="/book.html" class="btn">Get started</a>
+      <div class="software-card reveal">
+        <h3>Paged</h3>
+        <div class="price-line">$199 to build &middot; $10/mo after</div>
+        <p>A one-page website, built for you, live fast. No design homework, no drag-and-drop weekend lost to a builder tool. You talk, we ship, it's yours.</p>
+        <a href="https://pagedlive.com" class="go">See Paged &rarr;</a>
       </div>
 
-      <div class="price-card">
-        <h3>Growth</h3>
-        <div class="price">$999<span>+ $250/month</span></div>
-        <p class="pitch">Up to 3 stacked automations. For businesses ready to remove multiple bottlenecks at once.</p>
+      <div class="software-card reveal">
+        <h3>Belnoda modules</h3>
+        <div class="price-line">Planned launch pricing, coming soon</div>
+        <p>Our modular business operating system. One login, one client list, and rooms you turn on when you need them. The planned ladder at launch:</p>
         <ul>
-          <li>Up to 3 automations</li>
-          <li>Integrated as a stack</li>
-          <li>Bi-weekly check-ins</li>
-          <li>Quarterly strategy review</li>
+          <li><strong>$4.99/mo</strong> base, with the free foundation built in</li>
+          <li><strong>$16.99/mo</strong> Tier 1 bundle of everyday rooms</li>
+          <li><strong>$5 to $19/mo</strong> for most individual rooms</li>
+          <li><strong>$99/mo</strong> Tier 2, <strong>$329/mo</strong> all-access</li>
         </ul>
-        <a href="/book.html" class="btn btn-secondary">Book a call</a>
+        <p style="font-size:0.85rem; margin-bottom:1rem;">These numbers may shift a little before launch. The early-access list hears first.</p>
+        <a href="/belnoda.html" class="go">See Belnoda &rarr;</a>
       </div>
 
-      <div class="price-card">
-        <h3>Scale</h3>
-        <div class="price">Custom<span>monthly retainer</span></div>
-        <p class="pitch">Full automation stack, dedicated build hours, ongoing optimization. For teams running multiple processes.</p>
+      <div class="software-card reveal">
+        <h3>Tealden</h3>
+        <div class="price-line">$299 to $549/mo</div>
+        <p>Done-for-you branded video. A new video in your colors and your voice, every day, without you opening an editor.</p>
         <ul>
-          <li>Unlimited automations</li>
-          <li>Weekly working sessions</li>
-          <li>Dedicated build hours</li>
-          <li>SLA on response time</li>
+          <li><strong>$299/mo</strong> self-scheduled</li>
+          <li><strong>$349/mo</strong> Starter</li>
+          <li><strong>$549/mo</strong> Momentum</li>
+          <li>Annual plans get <strong>two months free</strong></li>
         </ul>
-        <a href="/book.html" class="btn btn-secondary">Talk to us</a>
+        <div class="founding-chip"><strong>Founding round open:</strong> 50 percent off forever, while spots last.</div>
+        <a href="https://tealden.com" class="go">See Tealden &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section-parchment">
+<section id="done-for-you" class="section-cream">
   <div class="container">
-    <div class="eyebrow">Quick Starts</div>
-    <h2>Or buy a specific <em>thing.</em></h2>
-    <p class="section-lead">Fixed price. Fixed scope. No discovery call required (unless you want one). For when you know exactly what you need and want to get moving today.</p>
+    <span class="rung-tag reveal">Rung 4</span>
+    <div class="eyebrow reveal">Done For You</div>
+    <h2 class="reveal">Or we build it, run it, and <em>you get your week back.</em></h2>
+    <p class="section-lead reveal">The top of the ladder. You bring the problem, we bring the whole solution. Every engagement starts with a free 15-minute call, so nobody buys anything blind.</p>
 
-    <div class="quickstart-grid">
-      <div class="quickstart-card">
-        <div class="quickstart-tag">Most Popular</div>
-        <h3>Email Triage in 7 Days</h3>
-        <div class="price-line">$500 + $99/mo</div>
-        <p>Your inbox triaged into actionable buckets, AI-drafted replies in your voice, automated follow-ups for leads who didn't respond. Live within 7 days of signup.</p>
-        <a href="/book.html">Start this one →</a>
+    <div class="dfy-grid">
+      <div class="dfy-card reveal">
+        <h3>AI automation packages</h3>
+        <p>The busywork handled on a schedule or a trigger. Email triage, reports, trackers, that kind of thing.</p>
+        <ul>
+          <li><strong>Starter:</strong> <span class="from">$500 + $99/mo</span>, one automation, built and monitored</li>
+          <li><strong>Growth:</strong> <span class="from">$999 + $250/mo</span>, up to three automations, stacked</li>
+          <li><strong>Scale:</strong> <span class="from">custom</span>, the full stack, priced after we talk</li>
+        </ul>
       </div>
-
-      <div class="quickstart-card">
-        <h3>Weekly Reports on Autopilot</h3>
-        <div class="price-line">$500 + $99/mo</div>
-        <p>Custom weekly business report pulled from your tools (Stripe, Shopify, your CRM), formatted, and delivered to your inbox every Monday at 7am.</p>
-        <a href="/book.html">Start this one →</a>
+      <div class="dfy-card reveal">
+        <h3>Custom apps</h3>
+        <p>A tool built around your exact workflow, not the other way around.</p>
+        <ul>
+          <li><strong>Smaller builds:</strong> <span class="from">$2,500 to $7,500</span></li>
+          <li><strong>Larger builds:</strong> quoted after a scoping call</li>
+        </ul>
       </div>
-
-      <div class="quickstart-card">
-        <h3>AI Audit + Action Plan</h3>
-        <div class="price-line">$497 one-time</div>
-        <p>One focused week. Discovery, workflow audit, and a written 10-page action plan with prioritized recommendations and rough cost estimates.</p>
-        <a href="/book.html">Start this one →</a>
+      <div class="dfy-card reveal">
+        <h3>Custom websites</h3>
+        <p>Bigger than a one-pager? Custom sites are quoted, because the honest answer to "how much is a website" is "depends what it has to do." <a href="/book.html">Book a call</a> and we'll give you a real number, not a range with a mile between the ends.</p>
+        <p style="margin:0;">Just need something simple? <a href="https://pagedlive.com">Paged</a> is $199 and you'll have it fast.</p>
       </div>
-
-      <div class="quickstart-card">
-        <h3>Small Business Website</h3>
-        <div class="price-line">$1,500 + $29/mo</div>
-        <p>Professional 1-5 page site, mobile-first, SEO set up, on your domain. Includes booking integration and analytics. Live in 14 days.</p>
-        <a href="/book.html">Start this one →</a>
+      <div class="dfy-card reveal">
+        <h3>Diagnosis first</h3>
+        <p>Not sure what you need? Start with a look under the hood. All three credit toward any build.</p>
+        <ul>
+          <li><strong>Website Teardown:</strong> <span class="from">$99</span>, your site reviewed line by line</li>
+          <li><strong>Get-Found-on-Google Mini-Audit:</strong> <span class="from">$79</span></li>
+          <li><strong>Fix-My-Presence Call:</strong> <span class="from">$99</span></li>
+        </ul>
       </div>
-
-      <div class="quickstart-card">
-        <h3>Custom AI Assistant</h3>
-        <div class="price-line">$2,500 starting</div>
-        <p>An AI assistant built around one specific workflow in your business. Embedded on your site, in Slack, or wherever it needs to live. Tailored to your data.</p>
-        <a href="/book.html">Start this one →</a>
-      </div>
-
-      <div class="quickstart-card">
-        <h3>Booking Page Setup</h3>
-        <div class="price-line">$497 one-time</div>
-        <p>Cal.com or similar fully configured on your domain, branded to your site, synced with your calendar. Done in 3 days. Stop wasting time on email scheduling.</p>
-        <a href="/book.html">Start this one →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-dark">
-  <div class="container">
-    <div class="eyebrow">One-Off Builds</div>
-    <h2>Bigger projects, <em>custom scope.</em></h2>
-    <p class="section-lead">When the work needs to be tailored from scratch. Ranges shown for transparency. Exact pricing after a discovery call.</p>
-
-    <div class="oneoff-grid">
-      <div class="oneoff-card">
-        <h4>Custom AI Chat Assistant</h4>
-        <div class="range">$2,500 – $5,000</div>
-        <p>Website embed, trained on your knowledge. Includes 30-day support.</p>
-      </div>
-      <div class="oneoff-card">
-        <h4>Internal Knowledge Bot</h4>
-        <div class="range">$3,500 – $7,500</div>
-        <p>Slack or Teams integrated. Trained on your company docs and SOPs.</p>
-      </div>
-      <div class="oneoff-card">
-        <h4>CRM Setup &amp; Automation</h4>
-        <div class="range">$2,000 – $5,000</div>
-        <p>Data migration, workflow setup, training. Pipedrive, HubSpot, Close.</p>
-      </div>
-      <div class="oneoff-card">
-        <h4>E-commerce Automation</h4>
-        <div class="range">$3,500 – $8,000</div>
-        <p>Shopify orders, customer service, abandoned cart, inventory alerts.</p>
-      </div>
-      <div class="oneoff-card">
-        <h4>Custom Dashboard</h4>
-        <div class="range">$1,500 – $4,000</div>
-        <p>Web-based, real-time, pulling from your existing tools. Yours forever.</p>
-      </div>
-      <div class="oneoff-card">
-        <h4>Industry-Specific Package</h4>
-        <div class="range">$1,500 – $5,000</div>
-        <p>Real estate, healthcare, legal, e-commerce. Packaged for your vertical.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-cream faq">
-  <div class="container">
-    <div class="eyebrow">FAQ</div>
-    <h2>About the <em>pricing.</em></h2>
-    <div style="margin-top: 2rem; max-width: 760px;">
-      <details>
-        <summary>Why no hourly billing?</summary>
-        <p>Hourly creates the wrong incentive. The faster we build, the less we make. The slower we build, the more we make. We prefer fixed scope and fixed price so we're aligned with you on shipping fast, not stretching things out.</p>
-      </details>
-      <details>
-        <summary>Can I switch tiers as my needs change?</summary>
-        <p>Yes. Move up or down as your business evolves. Annual prepay gets you 10% off any tier.</p>
-      </details>
-      <details>
-        <summary>What if I want to cancel?</summary>
-        <p>Monthly tiers run month-to-month with 30 days notice. Quick Starts are one-time except for the maintenance component, which is the same 30-day cancellation. No long contracts, no fine print.</p>
-      </details>
-      <details>
-        <summary>Are the Quick Start prices firm?</summary>
-        <p>Yes for the listed scope. If your situation needs more custom work, we'll quote that separately. The whole point of Quick Starts is you know what you're paying before you book.</p>
-      </details>
-      <details>
-        <summary>Do you offer payment plans?</summary>
-        <p>Yes for projects $2,000+, typically 50% upfront and 50% on completion. For longer engagements, we set up monthly billing.</p>
-      </details>
-      <details>
-        <summary>What about app partnerships?</summary>
-        <p>That's a separate offering with revenue share pricing, not monthly fees. See <a href="https://partner.courtrightco.com" style="color: var(--copper);">partner.courtrightco.com</a>.</p>
-      </details>
     </div>
   </div>
 </section>
 
 <section class="cta-section">
   <div class="container">
-    <div class="eyebrow">Start Here</div>
-    <h2>Still not sure what fits? <em>Book the free audit.</em></h2>
-    <p>15 minutes. We'll map your situation and tell you which tier or Quick Start makes sense. Or that none of them do.</p>
-    <a href="/book.html" class="btn">Book the free audit</a>
+    <div class="eyebrow reveal" style="color: var(--gold);">Start Anywhere</div>
+    <h2 class="reveal">Not sure which rung <em>is yours?</em></h2>
+    <p class="reveal">That's the whole point of the call. Fifteen minutes, zero pressure, and we'll point you at the cheapest thing that actually fixes your problem. Sometimes that's the free one. We'll say so.</p>
+    <p class="reveal"><a href="/book.html" class="btn btn-gold">Book the free 15-min call</a></p>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    <p>© 2026 Courtright Collective LLC · Nashville, TN · <a href="/">Home</a> · <a href="/privacy.html">Privacy</a></p>
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="brand">Courtright <span>Collective</span></a>
+        <p class="tagline">A family-run digital studio in Nashville. We build the thing you've been trying to duct-tape together.</p>
+      </div>
+      <div>
+        <h4>The tools</h4>
+        <ul>
+          <li><a href="https://tealden.com">Tealden</a></li>
+          <li><a href="/belnoda.html">Belnoda</a></li>
+          <li><a href="https://allonetap.com">AllOneTap</a></li>
+          <li><a href="https://pagedlive.com">Paged</a></li>
+          <li><a href="/products.html">Small ticket shelf</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hire us</h4>
+        <ul>
+          <li><a href="/services/email-automation.html">Email automation</a></li>
+          <li><a href="/services/business-reports.html">Business reports</a></li>
+          <li><a href="/services/website-creation.html">Website builds</a></li>
+          <li><a href="/services/application-creation.html">App builds</a></li>
+          <li><a href="https://partner.courtrightco.com">Partnership program</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/book.html">Book a call</a></li>
+          <li><a href="/affiliates.html">Affiliate program</a></li>
+          <li><a href="https://tinkertaps.courtrightco.com">TinkerTaps</a></li>
+          <li><a href="https://trivd.courtrightco.com">Trivd</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>&copy; 2026 Courtright Collective LLC &middot; Nashville, TN</span>
+      <span><a href="/privacy.html">Privacy</a> &middot; <a href="mailto:info@courtrightco.com">info@courtrightco.com</a></span>
+    </div>
   </div>
 </footer>
+
+<script>
+  (function () {
+    var toggle = document.querySelector('.nav-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', function () {
+        var open = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+  })();
+</script>
+<script src="/assets/funnel.js" defer></script>
 
 </body>
 </html>

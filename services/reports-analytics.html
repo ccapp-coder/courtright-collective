@@ -2,82 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reports &amp; Analytics for Small Business | Courtright Collective</title>
-  <meta name="description" content="Custom reports, dashboards, and data analysis for small businesses. We sit with your data so you don't have to. Weekly summaries, monthly reviews, deep dives, and live dashboards.">
-  <meta name="keywords" content="small business reports, business analytics, data analysis, custom dashboards, weekly business report, business intelligence small business, KPI reporting">
+  <title>Reports &amp; Analytics, Done For You | Courtright Collective</title>
+  <meta name="description" content="We sit with your data so you don't have to. Weekly reports, monthly reviews, custom dashboards, and one-time deep dives, built around real decisions. From $500.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://courtrightco.com/services/reports-analytics.html">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Reports &amp; Analytics for Small Business">
-  <meta property="og:description" content="We sit with your data so you don't have to. Custom reports, dashboards, and analysis built around the decisions you're actually making.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Courtright Collective">
+  <meta property="og:title" content="Reports &amp; Analytics, Done For You">
+  <meta property="og:description" content="We sit with your data so you don't have to. Reports, dashboards, and deep dives built around the decisions you're actually making.">
   <meta property="og:url" content="https://courtrightco.com/services/reports-analytics.html">
+  <meta property="og:image" content="https://courtrightco.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Reports &amp; Analytics, Done For You">
+  <meta name="twitter:description" content="We sit with your data so you don't have to. Reports, dashboards, and deep dives built around real decisions.">
+  <meta name="twitter:image" content="https://courtrightco.com/og-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Retargeting pixel slots. Paste your snippets below and remove the comments.
+  <script> GOOGLE ADS / GA4 TAG GOES HERE </script>
+  <script> META PIXEL GOES HERE </script>
+  -->
+
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Service","name":"Reports &amp; Analytics","provider":{"@type":"Organization","name":"Courtright Collective","url":"https://courtrightco.com"},"description":"Custom business reports, dashboards, and data analysis for small businesses.","areaServed":"United States","serviceType":"Business Analytics"}
+  {"@context":"https://schema.org","@type":"Service","name":"Reports & Analytics","provider":{"@type":"Organization","name":"Courtright Collective","url":"https://courtrightco.com"},"description":"Custom business reports, dashboards, and data analysis for small businesses, built around real decisions.","areaServed":"United States","serviceType":"Business Analytics"}
   </script>
 
   <style>
     * { box-sizing: border-box; }
     :root {
-      --midnight: #0E1520; --ash: #1A2030;
-      --copper: #C45C28; --copper-lt: #D97040;
-      --gold: #D9A030; --smoke: #7A7268;
-      --parchment: #F4EBD9; --cream: #FAF6EF;
+      --midnight:  #0E1520;
+      --ash:       #1A2030;
+      --copper:    #C45C28;
+      --copper-lt: #D97040;
+      --gold:      #D9A030;
+      --gold-lt:   #F0B840;
+      --smoke:     #7A7268;
+      --parchment: #F4EBD9;
+      --cream:     #FAF6EF;
+      --white:     #FFFFFF;
       --display: 'Cormorant Garamond', Georgia, serif;
-      --body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      --body:    'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: var(--body); background: var(--cream); color: var(--midnight); margin: 0; line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-    nav { position: sticky; top: 0; z-index: 50; background: rgba(250, 246, 239, 0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(14, 21, 32, 0.07); }
-    nav .container { display: flex; align-items: center; justify-content: space-between; max-width: 1120px; padding-top: 1rem; padding-bottom: 1rem; }
+    body { font-family: var(--body); background: var(--cream); color: var(--midnight); margin: 0; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+
+    nav { position: sticky; top: 0; z-index: 50; background: rgba(250,246,239,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(14,21,32,0.07); }
+    nav .container { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; padding-bottom: 1rem; }
     .brand { font-family: var(--display); font-weight: 300; letter-spacing: 0.06em; font-size: 1.2rem; color: var(--midnight); text-decoration: none; }
     .brand span { color: var(--copper); font-weight: 400; }
-    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
-    .nav-links a { color: var(--midnight); text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.75; }
+    .nav-links { display: flex; gap: 1.6rem; align-items: center; }
+    .nav-links a { color: var(--midnight); text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.75; transition: opacity 0.2s; }
     .nav-links a:hover { opacity: 1; }
-    .btn { display: inline-block; padding: 0.875rem 1.75rem; background: var(--copper); color: white; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; transition: all 0.25s ease; }
-    .btn:hover { background: var(--copper-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196, 92, 40, 0.25); }
-    .breadcrumb { padding: 1.5rem 0; color: var(--smoke); font-size: 0.9rem; }
-    .breadcrumb a { color: var(--smoke); text-decoration: none; }
-    .breadcrumb a:hover { color: var(--copper); }
-    article { padding: 2rem 0 5rem; }
-    article h1 { font-family: var(--display); font-size: clamp(2.25rem, 4.5vw, 3.25rem); font-weight: 300; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 1rem; }
-    article h1 em { color: var(--copper); font-style: italic; font-weight: 400; }
-    article .lead { font-size: 1.2rem; color: var(--smoke); margin: 0 0 2.5rem; line-height: 1.65; max-width: 760px; }
-    article h2 { font-family: var(--display); font-size: clamp(1.5rem, 2.5vw, 1.85rem); font-weight: 600; margin: 3rem 0 1rem; color: var(--midnight); letter-spacing: -0.005em; }
-    article h2 em { color: var(--copper); font-style: italic; }
-    article h3 { font-family: var(--display); font-size: 1.2rem; font-weight: 600; margin: 1.5rem 0 0.5rem; color: var(--midnight); }
-    article p { color: var(--midnight); font-size: 1.05rem; margin: 0 0 1.25rem; }
-    article ul { color: var(--midnight); padding-left: 1.25rem; }
-    article ul li { margin: 0.5rem 0; }
-    article strong { color: var(--midnight); font-weight: 600; }
-    article a { color: var(--copper); text-decoration: none; border-bottom: 1px solid rgba(196, 92, 40, 0.3); }
-    article a:hover { border-color: var(--copper); }
-    .use-case { background: white; border: 1px solid rgba(14, 21, 32, 0.08); border-radius: 12px; padding: 1.75rem; margin: 1rem 0; transition: all 0.3s ease; }
-    .use-case:hover { border-color: var(--copper); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(14, 21, 32, 0.05); }
-    .use-case h3 { margin: 0 0 0.5rem; }
-    .use-case p { margin: 0; }
-    .cta-card { background: var(--ash); color: var(--parchment); border-radius: 12px; padding: 2.5rem; text-align: center; margin: 3.5rem 0 1rem; position: relative; overflow: hidden; }
-    .cta-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(196, 92, 40, 0.15) 0%, transparent 60%); }
-    .cta-card > * { position: relative; z-index: 1; }
-    .cta-card h2 { color: var(--parchment); margin-top: 0; }
-    .cta-card h2 em { color: var(--gold); }
-    .cta-card p { color: rgba(244, 235, 217, 0.7); margin: 0.5rem 0 1.5rem; }
-    .faq details { border-bottom: 1px solid rgba(14, 21, 32, 0.08); padding: 1.25rem 0; cursor: pointer; }
-    .faq summary { font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; color: var(--midnight); }
+    .nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--midnight); cursor: pointer; padding: 0.25rem 0.5rem; }
+    @media (max-width: 780px) {
+      .nav-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: flex-start; gap: 0; background: var(--cream); border-bottom: 1px solid rgba(14,21,32,0.1); padding: 0.5rem 1.5rem 1rem; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.6rem 0; width: 100%; }
+      .nav-links a.btn { margin-top: 0.5rem; text-align: center; }
+    }
+
+    .btn { display: inline-block; padding: 0.875rem 1.75rem; background: var(--copper); color: var(--white); border: none; border-radius: 6px; font-family: var(--body); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; text-decoration: none; transition: all 0.25s ease; cursor: pointer; }
+    .btn:hover { background: var(--copper-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,92,40,0.25); }
+    .btn-secondary { background: transparent; color: var(--midnight); border: 1.5px solid var(--midnight); }
+    .btn-secondary:hover { background: var(--midnight); color: var(--cream); box-shadow: 0 8px 24px rgba(14,21,32,0.2); }
+    .btn-gold { background: var(--gold); color: var(--midnight); }
+    .btn-gold:hover { background: var(--gold-lt); }
+
+    .hero { background: var(--midnight); color: var(--parchment); padding: 4.5rem 0 4rem; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(196,92,40,0.18) 0%, transparent 70%); pointer-events: none; animation: glow 8s ease-in-out infinite alternate; }
+    @keyframes glow { 0% { transform: scale(1) translateX(0); opacity: 0.7; } 100% { transform: scale(1.1) translateX(40px); opacity: 1; } }
+    .hero .container { position: relative; z-index: 1; }
+    .hero-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper); margin-bottom: 1.25rem; opacity: 0; transform: translateY(20px); animation: fadeUp 0.7s ease-out 0.1s forwards; }
+    .hero h1 { font-family: var(--display); font-size: clamp(2.2rem, 4.6vw, 3.6rem); font-weight: 300; line-height: 1.12; letter-spacing: -0.01em; margin: 0 0 1.25rem; max-width: 820px; opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s ease-out 0.25s forwards; }
+    .hero h1 em { font-style: italic; color: var(--copper); font-weight: 400; }
+    .hero .sub { font-size: 1.12rem; max-width: 640px; color: rgba(244,235,217,0.75); line-height: 1.65; margin: 0 0 2rem; opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s ease-out 0.4s forwards; }
+    .hero .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s ease-out 0.55s forwards; }
+    .hero .cta-row .btn-secondary { color: var(--parchment); border-color: rgba(244,235,217,0.3); }
+    .hero .cta-row .btn-secondary:hover { background: var(--parchment); color: var(--midnight); }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    section { padding: 4.5rem 0; position: relative; }
+    .section-dark { background: var(--midnight); color: var(--parchment); }
+    .section-cream { background: var(--cream); }
+    .section-parchment { background: var(--parchment); }
+    .eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.75rem; }
+    h2 { font-family: var(--display); font-size: clamp(1.9rem, 3.6vw, 2.7rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 1rem; max-width: 760px; }
+    h2 em { font-style: italic; color: var(--copper); }
+    .section-dark h2 em { color: var(--gold); }
+    .section-lead { font-size: 1.08rem; line-height: 1.7; color: var(--smoke); max-width: 680px; margin: 0 0 2.5rem; }
+    .section-dark .section-lead { color: rgba(244,235,217,0.65); }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    @media (max-width: 720px) { .case-grid { grid-template-columns: 1fr; } }
+    .case-card { background: var(--white); border: 1px solid rgba(14,21,32,0.08); border-radius: 12px; padding: 1.75rem; transition: all 0.3s ease; }
+    .case-card:hover { border-color: var(--copper); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(14,21,32,0.07); }
+    .case-card h3 { font-family: var(--display); font-size: 1.3rem; font-weight: 600; margin: 0 0 0.5rem; color: var(--midnight); }
+    .case-card p { color: var(--smoke); font-size: 0.95rem; line-height: 1.6; margin: 0; }
+
+    .replace-list { list-style: none; padding: 0; margin: 0 0 1.5rem; max-width: 720px; }
+    .replace-list li { padding: 0.85rem 0 0.85rem 1.9rem; border-bottom: 1px solid rgba(14,21,32,0.08); position: relative; font-size: 1rem; }
+    .replace-list li::before { content: '✕'; position: absolute; left: 0.25rem; color: var(--copper); font-weight: 700; }
+    .payoff { font-size: 1.05rem; max-width: 720px; }
+    .payoff strong { color: var(--copper); }
+
+    .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; max-width: 860px; }
+    @media (max-width: 720px) { .price-grid { grid-template-columns: 1fr; } }
+    .price-card { background: rgba(244,235,217,0.05); border: 1px solid rgba(244,235,217,0.14); border-radius: 12px; padding: 1.9rem; }
+    .price-card.featured { border-color: var(--gold); }
+    .price-card .tier { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .price-card .amount { font-family: var(--display); font-size: 2rem; font-weight: 600; color: var(--parchment); line-height: 1.2; }
+    .price-card .amount span { font-size: 1.05rem; font-family: var(--body); font-weight: 400; color: rgba(244,235,217,0.65); }
+    .price-card p { font-size: 0.92rem; color: rgba(244,235,217,0.65); line-height: 1.6; margin: 0.75rem 0 0; }
+    .credit-line { margin-top: 2rem; font-size: 0.95rem; color: rgba(244,235,217,0.7); max-width: 680px; }
+    .credit-line strong { color: var(--gold); }
+
+    .diy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; max-width: 860px; }
+    @media (max-width: 720px) { .diy-grid { grid-template-columns: 1fr; } }
+    .diy-card { background: var(--white); border: 1px solid rgba(14,21,32,0.08); border-radius: 12px; padding: 1.75rem; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: all 0.3s ease; }
+    .diy-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(14,21,32,0.07); }
+    .diy-card .tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .diy-card h3 { font-family: var(--display); font-size: 1.3rem; font-weight: 600; margin: 0 0 0.4rem; color: var(--midnight); }
+    .diy-card p { color: var(--smoke); font-size: 0.93rem; line-height: 1.6; margin: 0 0 1rem; flex: 1; }
+    .diy-card .go { color: var(--copper); font-weight: 600; font-size: 0.9rem; }
+
+    .capture-card { background: var(--parchment); border-radius: 14px; padding: 2.25rem; max-width: 640px; }
+    .capture-card h3 { font-family: var(--display); font-size: 1.5rem; font-weight: 600; margin: 0 0 0.5rem; }
+    .capture-card p { color: var(--smoke); font-size: 0.95rem; margin: 0 0 1.25rem; }
+    .capture-card form { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .capture-card input[type=email] { flex: 1; min-width: 220px; padding: 0.8rem 1rem; border-radius: 7px; border: 1px solid rgba(14,21,32,0.2); font-size: 0.95rem; font-family: var(--body); }
+    .lead-done { color: var(--copper); font-weight: 600; }
+
+    .faq { max-width: 760px; }
+    .faq details { border-bottom: 1px solid rgba(14,21,32,0.08); padding: 1.1rem 0; cursor: pointer; }
+    .faq summary { font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; gap: 1rem; color: var(--midnight); }
     .faq summary::-webkit-details-marker { display: none; }
-    .faq summary::after { content: '+'; color: var(--copper); font-size: 1.5rem; font-weight: 300; transition: transform 0.3s ease; }
+    .faq summary::after { content: '+'; color: var(--copper); font-size: 1.4rem; font-weight: 300; transition: transform 0.3s ease; }
     .faq details[open] summary::after { transform: rotate(45deg); }
-    .faq details p { color: var(--smoke); margin: 1rem 0 0; line-height: 1.65; }
-    footer { padding: 3rem 0 2rem; border-top: 1px solid rgba(14, 21, 32, 0.08); color: var(--smoke); font-size: 0.92rem; text-align: center; }
-    footer a { color: var(--smoke); text-decoration: none; }
-    footer a:hover { color: var(--copper); }
-    @media (max-width: 700px) { .nav-links a:not(.btn) { display: none; } }
+    .faq details p { color: var(--smoke); margin: 0.9rem 0 0; line-height: 1.65; font-size: 0.97rem; }
+
+    footer { padding: 4rem 0 2rem; background: var(--cream); border-top: 1px solid rgba(14,21,32,0.08); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
+    @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+    footer h4 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--smoke); margin: 0 0 1rem; }
+    footer ul { list-style: none; padding: 0; margin: 0; }
+    footer li { margin: 0.45rem 0; }
+    footer a { color: var(--midnight); text-decoration: none; font-size: 0.92rem; opacity: 0.75; transition: opacity 0.2s; }
+    footer a:hover { opacity: 1; color: var(--copper); }
+    footer .tagline { color: var(--smoke); margin: 1rem 0 0; max-width: 320px; font-size: 0.95rem; line-height: 1.6; }
+    .copyright { color: var(--smoke); font-size: 0.85rem; padding-top: 1.5rem; border-top: 1px solid rgba(14,21,32,0.08); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .copyright a { color: var(--smoke); text-decoration: none; }
+    .copyright a:hover { color: var(--copper); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-eyebrow, .hero h1, .hero .sub, .hero .cta-row { animation: none; opacity: 1; transform: none; }
+      .hero::before { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
   </style>
 </head>
 <body>
@@ -85,80 +176,135 @@
 <nav>
   <div class="container">
     <a href="/" class="brand">Courtright <span>Collective</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <div class="nav-links">
-      <a href="/#services">Services</a>
-      <a href="/book.html">Pricing</a>
+      <a href="/#modules">The tools</a>
+      <a href="/products.html">Start small</a>
+      <a href="/pricing.html">Pricing</a>
       <a href="/about.html">About</a>
       <a href="/book.html" class="btn">Book a call</a>
     </div>
   </div>
 </nav>
 
-<div class="container">
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <a href="/">Home</a> · <a href="/#services">Services</a> · Reports &amp; analytics
-  </nav>
-
-  <article>
+<header class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Done For You &middot; Reports &amp; Analytics</div>
     <h1>The data work you keep <em>meaning to do.</em></h1>
-    <p class="lead">Most small businesses are sitting on more data than they have time to make sense of. We sit with it for you. Weekly reports, monthly reviews, custom dashboards, and the occasional deep dive — built around the decisions you're actually trying to make.</p>
+    <p class="sub">You're sitting on more data than you have time to make sense of. We sit with it for you. Weekly reports, monthly reviews, custom dashboards, and the occasional deep dive, built around the decisions you're actually trying to make.</p>
+    <div class="cta-row">
+      <a href="/book.html" class="btn">Book a free 15-min call</a>
+      <a href="#pricing" class="btn btn-secondary">See what it costs</a>
+    </div>
+  </div>
+</header>
 
-    <h2>What this typically <em>replaces</em></h2>
-    <p>The exports that pile up in Downloads. The "I'll look at the numbers this weekend" that becomes next weekend. The CSV your accountant sent that you never opened. The dashboard tab in QuickBooks you stopped checking. <strong>The data isn't the problem. The time to sit with it is the problem.</strong></p>
-    <ul>
-      <li>Three separate sales reports you haven't merged into one view</li>
+<section class="section-cream">
+  <div class="container">
+    <div class="eyebrow reveal">What We Actually Do</div>
+    <h2 class="reveal">We're the analyst you <em>don't have to hire.</em></h2>
+    <p class="section-lead reveal">We connect to your data read-only (we never write to your systems), figure out which numbers actually drive decisions, and then keep the answers coming. Plain English, five-minute reads, charts only where they help.</p>
+
+    <div class="case-grid">
+      <div class="case-card reveal">
+        <h3>Weekly reports on autopilot</h3>
+        <p>A short written report every Monday morning. Revenue, leads, conversions, whatever matters to your business, pulled from your tools and written up with what's worth paying attention to. Read it in five minutes.</p>
+      </div>
+      <div class="case-card reveal">
+        <h3>Monthly reviews and quarterly deep dives</h3>
+        <p>The bigger-picture review you keep meaning to write yourself. Twelve weeks of data, what changed, what's working, what's slipping. A clean document you can hand to a partner, accountant, or investor.</p>
+      </div>
+      <div class="case-card reveal">
+        <h3>Custom live dashboards</h3>
+        <p>Stripe, your CRM, QuickBooks, Shopify, Google Analytics, whatever you've got, pulled into one view. Hosted on your domain, current in near-real-time, readable on your phone.</p>
+      </div>
+      <div class="case-card reveal">
+        <h3>One-time deep dives and data organization</h3>
+        <p>A folder of PDFs to sort, a year of receipts to reconcile, a question like "should we raise prices?" We structure what needs structuring, dig into what needs digging, and come back with clean files plus a written report. Recently used for legal case prep, vendor audits, tax-season reconciliation, and pricing analysis.</p>
+      </div>
+      <div class="case-card reveal">
+        <h3>Data consolidation across tools</h3>
+        <p>Your numbers live in five systems that don't talk to each other. We build the pipelines that pull, clean, and merge them so everything works off one source of truth. No more spreadsheet exports.</p>
+      </div>
+      <div class="case-card reveal">
+        <h3>KPI design that changes decisions</h3>
+        <p>Most businesses track vanity metrics that look nice but change nothing. We help you pick the three to five numbers that actually drive your business, and build everything else around those.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-parchment">
+  <div class="container">
+    <div class="eyebrow reveal">What This Replaces</div>
+    <h2 class="reveal">The exports piling up <em>in your Downloads folder.</em></h2>
+    <ul class="replace-list reveal">
+      <li>Three separate sales reports you never merged into one view</li>
       <li>A year of Stripe data you've never actually analyzed</li>
-      <li>Ad spend that you can't tell if it's profitable</li>
-      <li>Customer behavior you have a hunch about but no evidence for</li>
-      <li>A pricing change you've been "thinking about" for six months</li>
+      <li>Ad spend you can't tell is profitable or not</li>
+      <li>A customer-behavior hunch with no evidence behind it</li>
+      <li>The pricing change you've been "thinking about" for six months</li>
     </ul>
+    <p class="payoff reveal"><strong>The data isn't the problem. The time to sit with it is the problem.</strong> So we sit with it.</p>
+  </div>
+</section>
 
-    <h2>What we <em>build</em></h2>
-
-    <div class="use-case">
-      <h3>Weekly business reports on autopilot</h3>
-      <p>A short, written report delivered every Monday morning. Revenue, leads, conversions, anything that matters to your business — pulled from your tools, formatted, and written up in plain English with what's worth paying attention to. You read it in five minutes.</p>
+<section id="pricing" class="section-dark">
+  <div class="container">
+    <div class="eyebrow reveal" style="color: var(--gold);">What It Costs</div>
+    <h2 class="reveal">Priced by the job, <em>not by mystery.</em></h2>
+    <div class="price-grid">
+      <div class="price-card reveal">
+        <div class="tier">One-time deep dives</div>
+        <div class="amount">$500 <span>to $1,500</span></div>
+        <p>$500 for a single dataset or document set (roughly 50 files or fewer, one source), up to $1,500 for multi-source projects or larger datasets. Clean files plus a written report.</p>
+      </div>
+      <div class="price-card reveal">
+        <div class="tier">Weekly report</div>
+        <div class="amount">$500 <span>one-time + $99/mo</span></div>
+        <p>A weekly business report on autopilot. Set up once, delivered every Monday, maintained by us.</p>
+      </div>
+      <div class="price-card reveal">
+        <div class="tier">Custom dashboards</div>
+        <div class="amount">$1,500 <span>to $4,000</span></div>
+        <p>One-off dashboard builds pulling from multiple sources into a single live view, hosted on your domain.</p>
+      </div>
+      <div class="price-card reveal">
+        <div class="tier">Ongoing engagements</div>
+        <div class="amount">Scoped <span>on the call</span></div>
+        <p>Multiple reports, dashboards, and analysis on a schedule. We scope it after the free call so you're never guessing at the bill.</p>
+      </div>
     </div>
+    <p class="credit-line reveal"><strong>Started with a diagnosis product?</strong> Any diagnosis purchase from our small ticket shelf credits toward your build. The small yes counts toward the big one. <a href="/pricing.html" style="color: var(--gold);">See all pricing &rarr;</a></p>
+  </div>
+</section>
 
-    <div class="use-case">
-      <h3>Monthly reviews and quarterly deep dives</h3>
-      <p>The bigger picture review you keep meaning to write yourself. We pull twelve weeks of data, write up what changed, flag what's working, and call out what's slipping. Delivered as a clean document you can share with a partner, accountant, or investor.</p>
+<section class="section-cream">
+  <div class="container">
+    <div class="eyebrow reveal">Want The Cheaper DIY Version?</div>
+    <h2 class="reveal">Not ready to hire us? <em>Fair.</em></h2>
+    <p class="section-lead reveal">Two of our self-serve tools cover the most common reasons people land on this page. Start there, and if you want the analyst treatment later, we already know each other.</p>
+    <div class="diy-grid">
+      <a href="https://trends.courtrightco.com" class="diy-card reveal">
+        <div class="tag">Software &middot; DIY</div>
+        <h3>Trends</h3>
+        <p>Our data watcher. It tells you the moment a number needs you. Not a dashboard you forget to check, a nudge that finds you.</p>
+        <span class="go">See Trends &rarr;</span>
+      </a>
+      <a href="https://charted.courtrightco.com" class="diy-card reveal">
+        <div class="tag">Software &middot; DIY</div>
+        <h3>Charted</h3>
+        <p>A clear progress log your clients can watch, so they stay. If the report you need is "show my clients the work," this is the self-serve version.</p>
+        <span class="go">See Charted &rarr;</span>
+      </a>
     </div>
+  </div>
+</section>
 
-    <div class="use-case">
-      <h3>Custom live dashboards</h3>
-      <p>A web-based dashboard pulling from Stripe, your CRM, QuickBooks, Shopify, Google Analytics — whatever you've got — into one view. Hosted on your domain, accessible on phone or laptop, updated in near-real-time. The numbers you actually care about, in one place.</p>
-    </div>
-
-    <div class="use-case">
-      <h3>One-time deep dives &amp; data organization</h3>
-      <p>You have a specific question, a chaotic pile of files, or both. A folder of PDFs to sort, a legal case's worth of documents to organize and summarize, a year of receipts to reconcile, or a strategic question like "should we raise prices?" or "why did Q3 look weird?". We sit with the data, structure what needs structuring, dig into what needs digging into, and come back with clean files plus a written report. Recently used for legal case prep, vendor audits, tax-season reconciliation, and pricing analysis.</p>
-    </div>
-
-    <div class="use-case">
-      <h3>Data consolidation across tools</h3>
-      <p>Your numbers live in five different systems and none of them talk to each other. We build pipelines that pull, clean, and merge the data so reports and dashboards work off a single source of truth. No more spreadsheet exports.</p>
-    </div>
-
-    <div class="use-case">
-      <h3>KPI design for the metrics that matter</h3>
-      <p>Most businesses track the wrong things — vanity metrics that look good but don't change decisions. We help you pick the three to five numbers that actually drive your business and build everything else around those.</p>
-    </div>
-
-    <h2>What it actually <em>looks like</em></h2>
-    <p>We start with a free 30-minute call about your business and the questions you wish you had answers to. We connect to your data sources (read-only — we never write to your systems). Within a week you've got a first report or dashboard draft. After that, reports show up on the schedule we agreed on, and dashboards stay live and current. You don't open a spreadsheet again unless you want to.</p>
-
-    <h2>What it <em>costs</em></h2>
-    <p>One-time deep dives and data organization projects start at <strong>$500</strong> for a single dataset or document set (roughly 50 files or fewer, one source) and scale up to <strong>$1,500</strong> for multi-source projects or larger datasets. A weekly business report on autopilot is <strong>$500 one-time + $99/month</strong>. Custom dashboards typically run <strong>$1,500 – $4,000</strong> as one-off builds. Larger ongoing engagements with multiple reports, dashboards, and analysis are scoped after the audit call. <a href="/book.html">See all pricing →</a></p>
-
-    <div class="cta-card">
-      <h2>Tell us what you wish you <em>knew.</em></h2>
-      <p>15-minute free audit. Bring one question you've been meaning to answer with your data. We'll tell you how to answer it and what it would cost.</p>
-      <a href="/book.html" class="btn">Book the audit</a>
-    </div>
-
-    <h2 class="faq">Common <em>questions</em></h2>
-    <section class="faq">
+<section class="section-parchment">
+  <div class="container">
+    <div class="eyebrow reveal">Common Questions</div>
+    <div class="faq reveal">
       <details>
         <summary>What data sources do you support?</summary>
         <p>Most things with an API or an export: Stripe, Shopify, Square, QuickBooks, Xero, Google Analytics, Plausible, HubSpot, Pipedrive, Salesforce, Mailchimp, Klaviyo, Google Sheets, Airtable, and plain CSVs. If you can get data out of it, we can almost certainly work with it.</p>
@@ -172,26 +318,89 @@
         <p>Most clients don't, and that's fine. The first call is a conversation about what decisions you're actually trying to make. The metrics fall out of the decisions, not the other way around.</p>
       </details>
       <details>
-        <summary>Will the reports be too technical?</summary>
-        <p>No. Reports are written in plain English, with charts where they help and not where they don't. They're built to be read in five minutes by someone running a business, not analyzed for an hour by a data scientist.</p>
-      </details>
-      <details>
-        <summary>Can I share the reports with my team or my accountant?</summary>
-        <p>Yes. Reports come as clean PDFs or shared documents. Dashboards can have multiple logins if you want different views for different people.</p>
-      </details>
-      <details>
         <summary>How is this different from BI tools like Looker or Tableau?</summary>
-        <p>Those tools are powerful but they assume you have someone in-house who knows how to use them. We're the someone. You get the output without having to learn the software, hire an analyst, or maintain a stack.</p>
+        <p>Those tools are powerful, but they assume you have someone in-house who knows how to use them. We're the someone. You get the output without learning the software, hiring an analyst, or maintaining a stack.</p>
       </details>
-    </section>
-  </article>
-</div>
+    </div>
+  </div>
+</section>
+
+<section class="section-cream">
+  <div class="container">
+    <div class="capture-card reveal">
+      <h3>Not ready to book a call?</h3>
+      <p>Drop your email and I'll reach out personally. Bring the one question you've been meaning to answer with your data. I'll tell you how to answer it.</p>
+      <form data-lead="service-reports-analytics" data-done="Got it. I'll be in touch within a day.">
+        <input type="email" placeholder="you@business.com" required>
+        <input type="hidden" name="item" value="reports-analytics">
+        <button type="submit" class="btn">Reach out to me</button>
+      </form>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="container">
-    <p>© 2026 Courtright Collective LLC · Nashville, TN · <a href="/">Home</a> · <a href="/privacy.html">Privacy</a></p>
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="brand">Courtright <span>Collective</span></a>
+        <p class="tagline">A family-run digital studio in Nashville. We build the thing you've been trying to duct-tape together.</p>
+      </div>
+      <div>
+        <h4>The tools</h4>
+        <ul>
+          <li><a href="https://tealden.com">Tealden</a></li>
+          <li><a href="/belnoda.html">Belnoda</a></li>
+          <li><a href="https://allonetap.com">AllOneTap</a></li>
+          <li><a href="https://pagedlive.com">Paged</a></li>
+          <li><a href="/products.html">Small ticket shelf</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hire us</h4>
+        <ul>
+          <li><a href="/services/email-automation.html">Email automation</a></li>
+          <li><a href="/services/business-reports.html">Business reports</a></li>
+          <li><a href="/services/website-creation.html">Website builds</a></li>
+          <li><a href="/services/application-creation.html">App builds</a></li>
+          <li><a href="https://partner.courtrightco.com">Partnership program</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/book.html">Book a call</a></li>
+          <li><a href="/affiliates.html">Affiliate program</a></li>
+          <li><a href="https://tinkertaps.courtrightco.com">TinkerTaps</a></li>
+          <li><a href="https://trivd.courtrightco.com">Trivd</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>&copy; 2026 Courtright Collective LLC &middot; Nashville, TN</span>
+      <span><a href="/privacy.html">Privacy</a> &middot; <a href="mailto:info@courtrightco.com">info@courtrightco.com</a></span>
+    </div>
   </div>
 </footer>
+
+<script>
+  (function () {
+    var toggle = document.querySelector('.nav-toggle');
+    var links = document.querySelector('.nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', function () {
+        var open = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+  })();
+</script>
+<script src="/assets/funnel.js" defer></script>
 
 </body>
 </html>
