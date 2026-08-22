@@ -12,6 +12,20 @@ Everything needed to put the small-ticket library into Stripe. One command.
 
 The two free tools (eBay calculator, QR menu) are deliberately not in here. They are lead magnets, not products.
 
+## The account
+
+**Courtright Collective LLC, `acct_1TTQ3sAQ0icgNNC3`.** There are five Stripe accounts on the connection (Allonetap, Belnoda, Courtright Collective LLC, Paged, Tealden). Make sure the key you export belongs to Courtright Collective LLC.
+
+## Already created
+
+One item exists in **test mode** already, created directly through the Stripe connector before it dropped:
+
+| Item | Product | Price | Link |
+| --- | --- | --- | --- |
+| Founder's Copy Bank | `cc_founders_copy_bank` | `price_1U7DhzAQ0icgNNC3H9eUoAVT` | https://buy.stripe.com/test_6oUeVc98334iczae7Q7EQ00 |
+
+The script detects it and skips it. Nothing to clean up. See `stripe-results-test.json`.
+
 ## Running it
 
 Get a secret key from the Stripe dashboard, Developers, API keys. **Start with the test key.**
@@ -28,6 +42,8 @@ Check it in the Stripe test dashboard. When it looks right, swap in the live key
 
 Needs nothing but Python 3. No pip installs, no Stripe CLI.
 
+**The API shapes in this script were validated against the live Stripe API,** not guessed. A product with an inline price and a payment link with a hosted confirmation message were both created successfully in test mode before this was written.
+
 ## Options
 
 | Flag | What it does |
@@ -37,6 +53,20 @@ Needs nothing but Python 3. No pip installs, no Stripe CLI.
 | `--bundles` | Includes the 9 bundles. Off by default |
 | `--only <slug>` | One item, for testing |
 | `--site <url>` | Base URL for each product's `url` field. Defaults to `https://courtrightco.com/products` |
+
+## The account
+
+**Courtright Collective LLC, `acct_1TTQ3sAQ0icgNNC3`.** There are five Stripe accounts on the connection (Allonetap, Belnoda, Courtright Collective LLC, Paged, Tealden). Make sure the key you export belongs to Courtright Collective LLC.
+
+## Already created
+
+One item exists in **test mode** already, created directly through the Stripe connector before it dropped:
+
+| Item | Product | Price | Link |
+| --- | --- | --- | --- |
+| Founder's Copy Bank | `cc_founders_copy_bank` | `price_1U7DhzAQ0icgNNC3H9eUoAVT` | https://buy.stripe.com/test_6oUeVc98334iczae7Q7EQ00 |
+
+The script detects it and skips it. Nothing to clean up. See `stripe-results-test.json`.
 
 ## Running it twice is safe
 

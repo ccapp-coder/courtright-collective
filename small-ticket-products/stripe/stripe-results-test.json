@@ -1,0 +1,13 @@
+[
+  {
+    "slug": "founders-copy-bank",
+    "name": "Founder's Copy Bank",
+    "amount": 2900,
+    "product_id": "cc_founders_copy_bank",
+    "price_id": "price_1U7DhzAQ0icgNNC3H9eUoAVT",
+    "payment_link": "https://buy.stripe.com/test_6oUeVc98334iczae7Q7EQ00",
+    "account": "acct_1TTQ3sAQ0icgNNC3",
+    "livemode": false,
+    "note": "Created via the Stripe connector before it disconnected. Re-running the script will detect and skip this one."
+  }
+]
