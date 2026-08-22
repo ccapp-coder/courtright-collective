@@ -56,7 +56,7 @@
   /* ---------- Help bot ---------- */
   var ROUTES = [
     { label: "My customers are scattered everywhere", href: "https://contact.courtrightco.com" },
-    { label: "Booking is chaos", href: "https://looped.courtrightco.com" },
+    { label: "Booking is chaos", href: "https://booked.courtrightco.com" },
     { label: "I don't know if I'm making money", href: "https://accounting.courtrightco.com" },
     { label: "I need content but have no time", href: "https://tealden.com" },
     { label: "I'd rather hire it out", href: "/book.html" },
