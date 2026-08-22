@@ -1,0 +1,339 @@
+{
+  "_note": "Catalog for the Courtright Collective small-ticket library. Prices in US cents. stripe_id is used as a deterministic Stripe product id so re-running the script is safe.",
+  "currency": "usd",
+  "products": [
+    {
+      "slug": "founders-copy-bank",
+      "stripe_id": "cc_founders_copy_bank",
+      "name": "Founder's Copy Bank",
+      "unit_amount": 2900,
+      "category": "Marketing",
+      "description": "150+ lines of fill-in-the-blank marketing copy. Headlines, emails, social captions, objection handlers, and full website section copy. Markdown for Notion plus a branded PDF.",
+      "folder": "founders-copy-bank",
+      "kind": "digital"
+    },
+    {
+      "slug": "founders-ai-prompt-vault",
+      "stripe_id": "cc_ai_prompt_vault",
+      "name": "Founder's AI Prompt Vault",
+      "unit_amount": 3900,
+      "category": "AI",
+      "description": "70 copy-and-paste prompts across 9 categories that turn any AI chat window into the assistant you cannot afford to hire yet. Works with Claude, ChatGPT, Gemini, or Copilot.",
+      "folder": "founders-ai-prompt-vault",
+      "kind": "digital"
+    },
+    {
+      "slug": "indie-studio-command-center",
+      "stripe_id": "cc_command_center",
+      "name": "Indie Studio Command Center",
+      "unit_amount": 4900,
+      "category": "Templates",
+      "description": "The Notion workspace that runs an indie app studio. 11 connected databases: projects, tasks, idea vault, launch checklist, revenue, metrics, support, content, and a weekly review.",
+      "folder": "indie-studio-command-center",
+      "kind": "digital"
+    },
+    {
+      "slug": "aso-cheat-sheet",
+      "stripe_id": "cc_aso_cheat_sheet",
+      "name": "The ASO Cheat Sheet",
+      "unit_amount": 1900,
+      "category": "Apps",
+      "description": "Every App Store and Play Store field, character limit, and keyword rule on one working sheet. Plus screenshot rules, the ratings prompt timing, and a launch-day worksheet.",
+      "folder": "aso-cheat-sheet",
+      "kind": "digital"
+    },
+    {
+      "slug": "launch-playbook",
+      "stripe_id": "cc_launch_playbook",
+      "name": "How I Shipped 6 Apps Solo",
+      "unit_amount": 2700,
+      "category": "Apps",
+      "description": "The full launch playbook. Six phases from idea to App Store, working nights and weekends, each with a checklist and a real finish line. Roughly 12 to 16 weeks, mapped out.",
+      "folder": "launch-playbook",
+      "kind": "digital"
+    },
+    {
+      "slug": "screen-time-parent-guide",
+      "stripe_id": "cc_screen_time_guide",
+      "name": "Not All Screen Time Is Bad",
+      "unit_amount": 900,
+      "category": "Parenting",
+      "description": "A calm, guilt-free guide to toddler screens. The three questions that replace counting minutes, how to spot a good app in ten seconds, and the one thing to actually be strict about.",
+      "folder": "screen-time-parent-guide",
+      "kind": "digital"
+    },
+    {
+      "slug": "song-pitch-tracker",
+      "stripe_id": "cc_song_pitch_tracker",
+      "name": "The Song Pitch Tracker",
+      "unit_amount": 1900,
+      "category": "Music",
+      "description": "Three sheets that tell you what you sent, who has it, and who you owe a follow-up. Pitch tracker, song catalog with splits, and contacts. Works in Sheets, Excel, or Notion.",
+      "folder": "song-pitch-tracker",
+      "kind": "digital"
+    },
+    {
+      "slug": "legal-intake-checklist",
+      "stripe_id": "cc_legal_intake",
+      "name": "The Legal Intake Checklist",
+      "unit_amount": 2900,
+      "category": "Legal",
+      "description": "Seven stages from first contact to signed engagement letter, for solo attorneys and small firms. Scripts, red flags, the full intake field list, and the six things to automate first.",
+      "folder": "legal-intake-checklist",
+      "kind": "digital"
+    },
+    {
+      "slug": "solopreneur-crm-starter",
+      "stripe_id": "cc_mini_crm",
+      "name": "The Solopreneur Mini CRM",
+      "unit_amount": 1900,
+      "category": "Templates",
+      "description": "Everything a $99-a-month CRM does for a one-person business, minus the $99 and the 40 fields you will never fill in. Pipeline, contacts, activity log, and a 30-minute weekly rhythm.",
+      "folder": "solopreneur-crm-starter",
+      "kind": "digital"
+    },
+    {
+      "slug": "email-signature-pack",
+      "stripe_id": "cc_signature_pack",
+      "name": "The Email Signature Pack",
+      "unit_amount": 1500,
+      "category": "Branding",
+      "description": "Seven email signatures that do not break in Outlook, plus a browser builder that fills them in for you. No images, no subscriptions, no broken red X. Gmail, Outlook, and Apple Mail.",
+      "folder": "email-signature-pack",
+      "kind": "digital"
+    },
+    {
+      "slug": "indie-app-starter-kit",
+      "stripe_id": "cc_app_starter_kit",
+      "name": "The Indie App Starter Kit",
+      "unit_amount": 7900,
+      "category": "Apps",
+      "description": "A real, working app scaffold. Router, persistent store, dark mode, onboarding, empty states, service worker, PWA manifest, icons, and a serverless endpoint. No build step, no dependencies.",
+      "folder": "indie-app-starter-kit",
+      "kind": "digital"
+    },
+    {
+      "slug": "google-review-booster-kit",
+      "stripe_id": "cc_review_kit",
+      "name": "The Google Review Booster Kit",
+      "unit_amount": 3900,
+      "category": "Marketing",
+      "description": "How to get more reviews without begging or breaking Google's rules. 40+ ask and reply templates, the compliance rules most businesses break by accident, and two trackers.",
+      "folder": "google-review-booster-kit",
+      "kind": "digital"
+    },
+    {
+      "slug": "social-starter-pack",
+      "stripe_id": "cc_social_pack",
+      "name": "The Social Starter Pack",
+      "unit_amount": 2900,
+      "category": "Marketing",
+      "description": "Four content pillars, a 30-day plan, 90 caption templates, and a two-hour-a-month batching system. For business owners with no marketing person and no plans to hire one.",
+      "folder": "social-starter-pack",
+      "kind": "digital"
+    },
+    {
+      "slug": "logo-brand-starter",
+      "stripe_id": "cc_brand_starter",
+      "name": "The Logo + Brand Starter",
+      "unit_amount": 3900,
+      "category": "Branding",
+      "description": "Fourteen questions and one afternoon. Come out with a mark, a palette, two fonts, and a voice. Includes a brand board builder with live contrast checking so your colors stay readable.",
+      "folder": "logo-brand-starter",
+      "kind": "digital"
+    },
+    {
+      "slug": "grab-your-name-everywhere",
+      "stripe_id": "cc_grab_your_name",
+      "name": "Grab Your Name Everywhere",
+      "unit_amount": 1900,
+      "category": "Setup",
+      "description": "One afternoon to claim your business name everywhere that matters, in the order that protects you. Domain, email, Google, socials, directories, security. Plus a 49-row checklist.",
+      "folder": "grab-your-name-everywhere",
+      "kind": "digital"
+    },
+    {
+      "slug": "website-teardown",
+      "stripe_id": "cc_website_teardown",
+      "name": "The Website Teardown",
+      "unit_amount": 9900,
+      "category": "Service",
+      "description": "I go through your site the way a stranger does, cold, on a phone. Then I write down what happened, what it cost you, and the five things to fix first. Three business days, one PDF.",
+      "folder": "website-teardown",
+      "kind": "service"
+    },
+    {
+      "slug": "app-idea-validation-kit",
+      "stripe_id": "cc_app_validation",
+      "name": "The App Idea Validation Kit",
+      "unit_amount": 14900,
+      "category": "Service",
+      "description": "Store research, competitor teardowns, and an hour reading the bad reviews in your space. Then a verdict: build it, build something narrower, or do not build it. Five days, plus a call.",
+      "folder": "app-idea-validation-kit",
+      "kind": "service"
+    },
+    {
+      "slug": "google-mini-audit",
+      "stripe_id": "cc_google_audit",
+      "name": "Get-Found-on-Google Mini-Audit",
+      "unit_amount": 7900,
+      "category": "Service",
+      "description": "I run the searches your customers run, from your city, and write down where you show up and where you do not. Profile, reviews, listings, and website. Three business days, one PDF.",
+      "folder": "google-mini-audit",
+      "kind": "service"
+    },
+    {
+      "slug": "fix-my-presence-call",
+      "stripe_id": "cc_presence_call",
+      "name": "The Fix-My-Presence Call",
+      "unit_amount": 9900,
+      "category": "Service",
+      "description": "Forty-five minutes on a call, then a written plan within 24 hours. This week, this month, this quarter, with who does it and how long each thing takes. Including what to ignore.",
+      "folder": "fix-my-presence-call",
+      "kind": "service"
+    },
+    {
+      "slug": "client-portal-demo",
+      "stripe_id": "cc_portal_demo",
+      "name": "The Client-Portal Demo",
+      "unit_amount": 14900,
+      "category": "Service",
+      "description": "A working, clickable client portal with your logo, your colors, and your client types on it. Live URL in seven days, plus real prices for the real build. Stop imagining it.",
+      "folder": "client-portal-demo",
+      "kind": "service"
+    },
+    {
+      "slug": "ship-in-30-days",
+      "stripe_id": "cc_ship_30_days",
+      "name": "Ship Your First App in 30 Days",
+      "unit_amount": 19900,
+      "category": "Service",
+      "description": "One task a day, about an hour each. On day 30 a stranger downloads your app. Includes the Starter Kit, Launch Playbook, and ASO Cheat Sheet, three group calls, and a shared channel.",
+      "folder": "ship-in-30-days",
+      "kind": "service"
+    }
+  ],
+  "bundles": [
+    {
+      "slug": "bundle-founders-marketing-kit",
+      "stripe_id": "cc_bundle_marketing_kit",
+      "name": "The Founder's Marketing Kit",
+      "unit_amount": 5900,
+      "category": "Bundle",
+      "description": "Founder's Copy Bank, Social Starter Pack, and the Email Signature Pack. Everything you need to sound like yourself and look like you meant it.",
+      "contains": [
+        "founders-copy-bank",
+        "social-starter-pack",
+        "email-signature-pack"
+      ],
+      "kind": "bundle"
+    },
+    {
+      "slug": "bundle-founders-toolkit",
+      "stripe_id": "cc_bundle_founders_toolkit",
+      "name": "The Founder's Toolkit",
+      "unit_amount": 5900,
+      "category": "Bundle",
+      "description": "Founder's Copy Bank and the AI Prompt Vault. The words and the machine that helps you write them.",
+      "contains": [
+        "founders-copy-bank",
+        "founders-ai-prompt-vault"
+      ],
+      "kind": "bundle"
+    },
+    {
+      "slug": "bundle-indie-launch-pack",
+      "stripe_id": "cc_bundle_launch_pack",
+      "name": "The Indie Launch Pack",
+      "unit_amount": 3900,
+      "category": "Bundle",
+      "description": "The ASO Cheat Sheet and the full launch playbook. Everything about getting an app out the door and getting it found.",
+      "contains": [
+        "aso-cheat-sheet",
+        "launch-playbook"
+      ],
+      "kind": "bundle"
+    },
+    {
+      "slug": "bundle-ship-it",
+      "stripe_id": "cc_bundle_ship_it",
+      "name": "The Ship It Bundle",
+      "unit_amount": 10900,
+      "category": "Bundle",
+      "description": "The Indie App Starter Kit, the Launch Playbook, and the ASO Cheat Sheet. A working scaffold and the map to the store.",
+      "contains": [
+        "indie-app-starter-kit",
+        "launch-playbook",
+        "aso-cheat-sheet"
+      ],
+      "kind": "bundle"
+    },
+    {
+      "slug": "bundle-indie-studio",
+      "stripe_id": "cc_bundle_indie_studio",
+      "name": "The Indie Studio Bundle",
+      "unit_amount": 11900,
+      "category": "Bundle",
+      "description": "The Command Center, the Starter Kit, and the Launch Playbook. The system that runs the studio and the tools that fill it.",
+      "contains": [
+        "indie-studio-command-center",
+        "indie-app-starter-kit",
+        "launch-playbook"
+      ],
+      "kind": "bundle"
+    },
+    {
+      "slug": "bundle-look-legit",
+      "stripe_id": "cc_bundle_look_legit",
+      "name": "The Look Legit Bundle",
+      "unit_amount": 5900,
+      "category": "Bundle",
+      "description": "The Brand Starter, the Email Signature Pack, and Grab Your Name Everywhere. Decide it once, claim it everywhere, stop re-deciding.",
+      "contains": [
+        "logo-brand-starter",
+        "email-signature-pack",
+        "grab-your-name-everywhere"
+      ],
+      "kind": "bundle"
+    },
+    {
+      "slug": "bundle-local-visibility",
+      "stripe_id": "cc_bundle_local_visibility",
+      "name": "The Local Visibility Bundle",
+      "unit_amount": 9900,
+      "category": "Bundle",
+      "description": "The Get-Found-on-Google Mini-Audit plus the Review Booster Kit. I find the gap, you get the tool that closes it.",
+      "contains": [
+        "google-mini-audit",
+        "google-review-booster-kit"
+      ],
+      "kind": "bundle"
+    },
+    {
+      "slug": "bundle-working-musician",
+      "stripe_id": "cc_bundle_working_musician",
+      "name": "The Working Musician Kit",
+      "unit_amount": 2900,
+      "category": "Bundle",
+      "description": "The Song Pitch Tracker and the Solopreneur Mini CRM. For writers who also do session work, teach, or gig.",
+      "contains": [
+        "song-pitch-tracker",
+        "solopreneur-crm-starter"
+      ],
+      "kind": "bundle"
+    },
+    {
+      "slug": "bundle-follow-up-kit",
+      "stripe_id": "cc_bundle_follow_up",
+      "name": "The Follow-Up Kit",
+      "unit_amount": 3900,
+      "category": "Bundle",
+      "description": "The Solopreneur Mini CRM and the Founder's Copy Bank. The sheet that tells you to follow up, and the words to follow up with.",
+      "contains": [
+        "solopreneur-crm-starter",
+        "founders-copy-bank"
+      ],
+      "kind": "bundle"
+    }
+  ]
+}
