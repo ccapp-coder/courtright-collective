@@ -184,8 +184,16 @@ def main():
     if not args.key and not args.dry_run:
         sys.exit("No API key. Set STRIPE_SECRET_KEY or pass --key.")
 
-    mode = "DRY RUN" if args.dry_run else ("TEST" if (args.key or "").startswith("sk_test") else "LIVE")
-    if mode == "LIVE":
+    key = args.key or ""
+    # Stripe issues sk_test_/sk_live_ secret keys and rk_test_/rk_live_
+    # restricted keys. Anything that is not clearly a test key is treated
+    # as live, so the confirmation prompt errs toward being annoying
+    # rather than toward creating real products by accident.
+    is_test = key.startswith(("sk_test", "rk_test")) or "_test_" in key[:12]
+    target = "TEST" if is_test else "LIVE"
+    mode = ("DRY RUN, would target " + target) if args.dry_run else target
+
+    if not args.dry_run and target == "LIVE":
         print("\n  You are about to create products in LIVE Stripe.")
         if input("  Type 'live' to continue: ").strip().lower() != "live":
             sys.exit("Stopped. Nothing created.")
