@@ -18,7 +18,7 @@ The two free tools (eBay calculator, QR menu) are deliberately not in here. They
 
 ## Already created
 
-One item exists in **test mode** already, created directly through the Stripe connector before it dropped:
+One item exists in **test mode** already, created directly through the Stripe connector before it dropped. It has no bearing on a live run, which will create all 30 fresh:
 
 | Item | Product | Price | Link |
 | --- | --- | --- | --- |
@@ -28,17 +28,24 @@ The script detects it and skips it. Nothing to clean up. See `stripe-results-tes
 
 ## Running it
 
-Get a secret key from the Stripe dashboard, Developers, API keys. **Start with the test key.**
+Get a secret key from the Stripe dashboard, Developers, API keys, with **Courtright Collective LLC** selected.
 
 ```bash
 cd small-ticket-products/stripe
-export STRIPE_SECRET_KEY=sk_test_...
+export STRIPE_SECRET_KEY=sk_live_...
 
 python3 create_stripe_catalog.py --dry-run --bundles --payment-links   # look first
 python3 create_stripe_catalog.py --bundles --payment-links             # do it
 ```
 
-Check it in the Stripe test dashboard. When it looks right, swap in the live key and run it again. The script will ask you to type `live` before touching anything in live mode.
+The dry run prints which mode it would hit, so check the first line says `would target LIVE` before you drop the flag. The real run then asks you to type `live` before it touches anything.
+
+**Going straight to live is fine.** Creating products, prices, and payment links moves no money and charges nobody. A payment link is only reachable by someone you hand the URL to, and nothing appears on the site until you put it there. Use a test key first only if you want to rehearse.
+
+Two things to know about live mode:
+
+- The account has to be **activated for payments** or the links will exist but not be chargeable. Check Stripe's home page for any outstanding activation prompts.
+- Anything you decide against later gets **archived**, not deleted, once it has a price attached. That is cosmetic, archived products disappear from the product list.
 
 Needs nothing but Python 3. No pip installs, no Stripe CLI.
 
@@ -60,7 +67,7 @@ Needs nothing but Python 3. No pip installs, no Stripe CLI.
 
 ## Already created
 
-One item exists in **test mode** already, created directly through the Stripe connector before it dropped:
+One item exists in **test mode** already, created directly through the Stripe connector before it dropped. It has no bearing on a live run, which will create all 30 fresh:
 
 | Item | Product | Price | Link |
 | --- | --- | --- | --- |
