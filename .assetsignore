@@ -1,0 +1,8 @@
+# Files in this repo that must NOT be published as static assets.
+#
+# `wrangler.toml` sets `directory = "./"`, so without this file every path here
+# is fetchable at courtrightco.com/<name>. That would publish the worker source,
+# and with it the lab module list and the shape of the session token.
+worker.js
+wrangler.toml
+.assetsignore

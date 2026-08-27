@@ -1,5 +1,26 @@
 name = "courtright-collective"
 compatibility_date = "2026-01-01"
 
+# The worker sits in front of the static site. It answers /lab and hands
+# everything else straight back to the assets binding, so the marketing site is
+# unchanged for every visitor who is not going through the door.
+main = "worker.js"
+
 [assets]
 directory = "./"
+# Naming the binding is what lets worker.js reach the static files. Without a
+# name they are served automatically and a worker cannot fall through to them.
+binding = "ASSETS"
+
+# Secrets are NOT set here and never belong in this file. Set them once, from
+# this directory:
+#
+#   npx wrangler secret put LAB_PASSWORD
+#   npx wrangler secret put LAB_SECRET
+#
+# LAB_SECRET must be byte-identical to the value on every module worker, because
+# each module verifies the session cookie locally with it. Generate it once:
+#
+#   node -e "console.log(require('crypto').randomBytes(32).toString('base64url'))"
+#
+# Until both are set, /lab answers 503 and the rest of the site is untouched.
