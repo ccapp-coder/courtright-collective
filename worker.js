@@ -38,10 +38,13 @@ const TOKEN_VERSION = "v1";
 /** Sign in once, stay in for thirty days. Token expiry and cookie age agree. */
 const SESSION_SECONDS = 60 * 60 * 24 * 30;
 
+// Display names are the CURRENT product names; the URLs keep their original
+// subdomains per the rename rule (Trend still lives at trends., Listed at
+// contact.) — moving a subdomain is a DNS/Worker decision, not a copy edit.
 const MODULES = [
-  ["Trends", "https://trends.courtrightco.com", "The intelligence layer — how the business is doing, in plain language."],
+  ["Trend", "https://trends.courtrightco.com", "The intelligence layer — how the business is doing, in plain language."],
   ["Charted", "https://charted.courtrightco.com", "The progress tracker — how far the people you serve have come."],
-  ["Contact", "https://contact.courtrightco.com", "The CRM with no industry vocabulary — name your own roles."],
+  ["Listed", "https://contact.courtrightco.com", "The CRM with no industry vocabulary — name your own roles."],
   ["Gated", "https://gated.courtrightco.com", "Premium content behind a door, and the key for sale."],
   ["Jotted", "https://jotted.courtrightco.com", "The field kit — assess, price, sign, on a phone, on the job."],
   ["Paid", "https://paid.courtrightco.com", "Take card payments and see revenue with the real fee maths."],
