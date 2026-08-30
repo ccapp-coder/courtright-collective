@@ -1,15 +1,5 @@
 name = "courtright-collective"
-main = "worker.js"
 compatibility_date = "2026-01-01"
 
-# The Worker exists for one route: /lab (see worker.js). Static assets are
-# still served directly by Cloudflare for every path that matches a file —
-# the Worker only sees the rest and forwards them to this binding.
-#
-# Secrets this Worker needs (Settings → Variables, or `wrangler secret put`):
-#   LAB_PASSWORD  the one Lab password
-#   LAB_SECRET    signs the .courtrightco.com lab cookie; must equal the
-#                 LAB_SECRET on every module harness Worker
 [assets]
 directory = "./"
-binding = "ASSETS"
