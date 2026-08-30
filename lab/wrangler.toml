@@ -1,0 +1,20 @@
+# The Lab door — its own Worker, on its own subdomain.
+#
+# Deploy from THIS directory (`npx wrangler deploy`), or create a Worker named
+# `lab` in the dashboard, paste worker.js into the editor, deploy, and add the
+# custom domain lab.courtrightco.com under Settings → Domains & Routes.
+#
+# This is deliberately NOT part of the courtright-collective site Worker: the
+# main site stays pure static assets, and the Lab deploys on its own schedule.
+#
+# Secrets this Worker needs (Settings → Variables, or `wrangler secret put`):
+#   LAB_PASSWORD  the one Lab password
+#   LAB_SECRET    signs the .courtrightco.com lab cookie; must equal the
+#                 LAB_SECRET on every module harness Worker
+name = "lab"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+routes = [
+  { pattern = "lab.courtrightco.com", custom_domain = true }
+]
