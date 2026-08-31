@@ -21,6 +21,16 @@
  *                 cookie. Rotating it signs everyone out everywhere at once,
  *                 which is the designed blast radius.
  *
+ * ── Why the links carry keys right now ──────────────────────────────────────
+ * The harnesses are deployed on workers.dev, not yet on their courtrightco.com
+ * subdomains, because those hostnames are still served by the
+ * `courtright-modules` Worker and a harness deploy with its route armed would
+ * seize them. A cookie scoped to `.courtrightco.com` is not sent to a
+ * workers.dev hostname, so the shared lab session cannot reach them there.
+ * Each link therefore carries that module's own preview key, which is the
+ * single-module door that already existed. At subdomain cutover the keys come
+ * out of these URLs and the cookie does the work it was built for.
+ *
  * ── What this is, and is not ────────────────────────────────────────────────
  * This keeps unfinished work out of public view. It is NOT real user
  * authentication: never put real client data behind it. The Lab test
@@ -39,21 +49,61 @@ const SESSION_SECONDS = 60 * 60 * 24 * 30;
 // Display names are the CURRENT product names; the URLs keep their original
 // subdomains per the rename rule (Trend still lives at trends., Listed at
 // contact.) — moving a subdomain is a DNS/Worker decision, not a copy edit.
+//
+// The fourth field is the honest state of that harness as deployed. A module
+// with no Supabase project behind it reaches its own error page rather than
+// its interface, and saying so here is cheaper than clicking through to find
+// out.
 const MODULES = [
-  ["Trend", "https://trends.courtrightco.com", "The intelligence layer — how the business is doing, in plain language."],
-  ["Charted", "https://charted.courtrightco.com", "The progress tracker — how far the people you serve have come."],
-  ["Listed", "https://contact.courtrightco.com", "The CRM with no industry vocabulary — name your own roles."],
-  ["Gated", "https://gated.courtrightco.com", "Premium content behind a door, and the key for sale."],
-  ["Jotted", "https://jotted.courtrightco.com", "The field kit — assess, price, sign, on a phone, on the job."],
-  ["Paid", "https://paid.courtrightco.com", "Take card payments and see revenue with the real fee maths."],
-  ["Solved", "https://solved.courtrightco.com", "The team workspace — part document, part visual board."],
+  [
+    "Trend",
+    "https://trends-harness.tinkertapsapp.workers.dev/?k=trends-preview-8821",
+    "The intelligence layer — how the business is doing, in plain language.",
+    "no database yet",
+  ],
+  [
+    "Charted",
+    "https://charted-harness.tinkertapsapp.workers.dev/?k=charted-preview-8821",
+    "The progress tracker — how far the people you serve have come.",
+    "no database yet",
+  ],
+  [
+    "Listed",
+    "https://contact-harness.tinkertapsapp.workers.dev/?k=contact-preview-8821",
+    "The CRM with no industry vocabulary — name your own roles.",
+    "no database yet",
+  ],
+  [
+    "Gated",
+    "https://gated.tinkertapsapp.workers.dev/?key=gated-preview-8821",
+    "Premium content behind a door, and the key for sale.",
+    "",
+  ],
+  [
+    "Jotted",
+    "https://jotted-harness.tinkertapsapp.workers.dev/?k=jotted-preview-8821",
+    "The field kit — assess, price, sign, on a phone, on the job.",
+    "no database yet",
+  ],
+  [
+    "Paid",
+    "https://paid.tinkertapsapp.workers.dev/?key=paid-preview-8821",
+    "Take card payments and see revenue with the real fee maths.",
+    "",
+  ],
+  [
+    "Solved",
+    "https://solved-harness.tinkertapsapp.workers.dev/?k=solved-preview-8821",
+    "The team workspace — part document, part visual board.",
+    "no database yet",
+  ],
 ];
 
 // ── Crypto helpers — must mirror the modules' lab-gate.ts ───────────────────
 
 function toBase64Url(bytes) {
   let binary = "";
-  for (let i = 0; i < bytes.length; i += 1) binary += String.fromCharCode(bytes[i]);
+  for (const byte of bytes) binary += String.fromCharCode(byte);
   return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 }
 
@@ -136,6 +186,8 @@ const SHELL = (title, body) => `<!doctype html>
   li a:hover { border-color: #3a4552; }
   li b { display: block; font-size: 15px; margin-bottom: 2px; }
   li span { color: #93a0ad; font-size: 13px; line-height: 1.5; }
+  li em { display: inline-block; margin-left: 8px; font-style: normal; font-size: 11px;
+         font-weight: 600; letter-spacing: 0.02em; color: #e0a25e; vertical-align: 2px; }
   footer { margin-top: 22px; color: #5d6a76; font-size: 12px; line-height: 1.6; }
   footer a { color: #93a0ad; }
 </style>
@@ -158,17 +210,21 @@ function passwordPage(notice) {
 
 function hubPage() {
   const items = MODULES.map(
-    ([name, url, blurb]) => `<li><a href="${url}"><b>${name}</b><span>${blurb}</span></a></li>`,
+    ([name, url, blurb, state]) =>
+      `<li><a href="${url}"><b>${name}${state ? `<em>${state}</em>` : ""}</b><span>${blurb}</span></a></li>`,
   ).join("");
   return SHELL(
     "The Lab",
     `<h1>The Lab</h1>
-     <p class="sub">Signed in. The cookie covers every subdomain below — click freely, no more passwords.</p>
+     <p class="sub">Signed in. These are the lab deploys on workers.dev, and each
+     link carries its module's own key, so they open without another password.</p>
      <ul>${items}</ul>
      <footer>
        Test data only — this side of the door is never real client data.
-       Each module also has its own single-module share key for handing one
-       module to one person. <a href="/out">Sign out</a>
+       A module marked <em>no database yet</em> reaches its own error page:
+       it has no Supabase project and no migrations run. At subdomain cutover
+       these links become the plain courtrightco.com hostnames and the shared
+       cookie replaces the keys. <a href="/out">Sign out</a>
      </footer>`,
   );
 }
