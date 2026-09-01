@@ -1,3 +1,23 @@
+-- ═══════════════════════════════════════════════════════════════════════════
+-- SUPERSEDED 2026-09-01 — DO NOT APPLY THIS FILE.
+--
+-- The Lab database is live and it is NOT built this way. It is one Supabase
+-- project (ref pgcvdgkqgagfbiseodwe, "Belnoda Lab") with each module's tables
+-- in ITS OWN Postgres schema: trends, contact, gated, jotted, charted, solved,
+-- paid. All seven harnesses read SUPABASE_SCHEMA and are deployed against it.
+--
+-- This file takes the other road: one `public` schema, with superset
+-- definitions for the shared tables so every create-if-not-exists no-ops. It
+-- is a legitimate design and it was validated against PostgreSQL 16. It is
+-- simply not the one that was chosen, and the two cannot both be applied:
+-- running this would fill `public` with a second copy of all 125 tables while
+-- the harnesses keep reading their schemas, and nothing would look wrong until
+-- somebody wondered why their edits never showed up.
+--
+-- Kept for the record, and because its merged preamble is the clearest
+-- statement anywhere of how the shared stand-in tables actually differ.
+-- ═══════════════════════════════════════════════════════════════════════════
+
 -- The Lab database, in one paste.
 --
 -- Generated 2026-08-31 by concatenating, in order: a merged preamble for the

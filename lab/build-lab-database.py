@@ -1,3 +1,10 @@
+# SUPERSEDED 2026-09-01 — the file this generates must not be applied.
+#
+# The Lab database is live as one Supabase project with a schema per module
+# (trends, contact, gated, jotted, charted, solved, paid), and all seven
+# harnesses read SUPABASE_SCHEMA. This script builds the single-public-schema
+# alternative instead. See the header of lab/lab-database.sql.
+
 import os
 
 PREAMBLE = """-- The Lab database, in one paste.
