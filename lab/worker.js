@@ -1,10 +1,10 @@
 /**
- * lab.courtrightco.com — the Lab door.
+ * lab.courtrightco.com, the Lab door.
  *
  * One password, entered once. Signing in mints a signed token in a cookie
  * scoped to `.courtrightco.com`, and because a cookie on the parent domain is
- * sent to every subdomain beneath it, every module harness — trends, charted,
- * contact, gated, jotted, paid, solved — verifies it locally with no
+ * sent to every subdomain beneath it, every module harness, trends, charted,
+ * contact, gated, jotted, paid, solved, verifies it locally with no
  * redirect, no network call and no shared database. Their copies of
  * `lib/lab-gate.ts` recompute the HMAC below with the SAME `LAB_SECRET`.
  *
@@ -48,7 +48,7 @@ const SESSION_SECONDS = 60 * 60 * 24 * 30;
 
 // Display names are the CURRENT product names; the hostnames keep their
 // original slugs per the rename rule (Trend still lives at trends., Listed at
-// contact.) — moving a subdomain is a DNS/Worker decision, not a copy edit.
+// contact.), moving a subdomain is a DNS/Worker decision, not a copy edit.
 //
 // Gated and Paid serve their marketing page at `/` and the working module at
 // `/app`. The other five serve the module at `/`. The Lab links to the module,
@@ -57,17 +57,17 @@ const MODULES = [
   [
     "Trend",
     "https://trends-harness.tinkertapsapp.workers.dev/?k=trends-preview-8821",
-    "The intelligence layer — how the business is doing, in plain language.",
+    "The intelligence layer. How the business is doing, in plain language.",
   ],
   [
     "Charted",
     "https://charted-harness.tinkertapsapp.workers.dev/?k=charted-preview-8821",
-    "The progress tracker — how far the people you serve have come.",
+    "The progress tracker. How far the people you serve have come.",
   ],
   [
     "Listed",
     "https://contact-harness.tinkertapsapp.workers.dev/?k=contact-preview-8821",
-    "The CRM with no industry vocabulary — name your own roles.",
+    "The CRM with no industry vocabulary. Name your own roles.",
   ],
   [
     "Gated",
@@ -77,7 +77,7 @@ const MODULES = [
   [
     "Jotted",
     "https://jotted-harness.tinkertapsapp.workers.dev/?k=jotted-preview-8821",
-    "The field kit — assess, price, sign, on a phone, on the job.",
+    "The field kit. Assess, price, sign, on a phone, on the job.",
   ],
   [
     "Paid",
@@ -87,11 +87,11 @@ const MODULES = [
   [
     "Solved",
     "https://solved-harness.tinkertapsapp.workers.dev/?k=solved-preview-8821",
-    "The team workspace — part document, part visual board.",
+    "The team workspace. Part document, part visual board.",
   ],
 ];
 
-// ── Crypto helpers — must mirror the modules' lab-gate.ts ───────────────────
+// ── Crypto helpers, must mirror the modules' lab-gate.ts ───────────────────
 
 function toBase64Url(bytes) {
   let binary = "";
@@ -154,8 +154,8 @@ function readCookie(request, name) {
 /**
  * Courtright Collective, after dark.
  *
- * Same tokens as courtrightco.com — Cormorant Garamond for display, Outfit for
- * body, copper and gold on midnight — with the palette inverted, because the
+ * Same tokens as courtrightco.com, Cormorant Garamond for display, Outfit for
+ * body, copper and gold on midnight, with the palette inverted, because the
  * public site is parchment and this is the back room.
  */
 const SHELL = (title, body, wide) => `<!doctype html>
@@ -285,7 +285,7 @@ function hubPage() {
      not its sales page.</p>
      <ul>${items}</ul>
      <footer>
-       Test data only — this side of the door is never real client data.
+       Test data only. This side of the door is never real client data.
        These are the lab deploys on workers.dev, and each link carries its own
        module key; at subdomain cutover they become plain courtrightco.com
        hostnames and the shared cookie takes over. <a href="/out">Sign out</a>
