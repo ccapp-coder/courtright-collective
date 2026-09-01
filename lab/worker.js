@@ -46,56 +46,48 @@ const TOKEN_VERSION = "v1";
 /** Sign in once, stay in for thirty days. Token expiry and cookie age agree. */
 const SESSION_SECONDS = 60 * 60 * 24 * 30;
 
-// Display names are the CURRENT product names; the URLs keep their original
-// subdomains per the rename rule (Trend still lives at trends., Listed at
+// Display names are the CURRENT product names; the hostnames keep their
+// original slugs per the rename rule (Trend still lives at trends., Listed at
 // contact.) — moving a subdomain is a DNS/Worker decision, not a copy edit.
 //
-// The fourth field is the honest state of that harness as deployed. A module
-// with no Supabase project behind it reaches its own error page rather than
-// its interface, and saying so here is cheaper than clicking through to find
-// out.
+// Gated and Paid serve their marketing page at `/` and the working module at
+// `/app`. The other five serve the module at `/`. The Lab links to the module,
+// never to the sales page: this side of the door is for using the thing.
 const MODULES = [
   [
     "Trend",
     "https://trends-harness.tinkertapsapp.workers.dev/?k=trends-preview-8821",
     "The intelligence layer — how the business is doing, in plain language.",
-    "no database yet",
   ],
   [
     "Charted",
     "https://charted-harness.tinkertapsapp.workers.dev/?k=charted-preview-8821",
     "The progress tracker — how far the people you serve have come.",
-    "no database yet",
   ],
   [
     "Listed",
     "https://contact-harness.tinkertapsapp.workers.dev/?k=contact-preview-8821",
     "The CRM with no industry vocabulary — name your own roles.",
-    "no database yet",
   ],
   [
     "Gated",
-    "https://gated.tinkertapsapp.workers.dev/?key=gated-preview-8821",
+    "https://gated.tinkertapsapp.workers.dev/app?key=gated-preview-8821",
     "Premium content behind a door, and the key for sale.",
-    "",
   ],
   [
     "Jotted",
     "https://jotted-harness.tinkertapsapp.workers.dev/?k=jotted-preview-8821",
     "The field kit — assess, price, sign, on a phone, on the job.",
-    "no database yet",
   ],
   [
     "Paid",
-    "https://paid.tinkertapsapp.workers.dev/?key=paid-preview-8821",
+    "https://paid.tinkertapsapp.workers.dev/app?key=paid-preview-8821",
     "Take card payments and see revenue with the real fee maths.",
-    "",
   ],
   [
     "Solved",
     "https://solved-harness.tinkertapsapp.workers.dev/?k=solved-preview-8821",
     "The team workspace — part document, part visual board.",
-    "no database yet",
   ],
 ];
 
@@ -159,37 +151,107 @@ function readCookie(request, name) {
 
 // ── Pages ───────────────────────────────────────────────────────────────────
 
-const SHELL = (title, body) => `<!doctype html>
+/**
+ * Courtright Collective, after dark.
+ *
+ * Same tokens as courtrightco.com — Cormorant Garamond for display, Outfit for
+ * body, copper and gold on midnight — with the palette inverted, because the
+ * public site is parchment and this is the back room.
+ */
+const SHELL = (title, body, wide) => `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>${title}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap">
 <style>
-  :root { color-scheme: dark; }
-  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
-         background: #0f1216; color: #eef1f4;
-         font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-  main { width: 100%; max-width: 560px; padding: 40px 24px; }
-  h1 { font-size: 22px; margin: 0 0 6px; }
-  p.sub { color: #93a0ad; font-size: 14px; line-height: 1.6; margin: 0 0 24px; }
-  form { display: flex; gap: 10px; }
-  input[type="password"] { flex: 1; background: #171c22; color: #eef1f4; border: 1px solid #242c35;
-         border-radius: 8px; padding: 10px 12px; font-size: 15px; }
-  button { background: #b06a2c; color: #14100b; border: 0; border-radius: 8px; padding: 10px 18px;
-         font-size: 14px; font-weight: 600; cursor: pointer; }
-  .notice { color: #e0a25e; font-size: 13px; margin: 0 0 14px; }
-  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-  li a { display: block; background: #171c22; border: 1px solid #242c35; border-radius: 10px;
-         padding: 14px 16px; text-decoration: none; color: inherit; }
-  li a:hover { border-color: #3a4552; }
-  li b { display: block; font-size: 15px; margin-bottom: 2px; }
-  li span { color: #93a0ad; font-size: 13px; line-height: 1.5; }
-  li em { display: inline-block; margin-left: 8px; font-style: normal; font-size: 11px;
-         font-weight: 600; letter-spacing: 0.02em; color: #e0a25e; vertical-align: 2px; }
-  footer { margin-top: 22px; color: #5d6a76; font-size: 12px; line-height: 1.6; }
-  footer a { color: #93a0ad; }
+  :root {
+    --midnight:  #0E1520;
+    --ash:       #1A2030;
+    --copper:    #C45C28;
+    --copper-lt: #D97040;
+    --gold:      #D9A030;
+    --gold-lt:   #F0B840;
+    --smoke:     #7A7268;
+    --parchment: #F4EBD9;
+    --cream:     #FAF6EF;
+    --display: 'Cormorant Garamond', Georgia, serif;
+    --body:    'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: var(--midnight); color: var(--parchment);
+    font-family: var(--body); line-height: 1.6; -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(60rem 40rem at 12% -10%, rgba(196,92,40,0.16), transparent 60%),
+      radial-gradient(50rem 36rem at 92% 8%, rgba(217,160,48,0.10), transparent 62%);
+  }
+  main { width: 100%; max-width: ${wide ? "760px" : "520px"}; padding: 56px 24px; }
+
+  .brand {
+    font-family: var(--display); font-weight: 300; letter-spacing: 0.16em;
+    text-transform: uppercase; font-size: 0.82rem; color: var(--smoke);
+    margin: 0 0 26px; display: block; text-decoration: none;
+  }
+  .brand span { color: var(--copper-lt); }
+
+  h1 {
+    font-family: var(--display); font-weight: 300; font-size: 3rem; line-height: 1.05;
+    letter-spacing: 0.01em; margin: 0 0 10px; color: var(--cream);
+  }
+  h1 em { font-style: italic; color: var(--gold); }
+  p.sub { color: var(--smoke); font-size: 0.98rem; margin: 0 0 30px; max-width: 46ch; }
+
+  form { display: flex; gap: 10px; flex-wrap: wrap; }
+  input[type="password"] {
+    flex: 1 1 220px; background: var(--ash); color: var(--cream);
+    border: 1px solid rgba(244,235,217,0.14); border-radius: 6px;
+    padding: 0.85rem 1rem; font-family: var(--body); font-size: 1rem;
+  }
+  input[type="password"]:focus { outline: none; border-color: var(--copper); }
+  button {
+    background: var(--copper); color: var(--cream); border: 0; border-radius: 6px;
+    padding: 0.85rem 1.9rem; font-family: var(--body); font-weight: 600;
+    font-size: 0.95rem; letter-spacing: 0.04em; cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  button:hover { background: var(--copper-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,92,40,0.3); }
+
+  .notice {
+    color: var(--gold-lt); font-size: 0.9rem; margin: 0 0 16px;
+    border-left: 2px solid var(--gold); padding-left: 12px;
+  }
+
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  @media (min-width: 620px) { ul { grid-template-columns: 1fr 1fr; } }
+  li a {
+    display: block; height: 100%; background: var(--ash);
+    border: 1px solid rgba(244,235,217,0.08); border-left: 2px solid transparent;
+    border-radius: 8px; padding: 1.1rem 1.25rem; text-decoration: none; color: inherit;
+    transition: all 0.2s ease;
+  }
+  li a:hover {
+    border-left-color: var(--copper); background: #1E2537; transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+  }
+  li b {
+    display: block; font-family: var(--display); font-weight: 600;
+    font-size: 1.5rem; letter-spacing: 0.01em; color: var(--cream); margin-bottom: 3px;
+  }
+  li span { display: block; color: var(--smoke); font-size: 0.88rem; line-height: 1.55; }
+
+  footer {
+    margin-top: 32px; padding-top: 18px; border-top: 1px solid rgba(244,235,217,0.08);
+    color: var(--smoke); font-size: 0.82rem; line-height: 1.7;
+  }
+  footer a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(217,160,48,0.35); }
+  footer a:hover { color: var(--gold-lt); }
 </style>
 </head>
 <body><main>${body}</main></body>
@@ -197,35 +259,38 @@ const SHELL = (title, body) => `<!doctype html>
 
 function passwordPage(notice) {
   return SHELL(
-    "The Lab",
-    `<h1>The Lab</h1>
+    "The Lab | Courtright Collective",
+    `<span class="brand">Courtright <span>Collective</span></span>
+     <h1>The <em>Lab</em></h1>
      <p class="sub">One password opens every module. Nothing here is public.</p>
      ${notice ? `<p class="notice">${notice}</p>` : ""}
      <form method="post" action="/">
        <input type="password" name="password" autocomplete="current-password" autofocus aria-label="Lab password">
        <button type="submit">Enter</button>
      </form>`,
+    false,
   );
 }
 
 function hubPage() {
   const items = MODULES.map(
-    ([name, url, blurb, state]) =>
-      `<li><a href="${url}"><b>${name}${state ? `<em>${state}</em>` : ""}</b><span>${blurb}</span></a></li>`,
+    ([name, url, blurb]) =>
+      `<li><a href="${url}"><b>${name}</b><span>${blurb}</span></a></li>`,
   ).join("");
   return SHELL(
-    "The Lab",
-    `<h1>The Lab</h1>
-     <p class="sub">Signed in. These are the lab deploys on workers.dev, and each
-     link carries its module's own key, so they open without another password.</p>
+    "The Lab | Courtright Collective",
+    `<span class="brand">Courtright <span>Collective</span></span>
+     <h1>The <em>Lab</em></h1>
+     <p class="sub">Seven modules, one door. Each link opens the working module,
+     not its sales page.</p>
      <ul>${items}</ul>
      <footer>
        Test data only — this side of the door is never real client data.
-       A module marked <em>no database yet</em> reaches its own error page:
-       it has no Supabase project and no migrations run. At subdomain cutover
-       these links become the plain courtrightco.com hostnames and the shared
-       cookie replaces the keys. <a href="/out">Sign out</a>
+       These are the lab deploys on workers.dev, and each link carries its own
+       module key; at subdomain cutover they become plain courtrightco.com
+       hostnames and the shared cookie takes over. <a href="/out">Sign out</a>
      </footer>`,
+    true,
   );
 }
 
