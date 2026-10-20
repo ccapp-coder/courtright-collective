@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Affiliate Program | Courtright Collective</title>
-  <meta name="description" content="Earn 25% recurring commission reselling Courtright Collective software, for as long as your referrals stay subscribed. They get 5% off for life.">
+  <meta name="description" content="Earn 25% of what your referrals pay for their subscription, every month, for as long as they stay subscribed. They get 5% off their subscription while they stay.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://courtrightco.com/affiliates">
   <link rel="icon" href="/favicon.ico">
@@ -12,12 +12,12 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Courtright Collective">
   <meta property="og:title" content="Affiliate Program | Courtright Collective">
-  <meta property="og:description" content="Earn 25% recurring reselling our software. Your referrals get 5% off for life. $0 to join.">
+  <meta property="og:description" content="Earn 25% of what your referrals pay, every month they stay subscribed. They get 5% off their subscription. $0 to join.">
   <meta property="og:url" content="https://courtrightco.com/affiliates">
   <meta property="og:image" content="https://courtrightco.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Affiliate Program | Courtright Collective">
-  <meta name="twitter:description" content="Earn 25% recurring reselling our software. Your referrals get 5% off for life. $0 to join.">
+  <meta name="twitter:description" content="Earn 25% of what your referrals pay, every month they stay subscribed. They get 5% off their subscription. $0 to join.">
   <meta name="twitter:image" content="https://courtrightco.com/og-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -149,7 +149,7 @@
   <div class="container">
     <div class="eyebrow reveal">Affiliate Program</div>
     <h1>Earn 25% reselling <em>our software.</em></h1>
-    <p class="sub">We build software that makes small-business owners' lives easier: the Belnoda tools, Tealden's daily video, and more on the way. Refer it, and earn a recurring cut for as long as your referrals stay, while they save 5% for life.</p>
+    <p class="sub">We build software that makes small-business owners' lives easier: the Belnoda tools, Tealden's daily video, and more on the way. Refer it, and earn 25% of what your referrals pay for as long as they stay subscribed, while they save 5% on their subscription.</p>
     <a href="#apply" class="btn btn-gold">Apply to become an affiliate</a>
   </div>
 </header>
@@ -162,12 +162,12 @@
       <div class="term reveal">
         <div class="big">25%</div>
         <h3>Recurring commission</h3>
-        <p>Of every referral's subscription, every month, for as long as they stay a customer.</p>
+        <p>Of what each referral pays for their subscription, every month, for as long as they stay a customer.</p>
       </div>
       <div class="term reveal">
         <div class="big">5%</div>
         <h3>Off for your referrals</h3>
-        <p>The businesses you bring on get 5% off for the life of their subscription. A real reason to say yes.</p>
+        <p>The businesses you bring on get 5% off their subscription for as long as they stay subscribed. A real reason to say yes.</p>
       </div>
       <div class="term reveal">
         <div class="big">$0</div>
@@ -175,6 +175,42 @@
         <p>No fees, no minimums. Get a link, share it, and get paid by direct deposit.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!--
+  The earnings table is rendered from https://belnoda.com/api/partners/terms,
+  which computes it from the platform catalog (lib/spine/catalog.ts
+  AFFILIATE and the plan prices). No figure is typed on this page, so a price
+  or rate change in the platform moves this table with no edit here. Until
+  that endpoint answers, the table stays hidden rather than showing numbers
+  that could be stale.
+-->
+<section id="earnings" hidden>
+  <div class="container">
+    <h2 class="reveal">What one customer <em>earns you.</em></h2>
+    <p class="lead">Every month, for as long as they stay. Worked out on what they actually pay, after their discount.</p>
+    <div class="form-card" style="max-width:640px;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
+        <thead><tr style="text-align:left;color:var(--smoke);font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;"><th style="padding:0.4rem 0;">Belnoda plan</th><th>List price</th><th>They pay</th><th>You earn</th></tr></thead>
+        <tbody id="earnings-rows"></tbody>
+      </table>
+      <p style="color:var(--smoke);font-size:0.85rem;margin:1rem 0 0;">Rooms, AI employees and add-ons they add on top earn you the same percentage.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="reveal">The fine <em>print.</em></h2>
+    <ul class="lead" style="max-width:720px;padding-left:1.1rem;">
+      <li>You earn on recurring subscriptions: plans, rooms, AI employees and recurring add-ons.</li>
+      <li>One-time charges (like a website build) and usage overage earn nothing, and the 5% discount does not apply to them.</li>
+      <li>Your code does not stack with other discounts. If a customer has a larger one, that one applies, and you still get credit for them.</li>
+      <li>Anything a customer gets free or included earns nothing.</li>
+      <li>Commission is on what the customer actually pays, after discounts and refunds. A refund or chargeback reverses it.</li>
+      <li>Money your referrals take from their own customers through their account never counts.</li>
+    </ul>
   </div>
 </section>
 
@@ -186,7 +222,7 @@
       <div class="step reveal"><span class="num">01</span><h3>Apply</h3><p>Fill out the short form below. We review every application personally.</p></div>
       <div class="step reveal"><span class="num">02</span><h3>Get approved</h3><p>Once you're in, you get your own referral link and an affiliate dashboard.</p></div>
       <div class="step reveal"><span class="num">03</span><h3>Share it</h3><p>Send your link to business owners who'd benefit. They sign up, they save 5%.</p></div>
-      <div class="step reveal"><span class="num">04</span><h3>Get paid</h3><p>Connect your payout account and earn 25% every month they stay subscribed.</p></div>
+      <div class="step reveal"><span class="num">04</span><h3>Get paid</h3><p>Connect your payout account and earn 25% of what they pay, every month they stay subscribed.</p></div>
     </div>
   </div>
 </section>
@@ -220,6 +256,24 @@
     </div>
   </div>
 </footer>
+
+<script>
+  (function () {
+    var money = function (cents) { return '$' + (cents / 100).toFixed(2); };
+    fetch('https://belnoda.com/api/partners/terms')
+      .then(function (res) { return res.ok ? res.json() : null; })
+      .then(function (terms) {
+        if (!terms || !terms.examples || !terms.examples.length) return;
+        var rows = terms.examples.map(function (e) {
+          return '<tr style="border-top:1px solid rgba(14,21,32,0.08);"><td style="padding:0.5rem 0;">' + e.tierName + '</td><td>' + money(e.listCents) +
+            '</td><td>' + money(e.customerPaysCents) + '</td><td style="font-weight:600;color:var(--copper);">' + money(e.monthlyCommissionCents) + '</td></tr>';
+        }).join('');
+        document.getElementById('earnings-rows').innerHTML = rows;
+        document.getElementById('earnings').hidden = false;
+      })
+      .catch(function () {});
+  })();
+</script>
 
 <script>
   (function () {
