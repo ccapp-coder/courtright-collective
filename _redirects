@@ -1,0 +1,15 @@
+# Legacy Aimtogro legal pages now live on belnoda.com (2026-10-24)
+/aimtogro https://belnoda.com/ 301
+/aimtogro/ https://belnoda.com/ 301
+/aimtogro/index.html https://belnoda.com/ 301
+/aimtogro/privacy https://belnoda.com/legal/privacy 301
+/aimtogro/privacy.html https://belnoda.com/legal/privacy 301
+/aimtogro/terms https://belnoda.com/legal/terms 301
+/aimtogro/terms.html https://belnoda.com/legal/terms 301
+/aimtogro/eula https://belnoda.com/legal/terms 301
+/aimtogro/eula.html https://belnoda.com/legal/terms 301
+/aimtogro/sms-opt-in https://belnoda.com/sms-opt-in 301
+/aimtogro/sms-opt-in.html https://belnoda.com/sms-opt-in 301
+/aimtogro/* https://belnoda.com/ 301
+/belnoda https://belnoda.com/ 301
+/belnoda.html https://belnoda.com/ 301

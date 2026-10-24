@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page not found | Courtright Collective</title>
+  <meta name="description" content="That page is not here. The Courtright Collective tools are.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    :root { --midnight:#0E1520; --copper:#C45C28; --copper-lt:#D97040; --gold:#D9A030; --smoke:#7A7268; --parchment:#F4EBD9; --cream:#FAF6EF; --white:#FFFFFF; --display:'Cormorant Garamond',Georgia,serif; --body:'Outfit',-apple-system,sans-serif; }
+    body { font-family: var(--body); background: var(--cream); color: var(--midnight); margin: 0; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; display: flex; flex-direction: column; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; width: 100%; }
+    nav { position: sticky; top: 0; z-index: 50; background: rgba(250,246,239,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(14,21,32,0.07); }
+    nav .container { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; padding-bottom: 1rem; }
+    .brand { font-family: var(--display); font-weight: 300; letter-spacing: 0.06em; font-size: 1.2rem; color: var(--midnight); text-decoration: none; }
+    .brand span { color: var(--copper); font-weight: 400; }
+    .nav-links { display: flex; gap: 1.6rem; align-items: center; }
+    .nav-links a { color: var(--midnight); text-decoration: none; font-size: 0.95rem; font-weight: 500; opacity: 0.75; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--midnight); cursor: pointer; padding: 0.25rem 0.5rem; }
+    @media (max-width: 780px) {
+      .nav-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: flex-start; gap: 0; background: var(--cream); border-bottom: 1px solid rgba(14,21,32,0.1); padding: 0.5rem 1.5rem 1rem; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.6rem 0; width: 100%; }
+      .nav-links a.btn { margin-top: 0.5rem; text-align: center; }
+    }
+    .btn { display: inline-block; padding: 0.875rem 1.75rem; background: var(--copper); color: var(--white); border-radius: 6px; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; text-decoration: none; transition: all 0.25s ease; }
+    .btn:hover { background: var(--copper-lt); transform: translateY(-2px); }
+    .btn-secondary { background: transparent; color: var(--midnight); border: 1.5px solid var(--midnight); }
+    .btn-secondary:hover { background: var(--midnight); color: var(--cream); }
+    main { flex: 1; display: flex; align-items: center; padding: 4rem 0; }
+    .eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.75rem; }
+    h1 { font-family: var(--display); font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 300; line-height: 1.1; margin: 0 0 1.25rem; max-width: 760px; }
+    h1 em { font-style: italic; color: var(--copper); font-weight: 400; }
+    p.lead { font-size: 1.15rem; color: var(--smoke); max-width: 600px; line-height: 1.7; margin: 0 0 2rem; }
+    .actions { display: flex; gap: 0.85rem; flex-wrap: wrap; }
+    .links { margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+    .links a { color: var(--copper); font-weight: 600; text-decoration: none; font-size: 0.95rem; }
+    footer { padding: 2rem 0; border-top: 1px solid rgba(14,21,32,0.08); color: var(--smoke); font-size: 0.85rem; }
+    footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer a { color: var(--smoke); text-decoration: none; }
+    footer a:hover { color: var(--copper); }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="container">
+    <a href="/" class="brand">Courtright <span>Collective</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <div class="nav-links">
+      <a href="/#modules">The tools</a>
+      <a href="/products">Start small</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/about">About</a>
+      <a href="/book" class="btn">Book a call</a>
+    </div>
+  </div>
+</nav>
+<main>
+  <div class="container">
+    <div class="eyebrow">404</div>
+    <h1>That page is not here. <em>The tools are.</em></h1>
+    <p class="lead">The link you followed is old, mistyped, or belongs to something we retired. Everything we sell is one click away below.</p>
+    <div class="actions">
+      <a href="/" class="btn">Back to the home page</a>
+      <a href="/book" class="btn btn-secondary">Book a free 15-min call</a>
+    </div>
+    <div class="links">
+      <a href="https://tealden.com">Tealden</a>
+      <a href="https://belnoda.com">Belnoda</a>
+      <a href="https://allonetap.com">AllOneTap</a>
+      <a href="https://pagedlive.com">Paged</a>
+      <a href="/products">Small ticket shelf</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/about">About</a>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="container">
+    <span>&copy; 2026 Courtright Collective LLC &middot; Nashville, TN</span>
+    <span><a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a> &middot; <a href="mailto:info@courtrightco.com">info@courtrightco.com</a></span>
+  </div>
+</footer>
+<script>
+  (function () {
+    var toggle = document.querySelector(".nav-toggle");
+    var links = document.querySelector(".nav-links");
+    if (toggle && links) {
+      toggle.addEventListener("click", function () {
+        var open = links.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    }
+  })();
+</script>
+</body>
+</html>
