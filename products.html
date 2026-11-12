@@ -25,7 +25,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap"></noscript>
 
   <!-- Retargeting pixel slots. Paste your snippets below and remove the comments.
   <script> GOOGLE ADS / GA4 TAG GOES HERE </script>
@@ -171,7 +173,18 @@
       .hero-eyebrow, .hero h1, .hero .sub { animation: none; opacity: 1; transform: none; }
       .reveal { opacity: 1; transform: none; transition: none; }
     }
-  </style>
+  
+/* a11y + layout pass 2026-11-12: AA contrast, underlined inline links, 24px tap targets */
+:root{--copper:#A84A1C;--smoke:#6B645B;--ok:#256843}
+.nav-links a.btn{opacity:1;color:#fff}
+.module-card .mod-name,.now-card.featured .tag,.help-card.featured .tag,.diy-card .tag,.bundle-card .saves{color:#7A5710}
+.software-card p a{color:var(--gold-lt)}
+.field label .hint{opacity:1}
+html,body{overflow-x:clip}
+footer a,.copyright a{opacity:1;display:inline-block;min-height:24px;line-height:24px}
+.copyright{color:var(--smoke)}
+p a:not([class]),article a:not([class]),.feeds a,.credit-line a,.note a,li p a{text-decoration:underline;text-underline-offset:2px;padding:4px 0}
+</style>
 <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"CollectionPage","name":"The Small Ticket Shelf","url":"https://courtrightco.com/products","description":"Cheap, instant products and services from $9 to $199.","isPartOf":{"@id":"https://courtrightco.com/#organization"}}
   </script>
@@ -188,7 +201,7 @@
       <a href="#verticals">Vertical kits</a>
       <a href="#services">Services</a>
       <a href="#bundles">Bundles</a>
-      <a href="/book.html" class="btn">Book a call</a>
+      <a href="/book" class="btn">Book a call</a>
     </div>
   </div>
 </nav>
@@ -212,7 +225,7 @@
         <span class="price">$29</span>
         <h3>Founder's Copy Bank</h3>
         <p class="blurb">You did not start a business so you could stare at a blinking cursor. This is 150+ lines of real, working marketing copy with the specific bits swapped for brackets: headlines, cold emails, follow-ups, even the awkward invoice nudge. Fill in the brackets, read it out loud, ship it.</p>
-        <p class="feeds">Feeds into <a href="/services/website-creation.html">Website Creation</a>. Mention your order when you book and we take the $29 off.</p>
+        <p class="feeds">Feeds into <a href="/services/website-creation">Website Creation</a>. Mention your order when you book and we take the $29 off.</p>
         <a href="https://buy.stripe.com/dRm00i9830WadDe6Fo7EQ0v" class="btn btn-sm">Get this, $29</a>
       </article>
 
@@ -220,7 +233,7 @@
         <span class="price">$39</span>
         <h3>Founder's AI Prompt Vault</h3>
         <p class="blurb">Most people use AI like a search engine, get something generic back, and decide AI is overrated. The prompt is the problem, not the model. Seventy prompts written for people running small businesses, sorted by job: marketing, follow-ups, angry customers, pricing, hiring, the works.</p>
-        <p class="feeds">Feeds into our <a href="/book.html">AI automation services</a>. This is the taste test.</p>
+        <p class="feeds">Feeds into our <a href="/book">AI automation services</a>. This is the taste test.</p>
         <a href="https://buy.stripe.com/bJe7sK5VR20e2YAbZI7EQ0w" class="btn btn-sm">Get this, $39</a>
       </article>
 
@@ -228,7 +241,7 @@
         <span class="price">$19</span>
         <h3>The Solopreneur Mini CRM</h3>
         <p class="blurb">I have signed up for six CRMs and used zero of them for longer than five weeks. A one-person business really needs four answers: who owes me a reply, who do I owe, what closes this month, and who have I gone quiet on. Three sheets, all four answers, no monthly bill.</p>
-        <p class="feeds">Feeds into <a href="/services/email-automation.html">Email Automation</a>, the version that runs itself.</p>
+        <p class="feeds">Feeds into <a href="/services/email-automation">Email Automation</a>, the version that runs itself.</p>
         <a href="https://buy.stripe.com/aFa8wO0BxeN0fLm2p87EQ0x" class="btn btn-sm">Get this, $19</a>
       </article>
 
@@ -236,7 +249,7 @@
         <span class="price">$15</span>
         <h3>The Email Signature Pack</h3>
         <p class="blurb">Your signature is currently four lines of blue underlined text and a broken image icon. Not your fault, email renders like it is 2009. Seven signatures built the way email actually works, plus a local builder: type your details, pick a style, click copy. Install guides for every major client.</p>
-        <p class="feeds">Feeds into <a href="/services/website-creation.html">Website Creation</a>, because the site should look as good as the signature.</p>
+        <p class="feeds">Feeds into <a href="/services/website-creation">Website Creation</a>, because the site should look as good as the signature.</p>
         <a href="https://buy.stripe.com/dRmeVcfwr9sGdDee7Q7EQ0y" class="btn btn-sm">Get this, $15</a>
       </article>
 
@@ -244,7 +257,7 @@
         <span class="price">$39</span>
         <h3>The Google Review Booster Kit</h3>
         <p class="blurb">Your happy customers are not withholding reviews. Nobody asked them. This kit covers the one-tap link, the exact moments to ask, 40+ word-for-word templates for texts, emails, and counter cards, plus a reply for every review you will ever get, including all six flavors of one star.</p>
-        <p class="feeds">Feeds into <a href="/services/email-automation.html">Email Automation</a>, where the asking happens on its own.</p>
+        <p class="feeds">Feeds into <a href="/services/email-automation">Email Automation</a>, where the asking happens on its own.</p>
         <a href="https://buy.stripe.com/eVq3cu6ZVawK2YA2p87EQ0z" class="btn btn-sm">Get this, $39</a>
       </article>
 
@@ -252,7 +265,7 @@
         <span class="price">$29</span>
         <h3>The Social Starter Pack</h3>
         <p class="blurb">You are not bad at social media. You are trying to invent content at 9pm on a Tuesday with no plan, and nobody is good at that. Four content pillars, a 30-day calendar of twelve post shapes, 90 caption templates, and the two-hour batching session that schedules a month and closes the laptop.</p>
-        <p class="feeds">Feeds into <a href="/services/website-creation.html">Website Creation</a>, so the clicks have somewhere good to land.</p>
+        <p class="feeds">Feeds into <a href="/services/website-creation">Website Creation</a>, so the clicks have somewhere good to land.</p>
         <a href="https://buy.stripe.com/4gM8wO0Bx34i6aMbZI7EQ0A" class="btn btn-sm">Get this, $29</a>
       </article>
 
@@ -260,7 +273,7 @@
         <span class="price">$39</span>
         <h3>The Logo + Brand Starter</h3>
         <p class="blurb">A brand is not a logo. A brand is the set of decisions you stop re-making. Answer fourteen questions, and the builder turns them into a real one-page brand board: palette, fonts, buttons, voice, with every color automatically graded for readability. One afternoon, then stop thinking about it.</p>
-        <p class="feeds">Feeds into <a href="/services/website-creation.html">Website Creation</a>, usually the very next thought.</p>
+        <p class="feeds">Feeds into <a href="/services/website-creation">Website Creation</a>, usually the very next thought.</p>
         <a href="https://buy.stripe.com/8x25kCesndIW1Uw6Fo7EQ0B" class="btn btn-sm">Get this, $39</a>
       </article>
 
@@ -268,7 +281,7 @@
         <span class="price">$19</span>
         <h3>Grab Your Name Everywhere</h3>
         <p class="blurb">Most people set up Instagram first, get attached to the handle, then find out the .com is gone. Forever mismatch. This is the right order, done once: domain, email, Google Business Profile, handles, directories, then lock it all down. A 49-row checklist so nothing slips.</p>
-        <p class="feeds">Feeds into <a href="/services/website-creation.html">Website Creation</a>. You will own a domain with no site on it. We can fix that.</p>
+        <p class="feeds">Feeds into <a href="/services/website-creation">Website Creation</a>. You will own a domain with no site on it. We can fix that.</p>
         <a href="https://buy.stripe.com/8x2aEW1FBgV81Uw5Bk7EQ0C" class="btn btn-sm">Get this, $19</a>
       </article>
     </div>
@@ -286,7 +299,7 @@
         <span class="price">$49</span>
         <h3>Indie Studio Command Center</h3>
         <p class="blurb">Your studio is currently held together by three notes apps and your memory. Mine was too. This is the actual Notion system I run Courtright Collective on: eleven connected databases covering projects, tasks, ideas, launches, revenue, and the Friday review most founders skip.</p>
-        <p class="feeds">Feeds into the <a href="https://partner.courtrightco.com">partnership program</a>, for when the studio needs a build partner.</p>
+        <p class="feeds">Feeds into the <a href="/affiliates">partnership program</a>, for when the studio needs a build partner.</p>
         <a href="https://buy.stripe.com/6oU7sKfwr48mczabZI7EQ0D" class="btn btn-sm">Get this, $49</a>
       </article>
 
@@ -294,7 +307,7 @@
         <span class="price">$19</span>
         <h3>The ASO Cheat Sheet</h3>
         <p class="blurb">Your app is fine. Nobody can find it. This is every App Store optimization rule I learned the slow way, on one working sheet: field limits for both stores, the keyword mistakes that waste 40 of your 100 characters, the free localization trick, and the nine screenshot rules that do the real conversion work.</p>
-        <p class="feeds">Feeds into <a href="/services/application-creation.html">Application Creation</a>, if the app itself needs help too.</p>
+        <p class="feeds">Feeds into <a href="/services/application-creation">Application Creation</a>, if the app itself needs help too.</p>
         <a href="https://buy.stripe.com/6oU6oGfwrfR40Qs4xg7EQ0E" class="btn btn-sm">Get this, $19</a>
       </article>
 
@@ -302,7 +315,7 @@
         <span class="price">$27</span>
         <h3>How I Shipped 6 Apps Solo</h3>
         <p class="blurb">The reason most people never ship is not talent, and it is not time. It is that every decision is a fresh decision, and fresh decisions at 11pm are how projects die. This is my six-phase process, nights and weekends, each phase with a checklist and a real finish line.</p>
-        <p class="feeds">Feeds into the <a href="https://partner.courtrightco.com">partnership program</a>, for when you would rather build it with somebody.</p>
+        <p class="feeds">Feeds into the <a href="/affiliates">partnership program</a>, for when you would rather build it with somebody.</p>
         <a href="https://buy.stripe.com/6oUeVc0BxfR4bv69RA7EQ0F" class="btn btn-sm">Get this, $27</a>
       </article>
 
@@ -310,7 +323,7 @@
         <span class="price">$79</span>
         <h3>The Indie App Starter Kit</h3>
         <p class="blurb">The first forty hours of every project get burned on the same setup work, and that is exactly where solo projects die. This is hour forty, already done: router, persistent store, dark mode, service worker, deploy config. Zero dependencies, zero build step. It runs today.</p>
-        <p class="feeds">Feeds into <a href="/services/application-creation.html">Application Creation</a>, when you decide you want it built properly.</p>
+        <p class="feeds">Feeds into <a href="/services/application-creation">Application Creation</a>, when you decide you want it built properly.</p>
         <a href="https://buy.stripe.com/14A9ASesnfR442Ed3M7EQ0G" class="btn btn-sm">Get this, $79</a>
       </article>
     </div>
@@ -324,7 +337,7 @@
     <p class="section-lead reveal">Some problems only make sense inside one industry. These were written for the room you actually stand in.</p>
 
     <div class="vert-note reveal">
-      <strong>Restaurants and cafes:</strong> start with the free <a href="/tools/qr-menu.html">QR Menu Maker</a> below, then the Review Booster Kit. <strong>Resellers:</strong> the free <a href="/tools/ebay-calculator.html">eBay Repricing Calculator</a> has your name on it. <strong>Everyone else:</strong> if your industry is not here yet, <a href="/book.html">tell me what you do</a> and I will point you at the right fix.
+      <strong>Restaurants and cafes:</strong> start with the free <a href="/tools/qr-menu">QR Menu Maker</a> below, then the Review Booster Kit. <strong>Resellers:</strong> the free <a href="/tools/ebay-calculator">eBay Repricing Calculator</a> has your name on it. <strong>Everyone else:</strong> if your industry is not here yet, <a href="/book">tell me what you do</a> and I will point you at the right fix.
     </div>
   </div>
 </section>
@@ -340,7 +353,7 @@
         <span class="price">$79</span>
         <h3>Get-Found-on-Google Mini-Audit</h3>
         <p class="blurb">Most businesses rank perfectly for their own name and nowhere for the thing they actually sell. I run the eight searches your customers really run, from your city, then check your Google profile, your reviews against three competitors, and your site. The gaps arrive in writing, in three days.</p>
-        <p class="feeds">Feeds into the <a href="#google-review-booster-kit">Review Booster Kit</a> and monthly help if you want it. <a href="/book.html">Book a call</a>.</p>
+        <p class="feeds">Feeds into the <a href="#google-review-booster-kit">Review Booster Kit</a> and monthly help if you want it. <a href="/book">Book a call</a>.</p>
         <a href="https://buy.stripe.com/cNi28q1FB0Wa8iU4xg7EQ0H" class="btn btn-gold btn-sm">Get this, $79</a>
       </article>
 
@@ -348,7 +361,7 @@
         <span class="price">$99</span>
         <h3>The Website Teardown</h3>
         <p class="blurb">Somebody is on your website right now, deciding whether to leave. I go through your site the way a stranger does: cold, on a phone, no idea who you are. Three days later you get the write-up: what happened, what it cost you, and the five fixes that matter most, in order.</p>
-        <p class="feeds">Feeds into <a href="/services/website-creation.html">Website Creation</a>. Mention your order when you book the rebuild and we take the $99 off.</p>
+        <p class="feeds">Feeds into <a href="/services/website-creation">Website Creation</a>. Mention your order when you book the rebuild and we take the $99 off.</p>
         <a href="https://buy.stripe.com/cNi9ASckfbAObv69RA7EQ0I" class="btn btn-gold btn-sm">Get this, $99</a>
       </article>
 
@@ -356,7 +369,7 @@
         <span class="price">$99</span>
         <h3>The Fix-My-Presence Call</h3>
         <p class="blurb">You know something needs to change. You do not know which thing. Forty-five minutes on a call with me, and within 24 hours you get a written plan: this week, this month, this quarter, with who does it and how long each line takes. Including what to ignore, which is usually the most useful part.</p>
-        <p class="feeds">Feeds into whichever fix the plan names. When in doubt, <a href="/book.html">book the free 15 minutes first</a>.</p>
+        <p class="feeds">Feeds into whichever fix the plan names. When in doubt, <a href="/book">book the free 15 minutes first</a>.</p>
         <a href="https://buy.stripe.com/eVq28q6ZVgV8ar24xg7EQ0J" class="btn btn-gold btn-sm">Get this, $99</a>
       </article>
 
@@ -364,7 +377,7 @@
         <span class="price">$149</span>
         <h3>The App Idea Validation Kit</h3>
         <p class="blurb">Before you spend six months of nights on it, let me do the unglamorous part. Store research, five competitor teardowns, an hour in their one and two star reviews, and a verdict in the first line: build it, build something narrower, or do not. Plus a 20-minute call to talk it through.</p>
-        <p class="feeds">Feeds into <a href="/services/application-creation.html">Application Creation</a>, with a real build price already in the document.</p>
+        <p class="feeds">Feeds into <a href="/services/application-creation">Application Creation</a>, with a real build price already in the document.</p>
         <a href="https://buy.stripe.com/9B600iesn6gudDed3M7EQ0K" class="btn btn-gold btn-sm">Get this, $149</a>
       </article>
 
@@ -372,7 +385,7 @@
         <span class="price">$149</span>
         <h3>The Client-Portal Demo</h3>
         <p class="blurb">A client portal sounds great and also sounds like a big vague expensive thing, so it has stayed on your list for a year. In seven days I build a working demo with your logo, your colors, and your actual vocabulary, live at a real URL. Every screen labeled real or faked, plus real prices for the real build.</p>
-        <p class="feeds">Feeds into <a href="/services/application-creation.html">Application Creation</a>, now with a thing you can click instead of imagine.</p>
+        <p class="feeds">Feeds into <a href="/services/application-creation">Application Creation</a>, now with a thing you can click instead of imagine.</p>
         <a href="https://buy.stripe.com/14AfZgesn5cq6aMfbU7EQ0L" class="btn btn-gold btn-sm">Get this, $149</a>
       </article>
 
@@ -380,7 +393,7 @@
         <span class="price">$199</span>
         <h3>Ship Your First App in 30 Days</h3>
         <p class="blurb">On day 30, a stranger downloads your app. Not a prototype, a real app in a real store with your name on it. One task a day, about an hour, with three group calls, a shared channel, and a one-to-one with me. Includes the Starter Kit, the Launch Playbook, and the ASO Cheat Sheet.</p>
-        <p class="feeds">Feeds into the <a href="https://partner.courtrightco.com">partnership program</a>, if app number two should be a team effort.</p>
+        <p class="feeds">Feeds into the <a href="/affiliates">partnership program</a>, if app number two should be a team effort.</p>
         <a href="https://buy.stripe.com/28EdR8ckfawK7eQaVE7EQ0M" class="btn btn-gold btn-sm">Get this, $199</a>
       </article>
     </div>
@@ -459,12 +472,12 @@
     <h2 class="reveal">On the house. <em>No catch.</em></h2>
     <p class="section-lead reveal">Two working tools, free forever, no signup wall. If they save you an hour, you'll know who built them.</p>
     <div class="free-strip">
-      <a href="/tools/ebay-calculator.html" class="tool-card reveal" id="ebay-repricing-calculator">
+      <a href="/tools/ebay-calculator" class="tool-card reveal" id="ebay-repricing-calculator">
         <span class="free-tag">Free</span>
         <h3>eBay Repricing Calculator</h3>
         <p>Profit, break-even, target margin, and whether you can afford to match that undercutter. Every mode checked by hand, correct to the cent.</p>
       </a>
-      <a href="/tools/qr-menu.html" class="tool-card reveal" id="qr-menu-maker">
+      <a href="/tools/qr-menu" class="tool-card reveal" id="qr-menu-maker">
         <span class="free-tag">Free</span>
         <h3>QR Menu Maker</h3>
         <p>Build a scannable menu you own, print the QR, and stop paying $29 a month to host a PDF. About ten minutes, start to table tent.</p>
@@ -498,25 +511,25 @@
           <li><a href="https://belnoda.com">Belnoda</a></li>
           <li><a href="https://allonetap.com">AllOneTap</a></li>
           <li><a href="https://pagedlive.com">Paged</a></li>
-          <li><a href="/products.html">Small ticket shelf</a></li>
+          <li><a href="/products">Small ticket shelf</a></li>
         </ul>
       </div>
       <div>
         <h4>Hire us</h4>
         <ul>
-          <li><a href="/services/email-automation.html">Email automation</a></li>
-          <li><a href="/services/business-reports.html">Business reports</a></li>
-          <li><a href="/services/website-creation.html">Website builds</a></li>
-          <li><a href="/services/application-creation.html">App builds</a></li>
-          <li><a href="https://partner.courtrightco.com">Partnership program</a></li>
+          <li><a href="/services/email-automation">Email automation</a></li>
+          <li><a href="/services/business-reports">Business reports</a></li>
+          <li><a href="/services/website-creation">Website builds</a></li>
+          <li><a href="/services/application-creation">App builds</a></li>
+          <li><a href="/affiliates">Partnership program</a></li>
         </ul>
       </div>
       <div>
         <h4>Company</h4>
         <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/book.html">Book a call</a></li>
-          <li><a href="/affiliates.html">Affiliate program</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/book">Book a call</a></li>
+          <li><a href="/affiliates">Affiliate program</a></li>
           <li><a href="https://tinkertaps.courtrightco.com">TinkerTaps</a></li>
           <li><a href="https://trivd.courtrightco.com">Trivd</a></li>
         </ul>

@@ -25,7 +25,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap"></noscript>
 
   <!-- Retargeting pixel slots. Paste your snippets below and remove the comments.
   <script> GOOGLE ADS / GA4 TAG GOES HERE </script>
@@ -33,7 +35,7 @@
   -->
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"Courtright Collective","url":"https://courtrightco.com","description":"A family-run digital studio building websites, apps, and business tools.","address":{"@type":"PostalAddress","addressLocality":"Nashville","addressRegion":"TN","addressCountry":"US"},"sameAs":["https://partner.courtrightco.com","https://tinkertaps.courtrightco.com","https://trivd.courtrightco.com","https://tealden.com","https://allonetap.com","https://pagedlive.com"]}
+  {"@context":"https://schema.org","@type":"Organization","name":"Courtright Collective","url":"https://courtrightco.com","description":"A family-run digital studio building websites, apps, and business tools.","address":{"@type":"PostalAddress","addressLocality":"Nashville","addressRegion":"TN","addressCountry":"US"},"sameAs":["https://tinkertaps.courtrightco.com","https://trivd.courtrightco.com","https://tealden.com","https://allonetap.com","https://pagedlive.com"]}
   </script>
 
   <style>
@@ -199,7 +201,18 @@
       .hero::before { animation: none; }
       .reveal { opacity: 1; transform: none; transition: none; }
     }
-  </style>
+  
+/* a11y + layout pass 2026-11-12: AA contrast, underlined inline links, 24px tap targets */
+:root{--copper:#A84A1C;--smoke:#6B645B;--ok:#256843}
+.nav-links a.btn{opacity:1;color:#fff}
+.module-card .mod-name,.now-card.featured .tag,.help-card.featured .tag,.diy-card .tag,.bundle-card .saves{color:#7A5710}
+.software-card p a{color:var(--gold-lt)}
+.field label .hint{opacity:1}
+html,body{overflow-x:clip}
+footer a,.copyright a{opacity:1;display:inline-block;min-height:24px;line-height:24px}
+.copyright{color:var(--smoke)}
+p a:not([class]),article a:not([class]),.feeds a,.credit-line a,.note a,li p a{text-decoration:underline;text-underline-offset:2px;padding:4px 0}
+</style>
 </head>
 <body>
 
@@ -212,8 +225,8 @@
       <a href="#store">Start small</a>
       <a href="#tealden">Tealden</a>
       <a href="#done-for-you">Hire us</a>
-      <a href="/about.html">About</a>
-      <a href="/book.html" class="btn">Book a call</a>
+      <a href="/about">About</a>
+      <a href="/book" class="btn">Book a call</a>
     </div>
   </div>
 </nav>
@@ -226,7 +239,7 @@
       <p class="sub">Somewhere in your business there's a headache you keep patching with sticky notes, group texts, and a spreadsheet named FINAL_v3. Find the tool that fixes yours below. Or skip the browsing and hand the whole thing to us.</p>
       <div class="cta-row">
         <a href="#modules" class="btn">Find your fix</a>
-        <a href="/book.html" class="btn btn-secondary">Book a free 15-min call</a>
+        <a href="/book" class="btn btn-secondary">Book a free 15-min call</a>
       </div>
     </div>
     <div class="hero-logo" aria-hidden="true">
@@ -319,7 +332,7 @@
       <a href="https://belnoda.com/#rooms" class="module-card reveal">
         <div class="mod-name">Gated &middot; Membership</div>
         <h3>You want to charge for access and have nowhere to put it.</h3>
-        <p>A members-only door you control. Content, community, courses, whatever belongs behind it. $9 a month flat, and we never take a cut of your sales.</p>
+        <p>A members-only door you control. Content, community, courses, whatever belongs behind it. 5% of each sale, or $9 a month.</p>
         <span class="go">Show me &rarr;</span>
       </a>
       <a href="https://belnoda.com/#rooms" class="module-card reveal">
@@ -385,32 +398,32 @@
     <p class="section-lead reveal">Not ready for software or a studio project? Fair. These are cheap, instant, and each one knocks out a real problem this afternoon.</p>
 
     <div class="shelf-grid">
-      <a href="/products.html#founders-copy-bank" class="shelf-card reveal">
+      <a href="/products#founders-copy-bank" class="shelf-card reveal">
         <span class="price">$29</span>
         <h3>Founder's Copy Bank</h3>
         <p>150+ lines of working marketing copy with the blanks marked. Stop staring at the cursor.</p>
       </a>
-      <a href="/products.html#solopreneur-crm-starter" class="shelf-card reveal">
+      <a href="/products#solopreneur-crm-starter" class="shelf-card reveal">
         <span class="price">$19</span>
         <h3>Solopreneur Mini CRM</h3>
         <p>A dead-simple spreadsheet CRM that actually gets used. The paper cut version of Listed.</p>
       </a>
-      <a href="/products.html#google-review-booster-kit" class="shelf-card reveal">
+      <a href="/products#google-review-booster-kit" class="shelf-card reveal">
         <span class="price">$39</span>
         <h3>Google Review Booster Kit</h3>
         <p>The scripts and trackers that turn happy customers into public five-star proof.</p>
       </a>
-      <a href="/products.html#social-starter-pack" class="shelf-card reveal">
+      <a href="/products#social-starter-pack" class="shelf-card reveal">
         <span class="price">$29</span>
         <h3>Social Starter Pack</h3>
         <p>A month of posts you can actually keep up with. Calendar included.</p>
       </a>
-      <a href="/products.html#founders-ai-prompt-vault" class="shelf-card reveal">
+      <a href="/products#founders-ai-prompt-vault" class="shelf-card reveal">
         <span class="price">$39</span>
         <h3>Founder's AI Prompt Vault</h3>
         <p>The prompts we actually use to run a business with AI, organized by job.</p>
       </a>
-      <a href="/products.html#website-teardown" class="shelf-card reveal">
+      <a href="/products#website-teardown" class="shelf-card reveal">
         <span class="price">$99</span>
         <h3>The Website Teardown</h3>
         <p>We go through your site line by line and hand you the fix list in three days.</p>
@@ -418,7 +431,7 @@
     </div>
 
     <p class="credit-line reveal"><strong>Every dollar counts twice.</strong> Buy any of these, then mention your order when you book a build with us and we take the price off. Small yes now, credit later.</p>
-    <p class="reveal" style="margin-top: 1.5rem;"><a href="/products.html" class="btn btn-gold">See all 26 products &rarr;</a></p>
+    <p class="reveal" style="margin-top: 1.5rem;"><a href="/products" class="btn btn-gold">See all 26 products &rarr;</a></p>
   </div>
 </section>
 
@@ -428,12 +441,12 @@
     <h2 class="reveal">On the house. <em>No catch.</em></h2>
     <p class="section-lead reveal">Two working tools, free forever, no signup wall. If they save you an hour, you'll know who built them.</p>
     <div class="tools-grid">
-      <a href="/tools/ebay-calculator.html" class="tool-card reveal">
+      <a href="/tools/ebay-calculator" class="tool-card reveal">
         <span class="free-tag">Free</span>
         <h3>eBay Repricing Calculator</h3>
         <p>Profit, break-even, target margin. Every mode checked by hand, correct to the cent.</p>
       </a>
-      <a href="/tools/qr-menu.html" class="tool-card reveal">
+      <a href="/tools/qr-menu" class="tool-card reveal">
         <span class="free-tag">Free</span>
         <h3>QR Menu Maker</h3>
         <p>Build a scannable menu for your restaurant or cafe in about ten minutes.</p>
@@ -461,10 +474,10 @@
         <h3>AI automations</h3>
         <p>The busywork, handled on a schedule or a trigger.</p>
         <ul>
-          <li><a href="/services/email-automation.html">Email triage &amp; drafted replies</a></li>
-          <li><a href="/services/business-reports.html">Weekly reports on autopilot</a></li>
-          <li><a href="/services/financial-trackers.html">Financial trackers</a></li>
-          <li><a href="/services/asset-tracking.html">Asset &amp; inventory tracking</a></li>
+          <li><a href="/services/email-automation">Email triage &amp; drafted replies</a></li>
+          <li><a href="/services/business-reports">Weekly reports on autopilot</a></li>
+          <li><a href="/services/financial-trackers">Financial trackers</a></li>
+          <li><a href="/services/asset-tracking">Asset &amp; inventory tracking</a></li>
         </ul>
       </div>
       <div class="dfy-card reveal">
@@ -472,18 +485,18 @@
         <p>Need a site today? <a href="https://pagedlive.com"><strong>Paged</strong></a> turns a short questionnaire into a live one-page site in about a minute. Free on a pagedlive.com address, <span class="from">$499</span> makes it yours, then $25 a month. Need something custom, we do that too.</p>
         <ul>
           <li><a href="https://pagedlive.com">Paged: a one-page site in about a minute</a></li>
-          <li><a href="/services/website-creation.html">Custom website builds</a></li>
-          <li><a href="/services/application-creation.html">Custom apps &amp; tools</a></li>
-          <li><a href="https://partner.courtrightco.com">App partnership program</a></li>
+          <li><a href="/services/website-creation">Custom website builds</a></li>
+          <li><a href="/services/application-creation">Custom apps &amp; tools</a></li>
+          <li><a href="/affiliates">App partnership program</a></li>
         </ul>
       </div>
       <div class="dfy-card reveal">
         <h3>Diagnosis first</h3>
         <p>Not sure what you need? Start with a look under the hood. These credit toward any build.</p>
         <ul>
-          <li><a href="/products.html#website-teardown">Website Teardown, $99</a></li>
-          <li><a href="/products.html#google-mini-audit">Get-Found-on-Google Mini-Audit, $79</a></li>
-          <li><a href="/products.html#fix-my-presence-call">Fix-My-Presence Call, $99</a></li>
+          <li><a href="/products#website-teardown">Website Teardown, $99</a></li>
+          <li><a href="/products#google-mini-audit">Get-Found-on-Google Mini-Audit, $79</a></li>
+          <li><a href="/products#fix-my-presence-call">Fix-My-Presence Call, $99</a></li>
         </ul>
       </div>
     </div>
@@ -496,7 +509,7 @@
     <div class="eyebrow reveal" style="color: var(--gold);">One Last Thing</div>
     <h2 class="reveal">Still not sure where <em>your</em> headache fits?</h2>
     <p class="reveal">That's what the call is for. Fifteen minutes, zero pressure, and you'll leave knowing exactly which fix is yours. Worst case, you get free advice from a guy who's built this stuff for his own businesses.</p>
-    <p class="reveal"><a href="/book.html" class="btn btn-gold">Book the free call</a></p>
+    <p class="reveal"><a href="/book" class="btn btn-gold">Book the free call</a></p>
   </div>
 </section>
 
@@ -514,25 +527,25 @@
           <li><a href="https://belnoda.com">Belnoda</a></li>
           <li><a href="https://allonetap.com">AllOneTap</a></li>
           <li><a href="https://pagedlive.com">Paged</a></li>
-          <li><a href="/products.html">Small ticket shelf</a></li>
+          <li><a href="/products">Small ticket shelf</a></li>
         </ul>
       </div>
       <div>
         <h4>Hire us</h4>
         <ul>
-          <li><a href="/services/email-automation.html">Email automation</a></li>
-          <li><a href="/services/business-reports.html">Business reports</a></li>
-          <li><a href="/services/website-creation.html">Website builds</a></li>
-          <li><a href="/services/application-creation.html">App builds</a></li>
-          <li><a href="https://partner.courtrightco.com">Partnership program</a></li>
+          <li><a href="/services/email-automation">Email automation</a></li>
+          <li><a href="/services/business-reports">Business reports</a></li>
+          <li><a href="/services/website-creation">Website builds</a></li>
+          <li><a href="/services/application-creation">App builds</a></li>
+          <li><a href="/affiliates">Partnership program</a></li>
         </ul>
       </div>
       <div>
         <h4>Company</h4>
         <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/book.html">Book a call</a></li>
-          <li><a href="/affiliates.html">Affiliate program</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/book">Book a call</a></li>
+          <li><a href="/affiliates">Affiliate program</a></li>
           <li><a href="https://tinkertaps.courtrightco.com">TinkerTaps</a></li>
           <li><a href="https://trivd.courtrightco.com">Trivd</a></li>
         </ul>

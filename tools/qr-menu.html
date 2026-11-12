@@ -6,7 +6,25 @@
 <title>QR Menu Maker | Courtright Collective</title>
 <meta name="description" content="Build a mobile menu, download it as one file, and print the QR code. Free, no signup, no monthly fee, nothing leaves your browser.">
 <link rel="canonical" href="https://courtrightco.com/tools/qr-menu">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Courtright Collective">
+<meta property="og:title" content="QR Menu Maker | Courtright Collective">
+<meta property="og:description" content="Build a mobile menu, download it as one file, and print the QR code. Free, no signup, no monthly fee, nothing leaves your browser.">
+<meta property="og:url" content="https://courtrightco.com/tools/qr-menu">
+<meta property="og:image" content="https://courtrightco.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Courtright Collective">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QR Menu Maker | Courtright Collective">
+<meta name="twitter:description" content="Build a mobile menu, download it as one file, and print the QR code. Free, no signup, no monthly fee, nothing leaves your browser.">
+<meta name="twitter:image" content="https://courtrightco.com/og-image.png">
 <meta name="theme-color" content="#0E1520">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"QR Menu Maker","url":"https://courtrightco.com/tools/qr-menu","description":"Build a mobile menu, download it as one file, and print the QR code. Free, no signup, no monthly fee, nothing leaves your browser.","applicationCategory":"BusinessApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Courtright Collective","url":"https://courtrightco.com"}}
+</script>
 <style>
 /* @brand-fonts */
 /* @brand-fonts:start */
@@ -129,6 +147,22 @@ footer p{margin:0 0 1.1rem;opacity:.86;max-width:38rem}
 .cta{display:inline-block;background:linear-gradient(90deg,var(--copper),var(--gold));color:#fff;
   padding:.72rem 1.5rem;border-radius:9px;font-weight:800;text-decoration:none}
 footer small{display:block;margin-top:1.4rem;opacity:.55;font-size:.78rem}
+
+/* a11y + layout pass 2026-11-12: AA contrast, underlined inline links, 24px tap targets */
+:root{--copper:#A84A1C;--smoke:#6B645B;--ok:#256843}
+.nav-links a.btn{opacity:1;color:#fff}
+.module-card .mod-name,.now-card.featured .tag,.help-card.featured .tag,.diy-card .tag,.bundle-card .saves{color:#7A5710}
+.software-card p a{color:var(--gold-lt)}
+.field label .hint{opacity:1}
+html,body{overflow-x:clip}
+footer a,.copyright a{opacity:1;display:inline-block;min-height:24px;line-height:24px}
+.copyright{color:var(--smoke)}
+p a:not([class]),article a:not([class]),.feeds a,.credit-line a,.note a,li p a{text-decoration:underline;text-underline-offset:2px;padding:4px 0}
+
+/* small-screen overflow fix 2026-11-12 */
+.grid>*{min-width:0}
+.card{overflow-x:auto}
+@media(max-width:480px){th,td{padding:.5rem .4rem}}
 </style>
 </head>
 <body>
@@ -204,7 +238,7 @@ Cold Brew | 18 hour steep, no sugar added | 5</textarea>
             </div>
             <div class="field">
               <label for="accent">Accent color</label>
-              <input id="accent" type="color" value="#C45C28" style="height:44px;padding:.25rem">
+              <input id="accent" type="color" value="#A84A1C" style="height:44px;padding:.25rem">
             </div>
           </div>
           <div class="note">

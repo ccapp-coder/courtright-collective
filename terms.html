@@ -6,10 +6,27 @@
   <meta name="description" content="Terms of service for Courtright Collective LLC: engagements, acceptable use, SMS messaging, liability and governing law.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://courtrightco.com/terms">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Courtright Collective">
+<meta property="og:title" content="Terms of Service | Courtright Collective">
+<meta property="og:description" content="Terms of service for Courtright Collective LLC: engagements, acceptable use, SMS messaging, liability and governing law.">
+<meta property="og:url" content="https://courtrightco.com/terms">
+<meta property="og:image" content="https://courtrightco.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Courtright Collective">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Terms of Service | Courtright Collective">
+<meta name="twitter:description" content="Terms of service for Courtright Collective LLC: engagements, acceptable use, SMS messaging, liability and governing law.">
+<meta name="twitter:image" content="https://courtrightco.com/og-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"></noscript>
 
   <style>
     *{box-sizing:border-box}
@@ -35,7 +52,18 @@
     footer a{color:var(--smoke);text-decoration:none}
     footer a:hover{color:var(--copper)}
     @media (max-width:700px){.nav-links a:not(.btn){display:none}}
-  </style>
+  
+/* a11y + layout pass 2026-11-12: AA contrast, underlined inline links, 24px tap targets */
+:root{--copper:#A84A1C;--smoke:#6B645B;--ok:#256843}
+.nav-links a.btn{opacity:1;color:#fff}
+.module-card .mod-name,.now-card.featured .tag,.help-card.featured .tag,.diy-card .tag,.bundle-card .saves{color:#7A5710}
+.software-card p a{color:var(--gold-lt)}
+.field label .hint{opacity:1}
+html,body{overflow-x:clip}
+footer a,.copyright a{opacity:1;display:inline-block;min-height:24px;line-height:24px}
+.copyright{color:var(--smoke)}
+p a:not([class]),article a:not([class]),.feeds a,.credit-line a,.note a,li p a{text-decoration:underline;text-underline-offset:2px;padding:4px 0}
+</style>
 </head>
 <body>
 
@@ -44,9 +72,9 @@
     <a href="/" class="brand">Courtright <span>Collective</span></a>
     <div class="nav-links">
       <a href="/#services">Services</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/about.html">About</a>
-      <a href="/book.html" class="btn">Book a call</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/about">About</a>
+      <a href="/book" class="btn">Book a call</a>
     </div>
   </div>
 </nav>

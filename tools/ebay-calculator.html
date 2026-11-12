@@ -6,7 +6,25 @@
 <title>eBay Repricing Calculator | Courtright Collective</title>
 <meta name="description" content="Free eBay profit and repricing calculator. Work out what to charge, what you actually keep, and where your break-even sits. No signup, nothing leaves your browser.">
 <link rel="canonical" href="https://courtrightco.com/tools/ebay-calculator">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Courtright Collective">
+<meta property="og:title" content="eBay Repricing Calculator | Courtright Collective">
+<meta property="og:description" content="Free eBay profit and repricing calculator. Work out what to charge, what you actually keep, and where your break-even sits. No signup, nothing leaves your browser.">
+<meta property="og:url" content="https://courtrightco.com/tools/ebay-calculator">
+<meta property="og:image" content="https://courtrightco.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Courtright Collective">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="eBay Repricing Calculator | Courtright Collective">
+<meta name="twitter:description" content="Free eBay profit and repricing calculator. Work out what to charge, what you actually keep, and where your break-even sits. No signup, nothing leaves your browser.">
+<meta name="twitter:image" content="https://courtrightco.com/og-image.png">
 <meta name="theme-color" content="#0E1520">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"eBay Repricing Calculator","url":"https://courtrightco.com/tools/ebay-calculator","description":"Free eBay profit and repricing calculator. Work out what to charge, what you actually keep, and where your break-even sits. No signup, nothing leaves your browser.","applicationCategory":"BusinessApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Courtright Collective","url":"https://courtrightco.com"}}
+</script>
 <style>
 /* @brand-fonts */
 /* @brand-fonts:start */
@@ -190,6 +208,22 @@ footer p{margin:0 0 1.1rem;opacity:.86;max-width:38rem}
   padding:.72rem 1.5rem;border-radius:9px;font-weight:800;text-decoration:none;letter-spacing:.03em;
 }
 footer small{display:block;margin-top:1.4rem;opacity:.55;font-size:.78rem}
+
+/* a11y + layout pass 2026-11-12: AA contrast, underlined inline links, 24px tap targets */
+:root{--copper:#A84A1C;--smoke:#6B645B;--ok:#256843}
+.nav-links a.btn{opacity:1;color:#fff}
+.module-card .mod-name,.now-card.featured .tag,.help-card.featured .tag,.diy-card .tag,.bundle-card .saves{color:#7A5710}
+.software-card p a{color:var(--gold-lt)}
+.field label .hint{opacity:1}
+html,body{overflow-x:clip}
+footer a,.copyright a{opacity:1;display:inline-block;min-height:24px;line-height:24px}
+.copyright{color:var(--smoke)}
+p a:not([class]),article a:not([class]),.feeds a,.credit-line a,.note a,li p a{text-decoration:underline;text-underline-offset:2px;padding:4px 0}
+
+/* small-screen overflow fix 2026-11-12 */
+.grid>*{min-width:0}
+.card{overflow-x:auto}
+@media(max-width:480px){th,td{padding:.5rem .4rem}}
 </style>
 </head>
 <body>

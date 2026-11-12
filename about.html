@@ -22,7 +22,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap"></noscript>
 
   <!-- Retargeting pixel slots. Paste your snippets below and remove the comments.
   <script> GOOGLE ADS / GA4 TAG GOES HERE </script>
@@ -132,7 +134,18 @@
       .hero::before { animation: none; }
       .reveal { opacity: 1; transform: none; transition: none; }
     }
-  </style>
+  
+/* a11y + layout pass 2026-11-12: AA contrast, underlined inline links, 24px tap targets */
+:root{--copper:#A84A1C;--smoke:#6B645B;--ok:#256843}
+.nav-links a.btn{opacity:1;color:#fff}
+.module-card .mod-name,.now-card.featured .tag,.help-card.featured .tag,.diy-card .tag,.bundle-card .saves{color:#7A5710}
+.software-card p a{color:var(--gold-lt)}
+.field label .hint{opacity:1}
+html,body{overflow-x:clip}
+footer a,.copyright a{opacity:1;display:inline-block;min-height:24px;line-height:24px}
+.copyright{color:var(--smoke)}
+p a:not([class]),article a:not([class]),.feeds a,.credit-line a,.note a,li p a{text-decoration:underline;text-underline-offset:2px;padding:4px 0}
+</style>
 <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"AboutPage","name":"About Courtright Collective","url":"https://courtrightco.com/about","mainEntity":{"@id":"https://courtrightco.com/#organization"}}
   </script>
@@ -145,10 +158,10 @@
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <div class="nav-links">
       <a href="/#modules">The tools</a>
-      <a href="/products.html">Start small</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/about.html">About</a>
-      <a href="/book.html" class="btn">Book a call</a>
+      <a href="/products">Start small</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/about">About</a>
+      <a href="/book" class="btn">Book a call</a>
     </div>
   </div>
 </nav>
@@ -184,7 +197,7 @@
     <p>I started Courtright Collective as an indie app studio. That's how <a href="https://tinkertaps.courtrightco.com">TinkerTaps</a> and <a href="https://trivd.courtrightco.com">Trivd</a> came to be. Building apps is creative, slow work, and the wins are far apart.</p>
     <p>Somewhere along the way I noticed the pattern in what small-business owners kept asking for. It was never "build me an app." It was "make this one headache go away." The bookings, the follow-ups, the customer list scattered across three inboxes, the content they never had time to make. So we started building for the headaches instead of the categories.</p>
     <p>The flagship of that shift is <a href="https://tealden.com"><strong>Tealden</strong></a>. You drop in your clips, and it makes, schedules and posts short video for your business, with AI hooks and captions and an editor when you want one. On Momentum it makes the videos for you. The tools behind the other headaches are rooms in one house we call <a href="https://belnoda.com"><strong>Belnoda</strong></a>: one login, one customer list, turn on only what you need. It is live, and 50 founding seats are open at 50 percent off.</p>
-    <p>The app side still exists too, under our <a href="https://partner.courtrightco.com">partnership program</a> for founders ready to ship. Same studio, same family, one set of values.</p>
+    <p>The app side still exists too, under our <a href="/affiliates">partnership program</a> for founders ready to ship. Same studio, same family, one set of values.</p>
 
   </article>
 </div>
@@ -206,7 +219,7 @@
         <h3>The tools</h3>
         <p>Problem-first modules for bookings, follow-ups, customer lists, memberships, and more. Rooms in one house called Belnoda, live now.</p>
       </a>
-      <a href="/products.html" class="now-card reveal">
+      <a href="/products" class="now-card reveal">
         <div class="tag">Start Small &middot; From $9</div>
         <h3>The small ticket shelf</h3>
         <p>Cheap, instant fixes for one real problem at a time. Mention your order when you book a build and we take it off.</p>
@@ -216,12 +229,12 @@
         <h3>Paged</h3>
         <p>A one-page website built from a short questionnaire, live in about a minute. Free on a pagedlive.com address until $499 makes it yours, then $25 a month.</p>
       </a>
-      <a href="https://partner.courtrightco.com" class="now-card reveal">
+      <a href="/affiliates" class="now-card reveal">
         <div class="tag">Revenue Share</div>
         <h3>App partnership</h3>
         <p>For founders with an idea worth shipping. We design, build, launch, and support on a revenue share, no upfront fees.</p>
       </a>
-      <a href="/book.html" class="now-card reveal">
+      <a href="/book" class="now-card reveal">
         <div class="tag">Free Call</div>
         <h3>Not sure yet?</h3>
         <p>Bring whatever's on your mind. A bottleneck, an idea, a question. 15 minutes, no pitch. We'll find the right way in together.</p>
@@ -240,7 +253,7 @@
     <div class="cta-card reveal">
       <h2>See if we're a <em>fit.</em></h2>
       <p>15 minutes, free, no commitment. Bring a bottleneck, an idea, or just a question. You'll leave with a clear next step, or none, if there isn't one.</p>
-      <a href="/book.html" class="btn">Book a call</a>
+      <a href="/book" class="btn">Book a call</a>
     </div>
   </article>
 </div>

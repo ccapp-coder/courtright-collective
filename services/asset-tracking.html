@@ -22,7 +22,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap"></noscript>
 
   <!-- Retargeting pixel slots. Paste your snippets below and remove the comments.
   <script> GOOGLE ADS / GA4 TAG GOES HERE </script>
@@ -169,7 +171,18 @@
       .hero::before { animation: none; }
       .reveal { opacity: 1; transform: none; transition: none; }
     }
-  </style>
+  
+/* a11y + layout pass 2026-11-12: AA contrast, underlined inline links, 24px tap targets */
+:root{--copper:#A84A1C;--smoke:#6B645B;--ok:#256843}
+.nav-links a.btn{opacity:1;color:#fff}
+.module-card .mod-name,.now-card.featured .tag,.help-card.featured .tag,.diy-card .tag,.bundle-card .saves{color:#7A5710}
+.software-card p a{color:var(--gold-lt)}
+.field label .hint{opacity:1}
+html,body{overflow-x:clip}
+footer a,.copyright a{opacity:1;display:inline-block;min-height:24px;line-height:24px}
+.copyright{color:var(--smoke)}
+p a:not([class]),article a:not([class]),.feeds a,.credit-line a,.note a,li p a{text-decoration:underline;text-underline-offset:2px;padding:4px 0}
+</style>
 </head>
 <body>
 
@@ -179,10 +192,10 @@
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
     <div class="nav-links">
       <a href="/#modules">The tools</a>
-      <a href="/products.html">Start small</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/about.html">About</a>
-      <a href="/book.html" class="btn">Book a call</a>
+      <a href="/products">Start small</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/about">About</a>
+      <a href="/book" class="btn">Book a call</a>
     </div>
   </div>
 </nav>
@@ -193,7 +206,7 @@
     <h1>"I didn't know it renewed" is the most expensive sentence <em>in your business.</em></h1>
     <p class="sub">Equipment, inventory, contracts, leases, subscriptions. We build tracking that updates itself and taps you on the shoulder before anything renews, expires, or quietly disappears.</p>
     <div class="cta-row">
-      <a href="/book.html" class="btn">Book a free 15-min call</a>
+      <a href="/book" class="btn">Book a free 15-min call</a>
       <a href="#pricing" class="btn btn-secondary">See what it costs</a>
     </div>
   </div>
@@ -265,7 +278,7 @@
         <p>The full build: inventory reconciliation, subscription audits, and compliance tracking on top of the register and alerts.</p>
       </div>
     </div>
-    <p class="credit-line reveal"><strong>Started with a diagnosis product?</strong> Any diagnosis purchase from our small ticket shelf credits toward your build. The small yes counts toward the big one. <a href="/pricing.html" style="color: var(--gold);">See all pricing &rarr;</a></p>
+    <p class="credit-line reveal"><strong>Started with a diagnosis product?</strong> Any diagnosis purchase from our small ticket shelf credits toward your build. The small yes counts toward the big one. <a href="/pricing" style="color: var(--gold);">See all pricing &rarr;</a></p>
   </div>
 </section>
 
@@ -281,7 +294,7 @@
         <p>Capture it on site, find it forever. Photos, notes, measurements, all attached to the right job. The self-serve way to stop losing what you wrote down.</p>
         <span class="go">See Jotted &rarr;</span>
       </a>
-      <a href="/book.html" class="diy-card reveal">
+      <a href="/book" class="diy-card reveal">
         <div class="tag">Still not sure?</div>
         <h3>Talk it through first</h3>
         <p>Fifteen minutes, zero pressure. We'll look at what you're tracking by hand today and tell you honestly where automation pays off first.</p>
@@ -319,25 +332,25 @@
           <li><a href="https://belnoda.com">Belnoda</a></li>
           <li><a href="https://allonetap.com">AllOneTap</a></li>
           <li><a href="https://pagedlive.com">Paged</a></li>
-          <li><a href="/products.html">Small ticket shelf</a></li>
+          <li><a href="/products">Small ticket shelf</a></li>
         </ul>
       </div>
       <div>
         <h4>Hire us</h4>
         <ul>
-          <li><a href="/services/email-automation.html">Email automation</a></li>
-          <li><a href="/services/business-reports.html">Business reports</a></li>
-          <li><a href="/services/website-creation.html">Website builds</a></li>
-          <li><a href="/services/application-creation.html">App builds</a></li>
-          <li><a href="https://partner.courtrightco.com">Partnership program</a></li>
+          <li><a href="/services/email-automation">Email automation</a></li>
+          <li><a href="/services/business-reports">Business reports</a></li>
+          <li><a href="/services/website-creation">Website builds</a></li>
+          <li><a href="/services/application-creation">App builds</a></li>
+          <li><a href="/affiliates">Partnership program</a></li>
         </ul>
       </div>
       <div>
         <h4>Company</h4>
         <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/book.html">Book a call</a></li>
-          <li><a href="/affiliates.html">Affiliate program</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/book">Book a call</a></li>
+          <li><a href="/affiliates">Affiliate program</a></li>
           <li><a href="https://tinkertaps.courtrightco.com">TinkerTaps</a></li>
           <li><a href="https://trivd.courtrightco.com">Trivd</a></li>
         </ul>
