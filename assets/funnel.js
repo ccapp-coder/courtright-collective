@@ -54,12 +54,16 @@
   }
 
   /* ---------- Help bot ---------- */
+  /* Each problem lands on the Belnoda room that answers it: the client list,
+     booking, the P&L. The room cards carry id="room-<key>" on belnoda.com.
+     "Hire it out" is absolute because this script also runs on belnoda.com,
+     where a bare /book is the app's booking page behind sign-in. */
   var ROUTES = [
-    { label: "My customers are scattered everywhere", href: "https://belnoda.com/#rooms" },
-    { label: "Booking is chaos", href: "https://belnoda.com/#rooms" },
-    { label: "I don't know if I'm making money", href: "https://belnoda.com/#rooms" },
+    { label: "My customers are scattered everywhere", href: "https://belnoda.com/#room-contact" },
+    { label: "Booking is chaos", href: "https://belnoda.com/#room-booked" },
+    { label: "I don't know if I'm making money", href: "https://belnoda.com/#room-accounting" },
     { label: "I need content but have no time", href: "https://tealden.com" },
-    { label: "I'd rather hire it out", href: "/book" },
+    { label: "I'd rather hire it out", href: "https://courtrightco.com/book" },
   ];
 
   var botOpen = false;
